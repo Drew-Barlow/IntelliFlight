@@ -1,4 +1,4 @@
-import weather_api_manager
+import nws_manager
 
 
 class AI_Model:
