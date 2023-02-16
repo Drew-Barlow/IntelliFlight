@@ -5,9 +5,8 @@
     "faa": "ABE",
     "mstat": "72517",
     "location": {
-      "latitude": 40.65,
-      "longitude": -75.45,
-      "elevation": 120
+      "lat": "40.651773",
+      "lon": "-75.442797"
     },
     "bts_id": "10135"
   },
@@ -17,9 +16,8 @@
     "faa": "ABI",
     "mstat": "72266",
     "location": {
-      "latitude": 32.4167,
-      "longitude": -99.6833,
-      "elevation": 546
+      "lat": "32.4113006592",
+      "lon": "-99.68190002440001"
     },
     "bts_id": "10136"
   },
@@ -29,9 +27,8 @@
     "faa": "ABQ",
     "mstat": "72365",
     "location": {
-      "latitude": 35.0333,
-      "longitude": -106.6,
-      "elevation": 1631
+      "lat": "35.040199",
+      "lon": "-106.609001"
     },
     "bts_id": "10140"
   },
@@ -41,9 +38,8 @@
     "faa": "ABR",
     "mstat": "72659",
     "location": {
-      "latitude": 45.45,
-      "longitude": -98.4167,
-      "elevation": 397
+      "lat": "45.449100494384766",
+      "lon": "-98.42179870605469"
     },
     "bts_id": "10141"
   },
@@ -53,9 +49,8 @@
     "faa": "ABY",
     "mstat": "72216",
     "location": {
-      "latitude": 31.5333,
-      "longitude": -84.2,
-      "elevation": 60
+      "lat": "31.532946",
+      "lon": "-84.196215"
     },
     "bts_id": "10146"
   },
@@ -65,9 +60,8 @@
     "faa": "ACK",
     "mstat": "74493",
     "location": {
-      "latitude": 41.2531,
-      "longitude": -70.0603,
-      "elevation": 14
+      "lat": "41.25310135",
+      "lon": "-70.06020355"
     },
     "bts_id": "10154"
   },
@@ -77,9 +71,8 @@
     "faa": "ACT",
     "mstat": "72256",
     "location": {
-      "latitude": 31.6,
-      "longitude": -97.05,
-      "elevation": 157
+      "lat": "31.611299514770508",
+      "lon": "-97.23049926757812"
     },
     "bts_id": "10155"
   },
@@ -89,9 +82,8 @@
     "faa": "ACV",
     "mstat": "KACV0",
     "location": {
-      "latitude": 40.9781,
-      "longitude": -124.1086,
-      "elevation": 68
+      "lat": "40.978101",
+      "lon": "-124.109"
     },
     "bts_id": "10157"
   },
@@ -101,9 +93,8 @@
     "faa": "ACY",
     "mstat": "72407",
     "location": {
-      "latitude": 39.4667,
-      "longitude": -74.0833,
-      "elevation": 23
+      "lat": "39.45759963989258",
+      "lon": "-74.57720184326172"
     },
     "bts_id": "10158"
   },
@@ -113,9 +104,8 @@
     "faa": "ADQ",
     "mstat": "70350",
     "location": {
-      "latitude": 57.75,
-      "longitude": -152.4833,
-      "elevation": 22
+      "lat": "57.75",
+      "lon": "-152.4940033"
     },
     "bts_id": "10170"
   },
@@ -125,9 +115,8 @@
     "faa": "AEX",
     "mstat": "74754",
     "location": {
-      "latitude": 31.55,
-      "longitude": -92.9333,
-      "elevation": 27
+      "lat": "31.3274",
+      "lon": "-92.549797"
     },
     "bts_id": "10185"
   },
@@ -137,9 +126,8 @@
     "faa": "AGS",
     "mstat": "72218",
     "location": {
-      "latitude": 33.3667,
-      "longitude": -81.9667,
-      "elevation": 44
+      "lat": "33.3699",
+      "lon": "-81.9645"
     },
     "bts_id": "10208"
   },
@@ -149,9 +137,8 @@
     "faa": "AKN",
     "mstat": "70326",
     "location": {
-      "latitude": 58.6833,
-      "longitude": -156.65,
-      "elevation": 17
+      "lat": "58.677845",
+      "lon": "-156.651965"
     },
     "bts_id": "10245"
   },
@@ -161,9 +148,8 @@
     "faa": "ALB",
     "mstat": "72518",
     "location": {
-      "latitude": 42.75,
-      "longitude": -73.1333,
-      "elevation": 87
+      "lat": "42.74829864501953",
+      "lon": "-73.80169677734375"
     },
     "bts_id": "10257"
   },
@@ -173,9 +159,8 @@
     "faa": "ALO",
     "mstat": "72548",
     "location": {
-      "latitude": 42.55,
-      "longitude": -92.0667,
-      "elevation": 266
+      "lat": "42.557098388671875",
+      "lon": "-92.40029907226562"
     },
     "bts_id": "10268"
   },
@@ -185,9 +170,8 @@
     "faa": "ALS",
     "mstat": "72462",
     "location": {
-      "latitude": 37.4333,
-      "longitude": -105.8667,
-      "elevation": 2297
+      "lat": "37.434898",
+      "lon": "-105.866997"
     },
     "bts_id": "10272"
   },
@@ -197,9 +181,8 @@
     "faa": "ALW",
     "mstat": "A13Z0",
     "location": {
-      "latitude": 46.0946,
-      "longitude": -118.2858,
-      "elevation": 367
+      "lat": "46.09489822",
+      "lon": "-118.288002"
     },
     "bts_id": "10275"
   },
@@ -209,9 +192,8 @@
     "faa": "AMA",
     "mstat": "72363",
     "location": {
-      "latitude": 35.2167,
-      "longitude": -101.7167,
-      "elevation": 1099
+      "lat": "35.219398",
+      "lon": "-101.706001"
     },
     "bts_id": "10279"
   },
@@ -221,9 +203,8 @@
     "faa": "ANC",
     "mstat": "70273",
     "location": {
-      "latitude": 61.1667,
-      "longitude": -150.0333,
-      "elevation": 44
+      "lat": "61.1744",
+      "lon": "-149.996002"
     },
     "bts_id": "10299"
   },
@@ -233,9 +214,8 @@
     "faa": "APN",
     "mstat": "72639",
     "location": {
-      "latitude": 45.0833,
-      "longitude": -83.5667,
-      "elevation": 210
+      "lat": "45.0780983",
+      "lon": "-83.56030273"
     },
     "bts_id": "10333"
   },
@@ -245,9 +225,8 @@
     "faa": "ART",
     "mstat": "KART0",
     "location": {
-      "latitude": 43.9919,
-      "longitude": -76.0217,
-      "elevation": 100
+      "lat": "43.991901",
+      "lon": "-76.021698"
     },
     "bts_id": "10361"
   },
@@ -257,9 +236,8 @@
     "faa": "ASE",
     "mstat": "KASE0",
     "location": {
-      "latitude": 39.2232,
-      "longitude": -106.8689,
-      "elevation": 2389
+      "lat": "39.223202",
+      "lon": "-106.869003"
     },
     "bts_id": "10372"
   },
@@ -269,9 +247,8 @@
     "faa": "ATL",
     "mstat": "72219",
     "location": {
-      "latitude": 33.65,
-      "longitude": -84.1,
-      "elevation": 313
+      "lat": "33.6367",
+      "lon": "-84.428101"
     },
     "bts_id": "10397"
   },
@@ -281,9 +258,8 @@
     "faa": "ATW",
     "mstat": "KATW0",
     "location": {
-      "latitude": 44.2581,
-      "longitude": -88.5191,
-      "elevation": 280
+      "lat": "44.258099",
+      "lon": "-88.519096"
     },
     "bts_id": "10408"
   },
@@ -293,9 +269,8 @@
     "faa": "ATY",
     "mstat": "KATY0",
     "location": {
-      "latitude": 44.914,
-      "longitude": -97.1547,
-      "elevation": 533
+      "lat": "44.91400146",
+      "lon": "-97.15470123"
     },
     "bts_id": "10409"
   },
@@ -305,9 +280,8 @@
     "faa": "AUS",
     "mstat": "74745",
     "location": {
-      "latitude": 30.1945,
-      "longitude": -97.6699,
-      "elevation": 165
+      "lat": "30.197535",
+      "lon": "-97.662015"
     },
     "bts_id": "10423"
   },
@@ -317,9 +291,8 @@
     "faa": "AVL",
     "mstat": "72315",
     "location": {
-      "latitude": 35.4333,
-      "longitude": -82.0333,
-      "elevation": 660
+      "lat": "35.436199",
+      "lon": "-82.541801"
     },
     "bts_id": "10431"
   },
@@ -329,9 +302,8 @@
     "faa": "AVP",
     "mstat": "72513",
     "location": {
-      "latitude": 41.3333,
-      "longitude": -75.0667,
-      "elevation": 293
+      "lat": "41.338500976599995",
+      "lon": "-75.72339630130001"
     },
     "bts_id": "10434"
   },
@@ -341,9 +313,8 @@
     "faa": "AZO",
     "mstat": "KAZO0",
     "location": {
-      "latitude": 42.2344,
-      "longitude": -85.5516,
-      "elevation": 266
+      "lat": "42.234901428222656",
+      "lon": "-85.5521011352539"
     },
     "bts_id": "10469"
   },
@@ -353,9 +324,8 @@
     "faa": "BDL",
     "mstat": "72508",
     "location": {
-      "latitude": 41.9333,
-      "longitude": -72.6833,
-      "elevation": 53
+      "lat": "41.93851",
+      "lon": "-72.688066"
     },
     "bts_id": "10529"
   },
@@ -365,9 +335,8 @@
     "faa": "BET",
     "mstat": "70219",
     "location": {
-      "latitude": 60.7833,
-      "longitude": -161.8333,
-      "elevation": 37
+      "lat": "60.77980042",
+      "lon": "-161.8379974"
     },
     "bts_id": "10551"
   },
@@ -377,9 +346,8 @@
     "faa": "BFF",
     "mstat": "72566",
     "location": {
-      "latitude": 41.8667,
-      "longitude": -103.6,
-      "elevation": 1209
+      "lat": "41.87400055",
+      "lon": "-103.5960007"
     },
     "bts_id": "10558"
   },
@@ -389,9 +357,8 @@
     "faa": "BFI",
     "mstat": "KBFI0",
     "location": {
-      "latitude": 47.53,
-      "longitude": -122.302,
-      "elevation": 6
+      "lat": "47.529999",
+      "lon": "-122.302002"
     },
     "bts_id": "10559"
   },
@@ -401,9 +368,8 @@
     "faa": "BFL",
     "mstat": "72384",
     "location": {
-      "latitude": 35.4333,
-      "longitude": -119.05,
-      "elevation": 155
+      "lat": "35.433601",
+      "lon": "-119.056999"
     },
     "bts_id": "10561"
   },
@@ -413,9 +379,8 @@
     "faa": "BGM",
     "mstat": "72515",
     "location": {
-      "latitude": 42.2,
-      "longitude": -75.15,
-      "elevation": 499
+      "lat": "42.20869827",
+      "lon": "-75.97979736"
     },
     "bts_id": "10577"
   },
@@ -425,9 +390,8 @@
     "faa": "BGR",
     "mstat": "72607",
     "location": {
-      "latitude": 44.8074,
-      "longitude": -68.8281,
-      "elevation": 59
+      "lat": "44.8074",
+      "lon": "-68.828102"
     },
     "bts_id": "10581"
   },
@@ -437,9 +401,8 @@
     "faa": "BHM",
     "mstat": "72228",
     "location": {
-      "latitude": 33.5667,
-      "longitude": -86.75,
-      "elevation": 196
+      "lat": "33.562901",
+      "lon": "-86.753502"
     },
     "bts_id": "10599"
   },
@@ -449,9 +412,8 @@
     "faa": "BID",
     "mstat": "KBID0",
     "location": {
-      "latitude": 41.1681,
-      "longitude": -71.5778,
-      "elevation": 33
+      "lat": "41.1680984497",
+      "lon": "-71.577796936"
     },
     "bts_id": "10613"
   },
@@ -461,9 +423,8 @@
     "faa": "BIL",
     "mstat": "72677",
     "location": {
-      "latitude": 45.8167,
-      "longitude": -108.55,
-      "elevation": 1112
+      "lat": "45.807701",
+      "lon": "-108.542999"
     },
     "bts_id": "10620"
   },
@@ -473,9 +434,8 @@
     "faa": "BIS",
     "mstat": "72764",
     "location": {
-      "latitude": 46.7833,
-      "longitude": -100.75,
-      "elevation": 511
+      "lat": "46.772701263427734",
+      "lon": "-100.74600219726562"
     },
     "bts_id": "10627"
   },
@@ -485,9 +445,8 @@
     "faa": "BJI",
     "mstat": "72755",
     "location": {
-      "latitude": 47.5,
-      "longitude": -94.9333,
-      "elevation": 423
+      "lat": "47.50939941",
+      "lon": "-94.93370056"
     },
     "bts_id": "10631"
   },
@@ -497,9 +456,8 @@
     "faa": "BLI",
     "mstat": "KBLI0",
     "location": {
-      "latitude": 48.7927,
-      "longitude": -122.5375,
-      "elevation": 52
+      "lat": "48.79280090332031",
+      "lon": "-122.53800201416016"
     },
     "bts_id": "10666"
   },
@@ -509,9 +467,8 @@
     "faa": "BLV",
     "mstat": "4P0GT",
     "location": {
-      "latitude": 38.55,
-      "longitude": -89.85,
-      "elevation": 138
+      "lat": "38.5452",
+      "lon": "-89.835197"
     },
     "bts_id": "10676"
   },
@@ -521,9 +478,8 @@
     "faa": "BMI",
     "mstat": "KBMI0",
     "location": {
-      "latitude": 40.4771,
-      "longitude": -88.9159,
-      "elevation": 266
+      "lat": "40.4771",
+      "lon": "-88.915901"
     },
     "bts_id": "10685"
   },
@@ -533,9 +489,8 @@
     "faa": "BNA",
     "mstat": "72327",
     "location": {
-      "latitude": 36.1167,
-      "longitude": -86.6833,
-      "elevation": 183
+      "lat": "36.1245002746582",
+      "lon": "-86.6781997680664"
     },
     "bts_id": "10693"
   },
@@ -545,9 +500,8 @@
     "faa": "BOI",
     "mstat": "72681",
     "location": {
-      "latitude": 43.5667,
-      "longitude": -116.2333,
-      "elevation": 871
+      "lat": "43.5644",
+      "lon": "-116.223"
     },
     "bts_id": "10713"
   },
@@ -557,9 +511,8 @@
     "faa": "BOS",
     "mstat": "72509",
     "location": {
-      "latitude": 42.3667,
-      "longitude": -71.0167,
-      "elevation": 6
+      "lat": "42.3643",
+      "lon": "-71.005203"
     },
     "bts_id": "10721"
   },
@@ -569,9 +522,8 @@
     "faa": "BPT",
     "mstat": "72241",
     "location": {
-      "latitude": 30.5833,
-      "longitude": -94.1333,
-      "elevation": 5
+      "lat": "29.9508",
+      "lon": "-94.020699"
     },
     "bts_id": "10728"
   },
@@ -581,9 +533,8 @@
     "faa": "BQK",
     "mstat": "KBQK0",
     "location": {
-      "latitude": 31.259,
-      "longitude": -81.4663,
-      "elevation": 8
+      "lat": "31.258800506591797",
+      "lon": "-81.46649932861328"
     },
     "bts_id": "10731"
   },
@@ -593,9 +544,8 @@
     "faa": "BQN",
     "mstat": "78514",
     "location": {
-      "latitude": 18.5,
-      "longitude": -67.1333,
-      "elevation": 72
+      "lat": "18.4949",
+      "lon": "-67.129402"
     },
     "bts_id": "10732"
   },
@@ -605,9 +555,8 @@
     "faa": "BRD",
     "mstat": "KBRD0",
     "location": {
-      "latitude": 46.4017,
-      "longitude": -94.1356,
-      "elevation": 376
+      "lat": "46.402861",
+      "lon": "-94.129727"
     },
     "bts_id": "10739"
   },
@@ -617,9 +566,8 @@
     "faa": "BRO",
     "mstat": "72250",
     "location": {
-      "latitude": 25.9,
-      "longitude": -97.4231,
-      "elevation": 7
+      "lat": "25.90679931640625",
+      "lon": "-97.4259033203125"
     },
     "bts_id": "10747"
   },
@@ -629,9 +577,8 @@
     "faa": "BRW",
     "mstat": "70026",
     "location": {
-      "latitude": 71.2833,
-      "longitude": -156.7667,
-      "elevation": 13
+      "lat": "71.285402",
+      "lon": "-156.766008"
     },
     "bts_id": "10754"
   },
@@ -641,9 +588,8 @@
     "faa": "BTM",
     "mstat": "72774",
     "location": {
-      "latitude": 45.9548,
-      "longitude": -112.4975,
-      "elevation": 1692
+      "lat": "45.95479965209961",
+      "lon": "-112.49700164794922"
     },
     "bts_id": "10779"
   },
@@ -653,9 +599,8 @@
     "faa": "BTR",
     "mstat": "KBTR0",
     "location": {
-      "latitude": 30.5378,
-      "longitude": -91.1468,
-      "elevation": 21
+      "lat": "30.533199",
+      "lon": "-91.149597"
     },
     "bts_id": "10781"
   },
@@ -665,9 +610,8 @@
     "faa": "BTV",
     "mstat": "72617",
     "location": {
-      "latitude": 44.4667,
-      "longitude": -73.15,
-      "elevation": 102
+      "lat": "44.471901",
+      "lon": "-73.153297"
     },
     "bts_id": "10785"
   },
@@ -677,9 +621,8 @@
     "faa": "BUF",
     "mstat": "72528",
     "location": {
-      "latitude": 42.9333,
-      "longitude": -78.7333,
-      "elevation": 221
+      "lat": "42.94049835",
+      "lon": "-78.73220062"
     },
     "bts_id": "10792"
   },
@@ -689,23 +632,10 @@
     "faa": "BUR",
     "mstat": "72288",
     "location": {
-      "latitude": 34.2,
-      "longitude": -118.3667,
-      "elevation": 236
+      "lat": "34.197703",
+      "lon": "-118.356378"
     },
     "bts_id": "10800"
-  },
-  {
-    "desc": "Beluga AK: Beluga Airport",
-    "icao": "KBVU",
-    "faa": "BVU",
-    "mstat": "KBVU0",
-    "location": {
-      "latitude": 35.9475,
-      "longitude": -114.8611,
-      "elevation": 672
-    },
-    "bts_id": "16390"
   },
   {
     "desc": "Baltimore MD: Baltimore/Washington International Thurgood Marshall",
@@ -713,9 +643,8 @@
     "faa": "BWI",
     "mstat": "72406",
     "location": {
-      "latitude": 39.1667,
-      "longitude": -76.6833,
-      "elevation": 45
+      "lat": "39.1754",
+      "lon": "-76.668297"
     },
     "bts_id": "10821"
   },
@@ -725,9 +654,8 @@
     "faa": "BZN",
     "mstat": "KBZN0",
     "location": {
-      "latitude": 45.7776,
-      "longitude": -111.152,
-      "elevation": 1363
+      "lat": "45.77750015",
+      "lon": "-111.1529999"
     },
     "bts_id": "10849"
   },
@@ -737,9 +665,8 @@
     "faa": "CAE",
     "mstat": "72310",
     "location": {
-      "latitude": 33.95,
-      "longitude": -81.1167,
-      "elevation": 72
+      "lat": "33.938801",
+      "lon": "-81.119499"
     },
     "bts_id": "10868"
   },
@@ -749,9 +676,8 @@
     "faa": "CAK",
     "mstat": "72521",
     "location": {
-      "latitude": 40.9167,
-      "longitude": -81.45,
-      "elevation": 374
+      "lat": "40.916099548339844",
+      "lon": "-81.44219970703125"
     },
     "bts_id": "10874"
   },
@@ -761,9 +687,8 @@
     "faa": "CDC",
     "mstat": "KCDC0",
     "location": {
-      "latitude": 37.701,
-      "longitude": -113.0988,
-      "elevation": 1714
+      "lat": "37.70100021362305",
+      "lon": "-113.0989990234375"
     },
     "bts_id": "10918"
   },
@@ -773,9 +698,8 @@
     "faa": "CDV",
     "mstat": "70296",
     "location": {
-      "latitude": 60.5,
-      "longitude": -145.4833,
-      "elevation": 13
+      "lat": "60.491798",
+      "lon": "-145.477997"
     },
     "bts_id": "10926"
   },
@@ -785,9 +709,8 @@
     "faa": "CHA",
     "mstat": "72324",
     "location": {
-      "latitude": 35.0333,
-      "longitude": -85.2,
-      "elevation": 208
+      "lat": "35.035301",
+      "lon": "-85.203796"
     },
     "bts_id": "10980"
   },
@@ -797,9 +720,8 @@
     "faa": "CHO",
     "mstat": "KCHO0",
     "location": {
-      "latitude": 38.1386,
-      "longitude": -78.4529,
-      "elevation": 195
+      "lat": "38.13859939575195",
+      "lon": "-78.4529037475586"
     },
     "bts_id": "10990"
   },
@@ -809,9 +731,8 @@
     "faa": "CHS",
     "mstat": "72208",
     "location": {
-      "latitude": 32.9,
-      "longitude": -80.0333,
-      "elevation": 14
+      "lat": "32.898602",
+      "lon": "-80.040497"
     },
     "bts_id": "10994"
   },
@@ -821,9 +742,8 @@
     "faa": "CID",
     "mstat": "72545",
     "location": {
-      "latitude": 41.8851,
-      "longitude": -91.7123,
-      "elevation": 265
+      "lat": "41.884701",
+      "lon": "-91.7108"
     },
     "bts_id": "11003"
   },
@@ -833,9 +753,8 @@
     "faa": "CIU",
     "mstat": "KCIU0",
     "location": {
-      "latitude": 46.2507,
-      "longitude": -84.4724,
-      "elevation": 244
+      "lat": "46.25080108642578",
+      "lon": "-84.47239685058594"
     },
     "bts_id": "11013"
   },
@@ -845,9 +764,8 @@
     "faa": "CKB",
     "mstat": "KCKB0",
     "location": {
-      "latitude": 39.2966,
-      "longitude": -80.2281,
-      "elevation": 373
+      "lat": "39.2966",
+      "lon": "-80.228104"
     },
     "bts_id": "11027"
   },
@@ -857,9 +775,8 @@
     "faa": "CLE",
     "mstat": "72524",
     "location": {
-      "latitude": 41.4,
-      "longitude": -81.85,
-      "elevation": 241
+      "lat": "41.4117012024",
+      "lon": "-81.8498001099"
     },
     "bts_id": "11042"
   },
@@ -869,9 +786,8 @@
     "faa": "CLL",
     "mstat": "KCLL0",
     "location": {
-      "latitude": 30.5886,
-      "longitude": -96.3638,
-      "elevation": 98
+      "lat": "30.58860016",
+      "lon": "-96.36380005"
     },
     "bts_id": "11049"
   },
@@ -881,9 +797,8 @@
     "faa": "CLT",
     "mstat": "72314",
     "location": {
-      "latitude": 35.214,
-      "longitude": -80.9431,
-      "elevation": 228
+      "lat": "35.2140007019043",
+      "lon": "-80.94309997558594"
     },
     "bts_id": "11057"
   },
@@ -893,9 +808,8 @@
     "faa": "CMH",
     "mstat": "72428",
     "location": {
-      "latitude": 40.0,
-      "longitude": -82.05,
-      "elevation": 248
+      "lat": "39.998001",
+      "lon": "-82.891899"
     },
     "bts_id": "11066"
   },
@@ -905,9 +819,8 @@
     "faa": "CMI",
     "mstat": "KCMI0",
     "location": {
-      "latitude": 40.0388,
-      "longitude": -88.2778,
-      "elevation": 230
+      "lat": "40.039819",
+      "lon": "-88.276249"
     },
     "bts_id": "11067"
   },
@@ -917,9 +830,8 @@
     "faa": "CMX",
     "mstat": "72744",
     "location": {
-      "latitude": 47.1667,
-      "longitude": -88.4833,
-      "elevation": 334
+      "lat": "47.168399810791016",
+      "lon": "-88.48909759521484"
     },
     "bts_id": "11076"
   },
@@ -929,9 +841,8 @@
     "faa": "CNY",
     "mstat": "KCNY0",
     "location": {
-      "latitude": 38.755,
-      "longitude": -109.7548,
-      "elevation": 1389
+      "lat": "38.75500107",
+      "lon": "-109.7549973"
     },
     "bts_id": "11092"
   },
@@ -941,9 +852,8 @@
     "faa": "COD",
     "mstat": "72670",
     "location": {
-      "latitude": 44.5167,
-      "longitude": -109.0167,
-      "elevation": 1551
+      "lat": "44.520198822",
+      "lon": "-109.024002075"
     },
     "bts_id": "11097"
   },
@@ -953,9 +863,8 @@
     "faa": "COS",
     "mstat": "72466",
     "location": {
-      "latitude": 38.8167,
-      "longitude": -104.7167,
-      "elevation": 1885
+      "lat": "38.805801",
+      "lon": "-104.700996"
     },
     "bts_id": "11109"
   },
@@ -965,9 +874,8 @@
     "faa": "COU",
     "mstat": "72445",
     "location": {
-      "latitude": 38.8167,
-      "longitude": -92.2167,
-      "elevation": 271
+      "lat": "38.8181",
+      "lon": "-92.219597"
     },
     "bts_id": "11111"
   },
@@ -977,9 +885,8 @@
     "faa": "CPR",
     "mstat": "72569",
     "location": {
-      "latitude": 42.9,
-      "longitude": -106.4667,
-      "elevation": 1630
+      "lat": "42.908001",
+      "lon": "-106.463997"
     },
     "bts_id": "11122"
   },
@@ -989,9 +896,8 @@
     "faa": "CRP",
     "mstat": "72251",
     "location": {
-      "latitude": 27.7667,
-      "longitude": -97.0167,
-      "elevation": 13
+      "lat": "27.770399",
+      "lon": "-97.501198"
     },
     "bts_id": "11140"
   },
@@ -1001,9 +907,8 @@
     "faa": "CRW",
     "mstat": "72414",
     "location": {
-      "latitude": 38.3667,
-      "longitude": -81.6,
-      "elevation": 299
+      "lat": "38.3731",
+      "lon": "-81.593201"
     },
     "bts_id": "11146"
   },
@@ -1013,9 +918,8 @@
     "faa": "CSG",
     "mstat": "KCSG0",
     "location": {
-      "latitude": 32.5163,
-      "longitude": -84.9389,
-      "elevation": 121
+      "lat": "32.516300201416016",
+      "lon": "-84.93890380859375"
     },
     "bts_id": "11150"
   },
@@ -1025,9 +929,8 @@
     "faa": "CVG",
     "mstat": "72421",
     "location": {
-      "latitude": 39.05,
-      "longitude": -84.6667,
-      "elevation": 273
+      "lat": "39.048801",
+      "lon": "-84.667801"
     },
     "bts_id": "11193"
   },
@@ -1037,9 +940,8 @@
     "faa": "CWA",
     "mstat": "KCWA0",
     "location": {
-      "latitude": 44.7776,
-      "longitude": -89.6668,
-      "elevation": 389
+      "lat": "44.7775993347",
+      "lon": "-89.6668014526"
     },
     "bts_id": "11203"
   },
@@ -1049,9 +951,8 @@
     "faa": "DAB",
     "mstat": "74787",
     "location": {
-      "latitude": 29.1799,
-      "longitude": -81.0581,
-      "elevation": 10
+      "lat": "29.179899",
+      "lon": "-81.058098"
     },
     "bts_id": "11252"
   },
@@ -1061,9 +962,8 @@
     "faa": "DAL",
     "mstat": "72258",
     "location": {
-      "latitude": 32.8471,
-      "longitude": -96.8518,
-      "elevation": 148
+      "lat": "32.847099",
+      "lon": "-96.851799"
     },
     "bts_id": "11259"
   },
@@ -1073,9 +973,8 @@
     "faa": "DAY",
     "mstat": "72429",
     "location": {
-      "latitude": 39.9,
-      "longitude": -84.2167,
-      "elevation": 308
+      "lat": "39.902401",
+      "lon": "-84.219398"
     },
     "bts_id": "11267"
   },
@@ -1085,9 +984,8 @@
     "faa": "DBQ",
     "mstat": "72547",
     "location": {
-      "latitude": 42.4,
-      "longitude": -90.0333,
-      "elevation": 328
+      "lat": "42.402",
+      "lon": "-90.709503"
     },
     "bts_id": "11274"
   },
@@ -1097,9 +995,8 @@
     "faa": "DCA",
     "mstat": "72405",
     "location": {
-      "latitude": 38.85,
-      "longitude": -77.0333,
-      "elevation": 5
+      "lat": "38.8521",
+      "lon": "-77.037697"
     },
     "bts_id": "11278"
   },
@@ -1109,9 +1006,8 @@
     "faa": "DEN",
     "mstat": "72565",
     "location": {
-      "latitude": 39.8667,
-      "longitude": -104.6667,
-      "elevation": 1655
+      "lat": "39.861698150635",
+      "lon": "-104.672996521"
     },
     "bts_id": "11292"
   },
@@ -1121,9 +1017,8 @@
     "faa": "DFW",
     "mstat": "72259",
     "location": {
-      "latitude": 32.9,
-      "longitude": -97.0333,
-      "elevation": 184
+      "lat": "32.896801",
+      "lon": "-97.038002"
     },
     "bts_id": "11298"
   },
@@ -1133,9 +1028,8 @@
     "faa": "DHN",
     "mstat": "KDHN0",
     "location": {
-      "latitude": 31.321,
-      "longitude": -85.4495,
-      "elevation": 122
+      "lat": "31.321300506591797",
+      "lon": "-85.44960021972656"
     },
     "bts_id": "11308"
   },
@@ -1145,9 +1039,8 @@
     "faa": "DIK",
     "mstat": "72763",
     "location": {
-      "latitude": 46.7973,
-      "longitude": -102.8019,
-      "elevation": 790
+      "lat": "46.7974014282",
+      "lon": "-102.802001953"
     },
     "bts_id": "11315"
   },
@@ -1157,9 +1050,8 @@
     "faa": "DLG",
     "mstat": "70321",
     "location": {
-      "latitude": 59.05,
-      "longitude": -158.5167,
-      "elevation": 26
+      "lat": "59.04470062",
+      "lon": "-158.5050049"
     },
     "bts_id": "11336"
   },
@@ -1169,9 +1061,8 @@
     "faa": "DLH",
     "mstat": "72745",
     "location": {
-      "latitude": 46.8333,
-      "longitude": -92.2167,
-      "elevation": 435
+      "lat": "46.842098",
+      "lon": "-92.193604"
     },
     "bts_id": "11337"
   },
@@ -1181,9 +1072,8 @@
     "faa": "DRO",
     "mstat": "74521",
     "location": {
-      "latitude": 37.2,
-      "longitude": -107.8167,
-      "elevation": 0
+      "lat": "37.1515007019",
+      "lon": "-107.753997803"
     },
     "bts_id": "11413"
   },
@@ -1193,9 +1083,8 @@
     "faa": "DRT",
     "mstat": "72261",
     "location": {
-      "latitude": 29.3667,
-      "longitude": -100.9167,
-      "elevation": 304
+      "lat": "29.3742008209",
+      "lon": "-100.927001953"
     },
     "bts_id": "11415"
   },
@@ -1205,9 +1094,8 @@
     "faa": "DSM",
     "mstat": "72546",
     "location": {
-      "latitude": 41.5333,
-      "longitude": -93.6531,
-      "elevation": 292
+      "lat": "41.534",
+      "lon": "-93.663101"
     },
     "bts_id": "11423"
   },
@@ -1217,9 +1105,8 @@
     "faa": "DTW",
     "mstat": "72537",
     "location": {
-      "latitude": 42.2333,
-      "longitude": -83.0,
-      "elevation": 195
+      "lat": "42.212398529052734",
+      "lon": "-83.35340118408203"
     },
     "bts_id": "11433"
   },
@@ -1229,9 +1116,8 @@
     "faa": "DUT",
     "mstat": "70489",
     "location": {
-      "latitude": 53.9,
-      "longitude": -166.5333,
-      "elevation": 7
+      "lat": "53.89881",
+      "lon": "-166.544996"
     },
     "bts_id": "11445"
   },
@@ -1241,9 +1127,8 @@
     "faa": "EAR",
     "mstat": "KEAR0",
     "location": {
-      "latitude": 40.727,
-      "longitude": -99.0068,
-      "elevation": 650
+      "lat": "40.727001",
+      "lon": "-99.006798"
     },
     "bts_id": "11468"
   },
@@ -1253,9 +1138,8 @@
     "faa": "EAT",
     "mstat": "72782",
     "location": {
-      "latitude": 47.4,
-      "longitude": -120.2,
-      "elevation": 379
+      "lat": "47.3988990784",
+      "lon": "-120.207000732"
     },
     "bts_id": "11470"
   },
@@ -1265,9 +1149,8 @@
     "faa": "EAU",
     "mstat": "KEAU0",
     "location": {
-      "latitude": 44.8658,
-      "longitude": -91.4843,
-      "elevation": 278
+      "lat": "44.86579895019531",
+      "lon": "-91.48429870605469"
     },
     "bts_id": "11471"
   },
@@ -1277,9 +1160,8 @@
     "faa": "ECP",
     "mstat": "KECP0",
     "location": {
-      "latitude": 30.3582,
-      "longitude": -85.7956,
-      "elevation": 21
+      "lat": "30.357106",
+      "lon": "-85.795414"
     },
     "bts_id": "11481"
   },
@@ -1289,9 +1171,8 @@
     "faa": "EGE",
     "mstat": "KEGE0",
     "location": {
-      "latitude": 39.6428,
-      "longitude": -106.9159,
-      "elevation": 1996
+      "lat": "39.64260101",
+      "lon": "-106.9179993"
     },
     "bts_id": "11503"
   },
@@ -1301,9 +1182,8 @@
     "faa": "EKO",
     "mstat": "70580",
     "location": {
-      "latitude": 40.8249,
-      "longitude": -115.7917,
-      "elevation": 1567
+      "lat": "40.82490158081055",
+      "lon": "-115.79199981689453"
     },
     "bts_id": "11525"
   },
@@ -1313,9 +1193,8 @@
     "faa": "ELM",
     "mstat": "KELM0",
     "location": {
-      "latitude": 42.1599,
-      "longitude": -76.8916,
-      "elevation": 291
+      "lat": "42.1599006652832",
+      "lon": "-76.8916015625"
     },
     "bts_id": "11537"
   },
@@ -1325,9 +1204,8 @@
     "faa": "ELP",
     "mstat": "72270",
     "location": {
-      "latitude": 31.8167,
-      "longitude": -106.3833,
-      "elevation": 1206
+      "lat": "31.80719948",
+      "lon": "-106.3779984"
     },
     "bts_id": "11540"
   },
@@ -1337,9 +1215,8 @@
     "faa": "ENA",
     "mstat": "70259",
     "location": {
-      "latitude": 60.5833,
-      "longitude": -151.2333,
-      "elevation": 28
+      "lat": "60.57310104370117",
+      "lon": "-151.2449951171875"
     },
     "bts_id": "11555"
   },
@@ -1349,9 +1226,8 @@
     "faa": "ERI",
     "mstat": "72526",
     "location": {
-      "latitude": 42.0833,
-      "longitude": -80.1833,
-      "elevation": 223
+      "lat": "42.083127",
+      "lon": "-80.173867"
     },
     "bts_id": "11577"
   },
@@ -1361,9 +1237,8 @@
     "faa": "ESC",
     "mstat": "72648",
     "location": {
-      "latitude": 45.75,
-      "longitude": -87.0333,
-      "elevation": 180
+      "lat": "45.7226982117",
+      "lon": "-87.0936965942"
     },
     "bts_id": "11587"
   },
@@ -1373,9 +1248,8 @@
     "faa": "EUG",
     "mstat": "72693",
     "location": {
-      "latitude": 44.1333,
-      "longitude": -123.2167,
-      "elevation": 111
+      "lat": "44.12459945678711",
+      "lon": "-123.21199798583984"
     },
     "bts_id": "11603"
   },
@@ -1385,9 +1259,8 @@
     "faa": "EVV",
     "mstat": "72432",
     "location": {
-      "latitude": 38.0333,
-      "longitude": -87.5333,
-      "elevation": 127
+      "lat": "38.0369987488",
+      "lon": "-87.5324020386"
     },
     "bts_id": "11612"
   },
@@ -1397,9 +1270,8 @@
     "faa": "EWN",
     "mstat": "KEWN0",
     "location": {
-      "latitude": 35.073,
-      "longitude": -77.0429,
-      "elevation": 6
+      "lat": "35.0730018616",
+      "lon": "-77.04290008539999"
     },
     "bts_id": "11617"
   },
@@ -1409,9 +1281,8 @@
     "faa": "EWR",
     "mstat": "72502",
     "location": {
-      "latitude": 40.6833,
-      "longitude": -74.0,
-      "elevation": 5
+      "lat": "40.692501",
+      "lon": "-74.168701"
     },
     "bts_id": "11618"
   },
@@ -1421,9 +1292,8 @@
     "faa": "EYW",
     "mstat": "72201",
     "location": {
-      "latitude": 24.55,
-      "longitude": -81.1,
-      "elevation": 1
+      "lat": "24.556101",
+      "lon": "-81.759598"
     },
     "bts_id": "11624"
   },
@@ -1433,9 +1303,8 @@
     "faa": "FAI",
     "mstat": "70261",
     "location": {
-      "latitude": 64.8,
-      "longitude": -147.8667,
-      "elevation": 132
+      "lat": "64.81510162",
+      "lon": "-147.8560028"
     },
     "bts_id": "11630"
   },
@@ -1445,9 +1314,8 @@
     "faa": "FAR",
     "mstat": "72753",
     "location": {
-      "latitude": 46.9333,
-      "longitude": -96.8167,
-      "elevation": 274
+      "lat": "46.92070007324219",
+      "lon": "-96.81580352783203"
     },
     "bts_id": "11637"
   },
@@ -1457,9 +1325,8 @@
     "faa": "FAT",
     "mstat": "72389",
     "location": {
-      "latitude": 36.7833,
-      "longitude": -119.7167,
-      "elevation": 101
+      "lat": "36.776199",
+      "lon": "-119.718002"
     },
     "bts_id": "11638"
   },
@@ -1469,9 +1336,8 @@
     "faa": "FAY",
     "mstat": "KFAY0",
     "location": {
-      "latitude": 34.9912,
-      "longitude": -78.8803,
-      "elevation": 58
+      "lat": "34.991199",
+      "lon": "-78.880302"
     },
     "bts_id": "11641"
   },
@@ -1481,9 +1347,8 @@
     "faa": "FLG",
     "mstat": "KFLG0",
     "location": {
-      "latitude": 35.1403,
-      "longitude": -111.6693,
-      "elevation": 2138
+      "lat": "35.1385",
+      "lon": "-111.670998"
     },
     "bts_id": "11695"
   },
@@ -1493,9 +1358,8 @@
     "faa": "FLL",
     "mstat": "74783",
     "location": {
-      "latitude": 26.0726,
-      "longitude": -80.1527,
-      "elevation": 3
+      "lat": "26.072599",
+      "lon": "-80.152702"
     },
     "bts_id": "11697"
   },
@@ -1505,9 +1369,8 @@
     "faa": "FLO",
     "mstat": "KFLO0",
     "location": {
-      "latitude": 34.1854,
-      "longitude": -79.7239,
-      "elevation": 45
+      "lat": "34.18539810180664",
+      "lon": "-79.7238998413086"
     },
     "bts_id": "11699"
   },
@@ -1517,9 +1380,8 @@
     "faa": "FNT",
     "mstat": "72637",
     "location": {
-      "latitude": 42.9667,
-      "longitude": -83.0833,
-      "elevation": 238
+      "lat": "42.96540069580078",
+      "lon": "-83.74359893798828"
     },
     "bts_id": "11721"
   },
@@ -1529,9 +1391,8 @@
     "faa": "FSD",
     "mstat": "72651",
     "location": {
-      "latitude": 43.5833,
-      "longitude": -96.75,
-      "elevation": 436
+      "lat": "43.585463",
+      "lon": "-96.741152"
     },
     "bts_id": "11775"
   },
@@ -1541,9 +1402,8 @@
     "faa": "FSM",
     "mstat": "72344",
     "location": {
-      "latitude": 35.3333,
-      "longitude": -94.0333,
-      "elevation": 143
+      "lat": "35.336601",
+      "lon": "-94.367401"
     },
     "bts_id": "11778"
   },
@@ -1553,9 +1413,8 @@
     "faa": "FWA",
     "mstat": "72533",
     "location": {
-      "latitude": 41.0,
-      "longitude": -85.0333,
-      "elevation": 248
+      "lat": "40.9785",
+      "lon": "-85.195099"
     },
     "bts_id": "11823"
   },
@@ -1565,9 +1424,8 @@
     "faa": "GCC",
     "mstat": "72665",
     "location": {
-      "latitude": 44.3333,
-      "longitude": -105.55,
-      "elevation": 1330
+      "lat": "44.3489",
+      "lon": "-105.539001"
     },
     "bts_id": "11865"
   },
@@ -1577,9 +1435,8 @@
     "faa": "GCK",
     "mstat": "KGCK0",
     "location": {
-      "latitude": 37.9275,
-      "longitude": -100.7244,
-      "elevation": 881
+      "lat": "37.9275016785",
+      "lon": "-100.723999023"
     },
     "bts_id": "11867"
   },
@@ -1589,9 +1446,8 @@
     "faa": "GEG",
     "mstat": "72785",
     "location": {
-      "latitude": 47.6167,
-      "longitude": -117.5333,
-      "elevation": 723
+      "lat": "47.6199",
+      "lon": "-117.533997"
     },
     "bts_id": "11884"
   },
@@ -1601,9 +1457,8 @@
     "faa": "GFK",
     "mstat": "KGFK0",
     "location": {
-      "latitude": 47.9473,
-      "longitude": -97.1738,
-      "elevation": 257
+      "lat": "47.949299",
+      "lon": "-97.176102"
     },
     "bts_id": "11898"
   },
@@ -1613,9 +1468,8 @@
     "faa": "GGG",
     "mstat": "72247",
     "location": {
-      "latitude": 32.3833,
-      "longitude": -94.7167,
-      "elevation": 111
+      "lat": "32.38399887084961",
+      "lon": "-94.71150207519531"
     },
     "bts_id": "11905"
   },
@@ -1625,9 +1479,8 @@
     "faa": "GJT",
     "mstat": "72476",
     "location": {
-      "latitude": 39.1333,
-      "longitude": -108.5333,
-      "elevation": 1481
+      "lat": "39.126663",
+      "lon": "-108.529387"
     },
     "bts_id": "11921"
   },
@@ -1637,9 +1490,8 @@
     "faa": "GNV",
     "mstat": "74756",
     "location": {
-      "latitude": 29.6901,
-      "longitude": -82.2718,
-      "elevation": 46
+      "lat": "29.6900997162",
+      "lon": "-82.2717971802"
     },
     "bts_id": "11953"
   },
@@ -1649,9 +1501,8 @@
     "faa": "GPI",
     "mstat": "72779",
     "location": {
-      "latitude": 48.3,
-      "longitude": -114.2667,
-      "elevation": 906
+      "lat": "48.31050109863281",
+      "lon": "-114.25599670410156"
     },
     "bts_id": "11970"
   },
@@ -1661,9 +1512,8 @@
     "faa": "GPT",
     "mstat": "74757",
     "location": {
-      "latitude": 30.4073,
-      "longitude": -89.0701,
-      "elevation": 9
+      "lat": "30.407301",
+      "lon": "-89.070099"
     },
     "bts_id": "11973"
   },
@@ -1673,9 +1523,8 @@
     "faa": "GRB",
     "mstat": "72645",
     "location": {
-      "latitude": 44.4833,
-      "longitude": -88.1333,
-      "elevation": 212
+      "lat": "44.483459",
+      "lon": "-88.130805"
     },
     "bts_id": "11977"
   },
@@ -1685,9 +1534,8 @@
     "faa": "GRI",
     "mstat": "72552",
     "location": {
-      "latitude": 40.9667,
-      "longitude": -98.15,
-      "elevation": 563
+      "lat": "40.967498779296875",
+      "lon": "-98.30960083007812"
     },
     "bts_id": "11980"
   },
@@ -1697,9 +1545,8 @@
     "faa": "GRK",
     "mstat": "KGRK0",
     "location": {
-      "latitude": 31.0673,
-      "longitude": -97.8289,
-      "elevation": 309
+      "lat": "31.0672",
+      "lon": "-97.828903"
     },
     "bts_id": "11982"
   },
@@ -1709,9 +1556,8 @@
     "faa": "GRR",
     "mstat": "72635",
     "location": {
-      "latitude": 42.8833,
-      "longitude": -85.5167,
-      "elevation": 242
+      "lat": "42.88079834",
+      "lon": "-85.52279663"
     },
     "bts_id": "11986"
   },
@@ -1721,9 +1567,8 @@
     "faa": "GSO",
     "mstat": "72317",
     "location": {
-      "latitude": 36.1,
-      "longitude": -79.95,
-      "elevation": 282
+      "lat": "36.097801",
+      "lon": "-79.937302"
     },
     "bts_id": "11995"
   },
@@ -1733,9 +1578,8 @@
     "faa": "GSP",
     "mstat": "72312",
     "location": {
-      "latitude": 34.8833,
-      "longitude": -82.05,
-      "elevation": 296
+      "lat": "34.895699",
+      "lon": "-82.218903"
     },
     "bts_id": "11996"
   },
@@ -1745,9 +1589,8 @@
     "faa": "GST",
     "mstat": "70367",
     "location": {
-      "latitude": 58.4167,
-      "longitude": -135.7,
-      "elevation": 10
+      "lat": "58.4253006",
+      "lon": "-135.7070007"
     },
     "bts_id": "11997"
   },
@@ -1757,9 +1600,8 @@
     "faa": "GTF",
     "mstat": "72775",
     "location": {
-      "latitude": 47.4667,
-      "longitude": -111.3833,
-      "elevation": 1120
+      "lat": "47.48199844",
+      "lon": "-111.3710022"
     },
     "bts_id": "12003"
   },
@@ -1769,9 +1611,8 @@
     "faa": "GTR",
     "mstat": "KGTR0",
     "location": {
-      "latitude": 33.4503,
-      "longitude": -88.5914,
-      "elevation": 81
+      "lat": "33.450298309299995",
+      "lon": "-88.5914001465"
     },
     "bts_id": "12007"
   },
@@ -1781,9 +1622,8 @@
     "faa": "GUC",
     "mstat": "KGUC0",
     "location": {
-      "latitude": 38.5339,
-      "longitude": -106.933,
-      "elevation": 2341
+      "lat": "38.536346",
+      "lon": "-106.928306"
     },
     "bts_id": "12012"
   },
@@ -1793,9 +1633,8 @@
     "faa": "GUM",
     "mstat": "91212",
     "location": {
-      "latitude": 13.4833,
-      "longitude": 144.8,
-      "elevation": 91
+      "lat": "13.4834",
+      "lon": "144.796005"
     },
     "bts_id": "12016"
   },
@@ -1805,9 +1644,8 @@
     "faa": "HDN",
     "mstat": "KHDN0",
     "location": {
-      "latitude": 40.4812,
-      "longitude": -107.2177,
-      "elevation": 2014
+      "lat": "40.48120117",
+      "lon": "-107.2180023"
     },
     "bts_id": "12094"
   },
@@ -1817,9 +1655,8 @@
     "faa": "HGR",
     "mstat": "KHGR0",
     "location": {
-      "latitude": 39.7085,
-      "longitude": -77.7265,
-      "elevation": 214
+      "lat": "39.707901",
+      "lon": "-77.72949982"
     },
     "bts_id": "12119"
   },
@@ -1829,9 +1666,8 @@
     "faa": "HIB",
     "mstat": "KHIB0",
     "location": {
-      "latitude": 47.3866,
-      "longitude": -92.839,
-      "elevation": 413
+      "lat": "47.3866",
+      "lon": "-92.838997"
     },
     "bts_id": "12129"
   },
@@ -1841,9 +1677,8 @@
     "faa": "HLN",
     "mstat": "72772",
     "location": {
-      "latitude": 46.6,
-      "longitude": -111.9667,
-      "elevation": 1180
+      "lat": "46.6068",
+      "lon": "-111.983002"
     },
     "bts_id": "12156"
   },
@@ -1853,9 +1688,19 @@
     "faa": "HNL",
     "mstat": "91182",
     "location": {
-      "latitude": 21.3333,
-      "longitude": -157.95,
-      "elevation": 4
+      "lat": "21.32062",
+      "lon": "-157.924228"
+    },
+    "bts_id": "12173"
+  },
+  {
+    "desc": "Honolulu HI: Daniel K Inouye International",
+    "icao": "PHNL",
+    "faa": "HNL",
+    "mstat": "91182",
+    "location": {
+      "lat": "21.32062",
+      "lon": "-157.924228"
     },
     "bts_id": "12173"
   },
@@ -1865,9 +1710,8 @@
     "faa": "HOB",
     "mstat": "KHOB0",
     "location": {
-      "latitude": 32.6875,
-      "longitude": -103.217,
-      "elevation": 1116
+      "lat": "32.6875",
+      "lon": "-103.2170029"
     },
     "bts_id": "12177"
   },
@@ -1877,9 +1721,8 @@
     "faa": "HOU",
     "mstat": "SC9N0",
     "location": {
-      "latitude": 29.6375,
-      "longitude": -95.2825,
-      "elevation": 14
+      "lat": "29.645399",
+      "lon": "-95.2789"
     },
     "bts_id": "12191"
   },
@@ -1889,9 +1732,8 @@
     "faa": "HPN",
     "mstat": "KHPN0",
     "location": {
-      "latitude": 41.0669,
-      "longitude": -73.7076,
-      "elevation": 134
+      "lat": "41.06700134277344",
+      "lon": "-73.70760345458984"
     },
     "bts_id": "12197"
   },
@@ -1901,9 +1743,8 @@
     "faa": "HRL",
     "mstat": "KHRL0",
     "location": {
-      "latitude": 26.2285,
-      "longitude": -97.6544,
-      "elevation": 11
+      "lat": "26.228500366210938",
+      "lon": "-97.65440368652344"
     },
     "bts_id": "12206"
   },
@@ -1913,9 +1754,8 @@
     "faa": "HSV",
     "mstat": "72323",
     "location": {
-      "latitude": 34.65,
-      "longitude": -86.7833,
-      "elevation": 192
+      "lat": "34.637199",
+      "lon": "-86.775101"
     },
     "bts_id": "12217"
   },
@@ -1925,9 +1765,8 @@
     "faa": "HTS",
     "mstat": "72425",
     "location": {
-      "latitude": 38.3667,
-      "longitude": -82.55,
-      "elevation": 252
+      "lat": "38.366699",
+      "lon": "-82.557999"
     },
     "bts_id": "12223"
   },
@@ -1937,9 +1776,8 @@
     "faa": "HVN",
     "mstat": "KHVN0",
     "location": {
-      "latitude": 41.2638,
-      "longitude": -72.8868,
-      "elevation": 4
+      "lat": "41.26369858",
+      "lon": "-72.88680267"
     },
     "bts_id": "12244"
   },
@@ -1949,9 +1787,8 @@
     "faa": "HYA",
     "mstat": "KHYA0",
     "location": {
-      "latitude": 41.6693,
-      "longitude": -70.2804,
-      "elevation": 17
+      "lat": "41.6693",
+      "lon": "-70.280403"
     },
     "bts_id": "12250"
   },
@@ -1961,9 +1798,8 @@
     "faa": "HYS",
     "mstat": "KHYS0",
     "location": {
-      "latitude": 38.8422,
-      "longitude": -99.2732,
-      "elevation": 609
+      "lat": "38.84220123",
+      "lon": "-99.27320099"
     },
     "bts_id": "12255"
   },
@@ -1973,9 +1809,8 @@
     "faa": "IAD",
     "mstat": "72403",
     "location": {
-      "latitude": 38.9333,
-      "longitude": -77.45,
-      "elevation": 95
+      "lat": "38.9445",
+      "lon": "-77.455803"
     },
     "bts_id": "12264"
   },
@@ -1985,9 +1820,8 @@
     "faa": "IAG",
     "mstat": "KIAG0",
     "location": {
-      "latitude": 43.1073,
-      "longitude": -78.9462,
-      "elevation": 180
+      "lat": "43.1073",
+      "lon": "-78.946198"
     },
     "bts_id": "12265"
   },
@@ -1997,9 +1831,8 @@
     "faa": "IAH",
     "mstat": "72243",
     "location": {
-      "latitude": 30.0,
-      "longitude": -95.3667,
-      "elevation": 30
+      "lat": "29.984399795532227",
+      "lon": "-95.34140014648438"
     },
     "bts_id": "12266"
   },
@@ -2009,9 +1842,8 @@
     "faa": "ICT",
     "mstat": "72450",
     "location": {
-      "latitude": 37.65,
-      "longitude": -97.1,
-      "elevation": 406
+      "lat": "37.649899",
+      "lon": "-97.433098"
     },
     "bts_id": "12278"
   },
@@ -2021,9 +1853,8 @@
     "faa": "IDA",
     "mstat": "KIDA0",
     "location": {
-      "latitude": 43.5137,
-      "longitude": -112.0708,
-      "elevation": 1446
+      "lat": "43.514599",
+      "lon": "-112.070999"
     },
     "bts_id": "12280"
   },
@@ -2033,9 +1864,8 @@
     "faa": "ILG",
     "mstat": "72418",
     "location": {
-      "latitude": 39.6787,
-      "longitude": -75.6066,
-      "elevation": 24
+      "lat": "39.67869949",
+      "lon": "-75.60649872"
     },
     "bts_id": "12320"
   },
@@ -2045,9 +1875,8 @@
     "faa": "ILM",
     "mstat": "72302",
     "location": {
-      "latitude": 34.2706,
-      "longitude": -77.9026,
-      "elevation": 10
+      "lat": "34.270599365234375",
+      "lon": "-77.90260314941406"
     },
     "bts_id": "12323"
   },
@@ -2057,9 +1886,8 @@
     "faa": "IMT",
     "mstat": "KIMT0",
     "location": {
-      "latitude": 45.8184,
-      "longitude": -88.1146,
-      "elevation": 360
+      "lat": "45.8184013367",
+      "lon": "-88.1145019531"
     },
     "bts_id": "12335"
   },
@@ -2069,9 +1897,8 @@
     "faa": "IND",
     "mstat": "72438",
     "location": {
-      "latitude": 39.7167,
-      "longitude": -86.1167,
-      "elevation": 243
+      "lat": "39.7173",
+      "lon": "-86.294403"
     },
     "bts_id": "12339"
   },
@@ -2081,9 +1908,8 @@
     "faa": "ISP",
     "mstat": "72505",
     "location": {
-      "latitude": 40.7953,
-      "longitude": -73.1002,
-      "elevation": 30
+      "lat": "40.79520035",
+      "lon": "-73.10019684"
     },
     "bts_id": "12391"
   },
@@ -2093,9 +1919,8 @@
     "faa": "ITH",
     "mstat": "KITH0",
     "location": {
-      "latitude": 42.4914,
-      "longitude": -76.4587,
-      "elevation": 335
+      "lat": "42.49100112915039",
+      "lon": "-76.4583969116211"
     },
     "bts_id": "12397"
   },
@@ -2105,9 +1930,8 @@
     "faa": "ITO",
     "mstat": "91285",
     "location": {
-      "latitude": 19.7167,
-      "longitude": -155.05,
-      "elevation": 12
+      "lat": "19.721399",
+      "lon": "-155.048004"
     },
     "bts_id": "12402"
   },
@@ -2117,9 +1941,8 @@
     "faa": "IWA",
     "mstat": "KIWA0",
     "location": {
-      "latitude": 33.3078,
-      "longitude": -111.6555,
-      "elevation": 421
+      "lat": "33.3078",
+      "lon": "-111.654999"
     },
     "bts_id": "12411"
   },
@@ -2129,9 +1952,8 @@
     "faa": "JAC",
     "mstat": "72577",
     "location": {
-      "latitude": 43.6073,
-      "longitude": -110.7378,
-      "elevation": 1966
+      "lat": "43.6072998046875",
+      "lon": "-110.73799896240234"
     },
     "bts_id": "12441"
   },
@@ -2141,9 +1963,8 @@
     "faa": "JAN",
     "mstat": "72235",
     "location": {
-      "latitude": 32.3167,
-      "longitude": -90.0667,
-      "elevation": 105
+      "lat": "32.311199",
+      "lon": "-90.075897"
     },
     "bts_id": "12448"
   },
@@ -2153,9 +1974,8 @@
     "faa": "JAX",
     "mstat": "72206",
     "location": {
-      "latitude": 30.5,
-      "longitude": -81.0333,
-      "elevation": 9
+      "lat": "30.49410057067871",
+      "lon": "-81.68789672851562"
     },
     "bts_id": "12451"
   },
@@ -2165,9 +1985,8 @@
     "faa": "JFK",
     "mstat": "74486",
     "location": {
-      "latitude": 40.6333,
-      "longitude": -73.7667,
-      "elevation": 4
+      "lat": "40.639447",
+      "lon": "-73.779317"
     },
     "bts_id": "12478"
   },
@@ -2177,9 +1996,8 @@
     "faa": "JLN",
     "mstat": "KJLN0",
     "location": {
-      "latitude": 37.1518,
-      "longitude": -94.4983,
-      "elevation": 299
+      "lat": "37.151798",
+      "lon": "-94.498299"
     },
     "bts_id": "12511"
   },
@@ -2189,9 +2007,8 @@
     "faa": "JMS",
     "mstat": "KJMS0",
     "location": {
-      "latitude": 46.9297,
-      "longitude": -98.6782,
-      "elevation": 457
+      "lat": "46.92969894",
+      "lon": "-98.67819977"
     },
     "bts_id": "12519"
   },
@@ -2201,22 +2018,10 @@
     "faa": "JNU",
     "mstat": "70381",
     "location": {
-      "latitude": 58.35,
-      "longitude": -134.5667,
-      "elevation": 6
+      "lat": "58.35499954223633",
+      "lon": "-134.5760040283203"
     },
     "bts_id": "12523"
-  },
-  {
-    "desc": "Concord NC: Concord Regional",
-    "icao": "KJQF",
-    "faa": "JQF",
-    "mstat": "KJQF0",
-    "location": {
-      "latitude": 35.3878,
-      "longitude": -80.7091,
-      "elevation": 215
-    }
   },
   {
     "desc": "Kona HI: Ellison Onizuka Kona International at Keahole",
@@ -2224,9 +2029,8 @@
     "faa": "KOA",
     "mstat": "PHKO0",
     "location": {
-      "latitude": 19.7388,
-      "longitude": -156.0456,
-      "elevation": 14
+      "lat": "19.738783",
+      "lon": "-156.045603"
     },
     "bts_id": "12758"
   },
@@ -2236,9 +2040,8 @@
     "faa": "KTN",
     "mstat": "70395",
     "location": {
-      "latitude": 55.35,
-      "longitude": -131.7167,
-      "elevation": 27
+      "lat": "55.35559845",
+      "lon": "-131.7140045"
     },
     "bts_id": "12819"
   },
@@ -2248,9 +2051,8 @@
     "faa": "LAN",
     "mstat": "72539",
     "location": {
-      "latitude": 42.7833,
-      "longitude": -84.5833,
-      "elevation": 262
+      "lat": "42.77870178222656",
+      "lon": "-84.58740234375"
     },
     "bts_id": "12884"
   },
@@ -2260,9 +2062,8 @@
     "faa": "LAR",
     "mstat": "LJ957",
     "location": {
-      "latitude": 41.3165,
-      "longitude": -105.6729,
-      "elevation": 2218
+      "lat": "41.31209945678711",
+      "lon": "-105.67500305175781"
     },
     "bts_id": "12888"
   },
@@ -2272,9 +2073,8 @@
     "faa": "LAS",
     "mstat": "72386",
     "location": {
-      "latitude": 36.1167,
-      "longitude": -115.2667,
-      "elevation": 663
+      "lat": "36.083361",
+      "lon": "-115.151817"
     },
     "bts_id": "12889"
   },
@@ -2284,9 +2084,8 @@
     "faa": "LAX",
     "mstat": "72295",
     "location": {
-      "latitude": 33.9333,
-      "longitude": -118.3833,
-      "elevation": 38
+      "lat": "33.942501",
+      "lon": "-118.407997"
     },
     "bts_id": "12892"
   },
@@ -2296,9 +2095,8 @@
     "faa": "LBB",
     "mstat": "72267",
     "location": {
-      "latitude": 33.6667,
-      "longitude": -101.8167,
-      "elevation": 1000
+      "lat": "33.663601",
+      "lon": "-101.822998"
     },
     "bts_id": "12896"
   },
@@ -2308,9 +2106,8 @@
     "faa": "LBE",
     "mstat": "KLBE0",
     "location": {
-      "latitude": 40.2746,
-      "longitude": -79.4068,
-      "elevation": 366
+      "lat": "40.275902",
+      "lon": "-79.4048"
     },
     "bts_id": "12898"
   },
@@ -2320,9 +2117,8 @@
     "faa": "LBF",
     "mstat": "72562",
     "location": {
-      "latitude": 41.1167,
-      "longitude": -100.6667,
-      "elevation": 847
+      "lat": "41.12620163",
+      "lon": "-100.6839981"
     },
     "bts_id": "12899"
   },
@@ -2332,9 +2128,8 @@
     "faa": "LCH",
     "mstat": "72240",
     "location": {
-      "latitude": 30.2,
-      "longitude": -93.3833,
-      "elevation": 5
+      "lat": "30.126100540161133",
+      "lon": "-93.22329711914062"
     },
     "bts_id": "12915"
   },
@@ -2344,9 +2139,8 @@
     "faa": "LCK",
     "mstat": "KLCK0",
     "location": {
-      "latitude": 39.8138,
-      "longitude": -82.9278,
-      "elevation": 227
+      "lat": "39.813801",
+      "lon": "-82.927803"
     },
     "bts_id": "12917"
   },
@@ -2356,9 +2150,8 @@
     "faa": "LEX",
     "mstat": "72422",
     "location": {
-      "latitude": 38.0333,
-      "longitude": -84.6,
-      "elevation": 299
+      "lat": "38.036499",
+      "lon": "-84.605904"
     },
     "bts_id": "12945"
   },
@@ -2368,9 +2161,8 @@
     "faa": "LFT",
     "mstat": "KLFT0",
     "location": {
-      "latitude": 30.2052,
-      "longitude": -91.9876,
-      "elevation": 13
+      "lat": "30.205299",
+      "lon": "-91.987602"
     },
     "bts_id": "12951"
   },
@@ -2380,9 +2172,8 @@
     "faa": "LGA",
     "mstat": "72503",
     "location": {
-      "latitude": 40.7833,
-      "longitude": -73.05,
-      "elevation": 7
+      "lat": "40.777199",
+      "lon": "-73.872597"
     },
     "bts_id": "12953"
   },
@@ -2392,9 +2183,8 @@
     "faa": "LGB",
     "mstat": "72297",
     "location": {
-      "latitude": 33.8167,
-      "longitude": -118.15,
-      "elevation": 17
+      "lat": "33.816523",
+      "lon": "-118.149891"
     },
     "bts_id": "12954"
   },
@@ -2404,9 +2194,8 @@
     "faa": "LIH",
     "mstat": "91165",
     "location": {
-      "latitude": 21.9833,
-      "longitude": -159.3333,
-      "elevation": 45
+      "lat": "21.976",
+      "lon": "-159.339005"
     },
     "bts_id": "12982"
   },
@@ -2416,9 +2205,8 @@
     "faa": "LIT",
     "mstat": "OQRHP",
     "location": {
-      "latitude": 34.7267,
-      "longitude": -92.2361,
-      "elevation": 79
+      "lat": "34.729582",
+      "lon": "-92.223728"
     },
     "bts_id": "12992"
   },
@@ -2428,9 +2216,8 @@
     "faa": "LNK",
     "mstat": "72551",
     "location": {
-      "latitude": 40.8333,
-      "longitude": -96.7647,
-      "elevation": 372
+      "lat": "40.85100173950195",
+      "lon": "-96.75920104980469"
     },
     "bts_id": "13029"
   },
@@ -2440,9 +2227,8 @@
     "faa": "LNY",
     "mstat": "PHNY0",
     "location": {
-      "latitude": 20.7856,
-      "longitude": -156.9514,
-      "elevation": 399
+      "lat": "20.785675",
+      "lon": "-156.951324"
     },
     "bts_id": "13034"
   },
@@ -2452,9 +2238,8 @@
     "faa": "LRD",
     "mstat": "72252",
     "location": {
-      "latitude": 27.5333,
-      "longitude": -99.45,
-      "elevation": 155
+      "lat": "27.543800354003906",
+      "lon": "-99.46160125732422"
     },
     "bts_id": "13061"
   },
@@ -2464,9 +2249,8 @@
     "faa": "LSE",
     "mstat": "72643",
     "location": {
-      "latitude": 43.8833,
-      "longitude": -91.25,
-      "elevation": 199
+      "lat": "43.879002",
+      "lon": "-91.256699"
     },
     "bts_id": "13076"
   },
@@ -2476,9 +2260,8 @@
     "faa": "LWB",
     "mstat": "KLWB0",
     "location": {
-      "latitude": 37.8583,
-      "longitude": -80.3995,
-      "elevation": 701
+      "lat": "37.8582992554",
+      "lon": "-80.3994979858"
     },
     "bts_id": "13121"
   },
@@ -2488,9 +2271,8 @@
     "faa": "LWS",
     "mstat": "72783",
     "location": {
-      "latitude": 46.3667,
-      "longitude": -117.0167,
-      "elevation": 438
+      "lat": "46.3745002746582",
+      "lon": "-117.01499938964844"
     },
     "bts_id": "13127"
   },
@@ -2500,9 +2282,8 @@
     "faa": "LYH",
     "mstat": "72410",
     "location": {
-      "latitude": 37.3167,
-      "longitude": -79.2,
-      "elevation": 286
+      "lat": "37.326698",
+      "lon": "-79.200401"
     },
     "bts_id": "13139"
   },
@@ -2512,9 +2293,8 @@
     "faa": "MAF",
     "mstat": "72265",
     "location": {
-      "latitude": 31.9333,
-      "longitude": -102.2,
-      "elevation": 875
+      "lat": "31.942499",
+      "lon": "-102.202003"
     },
     "bts_id": "13158"
   },
@@ -2524,9 +2304,8 @@
     "faa": "MBS",
     "mstat": "KMBS0",
     "location": {
-      "latitude": 43.5329,
-      "longitude": -84.0796,
-      "elevation": 204
+      "lat": "43.532902",
+      "lon": "-84.079597"
     },
     "bts_id": "13184"
   },
@@ -2536,9 +2315,8 @@
     "faa": "MCI",
     "mstat": "72446",
     "location": {
-      "latitude": 39.2972,
-      "longitude": -94.7306,
-      "elevation": 313
+      "lat": "39.2976",
+      "lon": "-94.713898"
     },
     "bts_id": "13198"
   },
@@ -2548,9 +2326,8 @@
     "faa": "MCN",
     "mstat": "72217",
     "location": {
-      "latitude": 32.6833,
-      "longitude": -83.15,
-      "elevation": 108
+      "lat": "32.69279861450195",
+      "lon": "-83.64920043945312"
     },
     "bts_id": "13203"
   },
@@ -2560,9 +2337,8 @@
     "faa": "MCO",
     "mstat": "72205",
     "location": {
-      "latitude": 28.4167,
-      "longitude": -81.0,
-      "elevation": 29
+      "lat": "28.429399490356445",
+      "lon": "-81.30899810791016"
     },
     "bts_id": "13204"
   },
@@ -2572,9 +2348,8 @@
     "faa": "MDT",
     "mstat": "72399",
     "location": {
-      "latitude": 40.1932,
-      "longitude": -76.7626,
-      "elevation": 95
+      "lat": "40.193501",
+      "lon": "-76.763397"
     },
     "bts_id": "13230"
   },
@@ -2584,9 +2359,8 @@
     "faa": "MDW",
     "mstat": "72534",
     "location": {
-      "latitude": 41.7833,
-      "longitude": -87.75,
-      "elevation": 189
+      "lat": "41.785999",
+      "lon": "-87.752403"
     },
     "bts_id": "13232"
   },
@@ -2596,9 +2370,8 @@
     "faa": "MEI",
     "mstat": "72234",
     "location": {
-      "latitude": 32.3333,
-      "longitude": -88.75,
-      "elevation": 91
+      "lat": "32.3326",
+      "lon": "-88.7519"
     },
     "bts_id": "13241"
   },
@@ -2608,9 +2381,8 @@
     "faa": "MEM",
     "mstat": "72334",
     "location": {
-      "latitude": 35.0333,
-      "longitude": -89.9833,
-      "elevation": 102
+      "lat": "35.04240036010742",
+      "lon": "-89.97669982910156"
     },
     "bts_id": "13244"
   },
@@ -2620,9 +2392,8 @@
     "faa": "MFE",
     "mstat": "KMFE0",
     "location": {
-      "latitude": 26.1758,
-      "longitude": -98.2386,
-      "elevation": 33
+      "lat": "26.176141",
+      "lon": "-98.237965"
     },
     "bts_id": "13256"
   },
@@ -2632,9 +2403,8 @@
     "faa": "MFR",
     "mstat": "72597",
     "location": {
-      "latitude": 42.3833,
-      "longitude": -122.8833,
-      "elevation": 406
+      "lat": "42.37419891357422",
+      "lon": "-122.87300109863281"
     },
     "bts_id": "13264"
   },
@@ -2644,9 +2414,8 @@
     "faa": "MGM",
     "mstat": "72226",
     "location": {
-      "latitude": 32.3,
-      "longitude": -86.0667,
-      "elevation": 67
+      "lat": "32.300598",
+      "lon": "-86.393997"
     },
     "bts_id": "13277"
   },
@@ -2656,9 +2425,8 @@
     "faa": "MHK",
     "mstat": "KMHK0",
     "location": {
-      "latitude": 39.141,
-      "longitude": -96.6708,
-      "elevation": 325
+      "lat": "39.14099884033203",
+      "lon": "-96.6707992553711"
     },
     "bts_id": "13290"
   },
@@ -2668,9 +2436,8 @@
     "faa": "MHT",
     "mstat": "56FNV",
     "location": {
-      "latitude": 42.9296,
-      "longitude": -71.4356,
-      "elevation": 71
+      "lat": "42.932598",
+      "lon": "-71.435699"
     },
     "bts_id": "13296"
   },
@@ -2680,9 +2447,8 @@
     "faa": "MIA",
     "mstat": "72202",
     "location": {
-      "latitude": 25.7833,
-      "longitude": -80.3167,
-      "elevation": 4
+      "lat": "25.79319953918457",
+      "lon": "-80.29060363769531"
     },
     "bts_id": "13303"
   },
@@ -2692,9 +2458,8 @@
     "faa": "MKE",
     "mstat": "72640",
     "location": {
-      "latitude": 42.955,
-      "longitude": -87.9044,
-      "elevation": 211
+      "lat": "42.947200775146484",
+      "lon": "-87.89659881591797"
     },
     "bts_id": "13342"
   },
@@ -2704,9 +2469,8 @@
     "faa": "MKG",
     "mstat": "72636",
     "location": {
-      "latitude": 43.1667,
-      "longitude": -86.2333,
-      "elevation": 191
+      "lat": "43.169498",
+      "lon": "-86.238197"
     },
     "bts_id": "13344"
   },
@@ -2716,9 +2480,8 @@
     "faa": "MKK",
     "mstat": "91186",
     "location": {
-      "latitude": 21.15,
-      "longitude": -157.1,
-      "elevation": 138
+      "lat": "21.152901",
+      "lon": "-157.095993"
     },
     "bts_id": "13347"
   },
@@ -2728,9 +2491,8 @@
     "faa": "MLB",
     "mstat": "72204",
     "location": {
-      "latitude": 28.1,
-      "longitude": -80.65,
-      "elevation": 10
+      "lat": "28.1028",
+      "lon": "-80.645302"
     },
     "bts_id": "13360"
   },
@@ -2740,9 +2502,8 @@
     "faa": "MLI",
     "mstat": "72544",
     "location": {
-      "latitude": 41.45,
-      "longitude": -90.0167,
-      "elevation": 180
+      "lat": "41.448502",
+      "lon": "-90.5075"
     },
     "bts_id": "13367"
   },
@@ -2752,9 +2513,8 @@
     "faa": "MLU",
     "mstat": "KMLU0",
     "location": {
-      "latitude": 32.5109,
-      "longitude": -92.0377,
-      "elevation": 24
+      "lat": "32.510899",
+      "lon": "-92.037697"
     },
     "bts_id": "13377"
   },
@@ -2764,9 +2524,8 @@
     "faa": "MOB",
     "mstat": "72223",
     "location": {
-      "latitude": 30.6833,
-      "longitude": -88.0667,
-      "elevation": 66
+      "lat": "30.6912",
+      "lon": "-88.242798"
     },
     "bts_id": "13422"
   },
@@ -2776,9 +2535,8 @@
     "faa": "MOT",
     "mstat": "KMOT0",
     "location": {
-      "latitude": 48.2576,
-      "longitude": -101.278,
-      "elevation": 523
+      "lat": "48.2593994140625",
+      "lon": "-101.27999877929688"
     },
     "bts_id": "13433"
   },
@@ -2788,9 +2546,8 @@
     "faa": "MRY",
     "mstat": "M44D9",
     "location": {
-      "latitude": 36.5905,
-      "longitude": -121.8487,
-      "elevation": 77
+      "lat": "36.58700180053711",
+      "lon": "-121.84300231933594"
     },
     "bts_id": "13476"
   },
@@ -2800,9 +2557,8 @@
     "faa": "MSN",
     "mstat": "72641",
     "location": {
-      "latitude": 43.1333,
-      "longitude": -89.0167,
-      "elevation": 263
+      "lat": "43.1399",
+      "lon": "-89.337502"
     },
     "bts_id": "13485"
   },
@@ -2812,9 +2568,8 @@
     "faa": "MSO",
     "mstat": "72773",
     "location": {
-      "latitude": 46.9167,
-      "longitude": -114.1,
-      "elevation": 976
+      "lat": "46.91630173",
+      "lon": "-114.0910034"
     },
     "bts_id": "13486"
   },
@@ -2824,9 +2579,8 @@
     "faa": "MSP",
     "mstat": "72658",
     "location": {
-      "latitude": 44.8667,
-      "longitude": -93.05,
-      "elevation": 256
+      "lat": "44.882",
+      "lon": "-93.221802"
     },
     "bts_id": "13487"
   },
@@ -2836,9 +2590,8 @@
     "faa": "MSY",
     "mstat": "72231",
     "location": {
-      "latitude": 30.0,
-      "longitude": -90.0833,
-      "elevation": 2
+      "lat": "29.99340057373047",
+      "lon": "-90.25800323486328"
     },
     "bts_id": "13495"
   },
@@ -2848,9 +2601,8 @@
     "faa": "MTJ",
     "mstat": "KMTJ0",
     "location": {
-      "latitude": 38.5098,
-      "longitude": -107.8942,
-      "elevation": 1755
+      "lat": "38.509799957300004",
+      "lon": "-107.893997192"
     },
     "bts_id": "13502"
   },
@@ -2860,9 +2612,8 @@
     "faa": "MVY",
     "mstat": "KMVY0",
     "location": {
-      "latitude": 41.393,
-      "longitude": -70.6143,
-      "elevation": 20
+      "lat": "41.3931007385",
+      "lon": "-70.6143035889"
     },
     "bts_id": "13541"
   },
@@ -2872,9 +2623,8 @@
     "faa": "MWA",
     "mstat": "KMWA0",
     "location": {
-      "latitude": 37.755,
-      "longitude": -89.0111,
-      "elevation": 144
+      "lat": "37.751208",
+      "lon": "-89.016568"
     },
     "bts_id": "13543"
   },
@@ -2884,9 +2634,8 @@
     "faa": "MYR",
     "mstat": "74791",
     "location": {
-      "latitude": 33.6833,
-      "longitude": -78.9333,
-      "elevation": 8
+      "lat": "33.6796989441",
+      "lon": "-78.9282989502"
     },
     "bts_id": "13577"
   },
@@ -2896,9 +2645,19 @@
     "faa": "NYL",
     "mstat": "KNYL0",
     "location": {
-      "latitude": 32.6566,
-      "longitude": -114.606,
-      "elevation": 65
+      "lat": "32.656601",
+      "lon": "-114.606003"
+    },
+    "bts_id": "16218"
+  },
+  {
+    "desc": "Yuma AZ: Yuma MCAS/Yuma International",
+    "icao": "KNYL",
+    "faa": "NYL",
+    "mstat": "KNYL0",
+    "location": {
+      "lat": "32.656601",
+      "lon": "-114.606003"
     },
     "bts_id": "16218"
   },
@@ -2908,9 +2667,8 @@
     "faa": "OAJ",
     "mstat": "KOAJ0",
     "location": {
-      "latitude": 34.8292,
-      "longitude": -77.6121,
-      "elevation": 28
+      "lat": "34.829201",
+      "lon": "-77.612099"
     },
     "bts_id": "13795"
   },
@@ -2920,9 +2678,8 @@
     "faa": "OAK",
     "mstat": "72493",
     "location": {
-      "latitude": 37.7167,
-      "longitude": -122.2333,
-      "elevation": 2
+      "lat": "37.721298",
+      "lon": "-122.221001"
     },
     "bts_id": "13796"
   },
@@ -2932,9 +2689,8 @@
     "faa": "OGD",
     "mstat": "72575",
     "location": {
-      "latitude": 41.2,
-      "longitude": -112.0167,
-      "elevation": 1362
+      "lat": "41.195899963379",
+      "lon": "-112.0120010376"
     },
     "bts_id": "13829"
   },
@@ -2944,9 +2700,8 @@
     "faa": "OGG",
     "mstat": "91190",
     "location": {
-      "latitude": 20.9,
-      "longitude": -156.4333,
-      "elevation": 16
+      "lat": "20.898543",
+      "lon": "-156.431212"
     },
     "bts_id": "13830"
   },
@@ -2956,9 +2711,8 @@
     "faa": "OGS",
     "mstat": "KOGS0",
     "location": {
-      "latitude": 44.6819,
-      "longitude": -75.4655,
-      "elevation": 91
+      "lat": "44.6819",
+      "lon": "-75.4655"
     },
     "bts_id": "13832"
   },
@@ -2968,9 +2722,8 @@
     "faa": "OKC",
     "mstat": "72353",
     "location": {
-      "latitude": 35.3886,
-      "longitude": -97.6003,
-      "elevation": 398
+      "lat": "35.393101",
+      "lon": "-97.6007"
     },
     "bts_id": "13851"
   },
@@ -2980,9 +2733,8 @@
     "faa": "OMA",
     "mstat": "72550",
     "location": {
-      "latitude": 41.3,
-      "longitude": -95.9,
-      "elevation": 300
+      "lat": "41.3032",
+      "lon": "-95.894096"
     },
     "bts_id": "13871"
   },
@@ -2992,9 +2744,8 @@
     "faa": "OME",
     "mstat": "70200",
     "location": {
-      "latitude": 64.5167,
-      "longitude": -165.4333,
-      "elevation": 11
+      "lat": "64.51219940185547",
+      "lon": "-165.44500732421875"
     },
     "bts_id": "13873"
   },
@@ -3004,9 +2755,8 @@
     "faa": "ONT",
     "mstat": "8RXA6",
     "location": {
-      "latitude": 34.0532,
-      "longitude": -117.5768,
-      "elevation": 287
+      "lat": "34.055999755859375",
+      "lon": "-117.60099792480469"
     },
     "bts_id": "13891"
   },
@@ -3016,9 +2766,8 @@
     "faa": "ORD",
     "mstat": "72530",
     "location": {
-      "latitude": 41.9833,
-      "longitude": -87.9167,
-      "elevation": 204
+      "lat": "41.9786",
+      "lon": "-87.9048"
     },
     "bts_id": "13930"
   },
@@ -3028,9 +2777,8 @@
     "faa": "ORF",
     "mstat": "72308",
     "location": {
-      "latitude": 36.9,
-      "longitude": -76.2,
-      "elevation": 8
+      "lat": "36.8946",
+      "lon": "-76.201202"
     },
     "bts_id": "13931"
   },
@@ -3040,9 +2788,8 @@
     "faa": "ORH",
     "mstat": "72510",
     "location": {
-      "latitude": 42.2673,
-      "longitude": -71.8757,
-      "elevation": 308
+      "lat": "42.2673",
+      "lon": "-71.875702"
     },
     "bts_id": "13933"
   },
@@ -3052,9 +2799,8 @@
     "faa": "OTH",
     "mstat": "72691",
     "location": {
-      "latitude": 43.4169,
-      "longitude": -124.247,
-      "elevation": 5
+      "lat": "43.41709899902344",
+      "lon": "-124.24600219726562"
     },
     "bts_id": "13964"
   },
@@ -3064,9 +2810,8 @@
     "faa": "OTZ",
     "mstat": "70133",
     "location": {
-      "latitude": 66.8833,
-      "longitude": -162.6,
-      "elevation": 3
+      "lat": "66.88469696",
+      "lon": "-162.598999"
     },
     "bts_id": "13970"
   },
@@ -3076,9 +2821,8 @@
     "faa": "OWB",
     "mstat": "KOWB0",
     "location": {
-      "latitude": 37.7388,
-      "longitude": -87.1668,
-      "elevation": 124
+      "lat": "37.74010086",
+      "lon": "-87.16680145"
     },
     "bts_id": "13983"
   },
@@ -3088,9 +2832,8 @@
     "faa": "PAE",
     "mstat": "KPAE0",
     "location": {
-      "latitude": 47.907,
-      "longitude": -122.2816,
-      "elevation": 185
+      "lat": "47.9063",
+      "lon": "-122.281998"
     },
     "bts_id": "14004"
   },
@@ -3100,9 +2843,8 @@
     "faa": "PAH",
     "mstat": "72435",
     "location": {
-      "latitude": 37.05,
-      "longitude": -88.7667,
-      "elevation": 125
+      "lat": "37.06079864501953",
+      "lon": "-88.7738037109375"
     },
     "bts_id": "14006"
   },
@@ -3112,9 +2854,8 @@
     "faa": "PBG",
     "mstat": "KPBG0",
     "location": {
-      "latitude": 44.6509,
-      "longitude": -73.4681,
-      "elevation": 71
+      "lat": "44.650901794433594",
+      "lon": "-73.46810150146484"
     },
     "bts_id": "14025"
   },
@@ -3124,9 +2865,8 @@
     "faa": "PBI",
     "mstat": "72203",
     "location": {
-      "latitude": 26.6833,
-      "longitude": -80.1,
-      "elevation": 6
+      "lat": "26.68320083618164",
+      "lon": "-80.09559631347656"
     },
     "bts_id": "14027"
   },
@@ -3136,9 +2876,8 @@
     "faa": "PDX",
     "mstat": "72698",
     "location": {
-      "latitude": 45.5833,
-      "longitude": -122.6,
-      "elevation": 8
+      "lat": "45.58869934",
+      "lon": "-122.5979996"
     },
     "bts_id": "14057"
   },
@@ -3148,9 +2887,8 @@
     "faa": "PGA",
     "mstat": "72371",
     "location": {
-      "latitude": 36.9333,
-      "longitude": -111.45,
-      "elevation": 1314
+      "lat": "36.92610168",
+      "lon": "-111.447998"
     },
     "bts_id": "14081"
   },
@@ -3160,9 +2898,8 @@
     "faa": "PGD",
     "mstat": "KPGD0",
     "location": {
-      "latitude": 26.9189,
-      "longitude": -81.9909,
-      "elevation": 8
+      "lat": "26.9202",
+      "lon": "-81.990501"
     },
     "bts_id": "14082"
   },
@@ -3172,9 +2909,8 @@
     "faa": "PGV",
     "mstat": "KPGV0",
     "location": {
-      "latitude": 35.6352,
-      "longitude": -77.3853,
-      "elevation": 8
+      "lat": "35.6352005",
+      "lon": "-77.38529968"
     },
     "bts_id": "14092"
   },
@@ -3184,9 +2920,8 @@
     "faa": "PHF",
     "mstat": "KPHF0",
     "location": {
-      "latitude": 37.1319,
-      "longitude": -76.493,
-      "elevation": 13
+      "lat": "37.131901",
+      "lon": "-76.492996"
     },
     "bts_id": "14098"
   },
@@ -3196,9 +2931,8 @@
     "faa": "PHL",
     "mstat": "72408",
     "location": {
-      "latitude": 39.8667,
-      "longitude": -75.2333,
-      "elevation": 6
+      "lat": "39.87189865112305",
+      "lon": "-75.24109649658203"
     },
     "bts_id": "14100"
   },
@@ -3208,9 +2942,8 @@
     "faa": "PHX",
     "mstat": "72278",
     "location": {
-      "latitude": 33.4333,
-      "longitude": -112.05,
-      "elevation": 345
+      "lat": "33.435302",
+      "lon": "-112.005905"
     },
     "bts_id": "14107"
   },
@@ -3220,9 +2953,8 @@
     "faa": "PIA",
     "mstat": "72532",
     "location": {
-      "latitude": 40.6667,
-      "longitude": -89.6839,
-      "elevation": 201
+      "lat": "40.6642",
+      "lon": "-89.693298"
     },
     "bts_id": "14108"
   },
@@ -3232,9 +2964,8 @@
     "faa": "PIB",
     "mstat": "KPIB0",
     "location": {
-      "latitude": 31.4671,
-      "longitude": -89.3371,
-      "elevation": 91
+      "lat": "31.4671",
+      "lon": "-89.337097"
     },
     "bts_id": "14109"
   },
@@ -3244,9 +2975,8 @@
     "faa": "PIE",
     "mstat": "KPIE0",
     "location": {
-      "latitude": 27.91,
-      "longitude": -82.6874,
-      "elevation": 3
+      "lat": "27.9102",
+      "lon": "-82.687401"
     },
     "bts_id": "14112"
   },
@@ -3256,9 +2986,8 @@
     "faa": "PIH",
     "mstat": "72578",
     "location": {
-      "latitude": 42.9167,
-      "longitude": -112.6,
-      "elevation": 1356
+      "lat": "42.9098014831543",
+      "lon": "-112.59600067138672"
     },
     "bts_id": "14113"
   },
@@ -3268,9 +2997,8 @@
     "faa": "PIR",
     "mstat": "KPIR0",
     "location": {
-      "latitude": 44.3827,
-      "longitude": -100.286,
-      "elevation": 532
+      "lat": "44.38270187",
+      "lon": "-100.2860031"
     },
     "bts_id": "14120"
   },
@@ -3280,9 +3008,8 @@
     "faa": "PIT",
     "mstat": "72520",
     "location": {
-      "latitude": 40.4833,
-      "longitude": -80.0667,
-      "elevation": 367
+      "lat": "40.49150085",
+      "lon": "-80.23290253"
     },
     "bts_id": "14122"
   },
@@ -3292,9 +3019,8 @@
     "faa": "PLN",
     "mstat": "KPLN0",
     "location": {
-      "latitude": 45.5709,
-      "longitude": -84.7967,
-      "elevation": 220
+      "lat": "45.57089996",
+      "lon": "-84.79669952"
     },
     "bts_id": "14150"
   },
@@ -3304,9 +3030,8 @@
     "faa": "PNS",
     "mstat": "OZNF7",
     "location": {
-      "latitude": 30.4781,
-      "longitude": -87.1869,
-      "elevation": 38
+      "lat": "30.4734",
+      "lon": "-87.1866"
     },
     "bts_id": "14193"
   },
@@ -3316,9 +3041,8 @@
     "faa": "PQI",
     "mstat": "72713",
     "location": {
-      "latitude": 46.6833,
-      "longitude": -68.05,
-      "elevation": 163
+      "lat": "46.688999",
+      "lon": "-68.0448"
     },
     "bts_id": "14231"
   },
@@ -3328,9 +3052,8 @@
     "faa": "PRC",
     "mstat": "KPRC0",
     "location": {
-      "latitude": 34.6544,
-      "longitude": -112.4196,
-      "elevation": 1537
+      "lat": "34.654499",
+      "lon": "-112.419998"
     },
     "bts_id": "14237"
   },
@@ -3340,9 +3063,8 @@
     "faa": "PSC",
     "mstat": "KPSC0",
     "location": {
-      "latitude": 46.2647,
-      "longitude": -119.119,
-      "elevation": 125
+      "lat": "46.26470184326172",
+      "lon": "-119.11900329589844"
     },
     "bts_id": "14252"
   },
@@ -3352,9 +3074,8 @@
     "faa": "PSE",
     "mstat": "TJPS0",
     "location": {
-      "latitude": 18.0167,
-      "longitude": -66.5667,
-      "elevation": 9
+      "lat": "18.00830078125",
+      "lon": "-66.56300354003906"
     },
     "bts_id": "14254"
   },
@@ -3364,9 +3085,8 @@
     "faa": "PSG",
     "mstat": "70386",
     "location": {
-      "latitude": 56.8167,
-      "longitude": -132.9667,
-      "elevation": 0
+      "lat": "56.80170059",
+      "lon": "-132.9450073"
     },
     "bts_id": "14256"
   },
@@ -3376,9 +3096,8 @@
     "faa": "PSM",
     "mstat": "KPSM0",
     "location": {
-      "latitude": 43.0779,
-      "longitude": -70.8233,
-      "elevation": 31
+      "lat": "43.0778999329",
+      "lon": "-70.8233032227"
     },
     "bts_id": "14259"
   },
@@ -3388,9 +3107,8 @@
     "faa": "PSP",
     "mstat": "KPSP0",
     "location": {
-      "latitude": 33.8297,
-      "longitude": -116.5067,
-      "elevation": 145
+      "lat": "33.8297",
+      "lon": "-116.507004"
     },
     "bts_id": "14262"
   },
@@ -3400,9 +3118,8 @@
     "faa": "PUW",
     "mstat": "KPUW0",
     "location": {
-      "latitude": 46.7439,
-      "longitude": -117.1096,
-      "elevation": 779
+      "lat": "46.7439",
+      "lon": "-117.110001"
     },
     "bts_id": "14303"
   },
@@ -3412,9 +3129,8 @@
     "faa": "PVD",
     "mstat": "72507",
     "location": {
-      "latitude": 41.7333,
-      "longitude": -71.4333,
-      "elevation": 17
+      "lat": "41.725038",
+      "lon": "-71.425668"
     },
     "bts_id": "14307"
   },
@@ -3424,9 +3140,8 @@
     "faa": "PVU",
     "mstat": "KPVU0",
     "location": {
-      "latitude": 40.2192,
-      "longitude": -111.7234,
-      "elevation": 1371
+      "lat": "40.2192",
+      "lon": "-111.723"
     },
     "bts_id": "14314"
   },
@@ -3436,9 +3151,8 @@
     "faa": "PWM",
     "mstat": "72606",
     "location": {
-      "latitude": 43.65,
-      "longitude": -70.1333,
-      "elevation": 23
+      "lat": "43.646198",
+      "lon": "-70.309303"
     },
     "bts_id": "14321"
   },
@@ -3448,9 +3162,8 @@
     "faa": "RAP",
     "mstat": "72662",
     "location": {
-      "latitude": 44.05,
-      "longitude": -103.05,
-      "elevation": 976
+      "lat": "44.0452995300293",
+      "lon": "-103.05699920654297"
     },
     "bts_id": "14457"
   },
@@ -3460,9 +3173,8 @@
     "faa": "RDD",
     "mstat": "72592",
     "location": {
-      "latitude": 40.5,
-      "longitude": -122.2833,
-      "elevation": 153
+      "lat": "40.50899887",
+      "lon": "-122.2929993"
     },
     "bts_id": "14487"
   },
@@ -3472,9 +3184,8 @@
     "faa": "RDM",
     "mstat": "KRDM0",
     "location": {
-      "latitude": 44.2541,
-      "longitude": -121.15,
-      "elevation": 939
+      "lat": "44.2541008",
+      "lon": "-121.1500015"
     },
     "bts_id": "14489"
   },
@@ -3484,9 +3195,8 @@
     "faa": "RDU",
     "mstat": "72306",
     "location": {
-      "latitude": 35.9,
-      "longitude": -78.7667,
-      "elevation": 133
+      "lat": "35.877601623535156",
+      "lon": "-78.7874984741211"
     },
     "bts_id": "14492"
   },
@@ -3496,9 +3206,8 @@
     "faa": "RFD",
     "mstat": "72543",
     "location": {
-      "latitude": 42.2,
-      "longitude": -89.1,
-      "elevation": 224
+      "lat": "42.1954",
+      "lon": "-89.097198"
     },
     "bts_id": "14512"
   },
@@ -3508,9 +3217,8 @@
     "faa": "RHI",
     "mstat": "KRHI0",
     "location": {
-      "latitude": 45.6309,
-      "longitude": -89.4666,
-      "elevation": 495
+      "lat": "45.63119888305664",
+      "lon": "-89.46749877929688"
     },
     "bts_id": "14520"
   },
@@ -3520,9 +3228,8 @@
     "faa": "RIC",
     "mstat": "72401",
     "location": {
-      "latitude": 37.5167,
-      "longitude": -77.3167,
-      "elevation": 51
+      "lat": "37.50519943237305",
+      "lon": "-77.3197021484375"
     },
     "bts_id": "14524"
   },
@@ -3532,9 +3239,8 @@
     "faa": "RIW",
     "mstat": "72672",
     "location": {
-      "latitude": 43.0667,
-      "longitude": -108.45,
-      "elevation": 1684
+      "lat": "43.064201355",
+      "lon": "-108.459999084"
     },
     "bts_id": "14534"
   },
@@ -3544,9 +3250,8 @@
     "faa": "RKD",
     "mstat": "MOXWI",
     "location": {
-      "latitude": 44.0667,
-      "longitude": -69.1,
-      "elevation": 17
+      "lat": "44.06010056",
+      "lon": "-69.09919739"
     },
     "bts_id": "14539"
   },
@@ -3556,9 +3261,8 @@
     "faa": "RKS",
     "mstat": "72574",
     "location": {
-      "latitude": 41.6,
-      "longitude": -109.05,
-      "elevation": 2060
+      "lat": "41.5942",
+      "lon": "-109.065001"
     },
     "bts_id": "14543"
   },
@@ -3568,9 +3272,8 @@
     "faa": "RNO",
     "mstat": "72488",
     "location": {
-      "latitude": 39.4833,
-      "longitude": -119.7667,
-      "elevation": 1345
+      "lat": "39.49909973144531",
+      "lon": "-119.76799774169922"
     },
     "bts_id": "14570"
   },
@@ -3580,9 +3283,8 @@
     "faa": "ROA",
     "mstat": "72411",
     "location": {
-      "latitude": 37.3167,
-      "longitude": -79.9667,
-      "elevation": 358
+      "lat": "37.3255",
+      "lon": "-79.975403"
     },
     "bts_id": "14574"
   },
@@ -3592,9 +3294,8 @@
     "faa": "ROC",
     "mstat": "72529",
     "location": {
-      "latitude": 43.1167,
-      "longitude": -77.6833,
-      "elevation": 170
+      "lat": "43.1189",
+      "lon": "-77.672401"
     },
     "bts_id": "14576"
   },
@@ -3604,9 +3305,8 @@
     "faa": "ROW",
     "mstat": "72268",
     "location": {
-      "latitude": 33.3,
-      "longitude": -104.5333,
-      "elevation": 1118
+      "lat": "33.301601",
+      "lon": "-104.530998"
     },
     "bts_id": "14588"
   },
@@ -3616,9 +3316,8 @@
     "faa": "RST",
     "mstat": "72644",
     "location": {
-      "latitude": 43.9,
-      "longitude": -92.5,
-      "elevation": 401
+      "lat": "43.908298",
+      "lon": "-92.5"
     },
     "bts_id": "14633"
   },
@@ -3628,9 +3327,8 @@
     "faa": "RSW",
     "mstat": "KRSW0",
     "location": {
-      "latitude": 26.5362,
-      "longitude": -81.7552,
-      "elevation": 9
+      "lat": "26.53619956970215",
+      "lon": "-81.75520324707031"
     },
     "bts_id": "14635"
   },
@@ -3640,9 +3338,8 @@
     "faa": "SAF",
     "mstat": "KSAF0",
     "location": {
-      "latitude": 35.6171,
-      "longitude": -106.0894,
-      "elevation": 1935
+      "lat": "35.617099762",
+      "lon": "-106.088996887"
     },
     "bts_id": "14674"
   },
@@ -3652,9 +3349,8 @@
     "faa": "SAN",
     "mstat": "72290",
     "location": {
-      "latitude": 32.7333,
-      "longitude": -117.1833,
-      "elevation": 5
+      "lat": "32.7336006165",
+      "lon": "-117.190002441"
     },
     "bts_id": "14679"
   },
@@ -3664,9 +3360,8 @@
     "faa": "SAT",
     "mstat": "72253",
     "location": {
-      "latitude": 29.5333,
-      "longitude": -98.4667,
-      "elevation": 247
+      "lat": "29.533701",
+      "lon": "-98.469803"
     },
     "bts_id": "14683"
   },
@@ -3676,9 +3371,8 @@
     "faa": "SAV",
     "mstat": "72207",
     "location": {
-      "latitude": 32.1167,
-      "longitude": -81.0333,
-      "elevation": 16
+      "lat": "32.12760162",
+      "lon": "-81.20210266"
     },
     "bts_id": "14685"
   },
@@ -3688,9 +3382,8 @@
     "faa": "SAW",
     "mstat": "72628",
     "location": {
-      "latitude": 46.34,
-      "longitude": -87.38,
-      "elevation": 372
+      "lat": "46.3536",
+      "lon": "-87.395401"
     },
     "bts_id": "14686"
   },
@@ -3700,9 +3393,8 @@
     "faa": "SBA",
     "mstat": "72392",
     "location": {
-      "latitude": 34.4262,
-      "longitude": -119.8415,
-      "elevation": 4
+      "lat": "34.42620087",
+      "lon": "-119.8399963"
     },
     "bts_id": "14689"
   },
@@ -3712,9 +3404,8 @@
     "faa": "SBD",
     "mstat": "KSBD0",
     "location": {
-      "latitude": 34.0954,
-      "longitude": -117.2349,
-      "elevation": 353
+      "lat": "34.095402",
+      "lon": "-117.235001"
     },
     "bts_id": "14691"
   },
@@ -3724,9 +3415,8 @@
     "faa": "SBN",
     "mstat": "72535",
     "location": {
-      "latitude": 41.7,
-      "longitude": -86.3167,
-      "elevation": 244
+      "lat": "41.708698",
+      "lon": "-86.317299"
     },
     "bts_id": "14696"
   },
@@ -3736,9 +3426,8 @@
     "faa": "SBP",
     "mstat": "KSBP0",
     "location": {
-      "latitude": 35.2373,
-      "longitude": -120.6426,
-      "elevation": 65
+      "lat": "35.236801147499996",
+      "lon": "-120.641998291"
     },
     "bts_id": "14698"
   },
@@ -3748,9 +3437,8 @@
     "faa": "SBY",
     "mstat": "72398",
     "location": {
-      "latitude": 38.3402,
-      "longitude": -75.5095,
-      "elevation": 16
+      "lat": "38.34049987792969",
+      "lon": "-75.51029968261719"
     },
     "bts_id": "14704"
   },
@@ -3760,9 +3448,8 @@
     "faa": "SCC",
     "mstat": "PASC0",
     "location": {
-      "latitude": 70.1947,
-      "longitude": -148.4652,
-      "elevation": 20
+      "lat": "70.19470215",
+      "lon": "-148.4649963"
     },
     "bts_id": "14709"
   },
@@ -3772,9 +3459,8 @@
     "faa": "SCK",
     "mstat": "72492",
     "location": {
-      "latitude": 37.9,
-      "longitude": -121.2333,
-      "elevation": 9
+      "lat": "37.894199371338",
+      "lon": "-121.2379989624"
     },
     "bts_id": "14716"
   },
@@ -3784,9 +3470,8 @@
     "faa": "SDF",
     "mstat": "72423",
     "location": {
-      "latitude": 38.1833,
-      "longitude": -85.7333,
-      "elevation": 151
+      "lat": "38.1744",
+      "lon": "-85.736"
     },
     "bts_id": "14730"
   },
@@ -3796,9 +3481,8 @@
     "faa": "SEA",
     "mstat": "72793",
     "location": {
-      "latitude": 47.45,
-      "longitude": -122.3167,
-      "elevation": 131
+      "lat": "47.449162",
+      "lon": "-122.311134"
     },
     "bts_id": "14747"
   },
@@ -3808,9 +3492,8 @@
     "faa": "SFB",
     "mstat": "KSFB0",
     "location": {
-      "latitude": 28.7767,
-      "longitude": -81.2355,
-      "elevation": 17
+      "lat": "28.777599334716797",
+      "lon": "-81.23750305175781"
     },
     "bts_id": "14761"
   },
@@ -3820,9 +3503,8 @@
     "faa": "SFO",
     "mstat": "72494",
     "location": {
-      "latitude": 37.6167,
-      "longitude": -122.3667,
-      "elevation": 3
+      "lat": "37.61899948120117",
+      "lon": "-122.375"
     },
     "bts_id": "14771"
   },
@@ -3832,9 +3514,8 @@
     "faa": "SGF",
     "mstat": "72440",
     "location": {
-      "latitude": 37.2333,
-      "longitude": -93.05,
-      "elevation": 386
+      "lat": "37.245701",
+      "lon": "-93.388603"
     },
     "bts_id": "14783"
   },
@@ -3844,9 +3525,8 @@
     "faa": "SGU",
     "mstat": "KSGU0",
     "location": {
-      "latitude": 37.0906,
-      "longitude": -113.5931,
-      "elevation": 896
+      "lat": "37.036389",
+      "lon": "-113.510306"
     },
     "bts_id": "14794"
   },
@@ -3856,9 +3536,8 @@
     "faa": "SHD",
     "mstat": "KSHD0",
     "location": {
-      "latitude": 38.2638,
-      "longitude": -78.8964,
-      "elevation": 366
+      "lat": "38.263802",
+      "lon": "-78.8964"
     },
     "bts_id": "14802"
   },
@@ -3868,9 +3547,8 @@
     "faa": "SHR",
     "mstat": "72666",
     "location": {
-      "latitude": 44.7667,
-      "longitude": -106.9667,
-      "elevation": 1226
+      "lat": "44.76919937133789",
+      "lon": "-106.9800033569336"
     },
     "bts_id": "14812"
   },
@@ -3880,9 +3558,8 @@
     "faa": "SHV",
     "mstat": "72248",
     "location": {
-      "latitude": 32.45,
-      "longitude": -93.0,
-      "elevation": 79
+      "lat": "32.446602",
+      "lon": "-93.8256"
     },
     "bts_id": "14814"
   },
@@ -3892,9 +3569,8 @@
     "faa": "SIG",
     "mstat": "TJIG0",
     "location": {
-      "latitude": 18.4568,
-      "longitude": -66.0981,
-      "elevation": 3
+      "lat": "18.45680046081543",
+      "lon": "-66.09809875488281"
     },
     "bts_id": "14819"
   },
@@ -3904,9 +3580,8 @@
     "faa": "SIT",
     "mstat": "70371",
     "location": {
-      "latitude": 57.05,
-      "longitude": -135.3667,
-      "elevation": 6
+      "lat": "57.04710006713867",
+      "lon": "-135.36199951171875"
     },
     "bts_id": "14828"
   },
@@ -3916,9 +3591,8 @@
     "faa": "SJC",
     "mstat": "KSJC0",
     "location": {
-      "latitude": 37.3627,
-      "longitude": -121.9291,
-      "elevation": 19
+      "lat": "37.362452",
+      "lon": "-121.929188"
     },
     "bts_id": "14831"
   },
@@ -3928,9 +3602,8 @@
     "faa": "SJT",
     "mstat": "72263",
     "location": {
-      "latitude": 31.35,
-      "longitude": -100.5,
-      "elevation": 584
+      "lat": "31.35770034790039",
+      "lon": "-100.49600219726562"
     },
     "bts_id": "14842"
   },
@@ -3940,9 +3613,8 @@
     "faa": "SJU",
     "mstat": "78526",
     "location": {
-      "latitude": 18.4333,
-      "longitude": -66.0,
-      "elevation": 3
+      "lat": "18.4393997192",
+      "lon": "-66.0018005371"
     },
     "bts_id": "14843"
   },
@@ -3952,9 +3624,8 @@
     "faa": "SLC",
     "mstat": "72572",
     "location": {
-      "latitude": 40.7833,
-      "longitude": -111.9667,
-      "elevation": 1288
+      "lat": "40.785749",
+      "lon": "-111.979746"
     },
     "bts_id": "14869"
   },
@@ -3964,9 +3635,8 @@
     "faa": "SLN",
     "mstat": "74545",
     "location": {
-      "latitude": 38.65,
-      "longitude": -97.8,
-      "elevation": 0
+      "lat": "38.79100036621094",
+      "lon": "-97.6521987915039"
     },
     "bts_id": "14877"
   },
@@ -3976,9 +3646,8 @@
     "faa": "SMF",
     "mstat": "KSMF0",
     "location": {
-      "latitude": 38.6954,
-      "longitude": -121.5908,
-      "elevation": 8
+      "lat": "38.69540023803711",
+      "lon": "-121.59100341796875"
     },
     "bts_id": "14893"
   },
@@ -3988,9 +3657,8 @@
     "faa": "SMX",
     "mstat": "72394",
     "location": {
-      "latitude": 34.9,
-      "longitude": -120.4667,
-      "elevation": 79
+      "lat": "34.898899",
+      "lon": "-120.457001"
     },
     "bts_id": "14905"
   },
@@ -4000,9 +3668,8 @@
     "faa": "SNA",
     "mstat": "KSNA0",
     "location": {
-      "latitude": 33.6757,
-      "longitude": -117.8682,
-      "elevation": 17
+      "lat": "33.675701",
+      "lon": "-117.867996"
     },
     "bts_id": "14908"
   },
@@ -4012,9 +3679,8 @@
     "faa": "SPI",
     "mstat": "72439",
     "location": {
-      "latitude": 39.8442,
-      "longitude": -89.6781,
-      "elevation": 182
+      "lat": "39.844101",
+      "lon": "-89.677902"
     },
     "bts_id": "14952"
   },
@@ -4024,9 +3690,8 @@
     "faa": "SPS",
     "mstat": "72351",
     "location": {
-      "latitude": 33.9833,
-      "longitude": -98.4928,
-      "elevation": 309
+      "lat": "33.9888",
+      "lon": "-98.491898"
     },
     "bts_id": "14960"
   },
@@ -4036,9 +3701,8 @@
     "faa": "SRQ",
     "mstat": "KSRQ0",
     "location": {
-      "latitude": 27.3954,
-      "longitude": -82.5544,
-      "elevation": 9
+      "lat": "27.395399",
+      "lon": "-82.554398"
     },
     "bts_id": "14986"
   },
@@ -4048,9 +3712,8 @@
     "faa": "STC",
     "mstat": "72655",
     "location": {
-      "latitude": 45.5466,
-      "longitude": -94.0599,
-      "elevation": 314
+      "lat": "45.5466",
+      "lon": "-94.059898"
     },
     "bts_id": "15008"
   },
@@ -4060,9 +3723,8 @@
     "faa": "STL",
     "mstat": "72434",
     "location": {
-      "latitude": 38.75,
-      "longitude": -90.0333,
-      "elevation": 184
+      "lat": "38.748697",
+      "lon": "-90.370003"
     },
     "bts_id": "15016"
   },
@@ -4072,9 +3734,8 @@
     "faa": "STS",
     "mstat": "KSTS0",
     "location": {
-      "latitude": 38.509,
-      "longitude": -122.8129,
-      "elevation": 39
+      "lat": "38.50899887",
+      "lon": "-122.8130035"
     },
     "bts_id": "15023"
   },
@@ -4084,9 +3745,8 @@
     "faa": "STT",
     "mstat": "78543",
     "location": {
-      "latitude": 18.3333,
-      "longitude": -64.9833,
-      "elevation": 7
+      "lat": "18.337091",
+      "lon": "-64.977251"
     },
     "bts_id": "15024"
   },
@@ -4096,9 +3756,8 @@
     "faa": "STX",
     "mstat": "78547",
     "location": {
-      "latitude": 17.7,
-      "longitude": -64.8,
-      "elevation": 20
+      "lat": "17.701900482177734",
+      "lon": "-64.79859924316406"
     },
     "bts_id": "15027"
   },
@@ -4108,9 +3767,8 @@
     "faa": "SUN",
     "mstat": "KSUN0",
     "location": {
-      "latitude": 43.5038,
-      "longitude": -114.2956,
-      "elevation": 1622
+      "lat": "43.50439835",
+      "lon": "-114.2959976"
     },
     "bts_id": "15041"
   },
@@ -4120,9 +3778,8 @@
     "faa": "SUX",
     "mstat": "72557",
     "location": {
-      "latitude": 42.3833,
-      "longitude": -96.05,
-      "elevation": 335
+      "lat": "42.397605",
+      "lon": "-96.382237"
     },
     "bts_id": "15048"
   },
@@ -4132,9 +3789,8 @@
     "faa": "SWF",
     "mstat": "O5PFW",
     "location": {
-      "latitude": 41.5,
-      "longitude": -74.1,
-      "elevation": 150
+      "lat": "41.504101",
+      "lon": "-74.104797"
     },
     "bts_id": "15070"
   },
@@ -4144,9 +3800,8 @@
     "faa": "SWO",
     "mstat": "KSWO0",
     "location": {
-      "latitude": 36.1612,
-      "longitude": -97.0857,
-      "elevation": 305
+      "lat": "36.161201477051",
+      "lon": "-97.08570098877"
     },
     "bts_id": "15074"
   },
@@ -4156,9 +3811,8 @@
     "faa": "SYR",
     "mstat": "72519",
     "location": {
-      "latitude": 43.1167,
-      "longitude": -76.1,
-      "elevation": 125
+      "lat": "43.11119842529297",
+      "lon": "-76.1063003540039"
     },
     "bts_id": "15096"
   },
@@ -4168,9 +3822,8 @@
     "faa": "TBN",
     "mstat": "74550",
     "location": {
-      "latitude": 37.5167,
-      "longitude": -92.7,
-      "elevation": 390
+      "lat": "37.7416",
+      "lon": "-92.140701"
     },
     "bts_id": "15138"
   },
@@ -4180,9 +3833,8 @@
     "faa": "TLH",
     "mstat": "72214",
     "location": {
-      "latitude": 30.4,
-      "longitude": -84.0167,
-      "elevation": 25
+      "lat": "30.3965",
+      "lon": "-84.350304"
     },
     "bts_id": "15249"
   },
@@ -4192,9 +3844,8 @@
     "faa": "TOL",
     "mstat": "72536",
     "location": {
-      "latitude": 41.5833,
-      "longitude": -83.8,
-      "elevation": 208
+      "lat": "41.5868",
+      "lon": "-83.8078"
     },
     "bts_id": "15295"
   },
@@ -4204,9 +3855,8 @@
     "faa": "TPA",
     "mstat": "72211",
     "location": {
-      "latitude": 27.9667,
-      "longitude": -82.5333,
-      "elevation": 8
+      "lat": "27.975500106811523",
+      "lon": "-82.533203125"
     },
     "bts_id": "15304"
   },
@@ -4216,9 +3866,8 @@
     "faa": "TRI",
     "mstat": "72335",
     "location": {
-      "latitude": 36.4752,
-      "longitude": -82.4074,
-      "elevation": 463
+      "lat": "36.475201",
+      "lon": "-82.407401"
     },
     "bts_id": "15323"
   },
@@ -4228,9 +3877,8 @@
     "faa": "TTN",
     "mstat": "KTTN0",
     "location": {
-      "latitude": 40.2767,
-      "longitude": -74.8135,
-      "elevation": 65
+      "lat": "40.27669906616211",
+      "lon": "-74.8134994506836"
     },
     "bts_id": "15356"
   },
@@ -4240,9 +3888,8 @@
     "faa": "TUL",
     "mstat": "72356",
     "location": {
-      "latitude": 36.2,
-      "longitude": -95.8881,
-      "elevation": 206
+      "lat": "36.19839859008789",
+      "lon": "-95.88809967041016"
     },
     "bts_id": "15370"
   },
@@ -4252,9 +3899,8 @@
     "faa": "TUP",
     "mstat": "72332",
     "location": {
-      "latitude": 34.2667,
-      "longitude": -88.1,
-      "elevation": 105
+      "lat": "34.26810073852539",
+      "lon": "-88.7698974609375"
     },
     "bts_id": "15374"
   },
@@ -4264,9 +3910,8 @@
     "faa": "TUS",
     "mstat": "72274",
     "location": {
-      "latitude": 32.1333,
-      "longitude": -110.95,
-      "elevation": 805
+      "lat": "32.115004",
+      "lon": "-110.938053"
     },
     "bts_id": "15376"
   },
@@ -4276,9 +3921,8 @@
     "faa": "TVC",
     "mstat": "KTVC0",
     "location": {
-      "latitude": 44.7416,
-      "longitude": -85.5824,
-      "elevation": 190
+      "lat": "44.74140167236328",
+      "lon": "-85.58219909667969"
     },
     "bts_id": "15380"
   },
@@ -4288,9 +3932,8 @@
     "faa": "TWF",
     "mstat": "KTWF0",
     "location": {
-      "latitude": 42.4818,
-      "longitude": -114.4878,
-      "elevation": 1266
+      "lat": "42.4818",
+      "lon": "-114.487999"
     },
     "bts_id": "15389"
   },
@@ -4300,9 +3943,8 @@
     "faa": "TXK",
     "mstat": "KTXK0",
     "location": {
-      "latitude": 33.4537,
-      "longitude": -93.991,
-      "elevation": 119
+      "lat": "33.453701",
+      "lon": "-93.990997"
     },
     "bts_id": "15401"
   },
@@ -4312,9 +3954,8 @@
     "faa": "TYR",
     "mstat": "KTYR0",
     "location": {
-      "latitude": 32.3541,
-      "longitude": -95.4024,
-      "elevation": 166
+      "lat": "32.35409927368164",
+      "lon": "-95.40239715576172"
     },
     "bts_id": "15411"
   },
@@ -4324,9 +3965,8 @@
     "faa": "TYS",
     "mstat": "72326",
     "location": {
-      "latitude": 35.8167,
-      "longitude": -83.9833,
-      "elevation": 299
+      "lat": "35.811001",
+      "lon": "-83.994003"
     },
     "bts_id": "15412"
   },
@@ -4336,9 +3976,8 @@
     "faa": "VLD",
     "mstat": "KVLD0",
     "location": {
-      "latitude": 30.7814,
-      "longitude": -83.2762,
-      "elevation": 62
+      "lat": "30.782499313354492",
+      "lon": "-83.27670288085938"
     },
     "bts_id": "15607"
   },
@@ -4348,9 +3987,8 @@
     "faa": "VPS",
     "mstat": "72221",
     "location": {
-      "latitude": 30.4833,
-      "longitude": -86.5167,
-      "elevation": 26
+      "lat": "30.4832",
+      "lon": "-86.525398"
     },
     "bts_id": "15624"
   },
@@ -4360,9 +3998,8 @@
     "faa": "WRG",
     "mstat": "70387",
     "location": {
-      "latitude": 56.4833,
-      "longitude": -132.3667,
-      "elevation": 13
+      "lat": "56.48429871",
+      "lon": "-132.3699951"
     },
     "bts_id": "15841"
   },
@@ -4372,9 +4009,8 @@
     "faa": "WST",
     "mstat": "KWST0",
     "location": {
-      "latitude": 41.3496,
-      "longitude": -71.8034,
-      "elevation": 25
+      "lat": "41.3496017456",
+      "lon": "-71.8033981323"
     },
     "bts_id": "15855"
   },
@@ -4384,9 +4020,8 @@
     "faa": "WYS",
     "mstat": "KWYS0",
     "location": {
-      "latitude": 44.6884,
-      "longitude": -111.1176,
-      "elevation": 2027
+      "lat": "44.68840027",
+      "lon": "-111.1179962"
     },
     "bts_id": "15897"
   },
@@ -4396,23 +4031,10 @@
     "faa": "XNA",
     "mstat": "KXNA0",
     "location": {
-      "latitude": 36.2819,
-      "longitude": -94.3068,
-      "elevation": 393
+      "lat": "36.281898",
+      "lon": "-94.306801"
     },
     "bts_id": "15919"
-  },
-  {
-    "desc": "Williston ND: Williston Basin International",
-    "icao": "KXWA",
-    "faa": "XWA",
-    "mstat": "TRGWI",
-    "location": {
-      "latitude": 48.2609,
-      "longitude": -103.7511,
-      "elevation": 717
-    },
-    "bts_id": "16869"
   },
   {
     "desc": "Yakutat AK: Yakutat Airport",
@@ -4420,9 +4042,8 @@
     "faa": "YAK",
     "mstat": "70361",
     "location": {
-      "latitude": 59.5,
-      "longitude": -139.6667,
-      "elevation": 10
+      "lat": "59.508717",
+      "lon": "-139.660435"
     },
     "bts_id": "15991"
   },
@@ -4432,9 +4053,8 @@
     "faa": "YKM",
     "mstat": "72781",
     "location": {
-      "latitude": 46.5667,
-      "longitude": -120.5333,
-      "elevation": 334
+      "lat": "46.56819916",
+      "lon": "-120.5439987"
     },
     "bts_id": "16101"
   }
