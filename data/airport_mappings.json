@@ -1,0 +1,4441 @@
+[
+  {
+    "desc": "Allentown/Bethlehem/Easton PA: Lehigh Valley International",
+    "icao": "KABE",
+    "faa": "ABE",
+    "mstat": "72517",
+    "location": {
+      "latitude": 40.65,
+      "longitude": -75.45,
+      "elevation": 120
+    },
+    "bts_id": "10135"
+  },
+  {
+    "desc": "Abilene TX: Abilene Regional",
+    "icao": "KABI",
+    "faa": "ABI",
+    "mstat": "72266",
+    "location": {
+      "latitude": 32.4167,
+      "longitude": -99.6833,
+      "elevation": 546
+    },
+    "bts_id": "10136"
+  },
+  {
+    "desc": "Albuquerque NM: Albuquerque International Sunport",
+    "icao": "KABQ",
+    "faa": "ABQ",
+    "mstat": "72365",
+    "location": {
+      "latitude": 35.0333,
+      "longitude": -106.6,
+      "elevation": 1631
+    },
+    "bts_id": "10140"
+  },
+  {
+    "desc": "Aberdeen SD: Aberdeen Regional",
+    "icao": "KABR",
+    "faa": "ABR",
+    "mstat": "72659",
+    "location": {
+      "latitude": 45.45,
+      "longitude": -98.4167,
+      "elevation": 397
+    },
+    "bts_id": "10141"
+  },
+  {
+    "desc": "Albany GA: Southwest Georgia Regional",
+    "icao": "KABY",
+    "faa": "ABY",
+    "mstat": "72216",
+    "location": {
+      "latitude": 31.5333,
+      "longitude": -84.2,
+      "elevation": 60
+    },
+    "bts_id": "10146"
+  },
+  {
+    "desc": "Nantucket MA: Nantucket Memorial",
+    "icao": "KACK",
+    "faa": "ACK",
+    "mstat": "74493",
+    "location": {
+      "latitude": 41.2531,
+      "longitude": -70.0603,
+      "elevation": 14
+    },
+    "bts_id": "10154"
+  },
+  {
+    "desc": "Waco TX: Waco Regional",
+    "icao": "KACT",
+    "faa": "ACT",
+    "mstat": "72256",
+    "location": {
+      "latitude": 31.6,
+      "longitude": -97.05,
+      "elevation": 157
+    },
+    "bts_id": "10155"
+  },
+  {
+    "desc": "Arcata/Eureka CA: California Redwood Coast Humboldt County",
+    "icao": "KACV",
+    "faa": "ACV",
+    "mstat": "KACV0",
+    "location": {
+      "latitude": 40.9781,
+      "longitude": -124.1086,
+      "elevation": 68
+    },
+    "bts_id": "10157"
+  },
+  {
+    "desc": "Atlantic City NJ: Atlantic City International",
+    "icao": "KACY",
+    "faa": "ACY",
+    "mstat": "72407",
+    "location": {
+      "latitude": 39.4667,
+      "longitude": -74.0833,
+      "elevation": 23
+    },
+    "bts_id": "10158"
+  },
+  {
+    "desc": "Kodiak AK: Kodiak Airport",
+    "icao": "PADQ",
+    "faa": "ADQ",
+    "mstat": "70350",
+    "location": {
+      "latitude": 57.75,
+      "longitude": -152.4833,
+      "elevation": 22
+    },
+    "bts_id": "10170"
+  },
+  {
+    "desc": "Alexandria LA: Alexandria International",
+    "icao": "KAEX",
+    "faa": "AEX",
+    "mstat": "74754",
+    "location": {
+      "latitude": 31.55,
+      "longitude": -92.9333,
+      "elevation": 27
+    },
+    "bts_id": "10185"
+  },
+  {
+    "desc": "Augusta GA: Augusta Regional at Bush Field",
+    "icao": "KAGS",
+    "faa": "AGS",
+    "mstat": "72218",
+    "location": {
+      "latitude": 33.3667,
+      "longitude": -81.9667,
+      "elevation": 44
+    },
+    "bts_id": "10208"
+  },
+  {
+    "desc": "King Salmon AK: King Salmon Airport",
+    "icao": "PAKN",
+    "faa": "AKN",
+    "mstat": "70326",
+    "location": {
+      "latitude": 58.6833,
+      "longitude": -156.65,
+      "elevation": 17
+    },
+    "bts_id": "10245"
+  },
+  {
+    "desc": "Albany NY: Albany International",
+    "icao": "KALB",
+    "faa": "ALB",
+    "mstat": "72518",
+    "location": {
+      "latitude": 42.75,
+      "longitude": -73.1333,
+      "elevation": 87
+    },
+    "bts_id": "10257"
+  },
+  {
+    "desc": "Waterloo IA: Waterloo Regional",
+    "icao": "KALO",
+    "faa": "ALO",
+    "mstat": "72548",
+    "location": {
+      "latitude": 42.55,
+      "longitude": -92.0667,
+      "elevation": 266
+    },
+    "bts_id": "10268"
+  },
+  {
+    "desc": "Alamosa CO: San Luis Valley Regional/Bergman Field",
+    "icao": "KALS",
+    "faa": "ALS",
+    "mstat": "72462",
+    "location": {
+      "latitude": 37.4333,
+      "longitude": -105.8667,
+      "elevation": 2297
+    },
+    "bts_id": "10272"
+  },
+  {
+    "desc": "Walla Walla WA: Walla Walla Regional",
+    "icao": "KALW",
+    "faa": "ALW",
+    "mstat": "A13Z0",
+    "location": {
+      "latitude": 46.0946,
+      "longitude": -118.2858,
+      "elevation": 367
+    },
+    "bts_id": "10275"
+  },
+  {
+    "desc": "Amarillo TX: Rick Husband Amarillo International",
+    "icao": "KAMA",
+    "faa": "AMA",
+    "mstat": "72363",
+    "location": {
+      "latitude": 35.2167,
+      "longitude": -101.7167,
+      "elevation": 1099
+    },
+    "bts_id": "10279"
+  },
+  {
+    "desc": "Anchorage AK: Ted Stevens Anchorage International",
+    "icao": "PANC",
+    "faa": "ANC",
+    "mstat": "70273",
+    "location": {
+      "latitude": 61.1667,
+      "longitude": -150.0333,
+      "elevation": 44
+    },
+    "bts_id": "10299"
+  },
+  {
+    "desc": "Alpena MI: Alpena County Regional",
+    "icao": "KAPN",
+    "faa": "APN",
+    "mstat": "72639",
+    "location": {
+      "latitude": 45.0833,
+      "longitude": -83.5667,
+      "elevation": 210
+    },
+    "bts_id": "10333"
+  },
+  {
+    "desc": "Watertown NY: Watertown International",
+    "icao": "KART",
+    "faa": "ART",
+    "mstat": "KART0",
+    "location": {
+      "latitude": 43.9919,
+      "longitude": -76.0217,
+      "elevation": 100
+    },
+    "bts_id": "10361"
+  },
+  {
+    "desc": "Aspen CO: Aspen Pitkin County Sardy Field",
+    "icao": "KASE",
+    "faa": "ASE",
+    "mstat": "KASE0",
+    "location": {
+      "latitude": 39.2232,
+      "longitude": -106.8689,
+      "elevation": 2389
+    },
+    "bts_id": "10372"
+  },
+  {
+    "desc": "Atlanta GA: Hartsfield-Jackson Atlanta International",
+    "icao": "KATL",
+    "faa": "ATL",
+    "mstat": "72219",
+    "location": {
+      "latitude": 33.65,
+      "longitude": -84.1,
+      "elevation": 313
+    },
+    "bts_id": "10397"
+  },
+  {
+    "desc": "Appleton WI: Appleton International",
+    "icao": "KATW",
+    "faa": "ATW",
+    "mstat": "KATW0",
+    "location": {
+      "latitude": 44.2581,
+      "longitude": -88.5191,
+      "elevation": 280
+    },
+    "bts_id": "10408"
+  },
+  {
+    "desc": "Watertown SD: Watertown Regional",
+    "icao": "KATY",
+    "faa": "ATY",
+    "mstat": "KATY0",
+    "location": {
+      "latitude": 44.914,
+      "longitude": -97.1547,
+      "elevation": 533
+    },
+    "bts_id": "10409"
+  },
+  {
+    "desc": "Austin TX: Austin - Bergstrom International",
+    "icao": "KAUS",
+    "faa": "AUS",
+    "mstat": "74745",
+    "location": {
+      "latitude": 30.1945,
+      "longitude": -97.6699,
+      "elevation": 165
+    },
+    "bts_id": "10423"
+  },
+  {
+    "desc": "Asheville NC: Asheville Regional",
+    "icao": "KAVL",
+    "faa": "AVL",
+    "mstat": "72315",
+    "location": {
+      "latitude": 35.4333,
+      "longitude": -82.0333,
+      "elevation": 660
+    },
+    "bts_id": "10431"
+  },
+  {
+    "desc": "Scranton/Wilkes-Barre PA: Wilkes Barre Scranton International",
+    "icao": "KAVP",
+    "faa": "AVP",
+    "mstat": "72513",
+    "location": {
+      "latitude": 41.3333,
+      "longitude": -75.0667,
+      "elevation": 293
+    },
+    "bts_id": "10434"
+  },
+  {
+    "desc": "Kalamazoo MI: Kalamazoo/Battle Creek International",
+    "icao": "KAZO",
+    "faa": "AZO",
+    "mstat": "KAZO0",
+    "location": {
+      "latitude": 42.2344,
+      "longitude": -85.5516,
+      "elevation": 266
+    },
+    "bts_id": "10469"
+  },
+  {
+    "desc": "Hartford CT: Bradley International",
+    "icao": "KBDL",
+    "faa": "BDL",
+    "mstat": "72508",
+    "location": {
+      "latitude": 41.9333,
+      "longitude": -72.6833,
+      "elevation": 53
+    },
+    "bts_id": "10529"
+  },
+  {
+    "desc": "Bethel AK: Bethel Airport",
+    "icao": "PABE",
+    "faa": "BET",
+    "mstat": "70219",
+    "location": {
+      "latitude": 60.7833,
+      "longitude": -161.8333,
+      "elevation": 37
+    },
+    "bts_id": "10551"
+  },
+  {
+    "desc": "Scottsbluff NE: Western Neb. Regional/William B. Heilig Field",
+    "icao": "KBFF",
+    "faa": "BFF",
+    "mstat": "72566",
+    "location": {
+      "latitude": 41.8667,
+      "longitude": -103.6,
+      "elevation": 1209
+    },
+    "bts_id": "10558"
+  },
+  {
+    "desc": "Seattle WA: Boeing Field/King County International",
+    "icao": "KBFI",
+    "faa": "BFI",
+    "mstat": "KBFI0",
+    "location": {
+      "latitude": 47.53,
+      "longitude": -122.302,
+      "elevation": 6
+    },
+    "bts_id": "10559"
+  },
+  {
+    "desc": "Bakersfield CA: Meadows Field",
+    "icao": "KBFL",
+    "faa": "BFL",
+    "mstat": "72384",
+    "location": {
+      "latitude": 35.4333,
+      "longitude": -119.05,
+      "elevation": 155
+    },
+    "bts_id": "10561"
+  },
+  {
+    "desc": "Binghamton NY: Greater Binghamton/Edwin A. Link Field",
+    "icao": "KBGM",
+    "faa": "BGM",
+    "mstat": "72515",
+    "location": {
+      "latitude": 42.2,
+      "longitude": -75.15,
+      "elevation": 499
+    },
+    "bts_id": "10577"
+  },
+  {
+    "desc": "Bangor ME: Bangor International",
+    "icao": "KBGR",
+    "faa": "BGR",
+    "mstat": "72607",
+    "location": {
+      "latitude": 44.8074,
+      "longitude": -68.8281,
+      "elevation": 59
+    },
+    "bts_id": "10581"
+  },
+  {
+    "desc": "Birmingham AL: Birmingham-Shuttlesworth International",
+    "icao": "KBHM",
+    "faa": "BHM",
+    "mstat": "72228",
+    "location": {
+      "latitude": 33.5667,
+      "longitude": -86.75,
+      "elevation": 196
+    },
+    "bts_id": "10599"
+  },
+  {
+    "desc": "Block Island RI: Block Island State",
+    "icao": "KBID",
+    "faa": "BID",
+    "mstat": "KBID0",
+    "location": {
+      "latitude": 41.1681,
+      "longitude": -71.5778,
+      "elevation": 33
+    },
+    "bts_id": "10613"
+  },
+  {
+    "desc": "Billings MT: Billings Logan International",
+    "icao": "KBIL",
+    "faa": "BIL",
+    "mstat": "72677",
+    "location": {
+      "latitude": 45.8167,
+      "longitude": -108.55,
+      "elevation": 1112
+    },
+    "bts_id": "10620"
+  },
+  {
+    "desc": "Bismarck/Mandan ND: Bismarck Municipal",
+    "icao": "KBIS",
+    "faa": "BIS",
+    "mstat": "72764",
+    "location": {
+      "latitude": 46.7833,
+      "longitude": -100.75,
+      "elevation": 511
+    },
+    "bts_id": "10627"
+  },
+  {
+    "desc": "Bemidji MN: Bemidji Regional",
+    "icao": "KBJI",
+    "faa": "BJI",
+    "mstat": "72755",
+    "location": {
+      "latitude": 47.5,
+      "longitude": -94.9333,
+      "elevation": 423
+    },
+    "bts_id": "10631"
+  },
+  {
+    "desc": "Bellingham WA: Bellingham International",
+    "icao": "KBLI",
+    "faa": "BLI",
+    "mstat": "KBLI0",
+    "location": {
+      "latitude": 48.7927,
+      "longitude": -122.5375,
+      "elevation": 52
+    },
+    "bts_id": "10666"
+  },
+  {
+    "desc": "Belleville IL: Scott AFB MidAmerica St Louis",
+    "icao": "KBLV",
+    "faa": "BLV",
+    "mstat": "4P0GT",
+    "location": {
+      "latitude": 38.55,
+      "longitude": -89.85,
+      "elevation": 138
+    },
+    "bts_id": "10676"
+  },
+  {
+    "desc": "Bloomington/Normal IL: Central Il Regional Airport at Bloomington",
+    "icao": "KBMI",
+    "faa": "BMI",
+    "mstat": "KBMI0",
+    "location": {
+      "latitude": 40.4771,
+      "longitude": -88.9159,
+      "elevation": 266
+    },
+    "bts_id": "10685"
+  },
+  {
+    "desc": "Nashville TN: Nashville International",
+    "icao": "KBNA",
+    "faa": "BNA",
+    "mstat": "72327",
+    "location": {
+      "latitude": 36.1167,
+      "longitude": -86.6833,
+      "elevation": 183
+    },
+    "bts_id": "10693"
+  },
+  {
+    "desc": "Boise ID: Boise Air Terminal",
+    "icao": "KBOI",
+    "faa": "BOI",
+    "mstat": "72681",
+    "location": {
+      "latitude": 43.5667,
+      "longitude": -116.2333,
+      "elevation": 871
+    },
+    "bts_id": "10713"
+  },
+  {
+    "desc": "Boston MA: Logan International",
+    "icao": "KBOS",
+    "faa": "BOS",
+    "mstat": "72509",
+    "location": {
+      "latitude": 42.3667,
+      "longitude": -71.0167,
+      "elevation": 6
+    },
+    "bts_id": "10721"
+  },
+  {
+    "desc": "Beaumont/Port Arthur TX: Jack Brooks Regional",
+    "icao": "KBPT",
+    "faa": "BPT",
+    "mstat": "72241",
+    "location": {
+      "latitude": 30.5833,
+      "longitude": -94.1333,
+      "elevation": 5
+    },
+    "bts_id": "10728"
+  },
+  {
+    "desc": "Brunswick GA: Brunswick Golden Isles",
+    "icao": "KBQK",
+    "faa": "BQK",
+    "mstat": "KBQK0",
+    "location": {
+      "latitude": 31.259,
+      "longitude": -81.4663,
+      "elevation": 8
+    },
+    "bts_id": "10731"
+  },
+  {
+    "desc": "Aguadilla PR: Rafael Hernandez",
+    "icao": "TJBQ",
+    "faa": "BQN",
+    "mstat": "78514",
+    "location": {
+      "latitude": 18.5,
+      "longitude": -67.1333,
+      "elevation": 72
+    },
+    "bts_id": "10732"
+  },
+  {
+    "desc": "Brainerd MN: Brainerd Lakes Regional",
+    "icao": "KBRD",
+    "faa": "BRD",
+    "mstat": "KBRD0",
+    "location": {
+      "latitude": 46.4017,
+      "longitude": -94.1356,
+      "elevation": 376
+    },
+    "bts_id": "10739"
+  },
+  {
+    "desc": "Brownsville TX: Brownsville South Padre Island International",
+    "icao": "KBRO",
+    "faa": "BRO",
+    "mstat": "72250",
+    "location": {
+      "latitude": 25.9,
+      "longitude": -97.4231,
+      "elevation": 7
+    },
+    "bts_id": "10747"
+  },
+  {
+    "desc": "Barrow AK: Wiley Post/Will Rogers Memorial",
+    "icao": "PABR",
+    "faa": "BRW",
+    "mstat": "70026",
+    "location": {
+      "latitude": 71.2833,
+      "longitude": -156.7667,
+      "elevation": 13
+    },
+    "bts_id": "10754"
+  },
+  {
+    "desc": "Butte MT: Bert Mooney",
+    "icao": "KBTM",
+    "faa": "BTM",
+    "mstat": "72774",
+    "location": {
+      "latitude": 45.9548,
+      "longitude": -112.4975,
+      "elevation": 1692
+    },
+    "bts_id": "10779"
+  },
+  {
+    "desc": "Baton Rouge LA: Baton Rouge Metropolitan/Ryan Field",
+    "icao": "KBTR",
+    "faa": "BTR",
+    "mstat": "KBTR0",
+    "location": {
+      "latitude": 30.5378,
+      "longitude": -91.1468,
+      "elevation": 21
+    },
+    "bts_id": "10781"
+  },
+  {
+    "desc": "Burlington VT: Burlington International",
+    "icao": "KBTV",
+    "faa": "BTV",
+    "mstat": "72617",
+    "location": {
+      "latitude": 44.4667,
+      "longitude": -73.15,
+      "elevation": 102
+    },
+    "bts_id": "10785"
+  },
+  {
+    "desc": "Buffalo NY: Buffalo Niagara International",
+    "icao": "KBUF",
+    "faa": "BUF",
+    "mstat": "72528",
+    "location": {
+      "latitude": 42.9333,
+      "longitude": -78.7333,
+      "elevation": 221
+    },
+    "bts_id": "10792"
+  },
+  {
+    "desc": "Burbank CA: Bob Hope",
+    "icao": "KBUR",
+    "faa": "BUR",
+    "mstat": "72288",
+    "location": {
+      "latitude": 34.2,
+      "longitude": -118.3667,
+      "elevation": 236
+    },
+    "bts_id": "10800"
+  },
+  {
+    "desc": "Beluga AK: Beluga Airport",
+    "icao": "KBVU",
+    "faa": "BVU",
+    "mstat": "KBVU0",
+    "location": {
+      "latitude": 35.9475,
+      "longitude": -114.8611,
+      "elevation": 672
+    },
+    "bts_id": "16390"
+  },
+  {
+    "desc": "Baltimore MD: Baltimore/Washington International Thurgood Marshall",
+    "icao": "KBWI",
+    "faa": "BWI",
+    "mstat": "72406",
+    "location": {
+      "latitude": 39.1667,
+      "longitude": -76.6833,
+      "elevation": 45
+    },
+    "bts_id": "10821"
+  },
+  {
+    "desc": "Bozeman MT: Bozeman Yellowstone International",
+    "icao": "KBZN",
+    "faa": "BZN",
+    "mstat": "KBZN0",
+    "location": {
+      "latitude": 45.7776,
+      "longitude": -111.152,
+      "elevation": 1363
+    },
+    "bts_id": "10849"
+  },
+  {
+    "desc": "Columbia SC: Columbia Metropolitan",
+    "icao": "KCAE",
+    "faa": "CAE",
+    "mstat": "72310",
+    "location": {
+      "latitude": 33.95,
+      "longitude": -81.1167,
+      "elevation": 72
+    },
+    "bts_id": "10868"
+  },
+  {
+    "desc": "Akron OH: Akron-Canton Regional",
+    "icao": "KCAK",
+    "faa": "CAK",
+    "mstat": "72521",
+    "location": {
+      "latitude": 40.9167,
+      "longitude": -81.45,
+      "elevation": 374
+    },
+    "bts_id": "10874"
+  },
+  {
+    "desc": "Cedar City UT: Cedar City Regional",
+    "icao": "KCDC",
+    "faa": "CDC",
+    "mstat": "KCDC0",
+    "location": {
+      "latitude": 37.701,
+      "longitude": -113.0988,
+      "elevation": 1714
+    },
+    "bts_id": "10918"
+  },
+  {
+    "desc": "Cordova AK: Merle K Mudhole Smith",
+    "icao": "PACV",
+    "faa": "CDV",
+    "mstat": "70296",
+    "location": {
+      "latitude": 60.5,
+      "longitude": -145.4833,
+      "elevation": 13
+    },
+    "bts_id": "10926"
+  },
+  {
+    "desc": "Chattanooga TN: Lovell Field",
+    "icao": "KCHA",
+    "faa": "CHA",
+    "mstat": "72324",
+    "location": {
+      "latitude": 35.0333,
+      "longitude": -85.2,
+      "elevation": 208
+    },
+    "bts_id": "10980"
+  },
+  {
+    "desc": "Charlottesville VA: Charlottesville Albemarle",
+    "icao": "KCHO",
+    "faa": "CHO",
+    "mstat": "KCHO0",
+    "location": {
+      "latitude": 38.1386,
+      "longitude": -78.4529,
+      "elevation": 195
+    },
+    "bts_id": "10990"
+  },
+  {
+    "desc": "Charleston SC: Charleston AFB/International",
+    "icao": "KCHS",
+    "faa": "CHS",
+    "mstat": "72208",
+    "location": {
+      "latitude": 32.9,
+      "longitude": -80.0333,
+      "elevation": 14
+    },
+    "bts_id": "10994"
+  },
+  {
+    "desc": "Cedar Rapids/Iowa City IA: The Eastern Iowa",
+    "icao": "KCID",
+    "faa": "CID",
+    "mstat": "72545",
+    "location": {
+      "latitude": 41.8851,
+      "longitude": -91.7123,
+      "elevation": 265
+    },
+    "bts_id": "11003"
+  },
+  {
+    "desc": "Sault Ste. Marie MI: Chippewa County International",
+    "icao": "KCIU",
+    "faa": "CIU",
+    "mstat": "KCIU0",
+    "location": {
+      "latitude": 46.2507,
+      "longitude": -84.4724,
+      "elevation": 244
+    },
+    "bts_id": "11013"
+  },
+  {
+    "desc": "Clarksburg/Fairmont WV: North Central West Virginia",
+    "icao": "KCKB",
+    "faa": "CKB",
+    "mstat": "KCKB0",
+    "location": {
+      "latitude": 39.2966,
+      "longitude": -80.2281,
+      "elevation": 373
+    },
+    "bts_id": "11027"
+  },
+  {
+    "desc": "Cleveland OH: Cleveland-Hopkins International",
+    "icao": "KCLE",
+    "faa": "CLE",
+    "mstat": "72524",
+    "location": {
+      "latitude": 41.4,
+      "longitude": -81.85,
+      "elevation": 241
+    },
+    "bts_id": "11042"
+  },
+  {
+    "desc": "College Station/Bryan TX: Easterwood Field",
+    "icao": "KCLL",
+    "faa": "CLL",
+    "mstat": "KCLL0",
+    "location": {
+      "latitude": 30.5886,
+      "longitude": -96.3638,
+      "elevation": 98
+    },
+    "bts_id": "11049"
+  },
+  {
+    "desc": "Charlotte NC: Charlotte Douglas International",
+    "icao": "KCLT",
+    "faa": "CLT",
+    "mstat": "72314",
+    "location": {
+      "latitude": 35.214,
+      "longitude": -80.9431,
+      "elevation": 228
+    },
+    "bts_id": "11057"
+  },
+  {
+    "desc": "Columbus OH: John Glenn Columbus International",
+    "icao": "KCMH",
+    "faa": "CMH",
+    "mstat": "72428",
+    "location": {
+      "latitude": 40.0,
+      "longitude": -82.05,
+      "elevation": 248
+    },
+    "bts_id": "11066"
+  },
+  {
+    "desc": "Champaign/Urbana IL: University of Illinois/Willard",
+    "icao": "KCMI",
+    "faa": "CMI",
+    "mstat": "KCMI0",
+    "location": {
+      "latitude": 40.0388,
+      "longitude": -88.2778,
+      "elevation": 230
+    },
+    "bts_id": "11067"
+  },
+  {
+    "desc": "Hancock/Houghton MI: Houghton County Memorial",
+    "icao": "KCMX",
+    "faa": "CMX",
+    "mstat": "72744",
+    "location": {
+      "latitude": 47.1667,
+      "longitude": -88.4833,
+      "elevation": 334
+    },
+    "bts_id": "11076"
+  },
+  {
+    "desc": "Moab UT: Canyonlands Regional",
+    "icao": "KCNY",
+    "faa": "CNY",
+    "mstat": "KCNY0",
+    "location": {
+      "latitude": 38.755,
+      "longitude": -109.7548,
+      "elevation": 1389
+    },
+    "bts_id": "11092"
+  },
+  {
+    "desc": "Cody WY: Yellowstone Regional",
+    "icao": "KCOD",
+    "faa": "COD",
+    "mstat": "72670",
+    "location": {
+      "latitude": 44.5167,
+      "longitude": -109.0167,
+      "elevation": 1551
+    },
+    "bts_id": "11097"
+  },
+  {
+    "desc": "Colorado Springs CO: City of Colorado Springs Municipal",
+    "icao": "KCOS",
+    "faa": "COS",
+    "mstat": "72466",
+    "location": {
+      "latitude": 38.8167,
+      "longitude": -104.7167,
+      "elevation": 1885
+    },
+    "bts_id": "11109"
+  },
+  {
+    "desc": "Columbia MO: Columbia Regional",
+    "icao": "KCOU",
+    "faa": "COU",
+    "mstat": "72445",
+    "location": {
+      "latitude": 38.8167,
+      "longitude": -92.2167,
+      "elevation": 271
+    },
+    "bts_id": "11111"
+  },
+  {
+    "desc": "Casper WY: Casper/Natrona County International",
+    "icao": "KCPR",
+    "faa": "CPR",
+    "mstat": "72569",
+    "location": {
+      "latitude": 42.9,
+      "longitude": -106.4667,
+      "elevation": 1630
+    },
+    "bts_id": "11122"
+  },
+  {
+    "desc": "Corpus Christi TX: Corpus Christi International",
+    "icao": "KCRP",
+    "faa": "CRP",
+    "mstat": "72251",
+    "location": {
+      "latitude": 27.7667,
+      "longitude": -97.0167,
+      "elevation": 13
+    },
+    "bts_id": "11140"
+  },
+  {
+    "desc": "Charleston/Dunbar WV: West Virginia International Yeager",
+    "icao": "KCRW",
+    "faa": "CRW",
+    "mstat": "72414",
+    "location": {
+      "latitude": 38.3667,
+      "longitude": -81.6,
+      "elevation": 299
+    },
+    "bts_id": "11146"
+  },
+  {
+    "desc": "Columbus GA: Columbus Airport",
+    "icao": "KCSG",
+    "faa": "CSG",
+    "mstat": "KCSG0",
+    "location": {
+      "latitude": 32.5163,
+      "longitude": -84.9389,
+      "elevation": 121
+    },
+    "bts_id": "11150"
+  },
+  {
+    "desc": "Cincinnati OH: Cincinnati/Northern Kentucky International",
+    "icao": "KCVG",
+    "faa": "CVG",
+    "mstat": "72421",
+    "location": {
+      "latitude": 39.05,
+      "longitude": -84.6667,
+      "elevation": 273
+    },
+    "bts_id": "11193"
+  },
+  {
+    "desc": "Mosinee WI: Central Wisconsin",
+    "icao": "KCWA",
+    "faa": "CWA",
+    "mstat": "KCWA0",
+    "location": {
+      "latitude": 44.7776,
+      "longitude": -89.6668,
+      "elevation": 389
+    },
+    "bts_id": "11203"
+  },
+  {
+    "desc": "Daytona Beach FL: Daytona Beach International",
+    "icao": "KDAB",
+    "faa": "DAB",
+    "mstat": "74787",
+    "location": {
+      "latitude": 29.1799,
+      "longitude": -81.0581,
+      "elevation": 10
+    },
+    "bts_id": "11252"
+  },
+  {
+    "desc": "Dallas TX: Dallas Love Field",
+    "icao": "KDAL",
+    "faa": "DAL",
+    "mstat": "72258",
+    "location": {
+      "latitude": 32.8471,
+      "longitude": -96.8518,
+      "elevation": 148
+    },
+    "bts_id": "11259"
+  },
+  {
+    "desc": "Dayton OH: James M Cox/Dayton International",
+    "icao": "KDAY",
+    "faa": "DAY",
+    "mstat": "72429",
+    "location": {
+      "latitude": 39.9,
+      "longitude": -84.2167,
+      "elevation": 308
+    },
+    "bts_id": "11267"
+  },
+  {
+    "desc": "Dubuque IA: Dubuque Regional",
+    "icao": "KDBQ",
+    "faa": "DBQ",
+    "mstat": "72547",
+    "location": {
+      "latitude": 42.4,
+      "longitude": -90.0333,
+      "elevation": 328
+    },
+    "bts_id": "11274"
+  },
+  {
+    "desc": "Washington DC: Ronald Reagan Washington National",
+    "icao": "KDCA",
+    "faa": "DCA",
+    "mstat": "72405",
+    "location": {
+      "latitude": 38.85,
+      "longitude": -77.0333,
+      "elevation": 5
+    },
+    "bts_id": "11278"
+  },
+  {
+    "desc": "Denver CO: Denver International",
+    "icao": "KDEN",
+    "faa": "DEN",
+    "mstat": "72565",
+    "location": {
+      "latitude": 39.8667,
+      "longitude": -104.6667,
+      "elevation": 1655
+    },
+    "bts_id": "11292"
+  },
+  {
+    "desc": "Dallas/Fort Worth TX: Dallas/Fort Worth International",
+    "icao": "KDFW",
+    "faa": "DFW",
+    "mstat": "72259",
+    "location": {
+      "latitude": 32.9,
+      "longitude": -97.0333,
+      "elevation": 184
+    },
+    "bts_id": "11298"
+  },
+  {
+    "desc": "Dothan AL: Dothan Regional",
+    "icao": "KDHN",
+    "faa": "DHN",
+    "mstat": "KDHN0",
+    "location": {
+      "latitude": 31.321,
+      "longitude": -85.4495,
+      "elevation": 122
+    },
+    "bts_id": "11308"
+  },
+  {
+    "desc": "Dickinson ND: Dickinson - Theodore Roosevelt Regional",
+    "icao": "KDIK",
+    "faa": "DIK",
+    "mstat": "72763",
+    "location": {
+      "latitude": 46.7973,
+      "longitude": -102.8019,
+      "elevation": 790
+    },
+    "bts_id": "11315"
+  },
+  {
+    "desc": "Dillingham AK: Dillingham Airport",
+    "icao": "PADL",
+    "faa": "DLG",
+    "mstat": "70321",
+    "location": {
+      "latitude": 59.05,
+      "longitude": -158.5167,
+      "elevation": 26
+    },
+    "bts_id": "11336"
+  },
+  {
+    "desc": "Duluth MN: Duluth International",
+    "icao": "KDLH",
+    "faa": "DLH",
+    "mstat": "72745",
+    "location": {
+      "latitude": 46.8333,
+      "longitude": -92.2167,
+      "elevation": 435
+    },
+    "bts_id": "11337"
+  },
+  {
+    "desc": "Durango CO: Durango La Plata County",
+    "icao": "KDRO",
+    "faa": "DRO",
+    "mstat": "74521",
+    "location": {
+      "latitude": 37.2,
+      "longitude": -107.8167,
+      "elevation": 0
+    },
+    "bts_id": "11413"
+  },
+  {
+    "desc": "Del Rio TX: Del Rio International",
+    "icao": "KDRT",
+    "faa": "DRT",
+    "mstat": "72261",
+    "location": {
+      "latitude": 29.3667,
+      "longitude": -100.9167,
+      "elevation": 304
+    },
+    "bts_id": "11415"
+  },
+  {
+    "desc": "Des Moines IA: Des Moines International",
+    "icao": "KDSM",
+    "faa": "DSM",
+    "mstat": "72546",
+    "location": {
+      "latitude": 41.5333,
+      "longitude": -93.6531,
+      "elevation": 292
+    },
+    "bts_id": "11423"
+  },
+  {
+    "desc": "Detroit MI: Detroit Metro Wayne County",
+    "icao": "KDTW",
+    "faa": "DTW",
+    "mstat": "72537",
+    "location": {
+      "latitude": 42.2333,
+      "longitude": -83.0,
+      "elevation": 195
+    },
+    "bts_id": "11433"
+  },
+  {
+    "desc": "Unalaska AK: Unalaska Airport",
+    "icao": "PADU",
+    "faa": "DUT",
+    "mstat": "70489",
+    "location": {
+      "latitude": 53.9,
+      "longitude": -166.5333,
+      "elevation": 7
+    },
+    "bts_id": "11445"
+  },
+  {
+    "desc": "Kearney NE: Kearney Regional",
+    "icao": "KEAR",
+    "faa": "EAR",
+    "mstat": "KEAR0",
+    "location": {
+      "latitude": 40.727,
+      "longitude": -99.0068,
+      "elevation": 650
+    },
+    "bts_id": "11468"
+  },
+  {
+    "desc": "Wenatchee WA: Pangborn Memorial",
+    "icao": "KEAT",
+    "faa": "EAT",
+    "mstat": "72782",
+    "location": {
+      "latitude": 47.4,
+      "longitude": -120.2,
+      "elevation": 379
+    },
+    "bts_id": "11470"
+  },
+  {
+    "desc": "Eau Claire WI: Chippewa Valley Regional",
+    "icao": "KEAU",
+    "faa": "EAU",
+    "mstat": "KEAU0",
+    "location": {
+      "latitude": 44.8658,
+      "longitude": -91.4843,
+      "elevation": 278
+    },
+    "bts_id": "11471"
+  },
+  {
+    "desc": "Panama City FL: Northwest Florida Beaches International",
+    "icao": "KECP",
+    "faa": "ECP",
+    "mstat": "KECP0",
+    "location": {
+      "latitude": 30.3582,
+      "longitude": -85.7956,
+      "elevation": 21
+    },
+    "bts_id": "11481"
+  },
+  {
+    "desc": "Eagle CO: Eagle County Regional",
+    "icao": "KEGE",
+    "faa": "EGE",
+    "mstat": "KEGE0",
+    "location": {
+      "latitude": 39.6428,
+      "longitude": -106.9159,
+      "elevation": 1996
+    },
+    "bts_id": "11503"
+  },
+  {
+    "desc": "Elko NV: Elko Regional",
+    "icao": "KEKO",
+    "faa": "EKO",
+    "mstat": "70580",
+    "location": {
+      "latitude": 40.8249,
+      "longitude": -115.7917,
+      "elevation": 1567
+    },
+    "bts_id": "11525"
+  },
+  {
+    "desc": "Elmira/Corning NY: Elmira/Corning Regional",
+    "icao": "KELM",
+    "faa": "ELM",
+    "mstat": "KELM0",
+    "location": {
+      "latitude": 42.1599,
+      "longitude": -76.8916,
+      "elevation": 291
+    },
+    "bts_id": "11537"
+  },
+  {
+    "desc": "El Paso TX: El Paso International",
+    "icao": "KELP",
+    "faa": "ELP",
+    "mstat": "72270",
+    "location": {
+      "latitude": 31.8167,
+      "longitude": -106.3833,
+      "elevation": 1206
+    },
+    "bts_id": "11540"
+  },
+  {
+    "desc": "Kenai AK: Kenai Municipal",
+    "icao": "PAEN",
+    "faa": "ENA",
+    "mstat": "70259",
+    "location": {
+      "latitude": 60.5833,
+      "longitude": -151.2333,
+      "elevation": 28
+    },
+    "bts_id": "11555"
+  },
+  {
+    "desc": "Erie PA: Erie International/Tom Ridge Field",
+    "icao": "KERI",
+    "faa": "ERI",
+    "mstat": "72526",
+    "location": {
+      "latitude": 42.0833,
+      "longitude": -80.1833,
+      "elevation": 223
+    },
+    "bts_id": "11577"
+  },
+  {
+    "desc": "Escanaba MI: Delta County",
+    "icao": "KESC",
+    "faa": "ESC",
+    "mstat": "72648",
+    "location": {
+      "latitude": 45.75,
+      "longitude": -87.0333,
+      "elevation": 180
+    },
+    "bts_id": "11587"
+  },
+  {
+    "desc": "Eugene OR: Mahlon Sweet Field",
+    "icao": "KEUG",
+    "faa": "EUG",
+    "mstat": "72693",
+    "location": {
+      "latitude": 44.1333,
+      "longitude": -123.2167,
+      "elevation": 111
+    },
+    "bts_id": "11603"
+  },
+  {
+    "desc": "Evansville IN: Evansville Regional",
+    "icao": "KEVV",
+    "faa": "EVV",
+    "mstat": "72432",
+    "location": {
+      "latitude": 38.0333,
+      "longitude": -87.5333,
+      "elevation": 127
+    },
+    "bts_id": "11612"
+  },
+  {
+    "desc": "New Bern/Morehead/Beaufort NC: Coastal Carolina Regional",
+    "icao": "KEWN",
+    "faa": "EWN",
+    "mstat": "KEWN0",
+    "location": {
+      "latitude": 35.073,
+      "longitude": -77.0429,
+      "elevation": 6
+    },
+    "bts_id": "11617"
+  },
+  {
+    "desc": "Newark NJ: Newark Liberty International",
+    "icao": "KEWR",
+    "faa": "EWR",
+    "mstat": "72502",
+    "location": {
+      "latitude": 40.6833,
+      "longitude": -74.0,
+      "elevation": 5
+    },
+    "bts_id": "11618"
+  },
+  {
+    "desc": "Key West FL: Key West International",
+    "icao": "KEYW",
+    "faa": "EYW",
+    "mstat": "72201",
+    "location": {
+      "latitude": 24.55,
+      "longitude": -81.1,
+      "elevation": 1
+    },
+    "bts_id": "11624"
+  },
+  {
+    "desc": "Fairbanks AK: Fairbanks International",
+    "icao": "PAFA",
+    "faa": "FAI",
+    "mstat": "70261",
+    "location": {
+      "latitude": 64.8,
+      "longitude": -147.8667,
+      "elevation": 132
+    },
+    "bts_id": "11630"
+  },
+  {
+    "desc": "Fargo ND: Hector International",
+    "icao": "KFAR",
+    "faa": "FAR",
+    "mstat": "72753",
+    "location": {
+      "latitude": 46.9333,
+      "longitude": -96.8167,
+      "elevation": 274
+    },
+    "bts_id": "11637"
+  },
+  {
+    "desc": "Fresno CA: Fresno Yosemite International",
+    "icao": "KFAT",
+    "faa": "FAT",
+    "mstat": "72389",
+    "location": {
+      "latitude": 36.7833,
+      "longitude": -119.7167,
+      "elevation": 101
+    },
+    "bts_id": "11638"
+  },
+  {
+    "desc": "Fayetteville NC: Fayetteville Regional/Grannis Field",
+    "icao": "KFAY",
+    "faa": "FAY",
+    "mstat": "KFAY0",
+    "location": {
+      "latitude": 34.9912,
+      "longitude": -78.8803,
+      "elevation": 58
+    },
+    "bts_id": "11641"
+  },
+  {
+    "desc": "Flagstaff AZ: Flagstaff Pulliam",
+    "icao": "KFLG",
+    "faa": "FLG",
+    "mstat": "KFLG0",
+    "location": {
+      "latitude": 35.1403,
+      "longitude": -111.6693,
+      "elevation": 2138
+    },
+    "bts_id": "11695"
+  },
+  {
+    "desc": "Fort Lauderdale FL: Fort Lauderdale-Hollywood International",
+    "icao": "KFLL",
+    "faa": "FLL",
+    "mstat": "74783",
+    "location": {
+      "latitude": 26.0726,
+      "longitude": -80.1527,
+      "elevation": 3
+    },
+    "bts_id": "11697"
+  },
+  {
+    "desc": "Florence SC: Florence Regional",
+    "icao": "KFLO",
+    "faa": "FLO",
+    "mstat": "KFLO0",
+    "location": {
+      "latitude": 34.1854,
+      "longitude": -79.7239,
+      "elevation": 45
+    },
+    "bts_id": "11699"
+  },
+  {
+    "desc": "Flint MI: Bishop International",
+    "icao": "KFNT",
+    "faa": "FNT",
+    "mstat": "72637",
+    "location": {
+      "latitude": 42.9667,
+      "longitude": -83.0833,
+      "elevation": 238
+    },
+    "bts_id": "11721"
+  },
+  {
+    "desc": "Sioux Falls SD: Joe Foss Field",
+    "icao": "KFSD",
+    "faa": "FSD",
+    "mstat": "72651",
+    "location": {
+      "latitude": 43.5833,
+      "longitude": -96.75,
+      "elevation": 436
+    },
+    "bts_id": "11775"
+  },
+  {
+    "desc": "Fort Smith AR: Fort Smith Regional",
+    "icao": "KFSM",
+    "faa": "FSM",
+    "mstat": "72344",
+    "location": {
+      "latitude": 35.3333,
+      "longitude": -94.0333,
+      "elevation": 143
+    },
+    "bts_id": "11778"
+  },
+  {
+    "desc": "Fort Wayne IN: Fort Wayne International",
+    "icao": "KFWA",
+    "faa": "FWA",
+    "mstat": "72533",
+    "location": {
+      "latitude": 41.0,
+      "longitude": -85.0333,
+      "elevation": 248
+    },
+    "bts_id": "11823"
+  },
+  {
+    "desc": "Gillette WY: Northeast Wyoming Regional",
+    "icao": "KGCC",
+    "faa": "GCC",
+    "mstat": "72665",
+    "location": {
+      "latitude": 44.3333,
+      "longitude": -105.55,
+      "elevation": 1330
+    },
+    "bts_id": "11865"
+  },
+  {
+    "desc": "Garden City KS: Garden City Regional",
+    "icao": "KGCK",
+    "faa": "GCK",
+    "mstat": "KGCK0",
+    "location": {
+      "latitude": 37.9275,
+      "longitude": -100.7244,
+      "elevation": 881
+    },
+    "bts_id": "11867"
+  },
+  {
+    "desc": "Spokane WA: Spokane International",
+    "icao": "KGEG",
+    "faa": "GEG",
+    "mstat": "72785",
+    "location": {
+      "latitude": 47.6167,
+      "longitude": -117.5333,
+      "elevation": 723
+    },
+    "bts_id": "11884"
+  },
+  {
+    "desc": "Grand Forks ND: Grand Forks International",
+    "icao": "KGFK",
+    "faa": "GFK",
+    "mstat": "KGFK0",
+    "location": {
+      "latitude": 47.9473,
+      "longitude": -97.1738,
+      "elevation": 257
+    },
+    "bts_id": "11898"
+  },
+  {
+    "desc": "Longview TX: East Texas Regional",
+    "icao": "KGGG",
+    "faa": "GGG",
+    "mstat": "72247",
+    "location": {
+      "latitude": 32.3833,
+      "longitude": -94.7167,
+      "elevation": 111
+    },
+    "bts_id": "11905"
+  },
+  {
+    "desc": "Grand Junction CO: Grand Junction Regional",
+    "icao": "KGJT",
+    "faa": "GJT",
+    "mstat": "72476",
+    "location": {
+      "latitude": 39.1333,
+      "longitude": -108.5333,
+      "elevation": 1481
+    },
+    "bts_id": "11921"
+  },
+  {
+    "desc": "Gainesville FL: Gainesville Regional",
+    "icao": "KGNV",
+    "faa": "GNV",
+    "mstat": "74756",
+    "location": {
+      "latitude": 29.6901,
+      "longitude": -82.2718,
+      "elevation": 46
+    },
+    "bts_id": "11953"
+  },
+  {
+    "desc": "Guapi Colombia: Guapi Airport",
+    "icao": "KGPI",
+    "faa": "GPI",
+    "mstat": "72779",
+    "location": {
+      "latitude": 48.3,
+      "longitude": -114.2667,
+      "elevation": 906
+    },
+    "bts_id": "11970"
+  },
+  {
+    "desc": "Gulfport/Biloxi MS: Gulfport-Biloxi International",
+    "icao": "KGPT",
+    "faa": "GPT",
+    "mstat": "74757",
+    "location": {
+      "latitude": 30.4073,
+      "longitude": -89.0701,
+      "elevation": 9
+    },
+    "bts_id": "11973"
+  },
+  {
+    "desc": "Green Bay WI: Green Bay Austin Straubel International",
+    "icao": "KGRB",
+    "faa": "GRB",
+    "mstat": "72645",
+    "location": {
+      "latitude": 44.4833,
+      "longitude": -88.1333,
+      "elevation": 212
+    },
+    "bts_id": "11977"
+  },
+  {
+    "desc": "Grand Island NE: Central Nebraska Regional",
+    "icao": "KGRI",
+    "faa": "GRI",
+    "mstat": "72552",
+    "location": {
+      "latitude": 40.9667,
+      "longitude": -98.15,
+      "elevation": 563
+    },
+    "bts_id": "11980"
+  },
+  {
+    "desc": "Killeen TX: Robert Gray AAF",
+    "icao": "KGRK",
+    "faa": "GRK",
+    "mstat": "KGRK0",
+    "location": {
+      "latitude": 31.0673,
+      "longitude": -97.8289,
+      "elevation": 309
+    },
+    "bts_id": "11982"
+  },
+  {
+    "desc": "Grand Rapids MI: Gerald R. Ford International",
+    "icao": "KGRR",
+    "faa": "GRR",
+    "mstat": "72635",
+    "location": {
+      "latitude": 42.8833,
+      "longitude": -85.5167,
+      "elevation": 242
+    },
+    "bts_id": "11986"
+  },
+  {
+    "desc": "Greensboro/High Point NC: Piedmont Triad International",
+    "icao": "KGSO",
+    "faa": "GSO",
+    "mstat": "72317",
+    "location": {
+      "latitude": 36.1,
+      "longitude": -79.95,
+      "elevation": 282
+    },
+    "bts_id": "11995"
+  },
+  {
+    "desc": "Greer SC: Greenville-Spartanburg International",
+    "icao": "KGSP",
+    "faa": "GSP",
+    "mstat": "72312",
+    "location": {
+      "latitude": 34.8833,
+      "longitude": -82.05,
+      "elevation": 296
+    },
+    "bts_id": "11996"
+  },
+  {
+    "desc": "Gustavus AK: Gustavus Airport",
+    "icao": "PAGS",
+    "faa": "GST",
+    "mstat": "70367",
+    "location": {
+      "latitude": 58.4167,
+      "longitude": -135.7,
+      "elevation": 10
+    },
+    "bts_id": "11997"
+  },
+  {
+    "desc": "Great Falls MT: Great Falls International",
+    "icao": "KGTF",
+    "faa": "GTF",
+    "mstat": "72775",
+    "location": {
+      "latitude": 47.4667,
+      "longitude": -111.3833,
+      "elevation": 1120
+    },
+    "bts_id": "12003"
+  },
+  {
+    "desc": "Columbus MS: Golden Triangle Regional",
+    "icao": "KGTR",
+    "faa": "GTR",
+    "mstat": "KGTR0",
+    "location": {
+      "latitude": 33.4503,
+      "longitude": -88.5914,
+      "elevation": 81
+    },
+    "bts_id": "12007"
+  },
+  {
+    "desc": "Gunnison CO: Gunnison-Crested Butte Regional",
+    "icao": "KGUC",
+    "faa": "GUC",
+    "mstat": "KGUC0",
+    "location": {
+      "latitude": 38.5339,
+      "longitude": -106.933,
+      "elevation": 2341
+    },
+    "bts_id": "12012"
+  },
+  {
+    "desc": "Guam TT: Guam International",
+    "icao": "PGUM",
+    "faa": "GUM",
+    "mstat": "91212",
+    "location": {
+      "latitude": 13.4833,
+      "longitude": 144.8,
+      "elevation": 91
+    },
+    "bts_id": "12016"
+  },
+  {
+    "desc": "Hayden CO: Yampa Valley",
+    "icao": "KHDN",
+    "faa": "HDN",
+    "mstat": "KHDN0",
+    "location": {
+      "latitude": 40.4812,
+      "longitude": -107.2177,
+      "elevation": 2014
+    },
+    "bts_id": "12094"
+  },
+  {
+    "desc": "Hagerstown MD: Hagerstown Regional-Richard A. Henson Field",
+    "icao": "KHGR",
+    "faa": "HGR",
+    "mstat": "KHGR0",
+    "location": {
+      "latitude": 39.7085,
+      "longitude": -77.7265,
+      "elevation": 214
+    },
+    "bts_id": "12119"
+  },
+  {
+    "desc": "Hibbing MN: Range Regional",
+    "icao": "KHIB",
+    "faa": "HIB",
+    "mstat": "KHIB0",
+    "location": {
+      "latitude": 47.3866,
+      "longitude": -92.839,
+      "elevation": 413
+    },
+    "bts_id": "12129"
+  },
+  {
+    "desc": "Helena MT: Helena Regional",
+    "icao": "KHLN",
+    "faa": "HLN",
+    "mstat": "72772",
+    "location": {
+      "latitude": 46.6,
+      "longitude": -111.9667,
+      "elevation": 1180
+    },
+    "bts_id": "12156"
+  },
+  {
+    "desc": "Honolulu HI: Daniel K Inouye International",
+    "icao": "PHNL",
+    "faa": "HNL",
+    "mstat": "91182",
+    "location": {
+      "latitude": 21.3333,
+      "longitude": -157.95,
+      "elevation": 4
+    },
+    "bts_id": "12173"
+  },
+  {
+    "desc": "Hobbs NM: Lea County Regional",
+    "icao": "KHOB",
+    "faa": "HOB",
+    "mstat": "KHOB0",
+    "location": {
+      "latitude": 32.6875,
+      "longitude": -103.217,
+      "elevation": 1116
+    },
+    "bts_id": "12177"
+  },
+  {
+    "desc": "Houston TX: William P Hobby",
+    "icao": "KHOU",
+    "faa": "HOU",
+    "mstat": "SC9N0",
+    "location": {
+      "latitude": 29.6375,
+      "longitude": -95.2825,
+      "elevation": 14
+    },
+    "bts_id": "12191"
+  },
+  {
+    "desc": "White Plains NY: Westchester County",
+    "icao": "KHPN",
+    "faa": "HPN",
+    "mstat": "KHPN0",
+    "location": {
+      "latitude": 41.0669,
+      "longitude": -73.7076,
+      "elevation": 134
+    },
+    "bts_id": "12197"
+  },
+  {
+    "desc": "Harlingen/San Benito TX: Valley International",
+    "icao": "KHRL",
+    "faa": "HRL",
+    "mstat": "KHRL0",
+    "location": {
+      "latitude": 26.2285,
+      "longitude": -97.6544,
+      "elevation": 11
+    },
+    "bts_id": "12206"
+  },
+  {
+    "desc": "Huntsville AL: Huntsville International-Carl T Jones Field",
+    "icao": "KHSV",
+    "faa": "HSV",
+    "mstat": "72323",
+    "location": {
+      "latitude": 34.65,
+      "longitude": -86.7833,
+      "elevation": 192
+    },
+    "bts_id": "12217"
+  },
+  {
+    "desc": "Ashland WV: Tri-State/Milton J. Ferguson Field",
+    "icao": "KHTS",
+    "faa": "HTS",
+    "mstat": "72425",
+    "location": {
+      "latitude": 38.3667,
+      "longitude": -82.55,
+      "elevation": 252
+    },
+    "bts_id": "12223"
+  },
+  {
+    "desc": "New Haven CT: Tweed New Haven",
+    "icao": "KHVN",
+    "faa": "HVN",
+    "mstat": "KHVN0",
+    "location": {
+      "latitude": 41.2638,
+      "longitude": -72.8868,
+      "elevation": 4
+    },
+    "bts_id": "12244"
+  },
+  {
+    "desc": "Hyannis MA: Cape Cod Gateway",
+    "icao": "KHYA",
+    "faa": "HYA",
+    "mstat": "KHYA0",
+    "location": {
+      "latitude": 41.6693,
+      "longitude": -70.2804,
+      "elevation": 17
+    },
+    "bts_id": "12250"
+  },
+  {
+    "desc": "Hays KS: Hays Regional",
+    "icao": "KHYS",
+    "faa": "HYS",
+    "mstat": "KHYS0",
+    "location": {
+      "latitude": 38.8422,
+      "longitude": -99.2732,
+      "elevation": 609
+    },
+    "bts_id": "12255"
+  },
+  {
+    "desc": "Washington DC: Washington Dulles International",
+    "icao": "KIAD",
+    "faa": "IAD",
+    "mstat": "72403",
+    "location": {
+      "latitude": 38.9333,
+      "longitude": -77.45,
+      "elevation": 95
+    },
+    "bts_id": "12264"
+  },
+  {
+    "desc": "Niagara Falls NY: Niagara Falls International",
+    "icao": "KIAG",
+    "faa": "IAG",
+    "mstat": "KIAG0",
+    "location": {
+      "latitude": 43.1073,
+      "longitude": -78.9462,
+      "elevation": 180
+    },
+    "bts_id": "12265"
+  },
+  {
+    "desc": "Houston TX: George Bush Intercontinental/Houston",
+    "icao": "KIAH",
+    "faa": "IAH",
+    "mstat": "72243",
+    "location": {
+      "latitude": 30.0,
+      "longitude": -95.3667,
+      "elevation": 30
+    },
+    "bts_id": "12266"
+  },
+  {
+    "desc": "Wichita KS: Wichita Dwight D Eisenhower National",
+    "icao": "KICT",
+    "faa": "ICT",
+    "mstat": "72450",
+    "location": {
+      "latitude": 37.65,
+      "longitude": -97.1,
+      "elevation": 406
+    },
+    "bts_id": "12278"
+  },
+  {
+    "desc": "Idaho Falls ID: Idaho Falls Regional",
+    "icao": "KIDA",
+    "faa": "IDA",
+    "mstat": "KIDA0",
+    "location": {
+      "latitude": 43.5137,
+      "longitude": -112.0708,
+      "elevation": 1446
+    },
+    "bts_id": "12280"
+  },
+  {
+    "desc": "Wilmington DE: New Castle",
+    "icao": "KILG",
+    "faa": "ILG",
+    "mstat": "72418",
+    "location": {
+      "latitude": 39.6787,
+      "longitude": -75.6066,
+      "elevation": 24
+    },
+    "bts_id": "12320"
+  },
+  {
+    "desc": "Wilmington NC: Wilmington International",
+    "icao": "KILM",
+    "faa": "ILM",
+    "mstat": "72302",
+    "location": {
+      "latitude": 34.2706,
+      "longitude": -77.9026,
+      "elevation": 10
+    },
+    "bts_id": "12323"
+  },
+  {
+    "desc": "Iron Mountain/Kingsfd MI: Ford",
+    "icao": "KIMT",
+    "faa": "IMT",
+    "mstat": "KIMT0",
+    "location": {
+      "latitude": 45.8184,
+      "longitude": -88.1146,
+      "elevation": 360
+    },
+    "bts_id": "12335"
+  },
+  {
+    "desc": "Indianapolis IN: Indianapolis International",
+    "icao": "KIND",
+    "faa": "IND",
+    "mstat": "72438",
+    "location": {
+      "latitude": 39.7167,
+      "longitude": -86.1167,
+      "elevation": 243
+    },
+    "bts_id": "12339"
+  },
+  {
+    "desc": "Islip NY: Long Island MacArthur",
+    "icao": "KISP",
+    "faa": "ISP",
+    "mstat": "72505",
+    "location": {
+      "latitude": 40.7953,
+      "longitude": -73.1002,
+      "elevation": 30
+    },
+    "bts_id": "12391"
+  },
+  {
+    "desc": "Ithaca/Cortland NY: Ithaca Tompkins International",
+    "icao": "KITH",
+    "faa": "ITH",
+    "mstat": "KITH0",
+    "location": {
+      "latitude": 42.4914,
+      "longitude": -76.4587,
+      "elevation": 335
+    },
+    "bts_id": "12397"
+  },
+  {
+    "desc": "Hilo HI: Hilo International",
+    "icao": "PHTO",
+    "faa": "ITO",
+    "mstat": "91285",
+    "location": {
+      "latitude": 19.7167,
+      "longitude": -155.05,
+      "elevation": 12
+    },
+    "bts_id": "12402"
+  },
+  {
+    "desc": "Ivanovo Russia: Ivanovo Airport",
+    "icao": "KIWA",
+    "faa": "IWA",
+    "mstat": "KIWA0",
+    "location": {
+      "latitude": 33.3078,
+      "longitude": -111.6555,
+      "elevation": 421
+    },
+    "bts_id": "12411"
+  },
+  {
+    "desc": "Jackson WY: Jackson Hole",
+    "icao": "KJAC",
+    "faa": "JAC",
+    "mstat": "72577",
+    "location": {
+      "latitude": 43.6073,
+      "longitude": -110.7378,
+      "elevation": 1966
+    },
+    "bts_id": "12441"
+  },
+  {
+    "desc": "Jackson/Vicksburg MS: Jackson Medgar Wiley Evers International",
+    "icao": "KJAN",
+    "faa": "JAN",
+    "mstat": "72235",
+    "location": {
+      "latitude": 32.3167,
+      "longitude": -90.0667,
+      "elevation": 105
+    },
+    "bts_id": "12448"
+  },
+  {
+    "desc": "Jacksonville FL: Jacksonville International",
+    "icao": "KJAX",
+    "faa": "JAX",
+    "mstat": "72206",
+    "location": {
+      "latitude": 30.5,
+      "longitude": -81.0333,
+      "elevation": 9
+    },
+    "bts_id": "12451"
+  },
+  {
+    "desc": "New York NY: John F. Kennedy International",
+    "icao": "KJFK",
+    "faa": "JFK",
+    "mstat": "74486",
+    "location": {
+      "latitude": 40.6333,
+      "longitude": -73.7667,
+      "elevation": 4
+    },
+    "bts_id": "12478"
+  },
+  {
+    "desc": "Joplin MO: Joplin Regional",
+    "icao": "KJLN",
+    "faa": "JLN",
+    "mstat": "KJLN0",
+    "location": {
+      "latitude": 37.1518,
+      "longitude": -94.4983,
+      "elevation": 299
+    },
+    "bts_id": "12511"
+  },
+  {
+    "desc": "Jamestown ND: Jamestown Regional",
+    "icao": "KJMS",
+    "faa": "JMS",
+    "mstat": "KJMS0",
+    "location": {
+      "latitude": 46.9297,
+      "longitude": -98.6782,
+      "elevation": 457
+    },
+    "bts_id": "12519"
+  },
+  {
+    "desc": "Juneau AK: Juneau International",
+    "icao": "PAJN",
+    "faa": "JNU",
+    "mstat": "70381",
+    "location": {
+      "latitude": 58.35,
+      "longitude": -134.5667,
+      "elevation": 6
+    },
+    "bts_id": "12523"
+  },
+  {
+    "desc": "Concord NC: Concord Regional",
+    "icao": "KJQF",
+    "faa": "JQF",
+    "mstat": "KJQF0",
+    "location": {
+      "latitude": 35.3878,
+      "longitude": -80.7091,
+      "elevation": 215
+    }
+  },
+  {
+    "desc": "Kona HI: Ellison Onizuka Kona International at Keahole",
+    "icao": "PHKO",
+    "faa": "KOA",
+    "mstat": "PHKO0",
+    "location": {
+      "latitude": 19.7388,
+      "longitude": -156.0456,
+      "elevation": 14
+    },
+    "bts_id": "12758"
+  },
+  {
+    "desc": "Ketchikan AK: Ketchikan International",
+    "icao": "PAKT",
+    "faa": "KTN",
+    "mstat": "70395",
+    "location": {
+      "latitude": 55.35,
+      "longitude": -131.7167,
+      "elevation": 27
+    },
+    "bts_id": "12819"
+  },
+  {
+    "desc": "Lansing MI: Capital Region International",
+    "icao": "KLAN",
+    "faa": "LAN",
+    "mstat": "72539",
+    "location": {
+      "latitude": 42.7833,
+      "longitude": -84.5833,
+      "elevation": 262
+    },
+    "bts_id": "12884"
+  },
+  {
+    "desc": "Laramie WY: Laramie Regional",
+    "icao": "KLAR",
+    "faa": "LAR",
+    "mstat": "LJ957",
+    "location": {
+      "latitude": 41.3165,
+      "longitude": -105.6729,
+      "elevation": 2218
+    },
+    "bts_id": "12888"
+  },
+  {
+    "desc": "Las Vegas NV: Harry Reid International",
+    "icao": "KLAS",
+    "faa": "LAS",
+    "mstat": "72386",
+    "location": {
+      "latitude": 36.1167,
+      "longitude": -115.2667,
+      "elevation": 663
+    },
+    "bts_id": "12889"
+  },
+  {
+    "desc": "Los Angeles CA: Los Angeles International",
+    "icao": "KLAX",
+    "faa": "LAX",
+    "mstat": "72295",
+    "location": {
+      "latitude": 33.9333,
+      "longitude": -118.3833,
+      "elevation": 38
+    },
+    "bts_id": "12892"
+  },
+  {
+    "desc": "Lubbock TX: Lubbock Preston Smith International",
+    "icao": "KLBB",
+    "faa": "LBB",
+    "mstat": "72267",
+    "location": {
+      "latitude": 33.6667,
+      "longitude": -101.8167,
+      "elevation": 1000
+    },
+    "bts_id": "12896"
+  },
+  {
+    "desc": "Latrobe PA: Arnold Palmer Regional",
+    "icao": "KLBE",
+    "faa": "LBE",
+    "mstat": "KLBE0",
+    "location": {
+      "latitude": 40.2746,
+      "longitude": -79.4068,
+      "elevation": 366
+    },
+    "bts_id": "12898"
+  },
+  {
+    "desc": "North Platte NE: North Platte Regional Airport Lee Bird Field",
+    "icao": "KLBF",
+    "faa": "LBF",
+    "mstat": "72562",
+    "location": {
+      "latitude": 41.1167,
+      "longitude": -100.6667,
+      "elevation": 847
+    },
+    "bts_id": "12899"
+  },
+  {
+    "desc": "Lake Charles LA: Lake Charles Regional",
+    "icao": "KLCH",
+    "faa": "LCH",
+    "mstat": "72240",
+    "location": {
+      "latitude": 30.2,
+      "longitude": -93.3833,
+      "elevation": 5
+    },
+    "bts_id": "12915"
+  },
+  {
+    "desc": "Columbus OH: Rickenbacker International",
+    "icao": "KLCK",
+    "faa": "LCK",
+    "mstat": "KLCK0",
+    "location": {
+      "latitude": 39.8138,
+      "longitude": -82.9278,
+      "elevation": 227
+    },
+    "bts_id": "12917"
+  },
+  {
+    "desc": "Lexington KY: Blue Grass",
+    "icao": "KLEX",
+    "faa": "LEX",
+    "mstat": "72422",
+    "location": {
+      "latitude": 38.0333,
+      "longitude": -84.6,
+      "elevation": 299
+    },
+    "bts_id": "12945"
+  },
+  {
+    "desc": "Lafayette LA: Lafayette Regional Paul Fournet Field",
+    "icao": "KLFT",
+    "faa": "LFT",
+    "mstat": "KLFT0",
+    "location": {
+      "latitude": 30.2052,
+      "longitude": -91.9876,
+      "elevation": 13
+    },
+    "bts_id": "12951"
+  },
+  {
+    "desc": "New York NY: LaGuardia",
+    "icao": "KLGA",
+    "faa": "LGA",
+    "mstat": "72503",
+    "location": {
+      "latitude": 40.7833,
+      "longitude": -73.05,
+      "elevation": 7
+    },
+    "bts_id": "12953"
+  },
+  {
+    "desc": "Long Beach CA: Long Beach Airport",
+    "icao": "KLGB",
+    "faa": "LGB",
+    "mstat": "72297",
+    "location": {
+      "latitude": 33.8167,
+      "longitude": -118.15,
+      "elevation": 17
+    },
+    "bts_id": "12954"
+  },
+  {
+    "desc": "Lihue HI: Lihue Airport",
+    "icao": "PHLI",
+    "faa": "LIH",
+    "mstat": "91165",
+    "location": {
+      "latitude": 21.9833,
+      "longitude": -159.3333,
+      "elevation": 45
+    },
+    "bts_id": "12982"
+  },
+  {
+    "desc": "Little Rock AR: Bill and Hillary Clinton Nat Adams Field",
+    "icao": "KLIT",
+    "faa": "LIT",
+    "mstat": "OQRHP",
+    "location": {
+      "latitude": 34.7267,
+      "longitude": -92.2361,
+      "elevation": 79
+    },
+    "bts_id": "12992"
+  },
+  {
+    "desc": "Lincoln NE: Lincoln Airport",
+    "icao": "KLNK",
+    "faa": "LNK",
+    "mstat": "72551",
+    "location": {
+      "latitude": 40.8333,
+      "longitude": -96.7647,
+      "elevation": 372
+    },
+    "bts_id": "13029"
+  },
+  {
+    "desc": "Lanai HI: Lanai Airport",
+    "icao": "PHNY",
+    "faa": "LNY",
+    "mstat": "PHNY0",
+    "location": {
+      "latitude": 20.7856,
+      "longitude": -156.9514,
+      "elevation": 399
+    },
+    "bts_id": "13034"
+  },
+  {
+    "desc": "Laredo TX: Laredo International",
+    "icao": "KLRD",
+    "faa": "LRD",
+    "mstat": "72252",
+    "location": {
+      "latitude": 27.5333,
+      "longitude": -99.45,
+      "elevation": 155
+    },
+    "bts_id": "13061"
+  },
+  {
+    "desc": "La Crosse WI: La Crosse Regional",
+    "icao": "KLSE",
+    "faa": "LSE",
+    "mstat": "72643",
+    "location": {
+      "latitude": 43.8833,
+      "longitude": -91.25,
+      "elevation": 199
+    },
+    "bts_id": "13076"
+  },
+  {
+    "desc": "Lewisburg WV: Greenbrier Valley",
+    "icao": "KLWB",
+    "faa": "LWB",
+    "mstat": "KLWB0",
+    "location": {
+      "latitude": 37.8583,
+      "longitude": -80.3995,
+      "elevation": 701
+    },
+    "bts_id": "13121"
+  },
+  {
+    "desc": "Lewiston ID: Lewiston Nez Perce County",
+    "icao": "KLWS",
+    "faa": "LWS",
+    "mstat": "72783",
+    "location": {
+      "latitude": 46.3667,
+      "longitude": -117.0167,
+      "elevation": 438
+    },
+    "bts_id": "13127"
+  },
+  {
+    "desc": "Lynchburg VA: Lynchburg Regional/Preston Glenn Field",
+    "icao": "KLYH",
+    "faa": "LYH",
+    "mstat": "72410",
+    "location": {
+      "latitude": 37.3167,
+      "longitude": -79.2,
+      "elevation": 286
+    },
+    "bts_id": "13139"
+  },
+  {
+    "desc": "Midland/Odessa TX: Midland International Air and Space Port",
+    "icao": "KMAF",
+    "faa": "MAF",
+    "mstat": "72265",
+    "location": {
+      "latitude": 31.9333,
+      "longitude": -102.2,
+      "elevation": 875
+    },
+    "bts_id": "13158"
+  },
+  {
+    "desc": "Saginaw/Bay City/Midland MI: MBS International",
+    "icao": "KMBS",
+    "faa": "MBS",
+    "mstat": "KMBS0",
+    "location": {
+      "latitude": 43.5329,
+      "longitude": -84.0796,
+      "elevation": 204
+    },
+    "bts_id": "13184"
+  },
+  {
+    "desc": "Kansas City MO: Kansas City International",
+    "icao": "KMCI",
+    "faa": "MCI",
+    "mstat": "72446",
+    "location": {
+      "latitude": 39.2972,
+      "longitude": -94.7306,
+      "elevation": 313
+    },
+    "bts_id": "13198"
+  },
+  {
+    "desc": "Macon GA: Middle Georgia Regional",
+    "icao": "KMCN",
+    "faa": "MCN",
+    "mstat": "72217",
+    "location": {
+      "latitude": 32.6833,
+      "longitude": -83.15,
+      "elevation": 108
+    },
+    "bts_id": "13203"
+  },
+  {
+    "desc": "Orlando FL: Orlando International",
+    "icao": "KMCO",
+    "faa": "MCO",
+    "mstat": "72205",
+    "location": {
+      "latitude": 28.4167,
+      "longitude": -81.0,
+      "elevation": 29
+    },
+    "bts_id": "13204"
+  },
+  {
+    "desc": "Harrisburg PA: Harrisburg International",
+    "icao": "KMDT",
+    "faa": "MDT",
+    "mstat": "72399",
+    "location": {
+      "latitude": 40.1932,
+      "longitude": -76.7626,
+      "elevation": 95
+    },
+    "bts_id": "13230"
+  },
+  {
+    "desc": "Chicago IL: Chicago Midway International",
+    "icao": "KMDW",
+    "faa": "MDW",
+    "mstat": "72534",
+    "location": {
+      "latitude": 41.7833,
+      "longitude": -87.75,
+      "elevation": 189
+    },
+    "bts_id": "13232"
+  },
+  {
+    "desc": "Meridian MS: Key Field",
+    "icao": "KMEI",
+    "faa": "MEI",
+    "mstat": "72234",
+    "location": {
+      "latitude": 32.3333,
+      "longitude": -88.75,
+      "elevation": 91
+    },
+    "bts_id": "13241"
+  },
+  {
+    "desc": "Memphis TN: Memphis International",
+    "icao": "KMEM",
+    "faa": "MEM",
+    "mstat": "72334",
+    "location": {
+      "latitude": 35.0333,
+      "longitude": -89.9833,
+      "elevation": 102
+    },
+    "bts_id": "13244"
+  },
+  {
+    "desc": "Mission/McAllen/Edinburg TX: McAllen Miller International",
+    "icao": "KMFE",
+    "faa": "MFE",
+    "mstat": "KMFE0",
+    "location": {
+      "latitude": 26.1758,
+      "longitude": -98.2386,
+      "elevation": 33
+    },
+    "bts_id": "13256"
+  },
+  {
+    "desc": "Medford OR: Rogue Valley International - Medford",
+    "icao": "KMFR",
+    "faa": "MFR",
+    "mstat": "72597",
+    "location": {
+      "latitude": 42.3833,
+      "longitude": -122.8833,
+      "elevation": 406
+    },
+    "bts_id": "13264"
+  },
+  {
+    "desc": "Montgomery AL: Montgomery Regional",
+    "icao": "KMGM",
+    "faa": "MGM",
+    "mstat": "72226",
+    "location": {
+      "latitude": 32.3,
+      "longitude": -86.0667,
+      "elevation": 67
+    },
+    "bts_id": "13277"
+  },
+  {
+    "desc": "Manhattan/Ft. Riley KS: Manhattan Regional",
+    "icao": "KMHK",
+    "faa": "MHK",
+    "mstat": "KMHK0",
+    "location": {
+      "latitude": 39.141,
+      "longitude": -96.6708,
+      "elevation": 325
+    },
+    "bts_id": "13290"
+  },
+  {
+    "desc": "Manchester NH: Manchester Boston Regional",
+    "icao": "KMHT",
+    "faa": "MHT",
+    "mstat": "56FNV",
+    "location": {
+      "latitude": 42.9296,
+      "longitude": -71.4356,
+      "elevation": 71
+    },
+    "bts_id": "13296"
+  },
+  {
+    "desc": "Miami FL: Miami International",
+    "icao": "KMIA",
+    "faa": "MIA",
+    "mstat": "72202",
+    "location": {
+      "latitude": 25.7833,
+      "longitude": -80.3167,
+      "elevation": 4
+    },
+    "bts_id": "13303"
+  },
+  {
+    "desc": "Milwaukee WI: General Mitchell International",
+    "icao": "KMKE",
+    "faa": "MKE",
+    "mstat": "72640",
+    "location": {
+      "latitude": 42.955,
+      "longitude": -87.9044,
+      "elevation": 211
+    },
+    "bts_id": "13342"
+  },
+  {
+    "desc": "Muskegon MI: Muskegon County",
+    "icao": "KMKG",
+    "faa": "MKG",
+    "mstat": "72636",
+    "location": {
+      "latitude": 43.1667,
+      "longitude": -86.2333,
+      "elevation": 191
+    },
+    "bts_id": "13344"
+  },
+  {
+    "desc": "Hoolehua HI: Molokai",
+    "icao": "PHMK",
+    "faa": "MKK",
+    "mstat": "91186",
+    "location": {
+      "latitude": 21.15,
+      "longitude": -157.1,
+      "elevation": 138
+    },
+    "bts_id": "13347"
+  },
+  {
+    "desc": "Melbourne FL: Melbourne Orlando International",
+    "icao": "KMLB",
+    "faa": "MLB",
+    "mstat": "72204",
+    "location": {
+      "latitude": 28.1,
+      "longitude": -80.65,
+      "elevation": 10
+    },
+    "bts_id": "13360"
+  },
+  {
+    "desc": "Moline IL: Quad Cities International",
+    "icao": "KMLI",
+    "faa": "MLI",
+    "mstat": "72544",
+    "location": {
+      "latitude": 41.45,
+      "longitude": -90.0167,
+      "elevation": 180
+    },
+    "bts_id": "13367"
+  },
+  {
+    "desc": "Monroe LA: Monroe Regional",
+    "icao": "KMLU",
+    "faa": "MLU",
+    "mstat": "KMLU0",
+    "location": {
+      "latitude": 32.5109,
+      "longitude": -92.0377,
+      "elevation": 24
+    },
+    "bts_id": "13377"
+  },
+  {
+    "desc": "Mobile AL: Mobile Regional",
+    "icao": "KMOB",
+    "faa": "MOB",
+    "mstat": "72223",
+    "location": {
+      "latitude": 30.6833,
+      "longitude": -88.0667,
+      "elevation": 66
+    },
+    "bts_id": "13422"
+  },
+  {
+    "desc": "Minot ND: Minot International",
+    "icao": "KMOT",
+    "faa": "MOT",
+    "mstat": "KMOT0",
+    "location": {
+      "latitude": 48.2576,
+      "longitude": -101.278,
+      "elevation": 523
+    },
+    "bts_id": "13433"
+  },
+  {
+    "desc": "Monterey CA: Monterey Regional",
+    "icao": "KMRY",
+    "faa": "MRY",
+    "mstat": "M44D9",
+    "location": {
+      "latitude": 36.5905,
+      "longitude": -121.8487,
+      "elevation": 77
+    },
+    "bts_id": "13476"
+  },
+  {
+    "desc": "Madison WI: Dane County Regional-Truax Field",
+    "icao": "KMSN",
+    "faa": "MSN",
+    "mstat": "72641",
+    "location": {
+      "latitude": 43.1333,
+      "longitude": -89.0167,
+      "elevation": 263
+    },
+    "bts_id": "13485"
+  },
+  {
+    "desc": "Missoula MT: Missoula Montana",
+    "icao": "KMSO",
+    "faa": "MSO",
+    "mstat": "72773",
+    "location": {
+      "latitude": 46.9167,
+      "longitude": -114.1,
+      "elevation": 976
+    },
+    "bts_id": "13486"
+  },
+  {
+    "desc": "Minneapolis MN: Minneapolis-St Paul International",
+    "icao": "KMSP",
+    "faa": "MSP",
+    "mstat": "72658",
+    "location": {
+      "latitude": 44.8667,
+      "longitude": -93.05,
+      "elevation": 256
+    },
+    "bts_id": "13487"
+  },
+  {
+    "desc": "New Orleans LA: Louis Armstrong New Orleans International",
+    "icao": "KMSY",
+    "faa": "MSY",
+    "mstat": "72231",
+    "location": {
+      "latitude": 30.0,
+      "longitude": -90.0833,
+      "elevation": 2
+    },
+    "bts_id": "13495"
+  },
+  {
+    "desc": "Montrose/Delta CO: Montrose Regional",
+    "icao": "KMTJ",
+    "faa": "MTJ",
+    "mstat": "KMTJ0",
+    "location": {
+      "latitude": 38.5098,
+      "longitude": -107.8942,
+      "elevation": 1755
+    },
+    "bts_id": "13502"
+  },
+  {
+    "desc": "Martha's Vineyard MA: Martha's Vineyard Airport",
+    "icao": "KMVY",
+    "faa": "MVY",
+    "mstat": "KMVY0",
+    "location": {
+      "latitude": 41.393,
+      "longitude": -70.6143,
+      "elevation": 20
+    },
+    "bts_id": "13541"
+  },
+  {
+    "desc": "Marion/Herrin IL: Veterans Airport of Southern Illinois",
+    "icao": "KMWA",
+    "faa": "MWA",
+    "mstat": "KMWA0",
+    "location": {
+      "latitude": 37.755,
+      "longitude": -89.0111,
+      "elevation": 144
+    },
+    "bts_id": "13543"
+  },
+  {
+    "desc": "Myrtle Beach SC: Myrtle Beach International",
+    "icao": "KMYR",
+    "faa": "MYR",
+    "mstat": "74791",
+    "location": {
+      "latitude": 33.6833,
+      "longitude": -78.9333,
+      "elevation": 8
+    },
+    "bts_id": "13577"
+  },
+  {
+    "desc": "Yuma AZ: Yuma MCAS/Yuma International",
+    "icao": "KNYL",
+    "faa": "NYL",
+    "mstat": "KNYL0",
+    "location": {
+      "latitude": 32.6566,
+      "longitude": -114.606,
+      "elevation": 65
+    },
+    "bts_id": "16218"
+  },
+  {
+    "desc": "Jacksonville/Camp Lejeune NC: Albert J Ellis",
+    "icao": "KOAJ",
+    "faa": "OAJ",
+    "mstat": "KOAJ0",
+    "location": {
+      "latitude": 34.8292,
+      "longitude": -77.6121,
+      "elevation": 28
+    },
+    "bts_id": "13795"
+  },
+  {
+    "desc": "Oakland CA: Metro Oakland International",
+    "icao": "KOAK",
+    "faa": "OAK",
+    "mstat": "72493",
+    "location": {
+      "latitude": 37.7167,
+      "longitude": -122.2333,
+      "elevation": 2
+    },
+    "bts_id": "13796"
+  },
+  {
+    "desc": "Ogden UT: Ogden-Hinckley",
+    "icao": "KOGD",
+    "faa": "OGD",
+    "mstat": "72575",
+    "location": {
+      "latitude": 41.2,
+      "longitude": -112.0167,
+      "elevation": 1362
+    },
+    "bts_id": "13829"
+  },
+  {
+    "desc": "Kahului HI: Kahului Airport",
+    "icao": "PHOG",
+    "faa": "OGG",
+    "mstat": "91190",
+    "location": {
+      "latitude": 20.9,
+      "longitude": -156.4333,
+      "elevation": 16
+    },
+    "bts_id": "13830"
+  },
+  {
+    "desc": "Ogdensburg NY: Ogdensburg International",
+    "icao": "KOGS",
+    "faa": "OGS",
+    "mstat": "KOGS0",
+    "location": {
+      "latitude": 44.6819,
+      "longitude": -75.4655,
+      "elevation": 91
+    },
+    "bts_id": "13832"
+  },
+  {
+    "desc": "Oklahoma City OK: Will Rogers World",
+    "icao": "KOKC",
+    "faa": "OKC",
+    "mstat": "72353",
+    "location": {
+      "latitude": 35.3886,
+      "longitude": -97.6003,
+      "elevation": 398
+    },
+    "bts_id": "13851"
+  },
+  {
+    "desc": "Omaha NE: Eppley Airfield",
+    "icao": "KOMA",
+    "faa": "OMA",
+    "mstat": "72550",
+    "location": {
+      "latitude": 41.3,
+      "longitude": -95.9,
+      "elevation": 300
+    },
+    "bts_id": "13871"
+  },
+  {
+    "desc": "Nome AK: Nome Airport",
+    "icao": "PAOM",
+    "faa": "OME",
+    "mstat": "70200",
+    "location": {
+      "latitude": 64.5167,
+      "longitude": -165.4333,
+      "elevation": 11
+    },
+    "bts_id": "13873"
+  },
+  {
+    "desc": "Ontario CA: Ontario International",
+    "icao": "KONT",
+    "faa": "ONT",
+    "mstat": "8RXA6",
+    "location": {
+      "latitude": 34.0532,
+      "longitude": -117.5768,
+      "elevation": 287
+    },
+    "bts_id": "13891"
+  },
+  {
+    "desc": "Chicago IL: Chicago O'Hare International",
+    "icao": "KORD",
+    "faa": "ORD",
+    "mstat": "72530",
+    "location": {
+      "latitude": 41.9833,
+      "longitude": -87.9167,
+      "elevation": 204
+    },
+    "bts_id": "13930"
+  },
+  {
+    "desc": "Norfolk VA: Norfolk International",
+    "icao": "KORF",
+    "faa": "ORF",
+    "mstat": "72308",
+    "location": {
+      "latitude": 36.9,
+      "longitude": -76.2,
+      "elevation": 8
+    },
+    "bts_id": "13931"
+  },
+  {
+    "desc": "Worcester MA: Worcester Regional",
+    "icao": "KORH",
+    "faa": "ORH",
+    "mstat": "72510",
+    "location": {
+      "latitude": 42.2673,
+      "longitude": -71.8757,
+      "elevation": 308
+    },
+    "bts_id": "13933"
+  },
+  {
+    "desc": "North Bend/Coos Bay OR: Southwest Oregon Regional",
+    "icao": "KOTH",
+    "faa": "OTH",
+    "mstat": "72691",
+    "location": {
+      "latitude": 43.4169,
+      "longitude": -124.247,
+      "elevation": 5
+    },
+    "bts_id": "13964"
+  },
+  {
+    "desc": "Kotzebue AK: Ralph Wien Memorial",
+    "icao": "PAOT",
+    "faa": "OTZ",
+    "mstat": "70133",
+    "location": {
+      "latitude": 66.8833,
+      "longitude": -162.6,
+      "elevation": 3
+    },
+    "bts_id": "13970"
+  },
+  {
+    "desc": "Owensboro KY: Owensboro Daviess County Regional",
+    "icao": "KOWB",
+    "faa": "OWB",
+    "mstat": "KOWB0",
+    "location": {
+      "latitude": 37.7388,
+      "longitude": -87.1668,
+      "elevation": 124
+    },
+    "bts_id": "13983"
+  },
+  {
+    "desc": "Everett WA: Snohomish County",
+    "icao": "KPAE",
+    "faa": "PAE",
+    "mstat": "KPAE0",
+    "location": {
+      "latitude": 47.907,
+      "longitude": -122.2816,
+      "elevation": 185
+    },
+    "bts_id": "14004"
+  },
+  {
+    "desc": "Paducah KY: Barkley Regional",
+    "icao": "KPAH",
+    "faa": "PAH",
+    "mstat": "72435",
+    "location": {
+      "latitude": 37.05,
+      "longitude": -88.7667,
+      "elevation": 125
+    },
+    "bts_id": "14006"
+  },
+  {
+    "desc": "Plattsburgh NY: Plattsburgh International",
+    "icao": "KPBG",
+    "faa": "PBG",
+    "mstat": "KPBG0",
+    "location": {
+      "latitude": 44.6509,
+      "longitude": -73.4681,
+      "elevation": 71
+    },
+    "bts_id": "14025"
+  },
+  {
+    "desc": "West Palm Beach/Palm Beach FL: Palm Beach International",
+    "icao": "KPBI",
+    "faa": "PBI",
+    "mstat": "72203",
+    "location": {
+      "latitude": 26.6833,
+      "longitude": -80.1,
+      "elevation": 6
+    },
+    "bts_id": "14027"
+  },
+  {
+    "desc": "Portland OR: Portland International",
+    "icao": "KPDX",
+    "faa": "PDX",
+    "mstat": "72698",
+    "location": {
+      "latitude": 45.5833,
+      "longitude": -122.6,
+      "elevation": 8
+    },
+    "bts_id": "14057"
+  },
+  {
+    "desc": "Page AZ: Page Municipal",
+    "icao": "KPGA",
+    "faa": "PGA",
+    "mstat": "72371",
+    "location": {
+      "latitude": 36.9333,
+      "longitude": -111.45,
+      "elevation": 1314
+    },
+    "bts_id": "14081"
+  },
+  {
+    "desc": "Punta Gorda FL: Punta Gorda Airport",
+    "icao": "KPGD",
+    "faa": "PGD",
+    "mstat": "KPGD0",
+    "location": {
+      "latitude": 26.9189,
+      "longitude": -81.9909,
+      "elevation": 8
+    },
+    "bts_id": "14082"
+  },
+  {
+    "desc": "Greenville NC: Pitt Greenville",
+    "icao": "KPGV",
+    "faa": "PGV",
+    "mstat": "KPGV0",
+    "location": {
+      "latitude": 35.6352,
+      "longitude": -77.3853,
+      "elevation": 8
+    },
+    "bts_id": "14092"
+  },
+  {
+    "desc": "Newport News/Williamsburg VA: Newport News/Williamsburg International",
+    "icao": "KPHF",
+    "faa": "PHF",
+    "mstat": "KPHF0",
+    "location": {
+      "latitude": 37.1319,
+      "longitude": -76.493,
+      "elevation": 13
+    },
+    "bts_id": "14098"
+  },
+  {
+    "desc": "Philadelphia PA: Philadelphia International",
+    "icao": "KPHL",
+    "faa": "PHL",
+    "mstat": "72408",
+    "location": {
+      "latitude": 39.8667,
+      "longitude": -75.2333,
+      "elevation": 6
+    },
+    "bts_id": "14100"
+  },
+  {
+    "desc": "Phoenix AZ: Phoenix Sky Harbor International",
+    "icao": "KPHX",
+    "faa": "PHX",
+    "mstat": "72278",
+    "location": {
+      "latitude": 33.4333,
+      "longitude": -112.05,
+      "elevation": 345
+    },
+    "bts_id": "14107"
+  },
+  {
+    "desc": "Peoria IL: General Downing - Peoria International",
+    "icao": "KPIA",
+    "faa": "PIA",
+    "mstat": "72532",
+    "location": {
+      "latitude": 40.6667,
+      "longitude": -89.6839,
+      "elevation": 201
+    },
+    "bts_id": "14108"
+  },
+  {
+    "desc": "Hattiesburg/Laurel MS: Hattiesburg-Laurel Regional",
+    "icao": "KPIB",
+    "faa": "PIB",
+    "mstat": "KPIB0",
+    "location": {
+      "latitude": 31.4671,
+      "longitude": -89.3371,
+      "elevation": 91
+    },
+    "bts_id": "14109"
+  },
+  {
+    "desc": "St. Petersburg FL: St Pete Clearwater International",
+    "icao": "KPIE",
+    "faa": "PIE",
+    "mstat": "KPIE0",
+    "location": {
+      "latitude": 27.91,
+      "longitude": -82.6874,
+      "elevation": 3
+    },
+    "bts_id": "14112"
+  },
+  {
+    "desc": "Pocatello ID: Pocatello Regional",
+    "icao": "KPIH",
+    "faa": "PIH",
+    "mstat": "72578",
+    "location": {
+      "latitude": 42.9167,
+      "longitude": -112.6,
+      "elevation": 1356
+    },
+    "bts_id": "14113"
+  },
+  {
+    "desc": "Pierre SD: Pierre Regional",
+    "icao": "KPIR",
+    "faa": "PIR",
+    "mstat": "KPIR0",
+    "location": {
+      "latitude": 44.3827,
+      "longitude": -100.286,
+      "elevation": 532
+    },
+    "bts_id": "14120"
+  },
+  {
+    "desc": "Pittsburgh PA: Pittsburgh International",
+    "icao": "KPIT",
+    "faa": "PIT",
+    "mstat": "72520",
+    "location": {
+      "latitude": 40.4833,
+      "longitude": -80.0667,
+      "elevation": 367
+    },
+    "bts_id": "14122"
+  },
+  {
+    "desc": "Pellston MI: Pellston Regional Airport of Emmet County",
+    "icao": "KPLN",
+    "faa": "PLN",
+    "mstat": "KPLN0",
+    "location": {
+      "latitude": 45.5709,
+      "longitude": -84.7967,
+      "elevation": 220
+    },
+    "bts_id": "14150"
+  },
+  {
+    "desc": "Pensacola FL: Pensacola International",
+    "icao": "KPNS",
+    "faa": "PNS",
+    "mstat": "OZNF7",
+    "location": {
+      "latitude": 30.4781,
+      "longitude": -87.1869,
+      "elevation": 38
+    },
+    "bts_id": "14193"
+  },
+  {
+    "desc": "Presque Isle/Houlton ME: Presque Isle International",
+    "icao": "KPQI",
+    "faa": "PQI",
+    "mstat": "72713",
+    "location": {
+      "latitude": 46.6833,
+      "longitude": -68.05,
+      "elevation": 163
+    },
+    "bts_id": "14231"
+  },
+  {
+    "desc": "Prescott AZ: Prescott Regional Ernest A Love Field",
+    "icao": "KPRC",
+    "faa": "PRC",
+    "mstat": "KPRC0",
+    "location": {
+      "latitude": 34.6544,
+      "longitude": -112.4196,
+      "elevation": 1537
+    },
+    "bts_id": "14237"
+  },
+  {
+    "desc": "Pasco/Kennewick/Richland WA: Tri Cities",
+    "icao": "KPSC",
+    "faa": "PSC",
+    "mstat": "KPSC0",
+    "location": {
+      "latitude": 46.2647,
+      "longitude": -119.119,
+      "elevation": 125
+    },
+    "bts_id": "14252"
+  },
+  {
+    "desc": "Ponce PR: Mercedita",
+    "icao": "TJPS",
+    "faa": "PSE",
+    "mstat": "TJPS0",
+    "location": {
+      "latitude": 18.0167,
+      "longitude": -66.5667,
+      "elevation": 9
+    },
+    "bts_id": "14254"
+  },
+  {
+    "desc": "Petersburg AK: Petersburg James A Johnson",
+    "icao": "PAPG",
+    "faa": "PSG",
+    "mstat": "70386",
+    "location": {
+      "latitude": 56.8167,
+      "longitude": -132.9667,
+      "elevation": 0
+    },
+    "bts_id": "14256"
+  },
+  {
+    "desc": "Portsmouth NH: Portsmouth International at Pease",
+    "icao": "KPSM",
+    "faa": "PSM",
+    "mstat": "KPSM0",
+    "location": {
+      "latitude": 43.0779,
+      "longitude": -70.8233,
+      "elevation": 31
+    },
+    "bts_id": "14259"
+  },
+  {
+    "desc": "Palm Springs CA: Palm Springs International",
+    "icao": "KPSP",
+    "faa": "PSP",
+    "mstat": "KPSP0",
+    "location": {
+      "latitude": 33.8297,
+      "longitude": -116.5067,
+      "elevation": 145
+    },
+    "bts_id": "14262"
+  },
+  {
+    "desc": "Pullman WA: Pullman Moscow Regional",
+    "icao": "KPUW",
+    "faa": "PUW",
+    "mstat": "KPUW0",
+    "location": {
+      "latitude": 46.7439,
+      "longitude": -117.1096,
+      "elevation": 779
+    },
+    "bts_id": "14303"
+  },
+  {
+    "desc": "Providence RI: Rhode Island Tf Green International",
+    "icao": "KPVD",
+    "faa": "PVD",
+    "mstat": "72507",
+    "location": {
+      "latitude": 41.7333,
+      "longitude": -71.4333,
+      "elevation": 17
+    },
+    "bts_id": "14307"
+  },
+  {
+    "desc": "Provo UT: Provo Municipal",
+    "icao": "KPVU",
+    "faa": "PVU",
+    "mstat": "KPVU0",
+    "location": {
+      "latitude": 40.2192,
+      "longitude": -111.7234,
+      "elevation": 1371
+    },
+    "bts_id": "14314"
+  },
+  {
+    "desc": "Portland ME: Portland International Jetport",
+    "icao": "KPWM",
+    "faa": "PWM",
+    "mstat": "72606",
+    "location": {
+      "latitude": 43.65,
+      "longitude": -70.1333,
+      "elevation": 23
+    },
+    "bts_id": "14321"
+  },
+  {
+    "desc": "Rapid City SD: Rapid City Regional",
+    "icao": "KRAP",
+    "faa": "RAP",
+    "mstat": "72662",
+    "location": {
+      "latitude": 44.05,
+      "longitude": -103.05,
+      "elevation": 976
+    },
+    "bts_id": "14457"
+  },
+  {
+    "desc": "Redding CA: Redding Municipal",
+    "icao": "KRDD",
+    "faa": "RDD",
+    "mstat": "72592",
+    "location": {
+      "latitude": 40.5,
+      "longitude": -122.2833,
+      "elevation": 153
+    },
+    "bts_id": "14487"
+  },
+  {
+    "desc": "Bend/Redmond OR: Roberts Field",
+    "icao": "KRDM",
+    "faa": "RDM",
+    "mstat": "KRDM0",
+    "location": {
+      "latitude": 44.2541,
+      "longitude": -121.15,
+      "elevation": 939
+    },
+    "bts_id": "14489"
+  },
+  {
+    "desc": "Raleigh/Durham NC: Raleigh-Durham International",
+    "icao": "KRDU",
+    "faa": "RDU",
+    "mstat": "72306",
+    "location": {
+      "latitude": 35.9,
+      "longitude": -78.7667,
+      "elevation": 133
+    },
+    "bts_id": "14492"
+  },
+  {
+    "desc": "Rockford IL: Chicago/Rockford International",
+    "icao": "KRFD",
+    "faa": "RFD",
+    "mstat": "72543",
+    "location": {
+      "latitude": 42.2,
+      "longitude": -89.1,
+      "elevation": 224
+    },
+    "bts_id": "14512"
+  },
+  {
+    "desc": "Rhinelander WI: Rhinelander/Oneida County",
+    "icao": "KRHI",
+    "faa": "RHI",
+    "mstat": "KRHI0",
+    "location": {
+      "latitude": 45.6309,
+      "longitude": -89.4666,
+      "elevation": 495
+    },
+    "bts_id": "14520"
+  },
+  {
+    "desc": "Richmond VA: Richmond International",
+    "icao": "KRIC",
+    "faa": "RIC",
+    "mstat": "72401",
+    "location": {
+      "latitude": 37.5167,
+      "longitude": -77.3167,
+      "elevation": 51
+    },
+    "bts_id": "14524"
+  },
+  {
+    "desc": "Riverton/Lander WY: Central Wyoming Regional",
+    "icao": "KRIW",
+    "faa": "RIW",
+    "mstat": "72672",
+    "location": {
+      "latitude": 43.0667,
+      "longitude": -108.45,
+      "elevation": 1684
+    },
+    "bts_id": "14534"
+  },
+  {
+    "desc": "Rockland ME: Knox County Regional",
+    "icao": "KRKD",
+    "faa": "RKD",
+    "mstat": "MOXWI",
+    "location": {
+      "latitude": 44.0667,
+      "longitude": -69.1,
+      "elevation": 17
+    },
+    "bts_id": "14539"
+  },
+  {
+    "desc": "Rock Springs WY: Southwest Wyoming Regional",
+    "icao": "KRKS",
+    "faa": "RKS",
+    "mstat": "72574",
+    "location": {
+      "latitude": 41.6,
+      "longitude": -109.05,
+      "elevation": 2060
+    },
+    "bts_id": "14543"
+  },
+  {
+    "desc": "Reno NV: Reno/Tahoe International",
+    "icao": "KRNO",
+    "faa": "RNO",
+    "mstat": "72488",
+    "location": {
+      "latitude": 39.4833,
+      "longitude": -119.7667,
+      "elevation": 1345
+    },
+    "bts_id": "14570"
+  },
+  {
+    "desc": "Roanoke VA: Roanoke Blacksburg Regional",
+    "icao": "KROA",
+    "faa": "ROA",
+    "mstat": "72411",
+    "location": {
+      "latitude": 37.3167,
+      "longitude": -79.9667,
+      "elevation": 358
+    },
+    "bts_id": "14574"
+  },
+  {
+    "desc": "Rochester NY: Frederick Douglass Grtr Rochester International",
+    "icao": "KROC",
+    "faa": "ROC",
+    "mstat": "72529",
+    "location": {
+      "latitude": 43.1167,
+      "longitude": -77.6833,
+      "elevation": 170
+    },
+    "bts_id": "14576"
+  },
+  {
+    "desc": "Roswell NM: Roswell Air Center",
+    "icao": "KROW",
+    "faa": "ROW",
+    "mstat": "72268",
+    "location": {
+      "latitude": 33.3,
+      "longitude": -104.5333,
+      "elevation": 1118
+    },
+    "bts_id": "14588"
+  },
+  {
+    "desc": "Rochester MN: Rochester International",
+    "icao": "KRST",
+    "faa": "RST",
+    "mstat": "72644",
+    "location": {
+      "latitude": 43.9,
+      "longitude": -92.5,
+      "elevation": 401
+    },
+    "bts_id": "14633"
+  },
+  {
+    "desc": "Fort Myers FL: Southwest Florida International",
+    "icao": "KRSW",
+    "faa": "RSW",
+    "mstat": "KRSW0",
+    "location": {
+      "latitude": 26.5362,
+      "longitude": -81.7552,
+      "elevation": 9
+    },
+    "bts_id": "14635"
+  },
+  {
+    "desc": "Santa Fe NM: Santa Fe Municipal",
+    "icao": "KSAF",
+    "faa": "SAF",
+    "mstat": "KSAF0",
+    "location": {
+      "latitude": 35.6171,
+      "longitude": -106.0894,
+      "elevation": 1935
+    },
+    "bts_id": "14674"
+  },
+  {
+    "desc": "San Diego CA: San Diego International",
+    "icao": "KSAN",
+    "faa": "SAN",
+    "mstat": "72290",
+    "location": {
+      "latitude": 32.7333,
+      "longitude": -117.1833,
+      "elevation": 5
+    },
+    "bts_id": "14679"
+  },
+  {
+    "desc": "San Antonio TX: San Antonio International",
+    "icao": "KSAT",
+    "faa": "SAT",
+    "mstat": "72253",
+    "location": {
+      "latitude": 29.5333,
+      "longitude": -98.4667,
+      "elevation": 247
+    },
+    "bts_id": "14683"
+  },
+  {
+    "desc": "Savannah GA: Savannah/Hilton Head International",
+    "icao": "KSAV",
+    "faa": "SAV",
+    "mstat": "72207",
+    "location": {
+      "latitude": 32.1167,
+      "longitude": -81.0333,
+      "elevation": 16
+    },
+    "bts_id": "14685"
+  },
+  {
+    "desc": "Istanbul Turkey: Sabiha Gokcen",
+    "icao": "KSAW",
+    "faa": "SAW",
+    "mstat": "72628",
+    "location": {
+      "latitude": 46.34,
+      "longitude": -87.38,
+      "elevation": 372
+    },
+    "bts_id": "14686"
+  },
+  {
+    "desc": "Santa Barbara CA: Santa Barbara Municipal",
+    "icao": "KSBA",
+    "faa": "SBA",
+    "mstat": "72392",
+    "location": {
+      "latitude": 34.4262,
+      "longitude": -119.8415,
+      "elevation": 4
+    },
+    "bts_id": "14689"
+  },
+  {
+    "desc": "San Bernardino CA: San Bernardino International",
+    "icao": "KSBD",
+    "faa": "SBD",
+    "mstat": "KSBD0",
+    "location": {
+      "latitude": 34.0954,
+      "longitude": -117.2349,
+      "elevation": 353
+    },
+    "bts_id": "14691"
+  },
+  {
+    "desc": "South Bend IN: South Bend International",
+    "icao": "KSBN",
+    "faa": "SBN",
+    "mstat": "72535",
+    "location": {
+      "latitude": 41.7,
+      "longitude": -86.3167,
+      "elevation": 244
+    },
+    "bts_id": "14696"
+  },
+  {
+    "desc": "San Luis Obispo CA: San Luis County Regional",
+    "icao": "KSBP",
+    "faa": "SBP",
+    "mstat": "KSBP0",
+    "location": {
+      "latitude": 35.2373,
+      "longitude": -120.6426,
+      "elevation": 65
+    },
+    "bts_id": "14698"
+  },
+  {
+    "desc": "Salisbury MD: Salisbury-Ocean City/Wicomico Regional",
+    "icao": "KSBY",
+    "faa": "SBY",
+    "mstat": "72398",
+    "location": {
+      "latitude": 38.3402,
+      "longitude": -75.5095,
+      "elevation": 16
+    },
+    "bts_id": "14704"
+  },
+  {
+    "desc": "Deadhorse AK: Deadhorse Airport",
+    "icao": "PASC",
+    "faa": "SCC",
+    "mstat": "PASC0",
+    "location": {
+      "latitude": 70.1947,
+      "longitude": -148.4652,
+      "elevation": 20
+    },
+    "bts_id": "14709"
+  },
+  {
+    "desc": "Stockton CA: Stockton Metro",
+    "icao": "KSCK",
+    "faa": "SCK",
+    "mstat": "72492",
+    "location": {
+      "latitude": 37.9,
+      "longitude": -121.2333,
+      "elevation": 9
+    },
+    "bts_id": "14716"
+  },
+  {
+    "desc": "Louisville KY: Louisville Muhammad Ali International",
+    "icao": "KSDF",
+    "faa": "SDF",
+    "mstat": "72423",
+    "location": {
+      "latitude": 38.1833,
+      "longitude": -85.7333,
+      "elevation": 151
+    },
+    "bts_id": "14730"
+  },
+  {
+    "desc": "Seattle WA: Seattle/Tacoma International",
+    "icao": "KSEA",
+    "faa": "SEA",
+    "mstat": "72793",
+    "location": {
+      "latitude": 47.45,
+      "longitude": -122.3167,
+      "elevation": 131
+    },
+    "bts_id": "14747"
+  },
+  {
+    "desc": "Sanford FL: Orlando Sanford International",
+    "icao": "KSFB",
+    "faa": "SFB",
+    "mstat": "KSFB0",
+    "location": {
+      "latitude": 28.7767,
+      "longitude": -81.2355,
+      "elevation": 17
+    },
+    "bts_id": "14761"
+  },
+  {
+    "desc": "San Francisco CA: San Francisco International",
+    "icao": "KSFO",
+    "faa": "SFO",
+    "mstat": "72494",
+    "location": {
+      "latitude": 37.6167,
+      "longitude": -122.3667,
+      "elevation": 3
+    },
+    "bts_id": "14771"
+  },
+  {
+    "desc": "Springfield MO: Springfield-Branson National",
+    "icao": "KSGF",
+    "faa": "SGF",
+    "mstat": "72440",
+    "location": {
+      "latitude": 37.2333,
+      "longitude": -93.05,
+      "elevation": 386
+    },
+    "bts_id": "14783"
+  },
+  {
+    "desc": "St. George UT: St George Regional",
+    "icao": "KSGU",
+    "faa": "SGU",
+    "mstat": "KSGU0",
+    "location": {
+      "latitude": 37.0906,
+      "longitude": -113.5931,
+      "elevation": 896
+    },
+    "bts_id": "14794"
+  },
+  {
+    "desc": "Staunton VA: Shenandoah Valley Regional",
+    "icao": "KSHD",
+    "faa": "SHD",
+    "mstat": "KSHD0",
+    "location": {
+      "latitude": 38.2638,
+      "longitude": -78.8964,
+      "elevation": 366
+    },
+    "bts_id": "14802"
+  },
+  {
+    "desc": "Sheridan WY: Sheridan County",
+    "icao": "KSHR",
+    "faa": "SHR",
+    "mstat": "72666",
+    "location": {
+      "latitude": 44.7667,
+      "longitude": -106.9667,
+      "elevation": 1226
+    },
+    "bts_id": "14812"
+  },
+  {
+    "desc": "Shreveport LA: Shreveport Regional",
+    "icao": "KSHV",
+    "faa": "SHV",
+    "mstat": "72248",
+    "location": {
+      "latitude": 32.45,
+      "longitude": -93.0,
+      "elevation": 79
+    },
+    "bts_id": "14814"
+  },
+  {
+    "desc": "San Juan PR: Isla Grande",
+    "icao": "TJIG",
+    "faa": "SIG",
+    "mstat": "TJIG0",
+    "location": {
+      "latitude": 18.4568,
+      "longitude": -66.0981,
+      "elevation": 3
+    },
+    "bts_id": "14819"
+  },
+  {
+    "desc": "Sitka AK: Sitka Rocky Gutierrez",
+    "icao": "PASI",
+    "faa": "SIT",
+    "mstat": "70371",
+    "location": {
+      "latitude": 57.05,
+      "longitude": -135.3667,
+      "elevation": 6
+    },
+    "bts_id": "14828"
+  },
+  {
+    "desc": "San Jose CA: Norman Y. Mineta San Jose International",
+    "icao": "KSJC",
+    "faa": "SJC",
+    "mstat": "KSJC0",
+    "location": {
+      "latitude": 37.3627,
+      "longitude": -121.9291,
+      "elevation": 19
+    },
+    "bts_id": "14831"
+  },
+  {
+    "desc": "San Angelo TX: San Angelo Regional/Mathis Field",
+    "icao": "KSJT",
+    "faa": "SJT",
+    "mstat": "72263",
+    "location": {
+      "latitude": 31.35,
+      "longitude": -100.5,
+      "elevation": 584
+    },
+    "bts_id": "14842"
+  },
+  {
+    "desc": "San Juan PR: Luis Munoz Marin International",
+    "icao": "TJSJ",
+    "faa": "SJU",
+    "mstat": "78526",
+    "location": {
+      "latitude": 18.4333,
+      "longitude": -66.0,
+      "elevation": 3
+    },
+    "bts_id": "14843"
+  },
+  {
+    "desc": "Salt Lake City UT: Salt Lake City International",
+    "icao": "KSLC",
+    "faa": "SLC",
+    "mstat": "72572",
+    "location": {
+      "latitude": 40.7833,
+      "longitude": -111.9667,
+      "elevation": 1288
+    },
+    "bts_id": "14869"
+  },
+  {
+    "desc": "Salina KS: Salina Regional",
+    "icao": "KSLN",
+    "faa": "SLN",
+    "mstat": "74545",
+    "location": {
+      "latitude": 38.65,
+      "longitude": -97.8,
+      "elevation": 0
+    },
+    "bts_id": "14877"
+  },
+  {
+    "desc": "Sacramento CA: Sacramento International",
+    "icao": "KSMF",
+    "faa": "SMF",
+    "mstat": "KSMF0",
+    "location": {
+      "latitude": 38.6954,
+      "longitude": -121.5908,
+      "elevation": 8
+    },
+    "bts_id": "14893"
+  },
+  {
+    "desc": "Santa Maria CA: Santa Maria Public/Capt. G. Allan Hancock Field",
+    "icao": "KSMX",
+    "faa": "SMX",
+    "mstat": "72394",
+    "location": {
+      "latitude": 34.9,
+      "longitude": -120.4667,
+      "elevation": 79
+    },
+    "bts_id": "14905"
+  },
+  {
+    "desc": "Santa Ana CA: John Wayne Airport-Orange County",
+    "icao": "KSNA",
+    "faa": "SNA",
+    "mstat": "KSNA0",
+    "location": {
+      "latitude": 33.6757,
+      "longitude": -117.8682,
+      "elevation": 17
+    },
+    "bts_id": "14908"
+  },
+  {
+    "desc": "Springfield IL: Abraham Lincoln Capital",
+    "icao": "KSPI",
+    "faa": "SPI",
+    "mstat": "72439",
+    "location": {
+      "latitude": 39.8442,
+      "longitude": -89.6781,
+      "elevation": 182
+    },
+    "bts_id": "14952"
+  },
+  {
+    "desc": "Wichita Falls TX: Sheppard AFB/Wichita Falls Municipal",
+    "icao": "KSPS",
+    "faa": "SPS",
+    "mstat": "72351",
+    "location": {
+      "latitude": 33.9833,
+      "longitude": -98.4928,
+      "elevation": 309
+    },
+    "bts_id": "14960"
+  },
+  {
+    "desc": "Sarasota/Bradenton FL: Sarasota/Bradenton International",
+    "icao": "KSRQ",
+    "faa": "SRQ",
+    "mstat": "KSRQ0",
+    "location": {
+      "latitude": 27.3954,
+      "longitude": -82.5544,
+      "elevation": 9
+    },
+    "bts_id": "14986"
+  },
+  {
+    "desc": "St. Cloud MN: St. Cloud Regional",
+    "icao": "KSTC",
+    "faa": "STC",
+    "mstat": "72655",
+    "location": {
+      "latitude": 45.5466,
+      "longitude": -94.0599,
+      "elevation": 314
+    },
+    "bts_id": "15008"
+  },
+  {
+    "desc": "St. Louis MO: St Louis Lambert International",
+    "icao": "KSTL",
+    "faa": "STL",
+    "mstat": "72434",
+    "location": {
+      "latitude": 38.75,
+      "longitude": -90.0333,
+      "elevation": 184
+    },
+    "bts_id": "15016"
+  },
+  {
+    "desc": "Santa Rosa CA: Charles M. Schulz - Sonoma County",
+    "icao": "KSTS",
+    "faa": "STS",
+    "mstat": "KSTS0",
+    "location": {
+      "latitude": 38.509,
+      "longitude": -122.8129,
+      "elevation": 39
+    },
+    "bts_id": "15023"
+  },
+  {
+    "desc": "Charlotte Amalie VI: Cyril E King",
+    "icao": "TIST",
+    "faa": "STT",
+    "mstat": "78543",
+    "location": {
+      "latitude": 18.3333,
+      "longitude": -64.9833,
+      "elevation": 7
+    },
+    "bts_id": "15024"
+  },
+  {
+    "desc": "Christiansted VI: Henry E. Rohlsen",
+    "icao": "TISX",
+    "faa": "STX",
+    "mstat": "78547",
+    "location": {
+      "latitude": 17.7,
+      "longitude": -64.8,
+      "elevation": 20
+    },
+    "bts_id": "15027"
+  },
+  {
+    "desc": "Sun Valley/Hailey/Ketchum ID: Friedman Memorial",
+    "icao": "KSUN",
+    "faa": "SUN",
+    "mstat": "KSUN0",
+    "location": {
+      "latitude": 43.5038,
+      "longitude": -114.2956,
+      "elevation": 1622
+    },
+    "bts_id": "15041"
+  },
+  {
+    "desc": "Sioux City IA: Sioux Gateway Brig Gen Bud Day Field",
+    "icao": "KSUX",
+    "faa": "SUX",
+    "mstat": "72557",
+    "location": {
+      "latitude": 42.3833,
+      "longitude": -96.05,
+      "elevation": 335
+    },
+    "bts_id": "15048"
+  },
+  {
+    "desc": "Newburgh/Poughkeepsie NY: New York Stewart International",
+    "icao": "KSWF",
+    "faa": "SWF",
+    "mstat": "O5PFW",
+    "location": {
+      "latitude": 41.5,
+      "longitude": -74.1,
+      "elevation": 150
+    },
+    "bts_id": "15070"
+  },
+  {
+    "desc": "Stillwater OK: Stillwater Regional",
+    "icao": "KSWO",
+    "faa": "SWO",
+    "mstat": "KSWO0",
+    "location": {
+      "latitude": 36.1612,
+      "longitude": -97.0857,
+      "elevation": 305
+    },
+    "bts_id": "15074"
+  },
+  {
+    "desc": "Syracuse NY: Syracuse Hancock International",
+    "icao": "KSYR",
+    "faa": "SYR",
+    "mstat": "72519",
+    "location": {
+      "latitude": 43.1167,
+      "longitude": -76.1,
+      "elevation": 125
+    },
+    "bts_id": "15096"
+  },
+  {
+    "desc": "Fort Leonard Wood MO: Waynesville-St. Robert Regional Forney Field",
+    "icao": "KTBN",
+    "faa": "TBN",
+    "mstat": "74550",
+    "location": {
+      "latitude": 37.5167,
+      "longitude": -92.7,
+      "elevation": 390
+    },
+    "bts_id": "15138"
+  },
+  {
+    "desc": "Tallahassee FL: Tallahassee International",
+    "icao": "KTLH",
+    "faa": "TLH",
+    "mstat": "72214",
+    "location": {
+      "latitude": 30.4,
+      "longitude": -84.0167,
+      "elevation": 25
+    },
+    "bts_id": "15249"
+  },
+  {
+    "desc": "Toledo OH: Eugene F Kranz Toledo Express",
+    "icao": "KTOL",
+    "faa": "TOL",
+    "mstat": "72536",
+    "location": {
+      "latitude": 41.5833,
+      "longitude": -83.8,
+      "elevation": 208
+    },
+    "bts_id": "15295"
+  },
+  {
+    "desc": "Tampa FL: Tampa International",
+    "icao": "KTPA",
+    "faa": "TPA",
+    "mstat": "72211",
+    "location": {
+      "latitude": 27.9667,
+      "longitude": -82.5333,
+      "elevation": 8
+    },
+    "bts_id": "15304"
+  },
+  {
+    "desc": "Bristol/Johnson City/Kingsport TN: Tri Cities",
+    "icao": "KTRI",
+    "faa": "TRI",
+    "mstat": "72335",
+    "location": {
+      "latitude": 36.4752,
+      "longitude": -82.4074,
+      "elevation": 463
+    },
+    "bts_id": "15323"
+  },
+  {
+    "desc": "Trenton NJ: Trenton Mercer",
+    "icao": "KTTN",
+    "faa": "TTN",
+    "mstat": "KTTN0",
+    "location": {
+      "latitude": 40.2767,
+      "longitude": -74.8135,
+      "elevation": 65
+    },
+    "bts_id": "15356"
+  },
+  {
+    "desc": "Tulsa OK: Tulsa International",
+    "icao": "KTUL",
+    "faa": "TUL",
+    "mstat": "72356",
+    "location": {
+      "latitude": 36.2,
+      "longitude": -95.8881,
+      "elevation": 206
+    },
+    "bts_id": "15370"
+  },
+  {
+    "desc": "Tupelo MS: Tupelo Regional",
+    "icao": "KTUP",
+    "faa": "TUP",
+    "mstat": "72332",
+    "location": {
+      "latitude": 34.2667,
+      "longitude": -88.1,
+      "elevation": 105
+    },
+    "bts_id": "15374"
+  },
+  {
+    "desc": "Tucson AZ: Tucson International",
+    "icao": "KTUS",
+    "faa": "TUS",
+    "mstat": "72274",
+    "location": {
+      "latitude": 32.1333,
+      "longitude": -110.95,
+      "elevation": 805
+    },
+    "bts_id": "15376"
+  },
+  {
+    "desc": "Traverse City MI: Cherry Capital",
+    "icao": "KTVC",
+    "faa": "TVC",
+    "mstat": "KTVC0",
+    "location": {
+      "latitude": 44.7416,
+      "longitude": -85.5824,
+      "elevation": 190
+    },
+    "bts_id": "15380"
+  },
+  {
+    "desc": "Twin Falls ID: Joslin Field - Magic Valley Regional",
+    "icao": "KTWF",
+    "faa": "TWF",
+    "mstat": "KTWF0",
+    "location": {
+      "latitude": 42.4818,
+      "longitude": -114.4878,
+      "elevation": 1266
+    },
+    "bts_id": "15389"
+  },
+  {
+    "desc": "Texarkana AR: Texarkana Regional-Webb Field",
+    "icao": "KTXK",
+    "faa": "TXK",
+    "mstat": "KTXK0",
+    "location": {
+      "latitude": 33.4537,
+      "longitude": -93.991,
+      "elevation": 119
+    },
+    "bts_id": "15401"
+  },
+  {
+    "desc": "Tyler TX: Tyler Pounds Regional",
+    "icao": "KTYR",
+    "faa": "TYR",
+    "mstat": "KTYR0",
+    "location": {
+      "latitude": 32.3541,
+      "longitude": -95.4024,
+      "elevation": 166
+    },
+    "bts_id": "15411"
+  },
+  {
+    "desc": "Knoxville TN: McGhee Tyson",
+    "icao": "KTYS",
+    "faa": "TYS",
+    "mstat": "72326",
+    "location": {
+      "latitude": 35.8167,
+      "longitude": -83.9833,
+      "elevation": 299
+    },
+    "bts_id": "15412"
+  },
+  {
+    "desc": "Valdosta GA: Valdosta Regional",
+    "icao": "KVLD",
+    "faa": "VLD",
+    "mstat": "KVLD0",
+    "location": {
+      "latitude": 30.7814,
+      "longitude": -83.2762,
+      "elevation": 62
+    },
+    "bts_id": "15607"
+  },
+  {
+    "desc": "Valparaiso FL: Eglin AFB Destin Fort Walton Beach",
+    "icao": "KVPS",
+    "faa": "VPS",
+    "mstat": "72221",
+    "location": {
+      "latitude": 30.4833,
+      "longitude": -86.5167,
+      "elevation": 26
+    },
+    "bts_id": "15624"
+  },
+  {
+    "desc": "Wrangell AK: Wrangell Airport",
+    "icao": "PAWG",
+    "faa": "WRG",
+    "mstat": "70387",
+    "location": {
+      "latitude": 56.4833,
+      "longitude": -132.3667,
+      "elevation": 13
+    },
+    "bts_id": "15841"
+  },
+  {
+    "desc": "Westerly RI: Westerly State",
+    "icao": "KWST",
+    "faa": "WST",
+    "mstat": "KWST0",
+    "location": {
+      "latitude": 41.3496,
+      "longitude": -71.8034,
+      "elevation": 25
+    },
+    "bts_id": "15855"
+  },
+  {
+    "desc": "West Yellowstone MT: Yellowstone",
+    "icao": "KWYS",
+    "faa": "WYS",
+    "mstat": "KWYS0",
+    "location": {
+      "latitude": 44.6884,
+      "longitude": -111.1176,
+      "elevation": 2027
+    },
+    "bts_id": "15897"
+  },
+  {
+    "desc": "Fayetteville AR: Northwest Arkansas National",
+    "icao": "KXNA",
+    "faa": "XNA",
+    "mstat": "KXNA0",
+    "location": {
+      "latitude": 36.2819,
+      "longitude": -94.3068,
+      "elevation": 393
+    },
+    "bts_id": "15919"
+  },
+  {
+    "desc": "Williston ND: Williston Basin International",
+    "icao": "KXWA",
+    "faa": "XWA",
+    "mstat": "TRGWI",
+    "location": {
+      "latitude": 48.2609,
+      "longitude": -103.7511,
+      "elevation": 717
+    },
+    "bts_id": "16869"
+  },
+  {
+    "desc": "Yakutat AK: Yakutat Airport",
+    "icao": "PAYA",
+    "faa": "YAK",
+    "mstat": "70361",
+    "location": {
+      "latitude": 59.5,
+      "longitude": -139.6667,
+      "elevation": 10
+    },
+    "bts_id": "15991"
+  },
+  {
+    "desc": "Yakima WA: Yakima Air Terminal/McAllister Field",
+    "icao": "KYKM",
+    "faa": "YKM",
+    "mstat": "72781",
+    "location": {
+      "latitude": 46.5667,
+      "longitude": -120.5333,
+      "elevation": 334
+    },
+    "bts_id": "16101"
+  }
+]
