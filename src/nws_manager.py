@@ -7,8 +7,8 @@ from typing import Final
 class Forecaster:
     NWS_POINTS_ENDPOINT: Final = 'https://api.weather.gov/points/{lat},{lon}'
 
-    def __init__(self):
-        with open('../data/airport_mappings.json', 'r') as f_mappings:
+    def __init__(self, map_path):
+        with open(map_path, 'r') as f_mappings:
             self.AIRPORT_MAPPINGS = json.load(f_mappings)
         print(f'{__name__}: Initialized weather API module')
 
@@ -47,7 +47,7 @@ class Forecaster:
 
                 if point_res.status_code != 200:
                     raise ConnectionError(
-                        f'NWS point lookup returned {point_res.status_code}.')
+                        f'NWS point lookup returned {point_res.status_code}: {point_res.text}')
 
                 # Get hourly forecast for the next 7 days using URL provided
                 # in the previous API response's body
@@ -56,7 +56,7 @@ class Forecaster:
 
                 if hourly_res.status_code != 200:
                     raise ConnectionError(
-                        f'NWS forecast lookup returned {hourly_res.status_code}.')
+                        f'NWS forecast lookup returned {hourly_res.status_code}: {hourly_res.text}')
 
                 # From all 1-hour periods in the forecast, find and return
                 # the one containing iso_timestamp
@@ -80,5 +80,5 @@ class Forecaster:
 
 if __name__ == '__main__':
     # Simple test case for Detroit Metro Airport
-    print(json.dumps(Forecaster().get_nws_forecast_from_bts(
-        11433, '2023-02-18T17:35:56.000Z'), indent=2))
+    print(json.dumps(Forecaster('../data/airport_mappings.json').get_nws_forecast_from_bts(
+        10170, datetime.datetime.now().isoformat()), indent=2))
