@@ -1,3 +1,6 @@
+# Data file that is too large for GitHub
+data/historical/weather/weather_by_bts_id.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
