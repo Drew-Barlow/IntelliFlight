@@ -3,7 +3,9 @@ import csv
 import random
 import math
 
-from ..constants import WEATHER_FIELDS
+from bisect import bisect_right
+
+from ..constants import WEATHER_FIELDS, TIME_INTERVAL_SIZE
 from ..util import DATA_PATH
 
 
@@ -69,3 +71,33 @@ def shuffle_and_partition(dataset: list, rng_seed: int, partition_count: int):
 
     # Floor partition indices to integer values
     return [math.floor(i) for i in partition_indices]
+
+
+def discretize(dataset: list):
+    """Discretize data in-place"""
+    wind_map = None
+    temp_map = None
+    with open('data/maps/wind_speeds.csv', 'r', encoding='utf-8') as w_in, \
+            open('data/maps/temp_ranges.csv', 'r', encoding='utf-8') as t_in:
+        wind_map = list(csv.DictReader(w_in))
+        temp_map = list(csv.DictReader(t_in))
+
+    for row in dataset:
+        for prefix in ['src_', 'dst_']:
+            # Discretize temperature
+            temp = row[f'{prefix}tavg']
+            thresholds = [float(i['min']) for i in temp_map[1:]]
+            index = bisect_right(thresholds, temp)
+            row[f'{prefix}tavg'] = temp_map[index]['key']
+
+            # Discretize wind speed
+            wind = row[f'{prefix}wspd']
+            thresholds = [float(i['min']) for i in wind_map[1:]]
+            index = bisect_right(thresholds, wind)
+            row[f'{prefix}wspd'] = temp_map[index]['key']
+
+        # Discretize timestamp into 30min segments
+
+        dep_time = row['CRS_DEP_TIME']
+        dep_min = int(dep_time[2:])
+        row['CRS_DEP_TIME'] = f'{dep_time[:2]}{dep_min - (dep_min % TIME_INTERVAL_SIZE)}'

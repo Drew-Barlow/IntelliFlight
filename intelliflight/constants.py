@@ -10,3 +10,5 @@ WEATHER_FIELDS: Final = [
         'forecast': 'windSpeed'
     }
 ]
+
+TIME_INTERVAL_SIZE: Final = 30  # minutes
