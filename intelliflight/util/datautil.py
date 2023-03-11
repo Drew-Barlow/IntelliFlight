@@ -100,4 +100,4 @@ def discretize(dataset: list):
 
         dep_time = row['CRS_DEP_TIME']
         dep_min = int(dep_time[2:])
-        row['CRS_DEP_TIME'] = f'{dep_time[:2]}{dep_min - (dep_min % TIME_INTERVAL_SIZE)}'
+        row['CRS_DEP_TIME'] = f'{dep_time[:2]}{str(dep_min - (dep_min % TIME_INTERVAL_SIZE)).rjust(2, "0")}'
