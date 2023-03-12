@@ -2,55 +2,117 @@ from . import ai_model
 import random
 import math
 import csv
+import datetime
 
 from ..util import datautil
 
 
 class Bayes_Net(ai_model.AI_Model):
-    def __init__(self, params_path=None):
+    def __init__(self, params_path: str = None):
         super().__init__(params_path)
-        self.ARRIVAL_STATUSES = {}
+
+        # Declare Bayes Net parameter dicts
+        # For feature value x and arrival status s,
+        # Structure is p(x | s) = dict[x][s]
+        # e.g. p(Monday|0-14min delay) = self.p_day['1']['delay:0']
+        self.p_status: dict[str, float] = None
+        self.p_day: dict[str, dict[str, float]] = None
+        self.p_airline: dict[str, dict[str, float]] = None
+        self.p_src: dict[str, dict[str, float]] = None
+        self.p_dst: dict[str, dict[str, float]] = None
+        self.p_dep_time: dict[str, dict[str, float]] = None
+        self.p_src_tmp: dict[str, dict[str, float]] = None
+        self.p_dst_tmp: dict[str, dict[str, float]] = None
+        self.p_src_wnd: dict[str, dict[str, float]] = None
+        self.p_dst_wind: dict[str, dict[str, float]] = None
+        # Flag indicating whether tables are initialized to values
+        self.p_tables_set: bool = False
+
+        # Frequency dicts. These store the frequency of variables
+        # in the training data and are used to generate probability values.
+        self.status_counter: dict[str, int] = None
+        self.day_counter: dict[str, dict[str, int]] = None
+        self.airline_counter: dict[str, dict[str, int]] = None
+        self.src_counter: dict[str, dict[str, int]] = None
+        self.dst_counter: dict[str, dict[str, int]] = None
+        self.dep_time_counter: dict[str, dict[str, int]] = None
+        self.src_tmp_counter: dict[str, dict[str, int]] = None
+        self.dst_tmp_counter: dict[str, dict[str, int]] = None
+        self.src_wind_counter: dict[str, dict[str, int]] = None
+        self.dst_wind_counter: dict[str, dict[str, int]] = None
+
+        # Information about which features occur in the training data
+        self.seen_airports: set = None
+        self.seen_carriers: set = None
+
+        # Parameters used to train model
+        self.rng_seed: int = None
+
+        # Generate key values for possible arrival states:
+        # -Arrived at destination (ahead, on-time, or delayed) [delay:<code>]
+        # -Cancelled [cancel:<code>]
+        # -Diverted to another airport [divert]
+        self.ARRIVAL_STATUSES: dict[str, str] = {}
+        # Open files containing codes and descriptions for arrival delay/ahead/on-time buckets
+        # and cancellation reasons.
         with open('data/maps/L_CANCELLATION.csv', 'r', encoding='utf-8') as cancel_in, \
                 open('data/maps/L_ONTIME_DELAY_GROUPS.csv', 'r', encoding='utf-8') as delay_in:
             cancellation_codes = csv.DictReader(cancel_in)
             delay_groups = csv.DictReader(delay_in)
+
+            # Format:
+            # { 'cancel:<code>': <associated cancellation reason> }
             for code in cancellation_codes:
                 self.ARRIVAL_STATUSES[f'cancel:{code["Code"]}'] = code['Description']
+
+            # Format:
+            # { 'delay:<code>': <description of time range for bucket> }
             for delay in delay_groups:
                 self.ARRIVAL_STATUSES[f'delay:{delay["Code"]}'] = delay['Description']
+
+            # Format:
+            # { 'divert': 'Diverted' }
             self.ARRIVAL_STATUSES['divert'] = 'Diverted'
 
-            self.DEP_TIMES = []
+            # Generate values for departure time buckets. Format:
+            # [ '0000', '0030', '0100', ..., '2300', '2330' ]
+            self.DEP_TIMES: list[str] = []
             for i in range(24):
                 for j in ['00', '30']:
                     self.DEP_TIMES.append(f'{str(i).rjust(2, "0")}{j}')
 
+            # Pull keys for temperature and wind buckets
             with open('data/maps/temp_ranges.csv', 'r', encoding='utf-8') as temp_in, \
                     open('data/maps/wind_speeds.csv', 'r', encoding='utf-8') as wind_in:
                 temp_codes = csv.DictReader(temp_in)
                 wind_codes = csv.DictReader(wind_in)
-                self.TEMP_KEYS = [code['key'] for code in temp_codes]
-                self.WIND_KEYS = [code['key'] for code in wind_codes]
+                self.TEMP_KEYS: list[str] = [code['key']
+                                             for code in temp_codes]
+                self.WIND_KEYS: list[str] = [code['key']
+                                             for code in wind_codes]
 
     def load_params(self, path: str):
         raise NotImplementedError
 
     def train_model(self, flight_path: str, partition_count: int, k_step_percent: float, max_k_fraction: float, rng_seed: int = None):
+        start_t: datetime.datetime = datetime.datetime.now().timestamp()
         if rng_seed is None:
             rng_seed = int(random.random() * 1000000000)
+        self.rng_seed = rng_seed
+        print(f'BayesNet: RNG seed is {self.rng_seed}.')
 
         # Process dataset
         print('BayesNet: Merging training datasets.')
-        data, seen_carriers, seen_src, seen_dst = datautil.merge_training_data(
+        data, self.seen_carriers, seen_src, seen_dst = datautil.merge_training_data(
             flight_path, 'data/historical/weather/weather_by_bts_id.json')
-        seen_airports = seen_src.copy()
+        self.seen_airports = seen_src.copy()
         for dst in seen_dst:
-            seen_airports.add(dst)
+            self.seen_airports.add(dst)
         print('BayesNet: Discretizing data.')
         datautil.discretize(data)
         print('BayesNet: Shuffling and partitioning data.')
         partitions = datautil.shuffle_and_partition(
-            data, rng_seed, partition_count)
+            data, self.rng_seed, partition_count)
 
         # Determine laplace smoothing hyperparameter (k) using k-fold cross-validation with validation and test set
         data_len = len(data)
@@ -82,114 +144,252 @@ class Bayes_Net(ai_model.AI_Model):
                     validation_end = data_len
                 else:
                     validation_end = partitions[validation_index + 1]
+
+                validation_pass = \
+                    validation_index + 1 - int(passed_test_partition)
                 print(
-                    f'BayesNet:     Processing validation partition {validation_index + 1 - int(passed_test_partition)} of {len(partitions) - 1}.')
+                    f'BayesNet:     Processing validation partition {validation_pass} of {len(partitions) - 1}.')
 
-                status_counter = {
-                    key: 0 for key in self.ARRIVAL_STATUSES.keys()}
-                day_counter = {str(day_k): status_counter.copy()
-                               for day_k in range(1, 8)}
-                airline_counter = {aline_k: status_counter.copy()
-                                   for aline_k in seen_carriers}
-                src_counter = {src_k: status_counter.copy()
-                               for src_k in seen_airports}
-                dst_counter = src_counter.copy()
-                dep_time_counter = {dep_k: status_counter.copy()
-                                    for dep_k in self.DEP_TIMES}
-                src_tmp_counter = {tmp_k: status_counter.copy()
-                                   for tmp_k in self.TEMP_KEYS}
-                dst_tmp_counter = src_tmp_counter.copy()
-                src_wind_counter = {wnd_k: status_counter.copy()
-                                    for wnd_k in self.WIND_KEYS}
-                dst_wind_counter = src_wind_counter.copy()
+                self.count_frequencies(
+                    data, data_len, test_start, test_end, validation_start, validation_end)
 
-                training_range = [i for i in range(data_len) if not (
-                    (test_start <= i < test_end) or (validation_start <= i < validation_end))]
-                for i in training_range:
-                    record = data[i]
-                    status_k = None
-                    if record['CANCELLED'] == '1.00':
-                        status_k = f'cancel:{record["CANCELLATION_CODE"]}'
-                    elif record['DIVERTED'] == '1.00':
-                        status_k = 'divert'
-                    else:
-                        status_k = f'delay:{record["ARR_DELAY_GROUP"]}'
+                for k in k_values:
+                    self.fit_p(data_len, k)
 
-                    status_counter[status_k] += 1
-                    day_counter[record['DAY_OF_WEEK']][status_k] += 1
-                    airline_counter[record['OP_UNIQUE_CARRIER']][status_k] += 1
-                    src_counter[record['ORIGIN_AIRPORT_ID']][status_k] += 1
-                    dst_counter[record['DEST_AIRPORT_ID']][status_k] += 1
-                    dep_time_counter[record['CRS_DEP_TIME']][status_k] += 1
-                    src_tmp_counter[record['src_tavg']][status_k] += 1
-                    dst_tmp_counter[record['dst_tavg']][status_k] += 1
-                    src_wind_counter[record['src_wspd']][status_k] += 1
-                    dst_wind_counter[record['dst_wspd']][status_k] += 1
+                    error = self.test(data, validation_start, validation_end)
+                    # Incrementally adjust average
+                    k_validation_results[k] += (error -
+                                                k_validation_results[k]) / validation_pass
 
-            p_status = dict.fromkeys(self.ARRIVAL_STATUSES.keys(), 0)
-            p_day = {key: p_status.copy() for key in day_counter.keys()}
-            p_airline = {key: p_status.copy()
-                         for key in airline_counter.keys()}
-            p_src = {key: p_status.copy() for key in src_counter.keys()}
-            p_dst = {key: p_status.copy() for key in dst_counter.keys()}
-            p_dep_time = {key: p_status.copy()
-                          for key in dep_time_counter.keys()}
-            p_src_tmp = {key: p_status.copy()
-                         for key in src_tmp_counter.keys()}
-            p_dst_tmp = {key: p_status.copy()
-                         for key in dst_tmp_counter.keys()}
-            p_src_wnd = {key: p_status.copy()
-                         for key in src_wind_counter.keys()}
-            p_dst_wnd = {key: p_status.copy()
-                         for key in dst_wind_counter.keys()}
+            # TODO: Pick best performing k
+            best_k = None
+            best_error = 2
+            for k, avg_error in k_validation_results.items():
+                if avg_error < best_error:
+                    best_k = k
+                    best_error = avg_error
 
-            for k in k_values:
-                for status_k in p_status.keys():
-                    p_status[status_k] = self.laplace_smooth(
-                        status_counter[status_k], data_len, len(p_status.keys()), k)
-                    for key in p_day.keys():
-                        p_day[key][status_k] = self.laplace_smooth(
-                            day_counter[key][status_k], status_counter[status_k], len(p_day.keys()), k)
+            print(
+                'BayesNet:     Refitting model with best k value from cross-validation.')
+            # Using best k, refit to all data except test set
+            self.count_frequencies(data, data_len, test_start, test_end)
+            self.fit_p(data_len, best_k)
+            error = self.test(data, test_start, test_end)
+            k_test_results.append({'k': best_k, 'error': error})
 
-                    for key in p_airline.keys():
-                        p_airline[key][status_k] = self.laplace_smooth(
-                            airline_counter[key][status_k], status_counter[status_k], len(p_airline.keys()), k)
+        # Pick k value that performed best on test set
+        best_k = None
+        best_error = 2
+        for iteration in k_test_results:
+            if iteration['error'] < best_error:
+                best_k = iteration['k']
+                best_error = iteration['error']
 
-                    for key in p_src.keys():
-                        p_src[key][status_k] = self.laplace_smooth(
-                            src_counter[key][status_k], status_counter[status_k], len(p_src.keys()), k)
+        print('BayesNet: Refitting model with best k value from testing.')
+        # Fit to all data with best k
+        self.count_frequencies(data, data_len)
+        self.fit_p(data_len, best_k)
+        # self.export_parameters()
+        print(
+            f'BayesNet: Completed training in {round(datetime.datetime.now().timestamp() - start_t, 2)}s.')
 
-                    for key in p_dst.keys():
-                        p_dst[key][status_k] = self.laplace_smooth(
-                            dst_counter[key][status_k], status_counter[status_k], len(p_dst.keys()), k)
+    def laplace_smooth(self, observations_freq: int, total: int, dimension: int, k: int):
+        if total == 0 and (dimension == 0 or k == 0):
+            return 0  # Avoid DivideByZero exception
 
-                    for key in p_dep_time.keys():
-                        p_dep_time[key][status_k] = self.laplace_smooth(
-                            dep_time_counter[key][status_k], status_counter[status_k], len(p_dep_time.keys()), k)
+        return (observations_freq + k) / (total + dimension * k)
 
-                    for key in p_src_tmp.keys():
-                        p_src_tmp[key][status_k] = self.laplace_smooth(
-                            src_tmp_counter[key][status_k], status_counter[status_k], len(p_src_tmp.keys()), k)
+    def fit_p(self, data_len: int, k: int):
+        # Initialize probability dicts
+        p_status = dict.fromkeys(self.ARRIVAL_STATUSES.keys(), 0)
 
-                    for key in p_dst_tmp.keys():
-                        p_dst_tmp[key][status_k] = self.laplace_smooth(
-                            dst_tmp_counter[key][status_k], status_counter[status_k], len(p_dst_tmp.keys()), k)
+        p_day = {key: p_status.copy()
+                 for key in self.day_counter.keys()}
 
-                    for key in p_src_wnd.keys():
-                        p_src_wnd[key][status_k] = self.laplace_smooth(
-                            src_wind_counter[key][status_k], status_counter[status_k], len(p_src_wnd.keys()), k)
+        p_airline = {key: p_status.copy()
+                     for key in self.airline_counter.keys()}
 
-                    for key in p_dst_wnd.keys():
-                        p_dst_wnd[key][status_k] = self.laplace_smooth(
-                            dst_wind_counter[key][status_k], status_counter[status_k], len(p_dst_wnd.keys()), k)
+        p_src = {key: p_status.copy()
+                 for key in self.src_counter.keys()}
 
-    def laplace_smooth(self, observations: int, total: int, dimension: int, k: int):
-        return (observations + k) / (total + dimension * k)
+        p_dst = {key: p_status.copy()
+                 for key in self.dst_counter.keys()}
 
-    def fit_unsmoothed(self, dataset: list, test_start: int, test_end: int, validation_start: int, validation_end: int):
+        p_dep_time = {key: p_status.copy()
+                      for key in self.dep_time_counter.keys()}
+
+        p_src_tmp = {key: p_status.copy()
+                     for key in self.src_tmp_counter.keys()}
+
+        p_dst_tmp = {key: p_status.copy()
+                     for key in self.dst_tmp_counter.keys()}
+
+        p_src_wnd = {key: p_status.copy()
+                     for key in self.src_wind_counter.keys()}
+
+        p_dst_wnd = {key: p_status.copy()
+                     for key in self.dst_wind_counter.keys()}
+
+        # Calculate p values
+        for status_k in p_status.keys():
+            p_status[status_k] = self.laplace_smooth(
+                self.status_counter[status_k], data_len, len(p_status.keys()), k)
+            for key in p_day.keys():
+                p_day[key][status_k] = self.laplace_smooth(
+                    self.day_counter[key][status_k], self.status_counter[status_k], len(p_day.keys()), k)
+
+            for key in p_airline.keys():
+                p_airline[key][status_k] = self.laplace_smooth(
+                    self.airline_counter[key][status_k], self.status_counter[status_k], len(p_airline.keys()), k)
+
+            for key in p_src.keys():
+                p_src[key][status_k] = self.laplace_smooth(
+                    self.src_counter[key][status_k], self.status_counter[status_k], len(p_src.keys()), k)
+
+            for key in p_dst.keys():
+                p_dst[key][status_k] = self.laplace_smooth(
+                    self.dst_counter[key][status_k], self.status_counter[status_k], len(p_dst.keys()), k)
+
+            for key in p_dep_time.keys():
+                p_dep_time[key][status_k] = self.laplace_smooth(
+                    self.dep_time_counter[key][status_k], self.status_counter[status_k], len(p_dep_time.keys()), k)
+
+            for key in p_src_tmp.keys():
+                p_src_tmp[key][status_k] = self.laplace_smooth(
+                    self.src_tmp_counter[key][status_k], self.status_counter[status_k], len(p_src_tmp.keys()), k)
+
+            for key in p_dst_tmp.keys():
+                p_dst_tmp[key][status_k] = self.laplace_smooth(
+                    self.dst_tmp_counter[key][status_k], self.status_counter[status_k], len(p_dst_tmp.keys()), k)
+
+            for key in p_src_wnd.keys():
+                p_src_wnd[key][status_k] = self.laplace_smooth(
+                    self.src_wind_counter[key][status_k], self.status_counter[status_k], len(p_src_wnd.keys()), k)
+
+            for key in p_dst_wnd.keys():
+                p_dst_wnd[key][status_k] = self.laplace_smooth(
+                    self.dst_wind_counter[key][status_k], self.status_counter[status_k], len(p_dst_wnd.keys()), k)
+
+        # Update instance p dicts
+        self.set_p_tables(p_status, p_day, p_airline, p_src, p_dst,
+                          p_dep_time, p_src_tmp, p_dst_tmp, p_src_wnd, p_dst_wnd)
+
+    def export_parameters(self):
         raise NotImplementedError
 
-    def fit(self, dataset: list, k: int, test_start: int, test_end: int, validation_start: int, validation_end: int, out_path: str = None):
+    def count_frequencies(self, dataset: list, data_len: int, test_start: int = None, test_end: int = None, validation_start: int = None, validation_end: int = None):
+        # Reset frequency counters
+        self.status_counter = {
+            key: 0 for key in self.ARRIVAL_STATUSES.keys()}
+
+        self.day_counter = {str(day_k): self.status_counter.copy()
+                            for day_k in range(1, 8)}
+
+        self.airline_counter = {aline_k: self.status_counter.copy()
+                                for aline_k in self.seen_carriers}
+
+        self.src_counter = {src_k: self.status_counter.copy()
+                            for src_k in self.seen_airports}
+
+        self.dst_counter = self.src_counter.copy()
+
+        self.dep_time_counter = {dep_k: self.status_counter.copy()
+                                 for dep_k in self.DEP_TIMES}
+
+        self.src_tmp_counter = {tmp_k: self.status_counter.copy()
+                                for tmp_k in self.TEMP_KEYS}
+
+        self.dst_tmp_counter = self.src_tmp_counter.copy()
+
+        self.src_wind_counter = {wnd_k: self.status_counter.copy()
+                                 for wnd_k in self.WIND_KEYS}
+
+        self.dst_wind_counter = self.src_wind_counter.copy()
+
+        # Error checking
+
+        # Validation bounds must both be None or both have values
+        if (validation_start is None) != (validation_end is None):
+            raise TypeError(
+                f'BayesNet.count_frequencies(): Provided validation_start={validation_start} and validation_end={validation_end} (Either both or neither must be None).')
+        elif validation_start is None:
+            # Test bounds must both be None or both have values
+            if (test_start is None) != (test_end is None):
+                raise TypeError(
+                    f'BayesNet.count_frequencies(): Provided test_start={test_start} and test_end={test_end} (Either both or neither must be None).')
+            # If there is no test set, make the bounds negative so the index in the dataset never falls between them
+            if test_start is None:
+                test_start = -999
+                test_end = -999
+            # test_end must come after test_start
+            elif test_start > test_end:
+                raise ValueError(
+                    f'BayesNet.count_frequencies(): test_start={test_start} > test_end={test_end}')
+            # Set bounds to test set bounds
+            validation_start = test_start
+            validation_end = test_end
+        else:
+            # Cannot have validation set but no test set
+            if test_start is None or test_end is None:
+                raise TypeError(
+                    'BayesNet.count_frequencies(): Test set boundaries cannot be None if a validation set is defined.')
+            # test_end must come after test_start
+            if test_start > test_end:
+                raise ValueError(
+                    f'BayesNet.count_frequencies(): test_start={test_start} > test_end={test_end}')
+            # validation_end must come after validation_start
+            if validation_start > validation_end:
+                raise ValueError(
+                    f'BayesNet.count_frequencies(): validation_start={validation_start} > validation_end={validation_end}')
+
+        # Determine which records are not in test or validation sets
+        training_range = [i for i in range(data_len) if not (
+            (test_start <= i < test_end) or (validation_start <= i < validation_end))]
+
+        # Count variables
+        for i in training_range:
+            record = dataset[i]
+            # Process arrival status
+            status_k = None
+            if record['CANCELLED'] == '1.00':
+                status_k = f'cancel:{record["CANCELLATION_CODE"]}'
+            elif record['DIVERTED'] == '1.00':
+                status_k = 'divert'
+            else:
+                status_k = f'delay:{record["ARR_DELAY_GROUP"]}'
+
+            self.status_counter[status_k] += 1
+
+            # Process other variables
+            self.day_counter[record['DAY_OF_WEEK']][status_k] += 1
+            self.airline_counter[record['OP_UNIQUE_CARRIER']
+                                 ][status_k] += 1
+            self.src_counter[record['ORIGIN_AIRPORT_ID']
+                             ][status_k] += 1
+            self.dst_counter[record['DEST_AIRPORT_ID']][status_k] += 1
+            self.dep_time_counter[record['CRS_DEP_TIME']
+                                  ][status_k] += 1
+            self.src_tmp_counter[record['src_tavg']][status_k] += 1
+            self.dst_tmp_counter[record['dst_tavg']][status_k] += 1
+            self.src_wind_counter[record['src_wspd']][status_k] += 1
+            self.dst_wind_counter[record['dst_wspd']][status_k] += 1
+
+    def set_p_tables(self, p_status, p_day, p_airline, p_src, p_dst, p_dep_time, p_src_tmp, p_dst_tmp, p_src_wnd, p_dst_wnd):
+        """"""
+        self.p_status = p_status
+        self.p_day = p_day
+        self.p_airline = p_airline
+        self.p_src = p_src
+        self.p_dst = p_dst
+        self.p_dep_time = p_dep_time
+        self.p_src_tmp = p_src_tmp
+        self.p_dst_tmp = p_dst_tmp
+        self.p_src_wnd = p_src_wnd
+        self.p_dst_wind = p_dst_wnd
+        self.p_tables_set = True
+
+    def test(self, dataset: list, test_start: int, test_end: int):
+        return 0.2
         raise NotImplementedError
 
     def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, departure_time: str):
