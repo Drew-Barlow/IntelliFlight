@@ -148,15 +148,22 @@ class Bayes_Net(ai_model.AI_Model):
                 validation_pass = \
                     validation_index + 1 - int(passed_test_partition)
                 print(
-                    f'BayesNet:     Processing validation partition {validation_pass} of {len(partitions) - 1}.')
+                    f'BayesNet:   Processing validation partition {validation_pass} of {len(partitions) - 1}.')
 
                 self.count_frequencies(
                     data, data_len, test_start, test_end, validation_start, validation_end)
 
                 for k in k_values:
+                    print(
+                        f'BayesNet:     Fitting model with k={k}.')
                     self.fit_p(data_len, k)
 
+                    print(
+                        f'BayesNet:     Testing model with k={k}.')
                     error = self.test(data, validation_start, validation_end)
+                    accuracy = round((1 - error) * 100, 2)
+                    print(
+                        f'BayesNet:     Accuracy was {accuracy}%.')
                     # Incrementally adjust average
                     k_validation_results[k] += (error -
                                                 k_validation_results[k]) / validation_pass
@@ -170,11 +177,16 @@ class Bayes_Net(ai_model.AI_Model):
                     best_error = avg_error
 
             print(
-                'BayesNet:     Refitting model with best k value from cross-validation.')
+                f'BayesNet:   Refitting model with best k value from cross-validation (k={best_k}).')
             # Using best k, refit to all data except test set
             self.count_frequencies(data, data_len, test_start, test_end)
             self.fit_p(data_len, best_k)
+            print(
+                f'BayesNet:   Testing refit model.')
             error = self.test(data, test_start, test_end)
+            accuracy = round((1 - error) * 100, 2)
+            print(
+                f'BayesNet:   Accuracy was {accuracy}%.')
             k_test_results.append({'k': best_k, 'error': error})
 
         # Pick k value that performed best on test set
@@ -185,11 +197,15 @@ class Bayes_Net(ai_model.AI_Model):
                 best_k = iteration['k']
                 best_error = iteration['error']
 
-        print('BayesNet: Refitting model with best k value from testing.')
+        print(
+            f'BayesNet: Refitting model with best k value from testing (k={best_k}).')
         # Fit to all data with best k
         self.count_frequencies(data, data_len)
         self.fit_p(data_len, best_k)
         # self.export_parameters()
+        accuracy = round((1 - best_error) * 100, 2)
+        print(
+            f'BayesNet: Best model has k={best_k} and an estimated accuracy of {accuracy}%.')
         print(
             f'BayesNet: Completed training in {round(datetime.datetime.now().timestamp() - start_t, 2)}s.')
 
@@ -389,8 +405,62 @@ class Bayes_Net(ai_model.AI_Model):
         self.p_tables_set = True
 
     def test(self, dataset: list, test_start: int, test_end: int):
-        return 0.2
-        raise NotImplementedError
+        num_pass = 0
+        num_fail = 0
+        for i in range(test_start, test_end):
+            record = dataset[i]
+            predicted_status, _ = self.make_prediction(record['ORIGIN_AIRPORT_ID'], record['DEST_AIRPORT_ID'], record['OP_UNIQUE_CARRIER'],
+                                                       record['DAY_OF_WEEK'], record['CRS_DEP_TIME'], record['src_tavg'], record['dst_tavg'], record['src_wspd'], record['dst_wspd'])
+            if predicted_status == 'divert' and record['DIVERTED'] == '1.00':
+                print('divert')
+                num_pass += 1
+            elif 'delay:' in predicted_status and record['ARR_DELAY_GROUP'] == predicted_status.split(':')[1]:
+                num_pass += 1
+            elif 'cancel:' in predicted_status and record['CANCELLATION_CODE'] == predicted_status.split(':')[1]:
+                num_pass += 1
+            else:
+                num_fail += 1
 
-    def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, departure_time: str):
-        raise NotImplementedError
+        return num_fail / (num_pass + num_fail)
+
+    def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, day_of_week: int, departure_time: str, src_tmp: str, dst_tmp: str, src_wnd: str, dst_wnd: str):
+        if src_airport not in self.seen_airports:
+            raise ValueError(
+                f'BayesNet: src_airport={src_airport} did not occur in the training data.')
+        if dest_airport not in self.seen_airports:
+            raise ValueError(
+                f'BayesNet: dest_airport={dest_airport} did not occur in the training data.')
+        if operating_airline not in self.seen_carriers:
+            raise ValueError(
+                f'BayesNet: operating_airline={operating_airline} did not occur in the training data.')
+
+        src_airport = str(src_airport)
+        dest_airport = str(dest_airport)
+        day_of_week = str(day_of_week)
+
+        predicted_p = dict.fromkeys(self.p_status.keys())
+        for key in predicted_p.keys():
+            factors = [
+                self.p_status[key],
+                self.p_airline[operating_airline][key],
+                self.p_day[day_of_week][key],
+                self.p_dep_time[departure_time][key],
+                self.p_src[src_airport][key],
+                self.p_dst[dest_airport][key],
+                self.p_src_tmp[src_tmp][key],
+                self.p_dst_tmp[dst_tmp][key],
+                self.p_src_wnd[src_wnd][key],
+                self.p_dst_wind[dst_wnd][key]
+            ]
+            predicted_p[key] = math.prod(factors)
+
+        sum_intermediates = sum(predicted_p.values())
+        best_key = None
+        best_p = -1
+        for k, p in predicted_p.items():
+            predicted_p[k] = p / sum_intermediates
+            if predicted_p[k] > best_p:
+                best_key = k
+                best_p = predicted_p[k]
+
+        return best_key, best_p

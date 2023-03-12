@@ -13,7 +13,7 @@ class AI_Model:
         """Load model parameters"""
         raise NotImplementedError
 
-    def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, departure_time: str):
+    def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, day_of_week: int, departure_time: str, src_tmp: str, dst_tmp: str, src_wnd: str, dst_wnd: str):
         """Make a prediction based on data.
         Parameters:
         src_airport -- AirportID (from BTS data) of origin airport.
