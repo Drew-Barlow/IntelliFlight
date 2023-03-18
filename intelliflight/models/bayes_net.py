@@ -3,14 +3,13 @@ import random
 import math
 import csv
 import datetime
+import json
 
 from ..util import datautil
 
 
 class Bayes_Net(ai_model.AI_Model):
     def __init__(self, params_path: str = None):
-        super().__init__(params_path)
-
         # Declare Bayes Net parameter dicts
         # For feature value x and arrival status s,
         # Structure is p(x | s) = dict[x][s]
@@ -47,6 +46,8 @@ class Bayes_Net(ai_model.AI_Model):
 
         # Parameters used to train model
         self.rng_seed: int = None
+
+        super().__init__(params_path)
 
         # Generate key values for possible arrival states:
         # -Arrived at destination (ahead, on-time, or delayed) [delay:<code>]
@@ -92,7 +93,22 @@ class Bayes_Net(ai_model.AI_Model):
                                              for code in wind_codes]
 
     def load_params(self, path: str):
-        raise NotImplementedError
+        with open(path, 'r') as f_in:
+            import_json = json.load(f_in)
+            self.rng_seed = import_json['training_rng_seed']
+            self.seen_airports = set(import_json['seen_airports'])
+            self.seen_carriers = set(import_json['seen_carriers'])
+
+            self.p_status = import_json['p_tables']['arrival_status']
+            self.p_day = import_json['p_tables']['day']
+            self.p_airline = import_json['p_tables']['airline']
+            self.p_src = import_json['p_tables']['src_airport']
+            self.p_dst = import_json['p_tables']['dst_airport']
+            self.p_dep_time = import_json['p_tables']['departure_time']
+            self.p_src_tmp = import_json['p_tables']['src_temperature']
+            self.p_dst_tmp = import_json['p_tables']['dst_temperature']
+            self.p_src_wnd = import_json['p_tables']['src_wind_speed']
+            self.p_dst_wind = import_json['p_tables']['dst_wind_speed']
 
     def train_model(self, flight_path: str, partition_count: int, k_step_percent: float, max_k_fraction: float, rng_seed: int = None):
         start_t: datetime.datetime = datetime.datetime.now().timestamp()
@@ -291,7 +307,24 @@ class Bayes_Net(ai_model.AI_Model):
                           p_dep_time, p_src_tmp, p_dst_tmp, p_src_wnd, p_dst_wnd)
 
     def export_parameters(self):
-        raise NotImplementedError
+        export_json = {}
+        export_json['training_rng_seed'] = self.rng_seed
+        export_json['seen_airports'] = list(self.seen_airports)
+        export_json['seen_carriers'] = list(self.seen_carriers)
+        export_json['p_tables'] = {
+            'arrival_status': self.p_status,
+            'day': self.p_day,
+            'airline': self.p_airline,
+            'src_airport': self.p_src,
+            'dst_airport': self.p_dst,
+            'departure_time': self.p_dep_time,
+            'src_temperature': self.p_src_tmp,
+            'dst_temperature': self.p_dst_tmp,
+            'src_wind_speed': self.p_src_wnd,
+            'dst_wind_speed': self.p_dst_wind
+        }
+        with open('data/models/bayes_net.model.json', 'w') as f_out:
+            json.dump(export_json, f_out)
 
     def count_frequencies(self, dataset: list, data_len: int, test_start: int = None, test_end: int = None, validation_start: int = None, validation_end: int = None):
         # Reset frequency counters
