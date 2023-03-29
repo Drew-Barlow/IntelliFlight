@@ -2,7 +2,6 @@ import requests
 import json
 import datetime
 from typing import Final
-from schema import Schema, And
 from intelliflight.util import typeutil
 
 from ..util import DATA_PATH
@@ -10,19 +9,6 @@ from ..util import DATA_PATH
 
 class Forecaster:
     NWS_POINTS_ENDPOINT: Final = 'https://api.weather.gov/points/{lat},{lon}'
-    AIRPORT_MAP_SCHEMA: Final = Schema([
-        {
-            "desc": str,
-            "icao": And(str, lambda s: len(s) == 4),
-            "faa": And(str, lambda s: len(s) == 3),
-            "mstat": And(str, lambda s: typeutil.is_int(s)),
-            "location": {
-                "lat": And(str, lambda s: typeutil.is_float(s)),
-                "lon": And(str, lambda s: typeutil.is_float(s))
-            },
-            "bts_id": And(str, lambda s: typeutil.is_int(s))
-        }
-    ])
 
     def __init__(self, map_path: str, http_get: callable = requests.get):
         """Initialize Forecaster with airport mappings and a GET function.
@@ -30,7 +16,7 @@ class Forecaster:
         Positional arguments:
 
         map_path -- Path to an airport mappings file of schema
-                    `Forecaster.AIRPORT_MAP_SCHEMA`.
+                    `typeutil.AIRPORT_MAP_SCHEMA`.
         http_get -- Function returning a `requests.Response`-like object.
                     Useful for dependency injection for testing. Defaults to
                     requests.get().
@@ -39,7 +25,7 @@ class Forecaster:
         with open(map_path, 'r') as f_mappings:
             self.AIRPORT_MAPPINGS = json.load(f_mappings)
         # Validate that mapping schema is valid
-        Forecaster.AIRPORT_MAP_SCHEMA.validate(self.AIRPORT_MAPPINGS)
+        typeutil.AIRPORT_MAP_SCHEMA.validate(self.AIRPORT_MAPPINGS)
 
         print(f'{__name__}: Initialized weather API module')
 
