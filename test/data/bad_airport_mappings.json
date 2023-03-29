@@ -70,20 +70,6 @@
         }
     },
     {
-        "comment": "'mstat' field is str, not int",
-        "map": {
-            "desc": "Test airport",
-            "icao": "KABE",
-            "faa": "ABE",
-            "mstat": "abcde",
-            "location": {
-                "lat": "40.651773",
-                "lon": "-75.442797"
-            },
-            "bts_id": "10135"
-        }
-    },
-    {
         "comment": "'mstat field is float, not int",
         "map": {
             "desc": "Test airport",

@@ -30,4 +30,5 @@ testpaths = "test"
 markers = [
     "unit: function is part of the unit test suite",
     "nws: function tests the nws_manager module",
+    "datautil: function tests the datautil module",
 ]
