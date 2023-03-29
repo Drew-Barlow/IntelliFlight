@@ -4,8 +4,9 @@ import random
 import math
 
 from bisect import bisect_right
+from intelliflight.util import typeutil
 
-from ..constants import WEATHER_FIELDS, TIME_INTERVAL_SIZE
+from intelliflight.constants import WEATHER_FIELDS, TIME_INTERVAL_SIZE
 from ..util import DATA_PATH
 
 
@@ -18,7 +19,9 @@ def merge_training_data(flight_path: str, weather_path: str):
     with open(flight_path, 'r', encoding="utf-8") as f_in, \
             open(weather_path, 'r', encoding="utf-8") as w_in, \
             open(f'data/maps/airport_mappings.json', encoding="utf-8") as a_in:
-        known_airports = [i['bts_id'] for i in json.load(a_in)]
+        mappings = json.load(a_in)
+        typeutil.AIRPORT_MAP_SCHEMA.validate(mappings)
+        known_airports = [i['bts_id'] for i in mappings]
         weather_data = json.load(w_in)
         for row in csv.DictReader(f_in):
             flight_data.append(row)
@@ -35,8 +38,13 @@ def merge_training_data(flight_path: str, weather_path: str):
         ymd_date = f'{date_arr[2]}-{date_arr[0].rjust(2, "0")}-{date_arr[1].rjust(2, "0")}'
         # Check that weather data exists for the source and destination airports
         # Also check that src and dst airports are known
-        if str(row['ORIGIN_AIRPORT_ID']) in weather_data.keys() and str(row['DEST_AIRPORT_ID']) in weather_data.keys() and \
-                str(row['ORIGIN_AIRPORT_ID']) in known_airports and str(row['DEST_AIRPORT_ID']) in known_airports:
+        # First, check that src and dst airports are in weather data
+        # Next, check that the relevant date has weather data for src and dst
+        # Finally, check that src and dst are known in the mappings file
+        if str(row['ORIGIN_AIRPORT_ID']) in weather_data.keys() and str(row['DEST_AIRPORT_ID']) in weather_data.keys() \
+                and ymd_date in weather_data[str(row['ORIGIN_AIRPORT_ID'])].keys() \
+                and ymd_date in weather_data[str(row['DEST_AIRPORT_ID'])].keys() \
+                and str(row['ORIGIN_AIRPORT_ID']) in known_airports and str(row['DEST_AIRPORT_ID']) in known_airports:
             flight_weather = {
                 'src': weather_data[str(row['ORIGIN_AIRPORT_ID'])][ymd_date],
                 'dst': weather_data[str(row['DEST_AIRPORT_ID'])][ymd_date]
