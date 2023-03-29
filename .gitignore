@@ -1,6 +1,9 @@
 # Data file that is too large for GitHub
 data/historical/weather/weather_by_bts_id.json
 
+# Tmp directory used by pytest
+tmp/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

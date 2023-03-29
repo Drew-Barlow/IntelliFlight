@@ -23,9 +23,11 @@ classifiers = [
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
+    "--basetemp=tmp/pytest"
 ]
 testpaths = "test"
 
 markers = [
-    "unit: function is part of the unit test suite"
+    "unit: function is part of the unit test suite",
+    "nws: function tests the nws_manager module",
 ]
