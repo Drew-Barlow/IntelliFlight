@@ -6,7 +6,7 @@ import time
 import os.path as path
 from typing import Final
 
-from ..intelliflight.util.nws_manager import Forecaster
+from intelliflight.util.nws_manager import Forecaster
 
 AIRPORT_MAP_PATH: Final = '../data/maps/airport_mappings.json'
 
