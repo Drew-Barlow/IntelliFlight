@@ -93,22 +93,34 @@ class Bayes_Net(ai_model.AI_Model):
                                              for code in wind_codes]
 
     def load_params(self, path: str):
+        """"""
         with open(path, 'r') as f_in:
             import_json = json.load(f_in)
-            self.rng_seed = import_json['training_rng_seed']
-            self.seen_airports = set(import_json['seen_airports'])
-            self.seen_carriers = set(import_json['seen_carriers'])
+            # Load training RNG seed
+            rng_seed = import_json['training_rng_seed']
 
-            self.p_status = import_json['p_tables']['arrival_status']
-            self.p_day = import_json['p_tables']['day']
-            self.p_airline = import_json['p_tables']['airline']
-            self.p_src = import_json['p_tables']['src_airport']
-            self.p_dst = import_json['p_tables']['dst_airport']
-            self.p_dep_time = import_json['p_tables']['departure_time']
-            self.p_src_tmp = import_json['p_tables']['src_temperature']
-            self.p_dst_tmp = import_json['p_tables']['dst_temperature']
-            self.p_src_wnd = import_json['p_tables']['src_wind_speed']
-            self.p_dst_wind = import_json['p_tables']['dst_wind_speed']
+            # Load seen airports and airlines
+            seen_airports = set(import_json['seen_airports'])
+            seen_carriers = set(import_json['seen_carriers'])
+
+            # Load probability tables
+            p_status = import_json['p_tables']['arrival_status']
+            p_day = import_json['p_tables']['day']
+            p_airline = import_json['p_tables']['airline']
+            p_src = import_json['p_tables']['src_airport']
+            p_dst = import_json['p_tables']['dst_airport']
+            p_dep_time = import_json['p_tables']['departure_time']
+            p_src_tmp = import_json['p_tables']['src_temperature']
+            p_dst_tmp = import_json['p_tables']['dst_temperature']
+            p_src_wnd = import_json['p_tables']['src_wind_speed']
+            p_dst_wind = import_json['p_tables']['dst_wind_speed']
+
+            # If all loading succeeded, update member variables
+            self.rng_seed = rng_seed
+            self.seen_airports = seen_airports
+            self.seen_carriers = seen_carriers
+            self.set_p_tables(p_status, p_day, p_airline, p_src, p_dst,
+                              p_dep_time, p_src_tmp, p_dst_tmp, p_src_wnd, p_dst_wind)
 
     def train_model(self, flight_path: str, partition_count: int, k_step_percent: float, max_k_fraction: float, rng_seed: int = None):
         start_t: datetime.datetime = datetime.datetime.now().timestamp()

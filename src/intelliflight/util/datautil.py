@@ -57,8 +57,17 @@ def merge_training_data(flight_path: str, weather_path: str):
     return merged_data, seen_carriers, seen_src, seen_dst
 
 
-def shuffle_and_partition(dataset: list, rng_seed: int, partition_count: int):
-    """"""
+def shuffle_and_partition(dataset: list, rng_seed: int, partition_count: int) -> list[int]:
+    """Shuffle dataset in-place with passed RNG seed and return partition starting indices.
+
+    Positional arguments:
+    dataset -- list of data to be shuffled in-place with random.shuffle()
+    rng_seed -- seed value for random.seed()
+    partition_count -- number of data partitions to generate
+
+    Returns:
+    List of starting indices for each partition in dataset
+    """
     # Shuffle dataset in-place
     random.seed(rng_seed)
     random.shuffle(dataset)
@@ -74,7 +83,7 @@ def shuffle_and_partition(dataset: list, rng_seed: int, partition_count: int):
 
 
 def discretize(dataset: list):
-    """Discretize data in-place"""
+    """Discretize dataset in-place."""
     wind_map = None
     temp_map = None
     with open('data/maps/wind_speeds.csv', 'r', encoding='utf-8') as w_in, \
@@ -97,7 +106,6 @@ def discretize(dataset: list):
             row[f'{prefix}wspd'] = temp_map[index]['key']
 
         # Discretize timestamp into 30min segments
-
         dep_time = row['CRS_DEP_TIME']
         dep_min = int(dep_time[2:])
         row['CRS_DEP_TIME'] = f'{dep_time[:2]}{str(dep_min - (dep_min % TIME_INTERVAL_SIZE)).rjust(2, "0")}'

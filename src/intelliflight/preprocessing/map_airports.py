@@ -62,7 +62,7 @@ with open(f'{DATA_PATH}/raw/airports/L_AIRPORT.csv', 'r') as f_airport_faa_ids:
 
                             else:
                                 mappings.append({
-                                    # trim closing " and \n
+                                    # trim closing " and \n from descriptions
                                     'desc': ''.join(line.split(',')[1:])[1:-2],
                                     'icao': icao,
                                     'faa': line.split(',')[0][1:-1],
