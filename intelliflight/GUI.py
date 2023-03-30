@@ -78,16 +78,16 @@ class App(customtkinter.CTk):
         self.progressFrame.grid(row=0,column=4,pady=20,sticky='nsew')
         #Set training data checkbox
         self.trainingCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
-        self.trainingCheckbox.grid(row=0,column=3,pady=27)
+        self.trainingCheckbox.grid(row=0,column=4,pady=27)
         #Set partition count checkbox
         self.partitionCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
-        self.partitionCheckbox.grid(row=1,column=3,pady=27)
+        self.partitionCheckbox.grid(row=1,column=4,pady=13)
         #Set k value increment checkbox
         self.kValueCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
-        self.kValueCheckbox.grid(row=2,column=3,pady=27)
+        self.kValueCheckbox.grid(row=2,column=4,pady=35)
         #Set max k fraction chechbox
         self.kFractionCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
-        self.kFractionCheckbox.grid(row=3,column=3,pady=27)
+        self.kFractionCheckbox.grid(row=3,column=4,pady=10)
         #################################################################
 
 
