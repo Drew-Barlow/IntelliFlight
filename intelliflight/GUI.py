@@ -1,6 +1,6 @@
 #from intelliflight.models.bayes_net import Bayes_Net
 import tkinter
-import tkinter.messagebox
+import tkintermapview
 import customtkinter
 
 
@@ -25,6 +25,7 @@ class App(customtkinter.CTk):
         self.tabview.tab("Train").grid_columnconfigure((0,1,2,3,4),weight=1)
         self.tabview.tab("Predict").grid_columnconfigure((0),weight=1)
         
+        #TRAINING TAB
         #################################################################
         #Set text frame
         self.textFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
@@ -78,7 +79,7 @@ class App(customtkinter.CTk):
         self.progressFrame.grid(row=0,column=4,pady=20,sticky='nsew')
         #Set training data checkbox
         self.trainingCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
-        self.trainingCheckbox.grid(row=0,column=4,pady=27)
+        self.trainingCheckbox.grid(row=0,column=4,pady=27,padx=20)
         #Set partition count checkbox
         self.partitionCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
         self.partitionCheckbox.grid(row=1,column=4,pady=13)
@@ -89,6 +90,14 @@ class App(customtkinter.CTk):
         self.kFractionCheckbox = customtkinter.CTkCheckBox(self.progressFrame,text="")
         self.kFractionCheckbox.grid(row=3,column=4,pady=10)
         #################################################################
+
+        #PREDICT TAB
+        #################################################################
+        self.mapFrame = customtkinter.CTkFrame(self.tabview.tab("Predict"))
+        self.mapFrame.grid(row=0,column=0, sticky='nsew')
+        
+        self.map = tkintermapview.TkinterMapView(self.mapFrame,width=500,height=500,corner_radius=0)
+        self.map.grid(row=0,column=0)
 
 
     def button_callback(self):
@@ -117,6 +126,7 @@ class App(customtkinter.CTk):
         self.kFractionCheckbox.select()
         print(value)
 
-if __name__ =="__main__":
+
+if __name__ =="__main__":  
     app = App()
     app.mainloop()
