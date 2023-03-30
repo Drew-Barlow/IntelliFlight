@@ -37,8 +37,9 @@ class App(customtkinter.CTk):
         self.partitionLabel = customtkinter.CTkLabel(self.tabview.tab("Train"),text="Use the slider to set the partition count:")
         self.partitionLabel.grid(row=1,column=0)
         self.sliderP = customtkinter.CTkSlider(self.tabview.tab("Train"), from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
+        self.sliderP.set(0)
         self.sliderP.grid(row=1,column=1)
-        self.partitionOutputLabel = customtkinter.CTkEntry(self.tabview.tab("Train"),width=50,height=50,border_width=2)
+        self.partitionOutputLabel = customtkinter.CTkEntry(self.tabview.tab("Train"),width=37,height=30)
         self.partitionOutputLabel.grid(row=1,column=2)
         self.partitionCheckbox = customtkinter.CTkCheckBox(self.tabview.tab("Train"),text="")
         self.partitionCheckbox.grid(row=1,column=3)
@@ -48,7 +49,8 @@ class App(customtkinter.CTk):
         self.kValueLabel.grid(row=2,column=0)
         self.sliderK = customtkinter.CTkSlider(self.tabview.tab("Train"),from_=0, to=100, number_of_steps=10, command=self.sliderK_callback)
         self.sliderK.grid(row=2,column=1)
-        self.kValueOutput = customtkinter.CTkEntry(self.tabview.tab("Train"),width=50,height=50)
+        self.sliderK.set(10)
+        self.kValueOutput = customtkinter.CTkEntry(self.tabview.tab("Train"),width=37,height=30)
         self.kValueOutput.grid(row=2,column=2)
         self.kValueCheckbox = customtkinter.CTkCheckBox(self.tabview.tab("Train"),text="")
         self.kValueCheckbox.grid(row=2,column=3)
@@ -58,7 +60,8 @@ class App(customtkinter.CTk):
         self.kFractionLabel.grid(row=3,column=0)
         self.SliderF = customtkinter.CTkSlider(self.tabview.tab("Train"),from_=0, to=1, command=self.sliderF_callback)
         self.SliderF.grid(row=3,column=1)
-        self.kFractionOutput = customtkinter.CTkEntry(self.tabview.tab("Train"),width=50, height=50)
+        self.SliderF.set(0)
+        self.kFractionOutput = customtkinter.CTkEntry(self.tabview.tab("Train"),width=40, height=30)
         self.kFractionOutput.grid(row=3,column=2)
         self.kFractionCheckbox = customtkinter.CTkCheckBox(self.tabview.tab("Train"),text="")
         self.kFractionCheckbox.grid(row=3,column=3)
@@ -70,18 +73,21 @@ class App(customtkinter.CTk):
 
     def sliderP_callback(self,value):
         value = self.sliderP.get()
+        self.partitionOutputLabel.delete(0,10)
         self.partitionOutputLabel.insert(0,str(value))
         self.partitionCheckbox.select()
         print(value)
-
+        
     def sliderK_callback(self, value):
         value = self.sliderK.get()
+        self.kValueOutput.delete(0,10)
         self.kValueOutput.insert(0,str(value))
         self.kValueCheckbox.select()
         print(value)
     
     def sliderF_callback(self,value):
         value = self.SliderF.get()
+        self.kFractionOutput.delete(0,10)
         self.kFractionOutput.insert(0,str(value))
         self.kFractionCheckbox.select()
         print(value)
