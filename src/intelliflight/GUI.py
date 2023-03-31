@@ -23,13 +23,14 @@ class App(customtkinter.CTk):
         self.tabview.add("Train")
         self.tabview.add("Predict")
         self.tabview.tab("Train").grid_columnconfigure((0,1),weight=1)
+        self.tabview.tab("Train").grid_rowconfigure((0,1),weight=1)
         self.tabview.tab("Predict").grid_columnconfigure((0),weight=1)
         
         #TRAINING TAB
         #################################################################
         #Set text frame
         self.textFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
-        self.textFrame.grid(row=0,column=0,pady=20,padx=20,sticky='nsew')
+        self.textFrame.grid(row=0,column=0,pady=40,padx=20,sticky='nsew')
         #Set training data input text
         self.inputLabel = customtkinter.CTkLabel(self.textFrame,text="Input the file path for the training data:")
         self.inputLabel.grid(row=0,column=0,pady=20)
@@ -48,12 +49,17 @@ class App(customtkinter.CTk):
         #################################################################
         #Set input frame
         self.inputFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
-        self.inputFrame.grid(row=0,column=1,pady=20,padx=20,sticky='nsew')
+        self.inputFrame.grid(row=0,column=1,pady=40,padx=20,sticky='nsew')
         #Set training data input button
-        self.button = customtkinter.CTkButton(self.inputFrame,text="Input training data" ,command=self.button_callback)
-        self.button.grid(row=0,column=1,pady=20,padx=20)
+        self.inputButton = customtkinter.CTkButton(self.inputFrame,text="Input training data" ,command=self.inputButton_callback)
+        self.inputButton.grid(row=0,column=1,pady=20,padx=20)
         self.trainingCheckbox = customtkinter.CTkCheckBox(self.inputFrame,text="")
         self.trainingCheckbox.grid(row=0,column=2,padx=(73,0))
+
+        self.importFileButton = customtkinter.CTkButton(self.inputFrame,text="Import model file",command=self.importButton_callback)
+        self.importFileButton.grid(row=1,column=1,pady=20,padx=20)
+        self.importCheckbox = customtkinter.CTkCheckBox(self.inputFrame,text="")
+        self.importCheckbox.grid(row=1,column=2,padx=(73,0))
         #Set partition count input slider
         self.sliderP = customtkinter.CTkSlider(self.inputFrame, from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
         self.sliderP.grid(row=2,column=1,pady=30,padx=20)
@@ -74,6 +80,25 @@ class App(customtkinter.CTk):
         self.kFractionOutput.grid(row=4,column=2)
         #################################################################
 
+        
+        #################################################################
+        #Set bottom frame
+        self.bottomFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
+        self.bottomFrame.grid(row=1,column=0,sticky='n')
+        #Set import file button
+        self.importFileButton = customtkinter.CTkButton(self.bottomFrame,text="Import model file",command=self.importButton_callback)
+        self.importFileButton.grid(row=0,column=0)
+        #Set k value print
+        self.kValuePrint = customtkinter.CTkEntry(self.bottomFrame)
+        self.kValuePrint.grid(row=0,column=1)
+        #Set save model button
+        self.saveButton = customtkinter.CTkButton(self.bottomFrame,text="Save",command=self.saveButton_callback)
+        self.saveButton.grid(row=0,column=2)
+    
+
+
+        #################################################################
+
 
         #PREDICT TAB
         #################################################################
@@ -84,7 +109,7 @@ class App(customtkinter.CTk):
         self.map.grid(row=0,column=0)
 
 
-    def button_callback(self):
+    def inputButton_callback(self):
         dialog = customtkinter.CTkInputDialog(text="Enter training data file path:", title="Training Data")
         self.trainingCheckbox.select()
         print("Test:", dialog.get_input())
@@ -106,6 +131,12 @@ class App(customtkinter.CTk):
         self.kFractionOutput.delete(0,10)
         self.kFractionOutput.insert(0,str(value))
         print(value)
+
+    def importButton_callback(self):
+        pass
+    
+    def saveButton_callback(self):
+        pass
 
 
 if __name__ =="__main__":  
