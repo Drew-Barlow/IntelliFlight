@@ -60,6 +60,15 @@ class Dataset:
         if test_start >= test_end:
             raise ValueError('Dataset: ERR: test_start={} must be less than test_end={}'.format(
                 test_start, test_end))
+
+        elif not (0 <= test_start < self.__datalen):
+            raise IndexError('Dataset: ERR: test_start={} must be in range [{}, {})'.format(
+                test_start, 0, self.__datalen))
+
+        elif not (0 <= test_end < self.__datalen):
+            raise IndexError('Dataset: ERR: test_end={} must be in range [{}, {})'.format(
+                test_start, 0, self.__datalen))
+
         self.__test_start = test_start
         self.__test_end = test_end
 
@@ -69,6 +78,15 @@ class Dataset:
         if validation_start >= validation_end:
             raise ValueError('Dataset: ERR: validation_start={} must be less than validation_end={}'.format(
                 validation_start, validation_end))
+
+        elif not (0 <= validation_start < self.__datalen):
+            raise IndexError('Dataset: ERR: validation_start={} must be in range [{}, {})'.format(
+                validation_start, 0, self.__datalen))
+
+        elif not (0 <= validation_end < self.__datalen):
+            raise IndexError('Dataset: ERR: validation_end={} must be in range [{}, {})'.format(
+                validation_start, 0, self.__datalen))
+
         self.__validation_start = validation_start
         self.__validation_end = validation_end
 
