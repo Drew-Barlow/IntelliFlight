@@ -4,8 +4,6 @@ import datetime
 from typing import Final
 from intelliflight.util import typeutil
 
-from ..util import DATA_PATH
-
 
 class Forecaster:
     NWS_POINTS_ENDPOINT: Final = 'https://api.weather.gov/points/{lat},{lon}'
@@ -59,8 +57,11 @@ class Forecaster:
             if int(airport['bts_id']) == bts_id:
                 # Given lat/lon of airport, get the corresponding forecast area
                 # from National Weather Service
-                point_res: requests.Response = self.http_get(Forecaster.NWS_POINTS_ENDPOINT.format(lat=round(
-                    float(airport['location']['lat']), 4), lon=round(float(airport['location']['lon']), 4)))
+                point_res: requests.Response = \
+                    self.http_get(Forecaster.NWS_POINTS_ENDPOINT.format(
+                        lat=round(float(airport['location']['lat']), 4),
+                        lon=round(float(airport['location']['lon']), 4)
+                    ))
 
                 if point_res.status_code != 200:
                     raise ConnectionError(

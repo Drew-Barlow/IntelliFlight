@@ -1,11 +1,13 @@
 import pytest
 import json
 from pathlib import Path
-from schema import SchemaError
 import intelliflight.util.datautil as datautil
 from typing import Final
-from datetime import datetime
 from copy import deepcopy
+
+
+## DATA ##
+
 
 TEST_PATH: Final = Path(__file__).parent.parent
 
@@ -107,9 +109,13 @@ DISCRETIZE_BASE_DATA: Final = [{
 }]
 
 
+## TESTS ##
+
+
 @pytest.mark.unit
 @pytest.mark.datautil
 def test_merge_bad_flight_path():
+    """Attempt to load a nonexistent flight data file."""
     with pytest.raises(FileNotFoundError):
         datautil.merge_training_data('BAD_PATH', VALID_WEATHER_PATH)
 
@@ -117,6 +123,7 @@ def test_merge_bad_flight_path():
 @pytest.mark.unit
 @pytest.mark.datautil
 def test_merge_bad_weather_path():
+    """Attempt to load a nonexistent weather data file."""
     with pytest.raises(FileNotFoundError):
         datautil.merge_training_data(FLIGHTS_NO_TMP_OR_WND_PATH, 'BAD_PATH')
 
@@ -130,6 +137,19 @@ def test_merge_bad_weather_path():
     FLIGHTS_UNMAPPED_AIRPORTS_PATH
 ])
 def test_merge_partial(flight_data: Path):
+    """Verify that data are pruned in the following cases:
+
+    - No temperature or wind
+      - `tavg` field in weather data is null
+      - `wspd` field in weather data is null
+    - No weather for airport
+      - No weather data exist for the source airport
+      - No weather data exist for the destination airport
+    - No weather for data
+      - No weather data exist for the src/dst airports for a given date
+    - Unmapped airports
+      - Src/dst airports are not in airport mappings
+    """
     merged, _, _, _ = datautil.merge_training_data(
         flight_data, VALID_WEATHER_PATH)
     assert merged == PARTIAL_MERGE_OUTPUT
@@ -138,6 +158,7 @@ def test_merge_partial(flight_data: Path):
 @pytest.mark.unit
 @pytest.mark.datautil
 def test_merge_seen_carriers_airports():
+    """Verify that all output is correct for valid input."""
     merged, carriers, src, dst = datautil.merge_training_data(
         FLIGHTS_SEEN_CARRIERS_AND_AIRPORTS_PATH, VALID_WEATHER_PATH)
     assert merged == SEEN_CARRIERS_AIRPORTS_MERGE_OUTPUT
@@ -149,6 +170,12 @@ def test_merge_seen_carriers_airports():
 @pytest.mark.unit
 @pytest.mark.datautil
 def test_shuffle_and_partition():
+    """Test the following:
+
+    - Data are shuffled (order is changed)
+    - No records are added or dropped during shuffle
+    - Partition indices are correctly calculated
+    """
     unshuffled_data = json.load(FIFTY_FLIGHTS_PATH.open())
     shuffled_data = unshuffled_data[:]
     partition_indices = datautil.shuffle_and_partition(shuffled_data, 1, 3)
@@ -178,6 +205,7 @@ def test_shuffle_and_partition():
     (100, 12)
 ])
 def test_discretize_temp(temp, bucket):
+    """Verify that temperature is correctly discretized."""
     data = deepcopy(DISCRETIZE_BASE_DATA)
     data[0]['src_tavg'] = temp
     data[0]['dst_tavg'] = temp
@@ -196,6 +224,7 @@ def test_discretize_temp(temp, bucket):
     (40, 4)
 ])
 def test_discretize_wind(wind, bucket):
+    """Verify that wind speed is correctly discretized."""
     data = deepcopy(DISCRETIZE_BASE_DATA)
     data[0]['src_wspd'] = wind
     data[0]['dst_wspd'] = wind
@@ -211,6 +240,7 @@ def test_discretize_wind(wind, bucket):
     ('0030', '0030'),  ('0045', '0030'),
 ])
 def test_discretize_time(time, bucket):
+    """Verify that timestamp is correctly discretized."""
     data = deepcopy(DISCRETIZE_BASE_DATA)
     data[0]['CRS_DEP_TIME'] = time
     datautil.discretize(data)

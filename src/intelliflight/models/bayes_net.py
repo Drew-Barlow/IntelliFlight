@@ -14,6 +14,13 @@ from intelliflight.models.components.ptables import ProbabilityTables
 
 class Bayes_Net(ai_model.AI_Model):
     def __init__(self, params_path: str = None):
+        """Construct a Bayes_Net.
+
+        Positional arguments:
+
+        - params_path -- path to an existing model parameters file. If `None`,
+                         the model will be initialized in an untrained state.
+        """
         # Declare model components
         self.key_meta = KeyMeta()
         self.dataset = Dataset()
@@ -64,37 +71,67 @@ class Bayes_Net(ai_model.AI_Model):
                     [code['key'] for code in wind_codes])
 
     def load_params(self, path: str):
-        """"""
+        """Load model parameters from `path`."""
         with open(path, 'r') as f_in:
             import_json = json.load(f_in)
             # Load training RNG seed
-            rng_seed = import_json['training_rng_seed']
+            self.rng_seed = import_json['training_rng_seed']
 
             # Load seen airports and airlines
             seen_airports = set(import_json['seen_airports'])
             seen_carriers = set(import_json['seen_carriers'])
-
-            self.p_tables.import_p_tables(import_json['p_tables'])
-
-            # If all loading succeeded, update member variables
-            self.rng_seed = rng_seed
             self.key_meta.set_seen_airports(seen_airports)
             self.key_meta.set_seen_carriers(seen_carriers)
 
+            # Load probabilities
+            self.p_tables.import_p_tables(import_json['p_tables'])
+
     def load_data(self, flight_path: str):
+        """Load historical flight data from `flight_path`.
+
+        The program's internal historical weather database will be used.
+        This function will NOT train the model.
+        """
+        # Get merged and pruned flight and weather data
         print('BayesNet: Merging training datasets.')
         data, seen_carriers, seen_src, seen_dst = datautil.merge_training_data(
             flight_path, 'data/historical/weather/weather_by_bts_id.json')
+        # Get combined set of src and dst airports
         seen_airports = seen_src.copy()
         for dst in seen_dst:
             seen_airports.add(dst)
+
+        # Update key metadata
         self.key_meta.set_seen_airports(seen_airports)
         self.key_meta.set_seen_carriers(seen_carriers)
+
+        # Discretize and save data
         print('BayesNet: Discretizing data.')
         datautil.discretize(data)
         self.dataset.set_data(data)
 
     def train_model(self, partition_count: int, k_step_percent: float, max_k_fraction: float, rng_seed: int = None):
+        """Train the model.
+
+        Positional arguments:
+
+        - partition_count -- number of partitions to use for training. Must be
+                             at least 3 (training, validation, test).
+        - k_step_percent -- distance between each candidate value for the
+                            laplace smoothing parameter as a fraction of
+                            total dataset length. Must be between 0 and 1.
+        - max_k_fraction -- maximum value of the laplace smoothing parameter
+                            as a fraction of total dataset length. Must be
+                            between 0 and 1.
+        - rng_seed -- seed value for the RNG used to shuffle data. Can be used
+                      to ensure consistent output for debugging. If `None`, a
+                      random value is used.
+
+        Returns:
+
+        - Laplace smoothing parameter of trained model
+        - Accuracy of trained model against test data
+        """
         if self.dataset.get_data() is None:
             raise BufferError(
                 'BayesNet: ERR: No data loaded. Call load_data() first.')
@@ -212,8 +249,10 @@ class Bayes_Net(ai_model.AI_Model):
             f'BayesNet: Best model has k={best_k} and an estimated accuracy of {accuracy}%.')
         print(
             f'BayesNet: Completed training in {round(datetime.datetime.now().timestamp() - start_t, 2)}s.')
+        return best_k, accuracy
 
     def export_parameters(self):
+        """Export current model params to file."""
         export_json = {}
         export_json['training_rng_seed'] = self.rng_seed
         export_json['seen_airports'] = list(self.key_meta.get_seen_airports())
@@ -223,6 +262,17 @@ class Bayes_Net(ai_model.AI_Model):
             json.dump(export_json, f_out)
 
     def test(self, test_bounds: tuple[int, int]):
+        """Test model accuracy on data within test bounds.
+
+        `test_bounds` fields:
+
+        - test_start -- starting index for test. Inclusive.
+        - test_end -- ending index for test. Exclusive.
+
+        Returns:
+
+        Fraction of tests failed (error rate)
+        """
         num_pass = 0
         num_fail = 0
         test_start, test_end = test_bounds
@@ -243,6 +293,27 @@ class Bayes_Net(ai_model.AI_Model):
         return num_fail / (num_pass + num_fail)
 
     def make_prediction(self, src_airport: int, dest_airport: int, operating_airline: str, day_of_week: int, departure_time: str, src_tmp: str, dst_tmp: str, src_wnd: str, dst_wnd: str):
+        """Predict flight outcome.
+
+        Positional arguments:
+
+        - src_airport -- BTS ID of source airport
+        - dest_airport -- BTS ID of destination airport
+        - operating_airline -- code of airline operating flight
+        - day_of_week -- day of flight in range `(1: Monday - 7: Sunday)`
+        - departure_time -- discretized departure time in `hhmm` format
+        - src_tmp -- bucket key of discretized temperature at source airport
+        - src_tmp -- bucket key of discretized temperature at destination
+                     airport
+        - src_wnd -- bucket key of discretized wind speed at source airport
+        - src_wnd -- bucket key of discretized wind speed at destination
+                     airport
+
+        Returns:
+
+        - Key of most likely arrival status
+        - Probability of most likely arrival status
+        """
         if not self.key_meta.in_seen_airports(src_airport):
             raise ValueError(
                 f'BayesNet: src_airport={src_airport} did not occur in the training data.')

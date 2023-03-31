@@ -8,6 +8,12 @@ from typing import Final
 
 from intelliflight.util.nws_manager import Forecaster
 
+"""
+THIS FILE WAS USED FOR DEVELOPER TESTING TO CHARACTERIZE THE BEHAVIOR OF THE
+NWS FORECAST API. SINCE THAT API IS NOW UNDERSTOOD, THIS SCRIPT IS NO LONGER
+MAINTAINED AND IS NOT GUARANTEED TO WORK AGAINST THE CURRENT CODEBASE.
+"""
+
 AIRPORT_MAP_PATH: Final = '../data/maps/airport_mappings.json'
 
 start_time = datetime.datetime.now()

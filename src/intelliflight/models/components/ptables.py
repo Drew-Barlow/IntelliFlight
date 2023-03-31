@@ -5,8 +5,16 @@ from intelliflight.models.components.frequencycounter import FrequencyCounter
 
 
 class ProbabilityTables:
+    """Utility class storing tables of probabilities of feature values.
+    For feature `X` and arrival statuses `S`, the table `p_<X>[x][s]`
+    contains `P(X = x | S = s)`
+    (uppercase letters are variable names, lowercase are specific values).
+
+    The table `p_status[s]` contains the prior probability `P(S = s)`.
+    """
+
     def __init__(self):
-        # Declare Bayes Net parameter dicts
+        # Declare Bayes Net probability dicts for each feature
         # For feature value x and arrival status s,
         # Structure is p(x | s) = dict[x][s]
         # e.g. p(Monday|0-14min delay) = self.p_day['1']['delay:0']
@@ -21,14 +29,17 @@ class ProbabilityTables:
         self.p_src_wnd: dict[str, dict[str, float]] = None
         self.p_dst_wnd: dict[str, dict[str, float]] = None
 
+        # K value used for fit(). Not set if parameters are loaded
+        # with import_p_tables().
         self.__k: int = None
 
-        # Flag indicating whether tables are initialized to values
+        # Flag indicating whether tables are initialized to 0 values
         self.__p_tables_reset: bool = False
+        # Flag indicating whether tables have been fit to data
         self.__p_tables_fit: bool = False
 
     def reset_tables(self, key_meta: KeyMeta, frequencies: FrequencyCounter):
-        """Initializes tables with new keys and zero values.
+        """Initializes tables with new keys and a zero value for each key.
         Keys derived from arguments."""
         self.__p_tables_fit = False
         self.__p_tables_reset = True
@@ -67,6 +78,7 @@ class ProbabilityTables:
         """Fits the tables to a dataset.
 
         Positional arguments:
+
         - dataset -- `Dataset` from which variable frequencies were drawn
         - frequencies -- `FrequencyCounter` on which `count_frequencies()`
                          has been invoked
@@ -80,9 +92,16 @@ class ProbabilityTables:
                 'ProbabilityTables: ERR: Tables were not reset. Run reset_tables() first.')
         # Calculate p values
         for status_k in self.p_status.keys():
+            # Get frequency of this arrival status
             status_freq = frequencies.query_status_counter(status_k)
+
+            # Calculate prior probability of current arrival status
             self.p_status[status_k] = self.__laplace_smooth(
                 status_freq, data_len, len(self.p_status.keys()), k)
+
+            # Calculate probabilities of each feature value given current
+            # arrival status
+
             for key in self.p_day.keys():
                 self.p_day[key][status_k] = self.__laplace_smooth(
                     frequencies.query_day_counter(key, status_k), status_freq, len(self.p_day.keys()), k)
@@ -119,6 +138,7 @@ class ProbabilityTables:
                 self.p_dst_wnd[key][status_k] = self.__laplace_smooth(
                     frequencies.query_dst_wnd_counter(key, status_k), status_freq, len(self.p_dst_wnd.keys()), k)
 
+        # Update other variables
         self.__k = k
         self.__p_tables_fit = True
         self.__p_tables_reset = False
@@ -148,7 +168,7 @@ class ProbabilityTables:
         - 'src_wind_speed'
         - 'dst_wind_speed'
 
-        Each value in the dict is a properly formatted p_table.
+        Each value in the dict must be a properly formatted p_table.
         """
         self.p_status = deepcopy(tables['arrival_status'])
         self.p_day = deepcopy(tables['day'])
@@ -198,33 +218,43 @@ class ProbabilityTables:
     # P(variable = key | arrival status)
 
     def query_p_status(self, status: str) -> float:
+        """Get `P(status)`"""
         return self.p_status[status]
 
     def query_p_day(self, day: str, status: str) -> float:
+        """Get `P(day | status)`"""
         return self.p_day[day][status]
 
     def query_p_airline(self, airline: str, status: str) -> float:
+        """Get `P(airline | status)`"""
         return self.p_airline[airline][status]
 
     def query_p_src(self, src: str, status: str) -> float:
+        """Get `P(src | status)`"""
         return self.p_src[src][status]
 
     def query_p_dst(self, dst: str, status: str) -> float:
+        """Get `P(dst | status)`"""
         return self.p_dst[dst][status]
 
     def query_p_dep_time(self, dep_time: str, status: str) -> float:
+        """Get `P(dep_time | status)`"""
         return self.p_dep_time[dep_time][status]
 
     def query_p_src_tmp(self, src_tmp: str, status: str) -> float:
+        """Get `P(src_tmp | status)`"""
         return self.p_src_tmp[src_tmp][status]
 
     def query_p_dst_tmp(self, dst_tmp: str, status: str) -> float:
+        """Get `P(dst_tmp | status)`"""
         return self.p_dst_tmp[dst_tmp][status]
 
     def query_p_src_wnd(self, src_wnd: str, status: str) -> float:
+        """Get `P(src_wnd | status)`"""
         return self.p_src_wnd[src_wnd][status]
 
     def query_p_dst_wnd(self, dst_wnd: str, status: str) -> float:
+        """Get `P(dst_wnd | status)`"""
         return self.p_dst_wnd[dst_wnd][status]
 
     # GETTERS
@@ -232,33 +262,43 @@ class ProbabilityTables:
     # consider a query function instead.
 
     def get_p_status(self) -> dict[str, float]:
+        """Copy `p_status`"""
         return self.p_status.copy()
 
     def get_p_day(self) -> dict[str, dict[str, float]]:
+        """Deep `copy p_day`"""
         return deepcopy(self.p_day)
 
     def get_p_airline(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_airline`"""
         return deepcopy(self.p_airline)
 
     def get_p_src(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_src`"""
         return deepcopy(self.p_src)
 
     def get_p_dst(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_dst`"""
         return deepcopy(self.p_dst)
 
     def get_p_dep_time(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_dep_time`"""
         return deepcopy(self.p_dep_time)
 
     def get_p_src_tmp(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_src_tmp`"""
         return deepcopy(self.p_src_tmp)
 
     def get_p_dst_tmp(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_dst_tmp`"""
         return deepcopy(self.p_dst_tmp)
 
     def get_p_src_wnd(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_src_wnd`"""
         return deepcopy(self.p_src_wnd)
 
     def get_p_dst_wnd(self) -> dict[str, dict[str, float]]:
+        """Deep copy `p_dst_wnd`"""
         return deepcopy(self.p_dst_wnd)
 
     def __laplace_smooth(self, observations_freq: int, total: int, dimension: int, k: int):

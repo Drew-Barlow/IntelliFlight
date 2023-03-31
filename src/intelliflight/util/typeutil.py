@@ -19,7 +19,7 @@ AIRPORT_MAP_SCHEMA: Final = Schema([
 
 
 def is_float(val: str) -> bool:
-    """Test whether string `val` is a float"""
+    """Test whether string `val` is a float."""
     try:
         float(val)
         return True
@@ -28,7 +28,7 @@ def is_float(val: str) -> bool:
 
 
 def is_int(val: str) -> bool:
-    """Test whether string `val` is an int"""
+    """Test whether string `val` is an int."""
     try:
         int(val)
         return True

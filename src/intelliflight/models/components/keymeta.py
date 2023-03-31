@@ -1,7 +1,13 @@
-from copy import deepcopy
-
-
 class KeyMeta:
+    """Stores the following information:
+
+    - Airport bts_id values in training data
+    - Carrier codes in training data
+    - Arrival statuses as `{ key: description }` (both `str`)
+    - Key values for temperature buckets
+    - Key values for wind speed buckets
+    """
+
     def __init__(self):
         # Key values for possible arrival states:
         # -Arrived at destination (ahead, on-time, or delayed) [delay:<code>]

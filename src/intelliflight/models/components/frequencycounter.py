@@ -4,6 +4,15 @@ from intelliflight.models.components.keymeta import KeyMeta
 
 
 class FrequencyCounter:
+    """Utility class storing tables of absolute frequencies of feature values.
+    For feature `X` and arrival statuses `S`, the table `<X>_counter[x][s]`
+    contains `freq(X = x | S = s)`
+    (uppercase letters are variable names, lowercase are specific values).
+
+    The table `status_counter[s]` contains frequencies `freq(S = s)` across
+    the entire data set.
+    """
+
     def __init__(self):
         # Frequency dicts. These store the frequency of variables
         # in the training data and are used to generate probability values.
@@ -20,6 +29,8 @@ class FrequencyCounter:
         self.__counters_reset: bool = False
 
     def reset_counters(self, key_meta: KeyMeta):
+        """Given key data in `key_meta`, initialize counter keys and reset
+        all frequencies to 0."""
         # Reset frequency counters
         self.__status_counter = {
             key: 0 for key in key_meta.get_status_keys()}
@@ -51,6 +62,8 @@ class FrequencyCounter:
         self.__counters_reset = True
 
     def count_frequencies(self, dataset: Dataset):
+        """Given 'dataset', calculate and set the frequencies of all feature
+        values. `reset_counters()` must be called first."""
         # Error checking
         if not self.__counters_reset:
             raise BufferError(
@@ -91,8 +104,9 @@ class FrequencyCounter:
                 raise ValueError(
                     f'FrequencyCounter.count_frequencies(): validation_start={validation_start} > validation_end={validation_end}')
 
+        # Count features
+
         data = dataset.get_data()
-        # Count variables
         for i in range(dataset.get_len()):
             # Check if record is in test or validation set
             if ((test_start <= i < test_end)
@@ -127,61 +141,81 @@ class FrequencyCounter:
         self.__counters_reset = False
 
     def get_status_counter(self) -> dict[str, int]:
+        """Copy `status_counter`"""
         return self.__status_counter.copy()
 
     def get_day_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `day_counter`"""
         return deepcopy(self.__day_counter)
 
     def get_airline_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `airline_counter`"""
         return deepcopy(self.__airline_counter)
 
     def get_src_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `src_counter`"""
         return deepcopy(self.__src_counter)
 
     def get_dst_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `dst_counter`"""
         return deepcopy(self.__dst_counter)
 
     def get_dep_time_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `det_time_counter`"""
         return deepcopy(self.__dep_time_counter)
 
     def get_src_tmp_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `src_tmp_counter`"""
         return deepcopy(self.__src_tmp_counter)
 
     def get_dst_tmp_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `dst_tmp_counter`"""
         return deepcopy(self.__dst_tmp_counter)
 
     def get_src_wind_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `src_wnd_counter`"""
         return deepcopy(self.__src_wind_counter)
 
     def get_dst_wind_counter(self) -> dict[str, dict[str, int]]:
+        """Deep copy `dst_wnd_counter`"""
         return deepcopy(self.__dst_wind_counter)
 
     def query_status_counter(self, status: str) -> int:
+        """Get `freq(status)`"""
         return self.__status_counter[status]
 
     def query_day_counter(self, day: str, status: str) -> int:
+        """Get `freq(day | status)`"""
         return self.__day_counter[day][status]
 
     def query_airline_counter(self, airline: str, status: str) -> int:
+        """Get `freq(airline | status)`"""
         return self.__airline_counter[airline][status]
 
     def query_src_counter(self, src: str, status: str) -> int:
+        """Get `freq(src | status)`"""
         return self.__src_counter[src][status]
 
     def query_dst_counter(self, dst: str, status: str) -> int:
+        """Get `freq(dst | status)`"""
         return self.__dst_counter[dst][status]
 
     def query_dep_time_counter(self, dep_time: str, status: str) -> int:
+        """Get `freq(dep_time | status)`"""
         return self.__dep_time_counter[dep_time][status]
 
     def query_src_tmp_counter(self, src_tmp: str, status: str) -> int:
+        """Get `freq(src_tmp | status)`"""
         return self.__src_tmp_counter[src_tmp][status]
 
     def query_dst_tmp_counter(self, dst_tmp: str, status: str) -> int:
+        """Get `freq(dst_tmp | status)`"""
         return self.__dst_tmp_counter[dst_tmp][status]
 
     def query_src_wnd_counter(self, src_wnd: str, status: str) -> int:
+        """Get `freq(src_wnd | status)`"""
         return self.__src_wind_counter[src_wnd][status]
 
     def query_dst_wnd_counter(self, dst_wnd: str, status: str) -> int:
+        """Get `freq(dst_wnd | status)`"""
         return self.__dst_wind_counter[dst_wnd][status]

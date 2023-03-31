@@ -1,6 +1,3 @@
-import intelliflight.util.nws_manager as nws_manager
-
-
 class AI_Model:
     model_params = None
 
