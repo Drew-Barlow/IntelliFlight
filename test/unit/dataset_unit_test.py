@@ -3,7 +3,6 @@ import json
 from pathlib import Path
 from intelliflight.models.components.dataset import Dataset
 from typing import Final
-from copy import deepcopy
 
 
 ## DATA ##
@@ -81,6 +80,7 @@ def test_set_test_bounds_start_above_end():
 @pytest.mark.unit
 @pytest.mark.dataset
 def test_clear_test_bounds():
+    """Test whether test bounds are properly cleared."""
     dataset = setup()
     dataset.set_test_bounds(1, 2)
     dataset.clear_test_partition()
@@ -129,6 +129,7 @@ def test_set_validation_bounds_start_above_end():
 @pytest.mark.unit
 @pytest.mark.dataset
 def test_clear_validation_bounds():
+    """Test whether validation bounds are properly cleared."""
     dataset = setup()
     dataset.set_validation_bounds(1, 2)
     dataset.clear_validation_partition()
@@ -138,6 +139,7 @@ def test_clear_validation_bounds():
 @pytest.mark.unit
 @pytest.mark.dataset
 def test_get_training_len_with_test_part():
+    """Test getting data length minus test segment."""
     dataset = setup()
     dataset.set_test_bounds(0, 5)
     assert dataset.get_training_len() == (dataset.get_len() - 5)
@@ -146,6 +148,7 @@ def test_get_training_len_with_test_part():
 @pytest.mark.unit
 @pytest.mark.dataset
 def test_get_training_len_with_validation_part():
+    """Test getting data length minus validation segment."""
     dataset = setup()
     dataset.set_validation_bounds(0, 5)
     assert dataset.get_training_len() == (dataset.get_len() - 5)
@@ -154,6 +157,7 @@ def test_get_training_len_with_validation_part():
 @pytest.mark.unit
 @pytest.mark.dataset
 def test_get_training_len_with_test_and_validation_part():
+    """Test getting data length minus test and validation segments."""
     dataset = setup()
     dataset.set_test_bounds(0, 5)
     dataset.set_validation_bounds(5, 10)
@@ -168,6 +172,8 @@ def test_get_training_len_with_test_and_validation_part():
 ])
 def test_get_training_len_with_overlapping_partitions(
         test_bounds: tuple[int, int], validation_bounds: tuple[int, int]):
+    """Test getting training data length when test and validation segments
+    overlap."""
     dataset = setup()
     dataset.set_test_bounds(*test_bounds)
     dataset.set_validation_bounds(*validation_bounds)
