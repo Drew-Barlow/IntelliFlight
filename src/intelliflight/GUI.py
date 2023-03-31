@@ -31,16 +31,16 @@ class App(customtkinter.CTk):
         self.textFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
         self.textFrame.grid(row=0,column=0,pady=20,sticky='nsew')
         #Set training data input text
-        self.inputLabel = customtkinter.CTkLabel(self.textFrame,text="Use this button to input the file path for the training data:")
+        self.inputLabel = customtkinter.CTkLabel(self.textFrame,text="Input the file path for the training data:")
         self.inputLabel.grid(row=0,column=0,pady=20,padx=20)
         #Set partition count text
-        self.partitionLabel = customtkinter.CTkLabel(self.textFrame,text="Use the slider to set the partition count:")
+        self.partitionLabel = customtkinter.CTkLabel(self.textFrame,text="Number of partitions for validation and testing:")
         self.partitionLabel.grid(row=1,column=0,pady=20,padx=20)
         #Set k value increment text
-        self.kValueLabel = customtkinter.CTkLabel(self.textFrame,text="Use the slider to set the increment for each k value:")
+        self.kValueLabel = customtkinter.CTkLabel(self.textFrame,text="Offset between candidate values for the laplace smoothing factor k as a percentage of the dataset length:")
         self.kValueLabel.grid(row=2,column=0,pady=20,padx=20)
         #Set max k value fraction text
-        self.kFractionLabel = customtkinter.CTkLabel(self.textFrame,text="Use the slider to set the percentage of the max fraction:")
+        self.kFractionLabel = customtkinter.CTkLabel(self.textFrame,text="The laplace smoothing factor k is at most this percentage of the dataset length:")
         self.kFractionLabel.grid(row=3,column=0,pady=20,padx=20)
         #################################################################
 
