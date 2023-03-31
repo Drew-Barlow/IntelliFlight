@@ -1,0 +1,73 @@
+{
+  "10135": {
+    "2018-01-01": {
+      "date": "2018-01-01",
+      "tavg": 10.0,
+      "tmin": 3.2,
+      "tmax": 19.2,
+      "prcp": 0.0,
+      "snow": 1.181,
+      "wdir": null,
+      "wspd": 11.0,
+      "wpgt": null,
+      "pres": 1029.3,
+      "tsun": null
+    },
+    "2018-01-02": {
+      "date": "2018-01-02",
+      "tavg": null,
+      "tmin": 5.2,
+      "tmax": 24.3,
+      "prcp": 0.0,
+      "snow": 1.181,
+      "wdir": 245.5,
+      "wspd": 10.8,
+      "wpgt": null,
+      "pres": 1029.4,
+      "tsun": null
+    },
+    "2018-01-03": {
+      "date": "2018-01-03",
+      "tavg": 15.1,
+      "tmin": 5.2,
+      "tmax": 24.3,
+      "prcp": 0.0,
+      "snow": 1.181,
+      "wdir": 245.5,
+      "wspd": null,
+      "wpgt": null,
+      "pres": 1029.4,
+      "tsun": null
+    }
+  },
+  "10136": {
+    "2018-01-01": {
+      "date": "2018-01-01",
+      "tavg": 5.0,
+      "tmin": 3.2,
+      "tmax": 19.2,
+      "prcp": 0.0,
+      "snow": 1.181,
+      "wdir": null,
+      "wspd": 6.0,
+      "wpgt": null,
+      "pres": 1029.3,
+      "tsun": null
+    }
+  },
+  "1": {
+    "2018-01-01": {
+      "date": "2018-01-01",
+      "tavg": 1.0,
+      "tmin": 3.2,
+      "tmax": 19.2,
+      "prcp": 0.0,
+      "snow": 1.181,
+      "wdir": null,
+      "wspd": 2.0,
+      "wpgt": null,
+      "pres": 1029.3,
+      "tsun": null
+    }
+  }
+}

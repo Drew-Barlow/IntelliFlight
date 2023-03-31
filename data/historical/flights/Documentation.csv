@@ -1,0 +1,12 @@
+SYS_FIELD_NAME,FIELD_DESC
+DAY_OF_WEEK,Day of Week
+FL_DATE,Flight Date (yyyymmdd)
+OP_UNIQUE_CARRIER,"Unique Carrier Code. When the same code has been used by multiple carriers, a numeric suffix is used for earlier users, for example, PA, PA(1), PA(2). Use this field for analysis across a range of years."
+ORIGIN_AIRPORT_ID,"Origin Airport, Airport ID. An identification number assigned by US DOT to identify a unique airport.  Use this field for airport analysis across a range of years because an airport can change its airport code and airport codes can be reused."
+DEST_AIRPORT_ID,"Destination Airport, Airport ID. An identification number assigned by US DOT to identify a unique airport.  Use this field for airport analysis across a range of years because an airport can change its airport code and airport codes can be reused."
+CRS_DEP_TIME,CRS Departure Time (local time: hhmm)
+DEP_DELAY_GROUP,"Departure Delay intervals, every (15 minutes from <-15 to >180)"
+ARR_DELAY_GROUP,"Arrival Delay intervals, every (15-minutes from <-15 to >180)"
+CANCELLED,Cancelled Flight Indicator (1=Yes)
+CANCELLATION_CODE,Specifies The Reason For Cancellation
+DIVERTED,Diverted Flight Indicator (1=Yes)

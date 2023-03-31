@@ -1,0 +1,7 @@
+requests
+pytest
+pytest-cov
+schema
+tk
+customtkinter
+tkintermapview

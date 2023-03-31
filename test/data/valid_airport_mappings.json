@@ -1,0 +1,24 @@
+[
+    {
+        "desc": "Allentown/Bethlehem/Easton PA: Lehigh Valley International",
+        "icao": "KABE",
+        "faa": "ABE",
+        "mstat": "72517",
+        "location": {
+            "lat": "40.651773",
+            "lon": "-75.442797"
+        },
+        "bts_id": "10135"
+    },
+    {
+        "desc": "Abilene TX: Abilene Regional",
+        "icao": "KABI",
+        "faa": "ABI",
+        "mstat": "72266",
+        "location": {
+            "lat": "32.4113006592",
+            "lon": "-99.68190002440001"
+        },
+        "bts_id": "10136"
+    }
+]

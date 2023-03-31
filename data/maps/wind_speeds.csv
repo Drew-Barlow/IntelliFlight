@@ -1,0 +1,6 @@
+key,min,desc
+0,0,0MPH <= s < 10MPH
+1,10,10MPH <= s < 20MPH
+2,20,20MPH <= s < 30MPH
+3,30,30MPH <= s < 40MPH
+4,40,40MPH <= s

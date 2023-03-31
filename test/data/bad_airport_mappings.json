@@ -1,0 +1,128 @@
+[
+    {
+        "comment": "Missing 'desc' field",
+        "map": {
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "Extra 'foo' field",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135",
+            "foo": "bar"
+        }
+    },
+    {
+        "comment": "Non-string 'desc' field",
+        "map": {
+            "desc": null,
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'icao' field not 4 characters long",
+        "map": {
+            "desc": "Test airport",
+            "icao": "too long",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'faa' field not 3 characters long",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "12",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'mstat field is float, not int",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "123.456",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'lat' field is str, not float",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "aa",
+                "lon": "-75.442797"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'lon' field is str, not float",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "bb"
+            },
+            "bts_id": "10135"
+        }
+    },
+    {
+        "comment": "'bts_id' field is float, not int",
+        "map": {
+            "desc": "Test airport",
+            "icao": "KABE",
+            "faa": "ABE",
+            "mstat": "72517",
+            "location": {
+                "lat": "40.651773",
+                "lon": "-75.442797"
+            },
+            "bts_id": "12.34"
+        }
+    }
+]
