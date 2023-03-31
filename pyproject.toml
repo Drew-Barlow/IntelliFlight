@@ -31,4 +31,8 @@ markers = [
     "unit: function is part of the unit test suite",
     "nws: function tests the nws_manager module",
     "datautil: function tests the datautil module",
+    "dataset: function tests the dataset model component",
+    "keymeta: function tests the KeyMeta model component",
+    "frequencies: function tests the FrequencyCounter model component",
+    "ptables: function tests the ProbabilityTables model component",
 ]
