@@ -18,26 +18,39 @@ class Dataset:
     def get_data(self) -> list:
         """Get data. This is NOT a copy; rather, it is a reference to this
         object's internal data list."""
-        if self.__data is None:
+        if not self.data_loaded():
             raise ValueError('Dataset: ERR: Data is None.')
+
         return self.__data
 
     def get_len(self) -> int:
         """Get length of full dataset."""
-        if self.__datalen is None:
+        if not self.data_loaded():
             raise ValueError('Dataset: ERR: Data is None.')
+
         return self.__datalen
 
     def get_training_len(self) -> int:
         """Get length of dataset, excluding test and validation partitions."""
-        if self.__datalen is None:
+        if not self.data_loaded():
             raise ValueError('Dataset: ERR: Data is None.')
+
         length = self.__datalen
         if self.__test_start is not None:
             length -= self.__test_end - self.__test_start
 
         if self.__validation_start is not None:
             length -= self.__validation_end - self.__validation_start
+
+        # Account for possible overlap between partitions, which could cause
+        # double counting.
+        if (self.__test_start is not None) \
+                and (self.__validation_start is not None):
+            if (self.__test_start <= self.__validation_start < self.__test_end):
+                length += self.__test_end - self.__validation_start
+
+            elif (self.__validation_start <= self.__test_start < self.__validation_end):
+                length += self.__validation_end - self.__test_start
 
         return length
 
@@ -57,6 +70,9 @@ class Dataset:
 
     def set_test_bounds(self, test_start: int, test_end: int):
         """Set test partition bounds. Start is inclusive; end is exclusive."""
+        if not self.data_loaded():
+            raise ValueError('Dataset: ERR: Data is None.')
+
         if test_start >= test_end:
             raise ValueError('Dataset: ERR: test_start={} must be less than test_end={}'.format(
                 test_start, test_end))
@@ -75,6 +91,9 @@ class Dataset:
     def set_validation_bounds(self, validation_start: int, validation_end: int):
         """Set validation partition bounds.
         Start is inclusive; end is exclusive."""
+        if not self.data_loaded():
+            raise ValueError('Dataset: ERR: Data is None.')
+
         if validation_start >= validation_end:
             raise ValueError('Dataset: ERR: validation_start={} must be less than validation_end={}'.format(
                 validation_start, validation_end))
@@ -99,3 +118,7 @@ class Dataset:
         """Set validation bounds to `None`"""
         self.__validation_start = None
         self.__validation_end = None
+
+    def data_loaded(self) -> bool:
+        """Test whether data is loaded in."""
+        return not self.__data is None
