@@ -22,43 +22,41 @@ class App(customtkinter.CTk):
         self.tabview.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
         self.tabview.add("Train")
         self.tabview.add("Predict")
-        self.tabview.tab("Train").grid_columnconfigure((0,1,2,3,4),weight=1)
+        self.tabview.tab("Train").grid_columnconfigure((0,1),weight=1)
         self.tabview.tab("Predict").grid_columnconfigure((0),weight=1)
         
         #TRAINING TAB
         #################################################################
         #Set text frame
         self.textFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
-        self.textFrame.grid(row=0,column=0,pady=20,sticky='nsew')
+        self.textFrame.grid(row=0,column=0,pady=20,padx=20,sticky='nsew')
         #Set training data input text
         self.inputLabel = customtkinter.CTkLabel(self.textFrame,text="Input the file path for the training data:")
-        self.inputLabel.grid(row=0,column=0,pady=20,padx=20)
+        self.inputLabel.grid(row=0,column=0,pady=20)
         #Set partition count text
         self.partitionLabel = customtkinter.CTkLabel(self.textFrame,text="Number of partitions for validation and testing:")
-        self.partitionLabel.grid(row=1,column=0,pady=20,padx=20)
+        self.partitionLabel.grid(row=1,column=0,pady=20)
         #Set k value increment text
-        self.kValueLabel = customtkinter.CTkLabel(self.textFrame,text="Offset between candidate values for the ")
-        self.kValueLabel.grid(row=2,column=0,padx=20)
-        self.kValueLabel2 = customtkinter.CTkLabel(self.textFrame,text="laplace smoothing factor k as a percentage of the dataset length:")
-        self.kValueLabel2.grid(row=3,column=0,padx=20)
+        self.kValueLabel = customtkinter.CTkLabel(self.textFrame,text="Offset between candidate values for thelaplace smoothing \nfactor k as a percentage of the dataset length:")
+        self.kValueLabel.grid(row=2,column=0,pady=20,padx=10)
         #Set max k value fraction text
-        self.kFractionLabel = customtkinter.CTkLabel(self.textFrame,text="The laplace smoothing factor k is at most this percentage of the dataset length:")
-        self.kFractionLabel.grid(row=4,column=0,pady=20,padx=20)
+        self.kFractionLabel = customtkinter.CTkLabel(self.textFrame,text="The laplace smoothing factor k is at most \nthis percentage of the dataset length:")
+        self.kFractionLabel.grid(row=4,column=0,pady=20)
         #################################################################
 
 
         #################################################################
         #Set input frame
         self.inputFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
-        self.inputFrame.grid(row=0,column=2,pady=20,sticky='nsew')
+        self.inputFrame.grid(row=0,column=1,pady=20,padx=20,sticky='nsew')
         #Set training data input button
         self.button = customtkinter.CTkButton(self.inputFrame,text="Input training data" ,command=self.button_callback)
         self.button.grid(row=0,column=1,pady=20,padx=20)
         self.trainingCheckbox = customtkinter.CTkCheckBox(self.inputFrame,text="")
-        self.trainingCheckbox.grid(row=0,column=2,pady=20,padx=20)
+        self.trainingCheckbox.grid(row=0,column=2,padx=(73,0))
         #Set partition count input slider
         self.sliderP = customtkinter.CTkSlider(self.inputFrame, from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
-        self.sliderP.grid(row=2,column=1,pady=27,padx=20)
+        self.sliderP.grid(row=2,column=1,pady=30,padx=20)
         self.sliderP.set(0)
         self.partitionOutput = customtkinter.CTkEntry(self.inputFrame,width=37,height=30)
         self.partitionOutput.grid(row=2,column=2)
@@ -70,11 +68,12 @@ class App(customtkinter.CTk):
         self.kValueOutput.grid(row=3,column=2)
         #Set max k value fraction slider
         self.SliderF = customtkinter.CTkSlider(self.inputFrame,from_=0, to=1, command=self.sliderF_callback)
-        self.SliderF.grid(row=4,column=1,pady=27,padx=20)
+        self.SliderF.grid(row=4,column=1,pady=25,padx=20)
         self.SliderF.set(0)
         self.kFractionOutput = customtkinter.CTkEntry(self.inputFrame,width=37, height=30)
         self.kFractionOutput.grid(row=4,column=2)
         #################################################################
+
 
         #PREDICT TAB
         #################################################################
