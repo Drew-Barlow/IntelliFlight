@@ -70,23 +70,12 @@ class FrequencyCounter:
                 'FrequencyCounter: ERR: Counters were not reset. Run reset_counters() first.')
         validation_start, validation_end = dataset.get_validation_bounds()
         test_start, test_end = dataset.get_test_bounds()
-        # Validation bounds must both be None or both have values
-        if (validation_start is None) != (validation_end is None):
-            raise TypeError(
-                f'FrequencyCounter.count_frequencies(): Provided validation_start={validation_start} and validation_end={validation_end} (Either both or neither must be None).')
-        elif validation_start is None:
+        if validation_start is None:
             # Test bounds must both be None or both have values
-            if (test_start is None) != (test_end is None):
-                raise TypeError(
-                    f'FrequencyCounter.count_frequencies(): Provided test_start={test_start} and test_end={test_end} (Either both or neither must be None).')
             # If there is no test set, make the bounds negative so the index in the dataset never falls between them
             if test_start is None:
                 test_start = -999
                 test_end = -999
-            # test_end must come after test_start
-            elif test_start > test_end:
-                raise ValueError(
-                    f'FrequencyCounter.count_frequencies(): test_start={test_start} > test_end={test_end}')
             # Set bounds to test set bounds
             validation_start = test_start
             validation_end = test_end
@@ -95,14 +84,6 @@ class FrequencyCounter:
             if test_start is None or test_end is None:
                 raise TypeError(
                     'FrequencyCounter.count_frequencies(): Test set boundaries cannot be None if a validation set is defined.')
-            # test_end must come after test_start
-            if test_start > test_end:
-                raise ValueError(
-                    f'FrequencyCounter.count_frequencies(): test_start={test_start} > test_end={test_end}')
-            # validation_end must come after validation_start
-            if validation_start > validation_end:
-                raise ValueError(
-                    f'FrequencyCounter.count_frequencies(): validation_start={validation_start} > validation_end={validation_end}')
 
         # Count features
 
