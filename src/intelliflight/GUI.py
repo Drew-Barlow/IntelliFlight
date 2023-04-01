@@ -13,13 +13,13 @@ class App(customtkinter.CTk):
         super().__init__()
 
         self.title("IntelliFlight")
-        self.geometry("900x600")
+        self.geometry("1920×1080")
 
         self.grid_rowconfigure((0), weight=1)
         self.grid_columnconfigure((0), weight=1)
 
         self.tabview = customtkinter.CTkTabview(self, width=250)
-        self.tabview.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
+        self.tabview.grid(row=0, column=0,  sticky="nsew")
         self.tabview.add("Train")
         self.tabview.add("Predict")
         self.tabview.tab("Train").grid_columnconfigure((0,1),weight=1)
@@ -50,50 +50,55 @@ class App(customtkinter.CTk):
         #Set input frame
         self.inputFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
         self.inputFrame.grid(row=0,column=1,pady=40,padx=20,sticky='nsew')
+
+        #Set new tab
+        self.fileTab = customtkinter.CTkTabview(self.inputFrame, width=250)
+        self.fileTab.grid(row=0,column=0,pady=20,padx=20,sticky='nsew')
+        self.fileTab.add("Train new model")
+        self.fileTab.add("Import existing model")
+        self.fileTab.tab("Train new model").grid_columnconfigure((0,1),weight=1)
+
         #Set training data input button
-        self.inputButton = customtkinter.CTkButton(self.inputFrame,text="Input training data" ,command=self.inputButton_callback)
+        self.inputButton = customtkinter.CTkButton(self.fileTab.tab("Train new model"),text="Input training data" ,command=self.inputButton_callback)
         self.inputButton.grid(row=0,column=1,pady=20,padx=20)
-        self.trainingCheckbox = customtkinter.CTkCheckBox(self.inputFrame,text="")
+        self.trainingCheckbox = customtkinter.CTkCheckBox(self.fileTab.tab("Train new model"),text="")
         self.trainingCheckbox.grid(row=0,column=2,padx=(73,0))
 
-        self.importFileButton = customtkinter.CTkButton(self.inputFrame,text="Import model file",command=self.importButton_callback)
+        self.importFileButton = customtkinter.CTkButton(self.fileTab.tab("Import existing model"),text="Import model file",command=self.importButton_callback)
         self.importFileButton.grid(row=1,column=1,pady=20,padx=20)
-        self.importCheckbox = customtkinter.CTkCheckBox(self.inputFrame,text="")
+        self.importCheckbox = customtkinter.CTkCheckBox(self.fileTab.tab("Import existing model"),text="")
         self.importCheckbox.grid(row=1,column=2,padx=(73,0))
         #Set partition count input slider
-        self.sliderP = customtkinter.CTkSlider(self.inputFrame, from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
+        self.sliderP = customtkinter.CTkSlider(self.fileTab.tab("Train new model"), from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
         self.sliderP.grid(row=2,column=1,pady=30,padx=20)
         self.sliderP.set(0)
-        self.partitionOutput = customtkinter.CTkEntry(self.inputFrame,width=37,height=30)
+        self.partitionOutput = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),width=37,height=30)
         self.partitionOutput.grid(row=2,column=2)
         #Set k value increment slider
-        self.sliderK = customtkinter.CTkSlider(self.inputFrame,from_=0, to=100, number_of_steps=10, command=self.sliderK_callback)
+        self.sliderK = customtkinter.CTkSlider(self.fileTab.tab("Train new model"),from_=0, to=100, number_of_steps=10, command=self.sliderK_callback)
         self.sliderK.grid(row=3,column=1,pady=27,padx=20)
         self.sliderK.set(0)
-        self.kValueOutput = customtkinter.CTkEntry(self.inputFrame,width=37,height=30)
+        self.kValueOutput = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),width=37,height=30)
         self.kValueOutput.grid(row=3,column=2)
         #Set max k value fraction slider
-        self.SliderF = customtkinter.CTkSlider(self.inputFrame,from_=0, to=1, command=self.sliderF_callback)
+        self.SliderF = customtkinter.CTkSlider(self.fileTab.tab("Train new model"),from_=0, to=1, command=self.sliderF_callback)
         self.SliderF.grid(row=4,column=1,pady=25,padx=20)
         self.SliderF.set(0)
-        self.kFractionOutput = customtkinter.CTkEntry(self.inputFrame,width=37, height=30)
+        self.kFractionOutput = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),width=37, height=30)
         self.kFractionOutput.grid(row=4,column=2)
         #################################################################
 
         
         #################################################################
-        #Set bottom frame
+        """ #Set bottom frame
         self.bottomFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
         self.bottomFrame.grid(row=1,column=0,sticky='n')
-        #Set import file button
-        self.importFileButton = customtkinter.CTkButton(self.bottomFrame,text="Import model file",command=self.importButton_callback)
-        self.importFileButton.grid(row=0,column=0)
         #Set k value print
         self.kValuePrint = customtkinter.CTkEntry(self.bottomFrame)
         self.kValuePrint.grid(row=0,column=1)
         #Set save model button
         self.saveButton = customtkinter.CTkButton(self.bottomFrame,text="Save",command=self.saveButton_callback)
-        self.saveButton.grid(row=0,column=2)
+        self.saveButton.grid(row=0,column=2) """
     
 
 
