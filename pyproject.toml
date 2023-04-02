@@ -23,7 +23,7 @@ classifiers = [
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
-    "--basetemp=tmp/pytest"
+    "--basetemp=tmp"
 ]
 testpaths = "test"
 
