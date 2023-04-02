@@ -25,6 +25,8 @@ class App(customtkinter.CTk):
         self.tabview.tab("Train").grid_columnconfigure((0,1),weight=1)
         self.tabview.tab("Train").grid_rowconfigure((0,1),weight=1)
         self.tabview.tab("Predict").grid_columnconfigure((0),weight=1)
+        self.tabview.tab("Predict").grid_rowconfigure((0,1),weight=1)
+
         
         #TRAINING TAB
         #################################################################
@@ -48,6 +50,7 @@ class App(customtkinter.CTk):
         #Set training data input text
         self.inputLabel = customtkinter.CTkLabel(self.fileTab.tab("Train new model"),text="Input the file path for the training data:")
         self.inputLabel.grid(row=0,column=0,pady=20)
+
         #Set training data input button
         self.inputButton = customtkinter.CTkButton(self.fileTab.tab("Train new model"),text="Input training data" ,command=self.inputButton_callback)
         self.inputButton.grid(row=0,column=1,pady=20,padx=20)
@@ -57,6 +60,7 @@ class App(customtkinter.CTk):
         #Set partition count text
         self.partitionLabel = customtkinter.CTkLabel(self.fileTab.tab("Train new model"),text="Number of partitions for validation and testing:")
         self.partitionLabel.grid(row=1,column=0,pady=20)
+
         #Set partition count input slider
         self.sliderP = customtkinter.CTkSlider(self.fileTab.tab("Train new model"), from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
         self.sliderP.grid(row=1,column=1,pady=30,padx=20)
@@ -67,6 +71,7 @@ class App(customtkinter.CTk):
         #Set k value increment text
         self.kValueLabel = customtkinter.CTkLabel(self.fileTab.tab("Train new model"),text="Offset between candidate values for thelaplace smoothing \nfactor k as a percentage of the dataset length:")
         self.kValueLabel.grid(row=2,column=0,pady=20,padx=10)
+
         #Set k value increment slider
         self.sliderK = customtkinter.CTkSlider(self.fileTab.tab("Train new model"),from_=0, to=100, number_of_steps=10, command=self.sliderK_callback)
         self.sliderK.grid(row=2,column=1,pady=27,padx=20)
@@ -77,6 +82,7 @@ class App(customtkinter.CTk):
         #Set max k value fraction text
         self.kFractionLabel = customtkinter.CTkLabel(self.fileTab.tab("Train new model"),text="The laplace smoothing factor k is at most \nthis percentage of the dataset length:")
         self.kFractionLabel.grid(row=3,column=0,pady=20)
+
         #Set max k value fraction slider
         self.SliderF = customtkinter.CTkSlider(self.fileTab.tab("Train new model"),from_=0, to=1, command=self.sliderF_callback)
         self.SliderF.grid(row=3,column=1,pady=25,padx=20)
@@ -84,39 +90,61 @@ class App(customtkinter.CTk):
         self.kFractionOutput = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),width=37, height=30)
         self.kFractionOutput.grid(row=3,column=2)
 
+        #Set divider line
         self.line = customtkinter.CTkLabel(self.fileTab.tab("Train new model"),text="________________________________________________________________________________________________________________________________________\n")
         self.line.grid(row=4,columnspan=3)
 
         #Set Run button
         self.runButton = customtkinter.CTkButton(self.fileTab.tab("Train new model"),text='Run Model',command=self.runButton_callback)
         self.runButton.grid(row=5,column=0,sticky ='w',padx=(20,0))
+
         #Set k value print
         self.kValuePrint = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),placeholder_text="Model's k value")
         self.kValuePrint.grid(row=5,column=0,sticky='e')
+
         #Set accuracy print
         self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab("Train new model"),placeholder_text="Accuracy of model")
         self.accuracyPrint.grid(row=5,column=1,padx=(20,0))
+
         #Set save model button
         self.saveButton = customtkinter.CTkButton(self.fileTab.tab("Train new model"),text="Save",command=self.saveButton_callback)
         self.saveButton.grid(row=5,column=2,sticky ='e',padx=(0,20)) 
-        
-        #IMPORT MODEL TAB
-        self.importFileButton = customtkinter.CTkButton(self.fileTab.tab("Import existing model"),text="Import model file",command=self.importButton_callback)
-        self.importFileButton.grid(row=1,column=1,pady=20,padx=20)
-        self.importCheckbox = customtkinter.CTkCheckBox(self.fileTab.tab("Import existing model"),text="")
-        self.importCheckbox.grid(row=1,column=2,padx=(73,0))
-        
-        
-        
         #################################################################
 
+
+        #IMPORT MODEL TAB 
+        #################################################################
+
+        #Set existing model input text
+        self.inputLabel = customtkinter.CTkLabel(self.fileTab.tab("Import existing model"),text="Input the file path for the existing model:")
+        self.inputLabel.grid(row=0,column=0,pady=20)
+
+        #Set import button
+        self.importFileButton = customtkinter.CTkButton(self.fileTab.tab("Import existing model"),text="Import model file",command=self.importButton_callback)
+        self.importFileButton.grid(row=0,column=1)
+
+        #Set import checkbox
+        self.importCheckbox = customtkinter.CTkCheckBox(self.fileTab.tab("Import existing model"),text="")
+        self.importCheckbox.grid(row=0,column=2)
+
+        #Set divider line
+        self.line = customtkinter.CTkLabel(self.fileTab.tab("Import existing model"),text="___________________________________________________________________________________________________________\n")
+        self.line.grid(row=1,columnspan=3)
+
+        #Set Run button
+        self.runButton = customtkinter.CTkButton(self.fileTab.tab("Import existing model"),text='Run Model',command=self.runButton_callback)
+        self.runButton.grid(row=2,column=0)
+
+        #Set k value print
+        self.kValuePrint = customtkinter.CTkEntry(self.fileTab.tab("Import existing model"),placeholder_text="Model's k value")
+        self.kValuePrint.grid(row=2,column=1)
+
+        #Set accuracy print
+        self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab("Import existing model"),placeholder_text="Accuracy of model")
+        self.accuracyPrint.grid(row=2,column=2)
         
         ################################################################
-    
-
-
-        #################################################################
-
+        
 
         #PREDICT TAB
         #################################################################
