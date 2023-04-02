@@ -1,7 +1,7 @@
 # IntelliFlight
 
-TODO: make proper readme later
-[DESCRIPTION]
+IntelliFlight is an app designed to predict flight delays, cancellations, and diversions based on factors such as weather, operating airline, flight plan (source and destination), and departure date/time. Implemented in Python, it is powered by the Naïve Bayesian Network machine learning model.
+
 
 ## Building the Test Environment
 
