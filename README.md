@@ -20,6 +20,8 @@ pip install -e .
 
 The second command above will install the app in editable mode, meaning that the installation will point to the project directory, allowing the app's files to be modified without necessitating reinstallation.
 
+To remove the virtual environment, delete the `.venv` folder. Virtual environments are non-portable; to move the environment, or if the project directory is moved, delete the `.venv` folder and repeat the above process in the new location.
+
 NOTE: These steps have been tested on Windows only. For other platforms, see the Python documentation on virtual environments [here](https://docs.python.org/3/library/venv.html).
 
 
