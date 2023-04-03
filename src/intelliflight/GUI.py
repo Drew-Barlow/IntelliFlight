@@ -2,6 +2,7 @@
 import tkinter
 import tkintermapview
 import customtkinter
+from tkcalendar import Calendar
 
 
 customtkinter.set_appearance_mode("System")
@@ -32,8 +33,8 @@ class App(customtkinter.CTk):
         #################################################################
 
         #Welcome
-        self.welcomeMsg = customtkinter.CTkLabel(self.tabview.tab("Train"),text="Welcome to the IntelliFlight model training tab. \nYou have the option of training the model with new data or import an existing model.",font=("Ariel",18))
-        self.welcomeMsg.grid(row=0,column=0)
+        self.trainingWelcomeMsg = customtkinter.CTkLabel(self.tabview.tab("Train"),text="Welcome to the IntelliFlight model training tab. \nYou have the option of training the model with new data or import an existing model.",font=("Ariel",18))
+        self.trainingWelcomeMsg.grid(row=0,column=0)
 
         #Set input frame
         self.inputFrame = customtkinter.CTkFrame(self.tabview.tab("Train"))
@@ -148,12 +149,48 @@ class App(customtkinter.CTk):
 
         #PREDICT TAB
         #################################################################
-        self.mapFrame = customtkinter.CTkFrame(self.tabview.tab("Predict"))
-        self.mapFrame.grid(row=0,column=0, sticky='nsew')
         
-        self.map = tkintermapview.TkinterMapView(self.mapFrame,width=500,height=500,corner_radius=0)
-        self.map.grid(row=0,column=0)
+        #welcome
+        self.predictWelcomeMsg = customtkinter.CTkLabel(self.tabview.tab("Predict"),text="Welcome to the IntelliFlight prediction tab. \nHere you can use the model to predict whether or not your flight will be delayed.",font=("Ariel",18))
+        self.predictWelcomeMsg.grid(row=0,column=0,columnspan=2)
+    
+        #Set map frame
+        self.mapFrame = customtkinter.CTkFrame(self.tabview.tab("Predict"))
+        self.mapFrame.grid(row=1,column=0,pady=20,padx=20,sticky='nsew')
 
+        #Set map label
+        self.mapLabel = customtkinter.CTkLabel(self.mapFrame,text="Use the map or drop down menu to choose your origin airport:")
+        self.mapLabel.grid(row=0,column=0,pady=20,padx=20)
+
+        #Set map
+        self.map = tkintermapview.TkinterMapView(self.mapFrame,width=300,height=300,corner_radius=0)
+        self.map.grid(row=1,column=0)
+
+        #Set airport option menu
+        optionmenu_var = customtkinter.StringVar(value="Select origin airport")
+        self.mapOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=[],variable=optionmenu_var,command=self.optionMenu_callback)
+        self.mapOptionMenu.grid(row=2,column=0,pady=20,padx=20)
+        
+        #Set calendar frame
+        self.calendarFrame = customtkinter.CTkFrame(self.tabview.tab("Predict"))
+        self.calendarFrame.grid(row=1,column=1,pady=20,padx=20,sticky='nsew')
+
+        #Set calendar label
+        self.calendarLabel = customtkinter.CTkLabel(self.calendarFrame,text="Use the calender to set your departure date:")
+        self.calendarLabel.grid(row=0,column=0,pady=20,padx=20)
+        
+        #Set calendar
+        self.calendar = Calendar(self.calendarFrame, selectmode ='day',year =2023,month=4,day=1)
+        self.calendar.grid(row=1,column=0)
+
+        #Set calendar button
+        self.setDateButton = customtkinter.CTkButton(self.calendarFrame,text="Set departure date",command=self.setDateButton_callback)
+        self.setDateButton.grid(row=2,column=0,pady=20,padx=20)
+
+        
+
+
+        ################################################################
 
     def inputButton_callback(self):
         dialog = customtkinter.CTkInputDialog(text="Enter training data file path:", title="Training Data")
@@ -187,6 +224,11 @@ class App(customtkinter.CTk):
     def runButton_callback(self):
         pass
 
+    def optionMenu_callback(self):
+        pass
+    
+    def setDateButton_callback(self):
+        pass
 
 if __name__ =="__main__":  
     app = App()
