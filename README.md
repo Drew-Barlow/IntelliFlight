@@ -60,7 +60,7 @@ To test multiple modules, use `-m "<mark> and <mark> and ..."`.
 
 ### Generating Coverage Reports
 
-To generate a code coverage report, execute any of the previous test commands with the added flag `--cov=<python-module-path>`. For example, to test the coverage of the `ptables` module by the `ptables` test suite, execute `pytest -m ptables --cov=intelliflight.models.components.ptables`.
+To generate a code coverage report, execute any of the previous test commands with the added flags `--cov=<python-module-path> --cov-report term-missing`. For example, to test the coverage of the `ptables` module by the `ptables` test suite, execute `pytest -m ptables --cov=intelliflight.models.components.ptables  --cov-report term-missing`.
 
 
 ## Deploying Production App

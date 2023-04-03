@@ -39,6 +39,7 @@ DEP_TIME_KEYS: Final = frozenset([
     '2200', '2230',
     '2300', '2330',
 ])
+SAMPLE_TABLES_PATH: Final = TEST_PATH / 'data' / 'sample_ptables.json'
 
 
 ## HELPERS ##
@@ -199,6 +200,77 @@ def test_fit_uninitialized():
     tables = ProbabilityTables()
     with pytest.raises(BufferError):
         tables.fit(get_dataset(), setup_counter(), 1)
+
+
+@pytest.mark.unit
+@pytest.mark.ptables
+def test_get_k():
+    """Test whether smoothing factor k is stored on fit."""
+    k = 1
+    tables = setup_ptables(k)
+    assert tables.get_k() == k
+
+
+@pytest.mark.unit
+@pytest.mark.ptables
+def test_is_fit():
+    """Test whether fit status is correctly recorded for various cases."""
+    # Test on initialization (not fit)
+    tables = ProbabilityTables()
+    assert not tables.is_fit()
+
+    # Test on initial table reset (not fit)
+    keymeta = get_keymeta()
+    dataset = get_dataset()
+    counter = FrequencyCounter()
+    counter.reset_counters(keymeta)
+    counter.count_frequencies(dataset)
+    tables.reset_tables(keymeta, counter)
+    assert not tables.is_fit()
+
+    # Test after fitting (is fit)
+    tables.fit(dataset, counter, 0)
+    assert tables.is_fit()
+
+    # Test after resetting fit tables (not fit)
+    tables.reset_tables(keymeta, counter)
+    assert not tables.is_fit()
+
+
+@pytest.mark.unit
+@pytest.mark.ptables
+def test_import_tables():
+    """Test that existing tables are properly imported."""
+    # Import tables
+    tables_in: dict = json.load(SAMPLE_TABLES_PATH.open())
+    tables = ProbabilityTables()
+    tables.import_p_tables(tables_in)
+
+    # Test results
+    assert tables.is_fit()
+    assert tables.get_p_status() == tables_in['arrival_status']
+    assert tables.get_p_day() == tables_in['day']
+    assert tables.get_p_airline() == tables_in['airline']
+    assert tables.get_p_src() == tables_in['src_airport']
+    assert tables.get_p_dst() == tables_in['dst_airport']
+    assert tables.get_p_dep_time() == tables_in['departure_time']
+    assert tables.get_p_src_tmp() == tables_in['src_temperature']
+    assert tables.get_p_dst_tmp() == tables_in['dst_temperature']
+    assert tables.get_p_src_wnd() == tables_in['src_wind_speed']
+    assert tables.get_p_dst_wnd() == tables_in['dst_wind_speed']
+
+
+@pytest.mark.unit
+@pytest.mark.ptables
+def test_export_tables():
+    """Test that existing tables are properly exported."""
+    # Import tables
+    tables_in: dict = json.load(SAMPLE_TABLES_PATH.open())
+    tables = ProbabilityTables()
+    tables.import_p_tables(tables_in)
+
+    # Export and compare to tables_in
+    assert tables.export_p_tables() == tables_in
 
 
 # In the following tests, the calculated p tables are compared to hard-coded
