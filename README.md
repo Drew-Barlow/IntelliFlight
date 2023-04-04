@@ -68,7 +68,7 @@ To generate a code coverage report, execute any of the previous test commands wi
 To install the app for production use, run `pip install .` in the project root directory.
 
 
-## Running the App
+## Usage Instructions
 
 In both the test and normal environments, the installed app can be run with `python -m intelliflight <arguments>`. Supported commands are as follows.
 
