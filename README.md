@@ -70,13 +70,50 @@ To install the app for production use, run `pip install .` in the project root d
 
 ## Running the App
 
-In both the test and normal environments, the installed app can be run with `python -m intelliflight <arguments>`. TODO: ADD INFO ABOUT ARGUMENTS
+In both the test and normal environments, the installed app can be run with `python -m intelliflight <arguments>`. Supported commands are as follows.
 
+### Using the GUI
 
+Running `python -m intelliflight` with no arguments will launch the GUI.
 
+### Accessing Help
 
-https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html
-https://blog.ionelmc.ro/2014/05/25/python-packaging/
-https://packaging.python.org/en/latest/tutorials/packaging-projects/
-https://docs.python.org/3/library/venv.html
-https://pypi.org/project/pytest-cov/
+Running `python -m intelliflight -h` or `python -m intelliflight --help` will print the help screen. This screen will also print if invalid arguments are provided to any command.
+
+### Training the Model
+
+The model can be trained using the following:
+```
+python -m intelliflight train [-h] -t PATH_TO_FLIGHT_DATA -p PARTITION_COUNT -s K_STEP -m MAX_K [-r RNG_SEED]
+```
+Run `python -m intelliflight train -h` for more information on each argument.
+
+### Making predictions
+
+The predictions can be made with a trained model using the following command:
+```
+python -m intelliflight predict [-h] -s SRC_AIRPORT -d DST_AIRPORT -D DAY_OF_WEEK -t DEP_TIME
+```
+Run `python -m intelliflight predict -h` for more information on each argument.
+
+### Listing Input Mappings
+
+Airports, airlines, and days of the week are passed into the above commands using IDs rather than human-readable descriptions or names. To view the mappings of IDs to human-readable name, run the following commands:
+
+#### Airports
+
+```
+python -m intelliflight list airports
+```
+
+#### Airlines
+
+```
+python -m intelliflight list airlines
+```
+
+#### Days of the Week
+
+```
+python -m intelliflight list days
+```
