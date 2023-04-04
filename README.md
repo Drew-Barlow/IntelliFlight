@@ -82,7 +82,7 @@ Running `python -m intelliflight -h` or `python -m intelliflight --help` will pr
 
 ### Training the Model
 
-The model can be trained using the following:
+The model can be trained using the following command:
 ```
 python -m intelliflight train [-h] -t PATH_TO_FLIGHT_DATA -p PARTITION_COUNT -s K_STEP -m MAX_K [-r RNG_SEED]
 ```
@@ -90,7 +90,7 @@ Run `python -m intelliflight train -h` for more information on each argument.
 
 ### Making predictions
 
-The predictions can be made with a trained model using the following command:
+Predictions can be made with a trained model using the following command:
 ```
 python -m intelliflight predict [-h] -s SRC_AIRPORT -d DST_AIRPORT -D DAY_OF_WEEK -t DEP_TIME
 ```
