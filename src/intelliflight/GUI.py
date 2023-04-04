@@ -143,13 +143,11 @@ class App(customtkinter.CTk):
         #Set accuracy print
         self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab("Import existing model"),placeholder_text="Accuracy of model")
         self.accuracyPrint.grid(row=2,column=2)
-        
         ################################################################
         
 
         #PREDICT TAB
         #################################################################
-        
         #welcome
         self.predictWelcomeMsg = customtkinter.CTkLabel(self.tabview.tab("Predict"),text="Welcome to the IntelliFlight prediction tab. \nHere you can use the model to predict whether or not your flight will be delayed.",font=("Ariel",18))
         self.predictWelcomeMsg.grid(row=0,column=0,columnspan=2)
@@ -165,6 +163,10 @@ class App(customtkinter.CTk):
         #Set map
         self.map = tkintermapview.TkinterMapView(self.mapFrame,width=300,height=300,corner_radius=0)
         self.map.grid(row=1,column=0)
+
+        #Set map position with mouse click
+        self.map.add_right_click_menu_command(label="Select origin",command=self.addMapMarkerOrigin,pass_coords=True)
+        self.map.add_right_click_menu_command(label="Select destination",command=self.addMapMarkerDest,pass_coords=True)
 
         #Set origin airport option menu
         originOptionmenu_var = customtkinter.StringVar(value="Select origin airport")
@@ -213,9 +215,10 @@ class App(customtkinter.CTk):
         #Set key description
         self.keyDescription = customtkinter.CTkEntry(self.mapFrame,placeholder_text="Prediction description")
         self.keyDescription.grid(row=4,column=1,pady=20,padx=20,sticky='e')
-        
         ################################################################
 
+        #TRAINING TAB FUNCTIONS
+        ################################################################
     def inputButton_callback(self):
         dialog = customtkinter.CTkInputDialog(text="Enter training data file path:", title="Training Data")
         self.trainingCheckbox.select()
@@ -247,7 +250,9 @@ class App(customtkinter.CTk):
 
     def runButton_callback(self):
         pass
-
+    
+    #PREDICTION TAB FUNCTIONS
+    ################################################################
     def originOptionMenu_callback(self):
         pass
 
@@ -255,7 +260,7 @@ class App(customtkinter.CTk):
         pass
     
     def setDepartDateButton_callback(self):
-        pass
+        print(self.calendar.get_date())
 
     def airlineOptionMenu_callback(self):
         pass
@@ -265,6 +270,15 @@ class App(customtkinter.CTk):
 
     def predictButton_callback(self):
         pass
+
+    def addMapMarkerOrigin(self,coords):
+        print("Add origin:", coords)
+        new_marker = self.map.set_marker(coords[0], coords[1], text="Origin")
+
+    def addMapMarkerDest(self,coords):
+        print("Add dest", coords)
+        new_marker = self.map.set_marker(coords[0], coords[1], text="Dest")
+
 
 
 if __name__ =="__main__":  
