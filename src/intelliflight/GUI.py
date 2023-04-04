@@ -159,37 +159,61 @@ class App(customtkinter.CTk):
         self.mapFrame.grid(row=1,column=0,pady=20,padx=20,sticky='nsew')
 
         #Set map label
-        self.mapLabel = customtkinter.CTkLabel(self.mapFrame,text="Use the map or drop down menu to choose your origin airport:")
+        self.mapLabel = customtkinter.CTkLabel(self.mapFrame,text="Use the map or drop down menus to choose your origin and\n destination airports:")
         self.mapLabel.grid(row=0,column=0,pady=20,padx=20)
 
         #Set map
         self.map = tkintermapview.TkinterMapView(self.mapFrame,width=300,height=300,corner_radius=0)
         self.map.grid(row=1,column=0)
 
-        #Set airport option menu
-        optionmenu_var = customtkinter.StringVar(value="Select origin airport")
-        self.mapOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=[],variable=optionmenu_var,command=self.optionMenu_callback)
-        self.mapOptionMenu.grid(row=2,column=0,pady=20,padx=20)
-        
-        #Set calendar frame
-        self.calendarFrame = customtkinter.CTkFrame(self.tabview.tab("Predict"))
-        self.calendarFrame.grid(row=1,column=1,pady=20,padx=20,sticky='nsew')
+        #Set origin airport option menu
+        originOptionmenu_var = customtkinter.StringVar(value="Select origin airport")
+        self.mapOriginOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=["test","tests"],variable=originOptionmenu_var,command=self.originOptionMenu_callback)
+        self.mapOriginOptionMenu.grid(row=2,column=0,padx=(20,0),sticky='w')
+
+        #Set destination airport option menu
+        destOptionmenu_var = customtkinter.StringVar(value="Select destination airport")
+        self.mapDestOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=["testing","test"],variable=destOptionmenu_var,command=self.destOptionMenu_callback)
+        self.mapDestOptionMenu.grid(row=2,column=0,padx=(0,13),sticky='e')
+
+        #Set airline option menu
+        airlineOptionmenu_var = customtkinter.StringVar(value="Select airline name")
+        self.airlineOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=["airline"],variable=airlineOptionmenu_var,command=self.airlineOptionMenu_callback)
+        self.airlineOptionMenu.grid(row=2,column=1,padx=(0,190),sticky='w')
 
         #Set calendar label
-        self.calendarLabel = customtkinter.CTkLabel(self.calendarFrame,text="Use the calender to set your departure date:")
-        self.calendarLabel.grid(row=0,column=0,pady=20,padx=20)
+        self.calendarLabel = customtkinter.CTkLabel(self.mapFrame,text="Use the calender to set your departure date:")
+        self.calendarLabel.grid(row=0,column=1,pady=20,padx=20)
         
         #Set calendar
-        self.calendar = Calendar(self.calendarFrame, selectmode ='day',year =2023,month=4,day=1)
-        self.calendar.grid(row=1,column=0)
+        self.calendar = Calendar(self.mapFrame, selectmode ='day',year=2023,month=4,day=1,borderwidth=5)
+        self.calendar.grid(row=1,column=1,pady=20,padx=20,sticky='n')
 
-        #Set calendar button
-        self.setDateButton = customtkinter.CTkButton(self.calendarFrame,text="Set departure date",command=self.setDateButton_callback)
-        self.setDateButton.grid(row=2,column=0,pady=20,padx=20)
-
+        #Set departure date button
+        self.setDepartDateButton = customtkinter.CTkButton(self.mapFrame,text="Set departure date",command=self.setDepartDateButton_callback)
+        self.setDepartDateButton.grid(row=1,column=1,pady=20,padx=20,sticky='s')
         
+        #Set departure time option menu
+        departTimeOptionmenu_var = customtkinter.StringVar(value="Select departure time")
+        self.departTimeOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame,values=["time"],variable=departTimeOptionmenu_var,command=self.departTimeOptionMenu_callback)
+        self.departTimeOptionMenu.grid(row=2,column=1,pady=20,padx=20,sticky='e')
 
+        #Set divider line
+        self.line = customtkinter.CTkLabel(self.mapFrame,text="______________________________________________________________________________________________________________________\n")
+        self.line.grid(row=3,columnspan=3)
 
+        #Set predict button
+        self.predictButton = customtkinter.CTkButton(self.mapFrame,text="Run prediction",command=self.predictButton_callback)
+        self.predictButton.grid(row=4,column=0,padx=20,pady=20,sticky='w')
+
+        #Set prediction key print
+        self.predictionKey = customtkinter.CTkEntry(self.mapFrame,placeholder_text="Type of prediction")
+        self.predictionKey.grid(row=4,column=1,sticky='w')
+
+        #Set key description
+        self.keyDescription = customtkinter.CTkEntry(self.mapFrame,placeholder_text="Prediction description")
+        self.keyDescription.grid(row=4,column=1,pady=20,padx=20,sticky='e')
+        
         ################################################################
 
     def inputButton_callback(self):
@@ -224,11 +248,24 @@ class App(customtkinter.CTk):
     def runButton_callback(self):
         pass
 
-    def optionMenu_callback(self):
+    def originOptionMenu_callback(self):
+        pass
+
+    def destOptionMenu_callback(self):
         pass
     
-    def setDateButton_callback(self):
+    def setDepartDateButton_callback(self):
         pass
+
+    def airlineOptionMenu_callback(self):
+        pass
+    
+    def departTimeOptionMenu_callback(self):
+        pass
+
+    def predictButton_callback(self):
+        pass
+
 
 if __name__ =="__main__":  
     app = App()
