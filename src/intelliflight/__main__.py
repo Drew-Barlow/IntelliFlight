@@ -5,6 +5,7 @@ import sys
 from .models.bayes_net import Bayes_Net
 from pathlib import Path
 from pydoc import pager
+from intelliflight.GUI import App
 
 
 def cli_yes_no_prompt(msg: str) -> bool:
@@ -175,8 +176,7 @@ list_subparser.add_argument(
 )
 
 if len(sys.argv) == 1:
-    # TODO: Invoke GUI here.
-    pass
+    App().mainloop()
 
 else:
     # Process command line args
