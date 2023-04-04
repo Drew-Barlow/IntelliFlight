@@ -183,8 +183,13 @@ else:
         args = parser.parse_args(sys.argv[1:])
 
     except:
+        if any([arg in '--help' for arg in sys.argv[1:]]):
+            # User called -h or --help, so help is already printed.
+            # Do nothing.
+            pass
+
         # Print appropriate help screen
-        if sys.argv[1] == 'train':
+        elif sys.argv[1] == 'train':
             train_subparser.print_help()
 
         elif sys.argv[1] == 'predict':
