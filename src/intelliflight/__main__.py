@@ -148,6 +148,7 @@ predict_subparser.add_argument(
     '-D', '--day',
     required=True,
     dest='day',
+    type=int,
     choices=range(1, 8),
     help='Day of week of departure.'
 )
