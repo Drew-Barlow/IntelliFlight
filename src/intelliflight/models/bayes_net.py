@@ -348,7 +348,12 @@ class Bayes_Net(ai_model.AI_Model):
         best_key = None
         best_p = -1
         for k, p in predicted_p.items():
-            predicted_p[k] = p / sum_intermediates
+            if sum_intermediates == 0:
+                predicted_p[k] = 0
+
+            else:
+                predicted_p[k] = p / sum_intermediates
+
             if predicted_p[k] > best_p:
                 best_key = k
                 best_p = predicted_p[k]
