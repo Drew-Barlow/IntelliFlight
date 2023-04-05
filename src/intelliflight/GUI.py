@@ -1,3 +1,5 @@
+import csv
+import json
 from intelliflight.models.bayes_net import Bayes_Net
 import tkinter
 import tkintermapview
@@ -5,9 +7,13 @@ import customtkinter
 from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
+from pathlib import Path
 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
+
+
+root_dir = Path(__file__).parent.parent.parent
 
 
 class App(customtkinter.CTk):
@@ -154,7 +160,7 @@ class App(customtkinter.CTk):
         self.importCheckbox = customtkinter.CTkCheckBox(
             self.fileTab.tab("Import existing model"), text="")
         self.importCheckbox.grid(row=0, column=2)
- 
+
         """  # Set divider line
         self.line = customtkinter.CTkLabel(self.fileTab.tab(
             "Import existing model"), text="___________________________________________________________________________________________________________\n")
@@ -285,7 +291,8 @@ class App(customtkinter.CTk):
             except Exception as e:
                 self.bayes = None
                 self.trainingCheckbox.deselect()
-                messagebox.showerror('Error', message="Could not load data file")
+                messagebox.showerror(
+                    'Error', message="Could not load data file")
                 print(e)
 
     def sliderP_callback(self, value):
@@ -293,13 +300,13 @@ class App(customtkinter.CTk):
         self.partitionCount = int(value)
         self.partitionOutput.delete(0, 10)
         self.partitionOutput.insert(0, str(value))
-       
+
     def sliderK_callback(self, value):
         value = self.sliderK.get()
         self.kvalueCount = value
         self.kValueOutput.delete(0, 10)
         self.kValueOutput.insert(0, str(value))
-        
+
     def sliderF_callback(self, value):
         value = self.SliderF.get()
         self.kFractionCount = value
@@ -313,34 +320,64 @@ class App(customtkinter.CTk):
             try:
                 self.bayes = Bayes_Net(data_path)
                 self.importCheckbox.select()
+                self.populate_prediction_screen()
             except Exception as e:
                 self.bayes = None
                 self.importCheckbox.deselect()
-                messagebox.showerror('Error', message="Could not load data file")
+                messagebox.showerror(
+                    'Error', message="Could not load data file")
                 print(e)
+                raise e
 
     def saveButton_callback(self):
         if self.bayes.p_tables.is_fit():
             if messagebox.askyesno('Save model', message="Would you like to save this model?") is True:
                 self.bayes.export_parameters()
         else:
-            messagebox.showerror('Error', message="You must train the model first")
+            messagebox.showerror(
+                'Error', message="You must train the model first")
 
     def runButton_callback(self):
         if not self.bayes.dataset.data_loaded():
             messagebox.showerror('Error', message="You most input a dataset")
         elif self.partitionCount is not None and self.kvalueCount is not None and self.kFractionCount is not None:
-            kvalue,accuracy = self.bayes.train_model(self.partitionCount, self.kvalueCount, self.kFractionCount) 
+            kvalue, accuracy = self.bayes.train_model(
+                self.partitionCount, self.kvalueCount, self.kFractionCount)
             self.kValuePrint.delete(0, 10)
             self.kValuePrint.insert(0, str(kvalue))
             self.accuracyPrint.delete(0, 10)
             self.accuracyPrint.insert(0, str(accuracy))
+            self.populate_prediction_screen()
         else:
             messagebox.showerror('Error', message="Slider not set")
-        
+
+    def populate_prediction_screen(self):
+        self.map.delete_all_marker()
+        self.airport_markers = []
+        # Get airline codes
+        seen_airports = self.bayes.key_meta.get_seen_airports()
+        # Get airline mapping data
+        airport_map_path = root_dir / 'data' / 'maps' / 'airport_mappings.json'
+        mappings = json.load(airport_map_path.open())
+
+        mappings_pruned = [
+            entry
+            for entry in mappings
+            if entry['bts_id'] in seen_airports
+        ]
+        self.airports = mappings_pruned
+        for airport in self.airports:
+            desc_split = airport["desc"].split(": ", maxsplit=1)
+            name_str = f'{desc_split[0]}:\n{desc_split[1]}\n({airport["bts_id"]})'
+            self.airport_markers.append(self.map.set_marker(
+                float(airport['location']['lat']),
+                float(airport['location']['lon']),
+                name_str
+            ))
 
     # PREDICTION TAB FUNCTIONS
     ################################################################
+
     def originOptionMenu_callback(self):
         pass
 
