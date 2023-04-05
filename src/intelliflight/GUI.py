@@ -4,7 +4,7 @@ import tkintermapview
 import customtkinter
 from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename
-
+from tkinter import messagebox
 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
@@ -14,9 +14,13 @@ class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
 
+        self.bayes = Bayes_Net()
         self.title("IntelliFlight")
         self.geometry("1920×1080")
 
+        self.partitionCount = None
+        self.kvalueCount = None
+        self.kFractionCount = None
         self.originMarkerList = []
         self.destMarkerList = []
 
@@ -73,9 +77,9 @@ class App(customtkinter.CTk):
 
         # Set partition count input slider
         self.sliderP = customtkinter.CTkSlider(self.fileTab.tab(
-            "Train new model"), from_=0, to=100, number_of_steps=10, command=self.sliderP_callback)
+            "Train new model"), from_=3, to=10, number_of_steps=7, command=self.sliderP_callback)
         self.sliderP.grid(row=1, column=1, pady=30, padx=20)
-        self.sliderP.set(0)
+        self.sliderP.set(3)
         self.partitionOutput = customtkinter.CTkEntry(
             self.fileTab.tab("Train new model"), width=37, height=30)
         self.partitionOutput.grid(row=1, column=2)
@@ -87,9 +91,9 @@ class App(customtkinter.CTk):
 
         # Set k value increment slider
         self.sliderK = customtkinter.CTkSlider(self.fileTab.tab(
-            "Train new model"), from_=0, to=100, number_of_steps=10, command=self.sliderK_callback)
+            "Train new model"), from_=0.05, to=1, number_of_steps=19, command=self.sliderK_callback)
         self.sliderK.grid(row=2, column=1, pady=27, padx=20)
-        self.sliderK.set(0)
+        self.sliderK.set(0.05)
         self.kValueOutput = customtkinter.CTkEntry(
             self.fileTab.tab("Train new model"), width=37, height=30)
         self.kValueOutput.grid(row=2, column=2)
@@ -136,7 +140,6 @@ class App(customtkinter.CTk):
 
         # IMPORT MODEL TAB
         #################################################################
-
         # Set existing model input text
         self.inputLabel = customtkinter.CTkLabel(self.fileTab.tab(
             "Import existing model"), text="Input the file path for the existing model:")
@@ -151,8 +154,8 @@ class App(customtkinter.CTk):
         self.importCheckbox = customtkinter.CTkCheckBox(
             self.fileTab.tab("Import existing model"), text="")
         self.importCheckbox.grid(row=0, column=2)
-
-        # Set divider line
+ 
+        """  # Set divider line
         self.line = customtkinter.CTkLabel(self.fileTab.tab(
             "Import existing model"), text="___________________________________________________________________________________________________________\n")
         self.line.grid(row=1, columnspan=3)
@@ -170,7 +173,7 @@ class App(customtkinter.CTk):
         # Set accuracy print
         self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab(
             "Import existing model"), placeholder_text="Accuracy of model")
-        self.accuracyPrint.grid(row=2, column=2)
+        self.accuracyPrint.grid(row=2, column=2) """
         ################################################################
 
         # PREDICT TAB
@@ -272,39 +275,69 @@ class App(customtkinter.CTk):
         # TRAINING TAB FUNCTIONS
         ################################################################
     def inputButton_callback(self):
-        self.trainingCheckbox.select()
-
         data_path = askopenfilename()
-        if len(data_path > 0):  # Didn't cancel
+        if len(data_path) > 0:  # Didn't cancel
             print("Data file:", data_path)
-            # TODO: DO OTHER STUFF
+            try:
+                self.bayes = Bayes_Net()
+                self.bayes.load_data(data_path)
+                self.trainingCheckbox.select()
+            except Exception as e:
+                self.bayes = None
+                self.trainingCheckbox.deselect()
+                messagebox.showerror('Error', message="Could not load data file")
+                print(e)
 
     def sliderP_callback(self, value):
         value = self.sliderP.get()
+        self.partitionCount = int(value)
         self.partitionOutput.delete(0, 10)
         self.partitionOutput.insert(0, str(value))
-        print(value)
-
+       
     def sliderK_callback(self, value):
         value = self.sliderK.get()
+        self.kvalueCount = value
         self.kValueOutput.delete(0, 10)
         self.kValueOutput.insert(0, str(value))
-        print(value)
-
+        
     def sliderF_callback(self, value):
         value = self.SliderF.get()
+        self.kFractionCount = value
         self.kFractionOutput.delete(0, 10)
         self.kFractionOutput.insert(0, str(value))
-        print(value)
 
     def importButton_callback(self):
-        pass
+        data_path = askopenfilename()
+        if len(data_path) > 0:  # Didn't cancel
+            print("Data file:", data_path)
+            try:
+                self.bayes = Bayes_Net(data_path)
+                self.importCheckbox.select()
+            except Exception as e:
+                self.bayes = None
+                self.importCheckbox.deselect()
+                messagebox.showerror('Error', message="Could not load data file")
+                print(e)
 
     def saveButton_callback(self):
-        pass
+        if self.bayes.p_tables.is_fit():
+            if messagebox.askyesno('Save model', message="Would you like to save this model?") is True:
+                self.bayes.export_parameters()
+        else:
+            messagebox.showerror('Error', message="You must train the model first")
 
     def runButton_callback(self):
-        pass
+        if not self.bayes.dataset.data_loaded():
+            messagebox.showerror('Error', message="You most input a dataset")
+        elif self.partitionCount is not None and self.kvalueCount is not None and self.kFractionCount is not None:
+            kvalue,accuracy = self.bayes.train_model(self.partitionCount, self.kvalueCount, self.kFractionCount) 
+            self.kValuePrint.delete(0, 10)
+            self.kValuePrint.insert(0, str(kvalue))
+            self.accuracyPrint.delete(0, 10)
+            self.accuracyPrint.insert(0, str(accuracy))
+        else:
+            messagebox.showerror('Error', message="Slider not set")
+        
 
     # PREDICTION TAB FUNCTIONS
     ################################################################
@@ -334,7 +367,7 @@ class App(customtkinter.CTk):
         self.originMarkerList.append(originMarker)
 
     def addMapMarkerDest(self, coords):
-        print("Add dest", coords)
+        print("Add destination", coords)
         for marker in self.destMarkerList:
             marker.delete()
         destMarker = self.map.set_marker(coords[0], coords[1], text="Dest")
