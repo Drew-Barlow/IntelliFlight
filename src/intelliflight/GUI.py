@@ -16,6 +16,9 @@ class App(customtkinter.CTk):
         self.title("IntelliFlight")
         self.geometry("1920×1080")
 
+        self.originMarkerList = []
+        self.destMarkerList = []
+
         self.grid_rowconfigure((0), weight=1)
         self.grid_columnconfigure((0), weight=1)
 
@@ -273,12 +276,18 @@ class App(customtkinter.CTk):
 
     def addMapMarkerOrigin(self,coords):
         print("Add origin:", coords)
-        new_marker = self.map.set_marker(coords[0], coords[1], text="Origin")
+        for marker in self.originMarkerList:
+            marker.delete()
+        originMarker = self.map.set_marker(coords[0], coords[1], text="Origin")
+        self.originMarkerList.append(originMarker)
 
     def addMapMarkerDest(self,coords):
         print("Add dest", coords)
-        new_marker = self.map.set_marker(coords[0], coords[1], text="Dest")
-
+        for marker in self.destMarkerList:
+            marker.delete()
+        destMarker = self.map.set_marker(coords[0], coords[1], text="Dest")
+        self.destMarkerList.append(destMarker)
+        
 
 
 if __name__ =="__main__":  
