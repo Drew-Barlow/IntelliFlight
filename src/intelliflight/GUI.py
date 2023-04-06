@@ -8,6 +8,8 @@ from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
 from pathlib import Path
+from  datetime import date
+from datetime import timedelta
 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
@@ -161,25 +163,6 @@ class App(customtkinter.CTk):
             self.fileTab.tab("Import existing model"), text="")
         self.importCheckbox.grid(row=0, column=2)
 
-        """  # Set divider line
-        self.line = customtkinter.CTkLabel(self.fileTab.tab(
-            "Import existing model"), text="___________________________________________________________________________________________________________\n")
-        self.line.grid(row=1, columnspan=3)
-
-        # Set Run button
-        self.runButton = customtkinter.CTkButton(self.fileTab.tab(
-            "Import existing model"), text='Run Model', command=self.runButton_callback)
-        self.runButton.grid(row=2, column=0)
-
-        # Set k value print
-        self.kValuePrint = customtkinter.CTkEntry(self.fileTab.tab(
-            "Import existing model"), placeholder_text="Model's k value")
-        self.kValuePrint.grid(row=2, column=1)
-
-        # Set accuracy print
-        self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab(
-            "Import existing model"), placeholder_text="Accuracy of model")
-        self.accuracyPrint.grid(row=2, column=2) """
         ################################################################
 
         # PREDICT TAB
@@ -205,17 +188,11 @@ class App(customtkinter.CTk):
         self.map.fit_bounding_box(
             (49.002494, -124.409591), (24.523096, -66.949895))
 
-        # # Set map position with mouse click
-        # self.map.add_right_click_menu_command(
-        #     label="Select origin", command=self.addMapMarkerOrigin, pass_coords=True)
-        # self.map.add_right_click_menu_command(
-        #     label="Select destination", command=self.addMapMarkerDest, pass_coords=True)
-
         # Set origin airport option menu
         originOptionmenu_var = customtkinter.StringVar(
             value="Select origin airport")
         self.mapOriginOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                               "test", "tests"], variable=originOptionmenu_var, command=self.originOptionMenu_callback)
+                                                               "test", "tests"], variable=originOptionmenu_var)
         self.mapOriginOptionMenu.grid(
             row=2, column=0, padx=(20, 0), sticky='w')
 
@@ -223,14 +200,14 @@ class App(customtkinter.CTk):
         destOptionmenu_var = customtkinter.StringVar(
             value="Select destination airport")
         self.mapDestOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             "testing", "test"], variable=destOptionmenu_var, command=self.destOptionMenu_callback)
+                                                             "testing", "test"], variable=destOptionmenu_var)
         self.mapDestOptionMenu.grid(row=2, column=0, padx=(0, 13), sticky='e')
 
         # Set airline option menu
         airlineOptionmenu_var = customtkinter.StringVar(
             value="Select airline name")
         self.airlineOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             "airline"], variable=airlineOptionmenu_var, command=self.airlineOptionMenu_callback)
+                                                             "airline"], variable=airlineOptionmenu_var)
         self.airlineOptionMenu.grid(row=2, column=1, padx=(0, 190), sticky='w')
 
         # Set calendar label
@@ -239,21 +216,40 @@ class App(customtkinter.CTk):
         self.calendarLabel.grid(row=0, column=1, pady=20, padx=20)
 
         # Set calendar
+        self.today = date.today()
         self.calendar = Calendar(
-            self.mapFrame, selectmode='day', year=2023, month=4, day=1, borderwidth=5)
+            self.mapFrame, selectmode='day', mindate=self.today, maxdate=date.today() + timedelta(days=7), borderwidth=5)
         self.calendar.grid(row=1, column=1, pady=20, padx=20, sticky='n')
-
-        # Set departure date button
-        self.setDepartDateButton = customtkinter.CTkButton(
-            self.mapFrame, text="Set departure date", command=self.setDepartDateButton_callback)
-        self.setDepartDateButton.grid(
-            row=1, column=1, pady=20, padx=20, sticky='s')
 
         # Set departure time option menu
         departTimeOptionmenu_var = customtkinter.StringVar(
             value="Select departure time")
         self.departTimeOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                                "time"], variable=departTimeOptionmenu_var, command=self.departTimeOptionMenu_callback)
+            '00:00', '00:30',
+            '01:00', '01:30',
+            '02:00', '02:30',
+            '03:00', '03:30',
+            '04:00', '04:30',
+            '05:00', '05:30',
+            '06:00', '06:30',
+            '07:00', '07:30',
+            '08:00', '08:30',
+            '09:00', '09:30',
+            '10:00', '10:30',
+            '11:00', '11:30',
+            '12:00', '12:30',
+            '13:00', '13:30',
+            '14:00', '14:30',
+            '15:00', '15:30',
+            '16:00', '16:30',
+            '17:00', '17:30',
+            '18:00', '18:30',
+            '19:00', '19:30',
+            '20:00', '20:30',
+            '21:00', '21:30',
+            '22:00', '22:30',
+            '23:00', '23:30',
+        ], variable=departTimeOptionmenu_var)
         self.departTimeOptionMenu.grid(
             row=2, column=1, pady=20, padx=20, sticky='e')
 
@@ -392,7 +388,6 @@ class App(customtkinter.CTk):
         self.mapDestOptionMenu.configure(values=menu_vals)
 
         # AIRLINES
-
         # Get airline codes
         seen_airlines = self.bayes.key_meta.get_seen_carriers()
         # Get airline mapping data
@@ -409,13 +404,11 @@ class App(customtkinter.CTk):
             # Make string from airline properties
             name_str = f'{airline["Description"]} ({airline["Code"]})'
             airline_menu_vals.append(name_str)
-
         # Sort alphabetically
         airline_menu_vals.sort()
-
         # Set dropdown values
         self.airlineOptionMenu.configure(values=airline_menu_vals)
-
+        
     def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
         # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
         name_str = ' '.join(marker.text.split('\n'))
@@ -435,39 +428,8 @@ class App(customtkinter.CTk):
     # PREDICTION TAB FUNCTIONS
     ################################################################
 
-    def originOptionMenu_callback(self, test):
-        print(test)
-        pass
-
-    def destOptionMenu_callback(self):
-        pass
-
-    def setDepartDateButton_callback(self):
-        print(self.calendar.get_date())
-
-    def airlineOptionMenu_callback(self):
-        pass
-
-    def departTimeOptionMenu_callback(self):
-        pass
-
     def predictButton_callback(self):
-        pass
-
-    def addMapMarkerOrigin(self, coords):
-        print("Add origin:", coords)
-        for marker in self.originMarkerList:
-            marker.delete()
-        originMarker = self.map.set_marker(coords[0], coords[1], text="Origin")
-        self.originMarkerList.append(originMarker)
-
-    def addMapMarkerDest(self, coords):
-        print("Add destination", coords)
-        for marker in self.destMarkerList:
-            marker.delete()
-        destMarker = self.map.set_marker(coords[0], coords[1], text="Dest")
-        self.destMarkerList.append(destMarker)
-
+        print(self.airlineOptionMenu.get())
 
 if __name__ == "__main__":
     app = App()
