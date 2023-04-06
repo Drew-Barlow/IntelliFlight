@@ -10,6 +10,10 @@ from intelliflight.models.components.dataset import Dataset
 from intelliflight.models.components.keymeta import KeyMeta
 from intelliflight.models.components.frequencycounter import FrequencyCounter
 from intelliflight.models.components.ptables import ProbabilityTables
+from pathlib import Path
+
+
+root_dir = Path(__file__).parent.parent.parent
 
 
 class Bayes_Net(ai_model.AI_Model):
@@ -314,10 +318,10 @@ class Bayes_Net(ai_model.AI_Model):
         - Key of most likely arrival status
         - Probability of most likely arrival status
         """
-        if not self.key_meta.in_seen_airports(src_airport):
+        if not self.key_meta.in_seen_airports(str(src_airport)):
             raise ValueError(
                 f'BayesNet: src_airport={src_airport} did not occur in the training data.')
-        if not self.key_meta.in_seen_airports(dest_airport):
+        if not self.key_meta.in_seen_airports(str(dest_airport)):
             raise ValueError(
                 f'BayesNet: dest_airport={dest_airport} did not occur in the training data.')
         if not self.key_meta.in_seen_carriers(operating_airline):
