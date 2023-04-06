@@ -391,6 +391,31 @@ class App(customtkinter.CTk):
         self.mapOriginOptionMenu.configure(values=menu_vals)
         self.mapDestOptionMenu.configure(values=menu_vals)
 
+        # AIRLINES
+
+        # Get airline codes
+        seen_airlines = self.bayes.key_meta.get_seen_carriers()
+        # Get airline mapping data
+        airline_map_path = root_dir / 'data' / 'maps' / 'L_UNIQUE_CARRIERS.csv'
+        mappings = csv.DictReader(airline_map_path.open())
+        # Generate 'description@code' strings for airlines in model
+        airline_mappings_pruned = [
+            entry
+            for entry in mappings
+            if entry['Code'] in seen_airlines
+        ]
+        airline_menu_vals = []
+        for airline in airline_mappings_pruned:
+            # Make string from airline properties
+            name_str = f'{airline["Description"]} ({airline["Code"]})'
+            airline_menu_vals.append(name_str)
+
+        # Sort alphabetically
+        airline_menu_vals.sort()
+
+        # Set dropdown values
+        self.airlineOptionMenu.configure(values=airline_menu_vals)
+
     def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
         # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
         name_str = ' '.join(marker.text.split('\n'))
