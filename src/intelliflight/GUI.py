@@ -8,8 +8,9 @@ from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
 from pathlib import Path
-from  datetime import date
-from datetime import timedelta
+from datetime import date, datetime, timedelta
+
+from intelliflight.util import datautil, nws_manager
 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
@@ -408,7 +409,7 @@ class App(customtkinter.CTk):
         airline_menu_vals.sort()
         # Set dropdown values
         self.airlineOptionMenu.configure(values=airline_menu_vals)
-        
+
     def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
         # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
         name_str = ' '.join(marker.text.split('\n'))
@@ -429,7 +430,86 @@ class App(customtkinter.CTk):
     ################################################################
 
     def predictButton_callback(self):
-        print(self.airlineOptionMenu.get())
+        src_airport_str = self.mapOriginOptionMenu.get()
+        dst_airport_str = self.mapDestOptionMenu.get()
+        airline_str = self.airlineOptionMenu.get()
+        dep_time = self.departTimeOptionMenu.get()
+
+        if any([
+            src_airport_str.lower() == 'select origin airport',
+            dst_airport_str.lower() == 'select destination airport',
+            airline_str.lower() == 'select airline name',
+            dep_time.lower() == 'select departure time'
+        ]):
+            messagebox.showerror(
+                'Error', 'All prediction fields must have a value.')
+
+        # [Month, Day, Year]
+        date_arr: list[str] = [i for i in self.calendar.get_date().split('/')]
+        date_arr[0] = date_arr[0].rjust(2, '0')
+        date_arr[1] = date_arr[1].rjust(2, '0')
+        date_arr[2] = f'20{date_arr[2]}'
+        iso_timestamp = \
+            f'{date_arr[2]}-{date_arr[0]}-{date_arr[1]}T{dep_time}:00Z'
+        airline_code = airline_str.rsplit('(', maxsplit=1)[1][:-1]
+        # Extract BTS from "<desc> (BTS)"
+        bts_src = int(src_airport_str.rsplit('(', maxsplit=1)[1][:-1])
+        bts_dst = int(dst_airport_str.rsplit('(', maxsplit=1)[1][:-1])
+        if bts_src == bts_dst:
+            messagebox.showerror(
+                'Error', 'Origin and destination cannot be the same.')
+            return
+        try:
+            forecast_src = nws_manager.Forecaster((root_dir / 'data' / 'maps' /
+                                                   'airport_mappings.json').as_posix()).get_nws_forecast_from_bts(bts_src, iso_timestamp)
+            forecast_dst = nws_manager.Forecaster((root_dir / 'data' / 'maps' /
+                                                   'airport_mappings.json').as_posix()).get_nws_forecast_from_bts(bts_dst, iso_timestamp)
+
+            data_to_discretize = [
+                {
+                    "CRS_DEP_TIME": ''.join(dep_time.split(':')),
+                    'src_tavg': float(forecast_src['temperature']),
+                    'dst_tavg': float(forecast_dst['temperature']),
+                    'src_wspd': float(forecast_src['windSpeed'].split(' ')[0]),
+                    'dst_wspd': float(forecast_dst['windSpeed'].split(' ')[0])
+                }
+            ]
+            datautil.discretize(data_to_discretize)
+            data_to_discretize = data_to_discretize[0]
+            status_k, probability = self.bayes.make_prediction(
+                bts_src,
+                bts_dst,
+                airline_code,
+                # Strip 'Z' from timestamp
+                datetime.fromisoformat(iso_timestamp[:-1]).isoweekday(),
+                data_to_discretize['CRS_DEP_TIME'],
+                data_to_discretize['src_tavg'],
+                data_to_discretize['dst_tavg'],
+                data_to_discretize['src_wspd'],
+                data_to_discretize['dst_wspd']
+            )
+
+            self.predictionKey.delete(0, 500)
+            prefix = 'Cancelled due to ' if status_k.find(
+                'cancel:') == 0 else ''
+            self.predictionKey.insert(
+                0, f'{prefix}{self.bayes.key_meta.get_arrival_statuses()[status_k]}')
+
+            self.keyDescription.delete(0, 500)
+            self.keyDescription.insert(
+                0, f'{round(probability * 100, 2)}% confidence')
+
+        except ConnectionError:
+            messagebox.showerror(
+                'Error', 'Cannot connect to National Weather Service. Try again later.')
+            return
+
+        except ValueError as e:
+            messagebox.showerror(
+                'Error', 'Selected date/time is outside acceptable range. Acceptable range is within exactly 7 days from the current time.')
+            raise e
+            return
+
 
 if __name__ == "__main__":
     app = App()
