@@ -205,11 +205,11 @@ class App(customtkinter.CTk):
         self.map.fit_bounding_box(
             (49.002494, -124.409591), (24.523096, -66.949895))
 
-        # Set map position with mouse click
-        self.map.add_right_click_menu_command(
-            label="Select origin", command=self.addMapMarkerOrigin, pass_coords=True)
-        self.map.add_right_click_menu_command(
-            label="Select destination", command=self.addMapMarkerDest, pass_coords=True)
+        # # Set map position with mouse click
+        # self.map.add_right_click_menu_command(
+        #     label="Select origin", command=self.addMapMarkerOrigin, pass_coords=True)
+        # self.map.add_right_click_menu_command(
+        #     label="Select destination", command=self.addMapMarkerDest, pass_coords=True)
 
         # Set origin airport option menu
         originOptionmenu_var = customtkinter.StringVar(
@@ -352,33 +352,66 @@ class App(customtkinter.CTk):
             messagebox.showerror('Error', message="Slider not set")
 
     def populate_prediction_screen(self):
+        # Clear map
         self.map.delete_all_marker()
         self.airport_markers = []
-        # Get airline codes
+        # Get airport codes
         seen_airports = self.bayes.key_meta.get_seen_airports()
-        # Get airline mapping data
+        # Get airport mapping data
         airport_map_path = root_dir / 'data' / 'maps' / 'airport_mappings.json'
         mappings = json.load(airport_map_path.open())
 
+        # Filter for airports in training data
         mappings_pruned = [
             entry
             for entry in mappings
             if entry['bts_id'] in seen_airports
         ]
-        self.airports = mappings_pruned
+        # Store airports in variable
+        self.airports: list[tkintermapview.map_widget.CanvasPositionMarker] = mappings_pruned
+        menu_vals = []  # Strings for dropdown menus
         for airport in self.airports:
+            # Make string from airport properties
             desc_split = airport["desc"].split(": ", maxsplit=1)
             name_str = f'{desc_split[0]}:\n{desc_split[1]}\n({airport["bts_id"]})'
+            # Add marker to list and map
             self.airport_markers.append(self.map.set_marker(
                 float(airport['location']['lat']),
                 float(airport['location']['lon']),
-                name_str
+                name_str,
+                command=self.pin_click_handler
             ))
+            # Replace '\n' with ' ' and add to menu_vals
+            menu_vals.append(' '.join(name_str.split('\n')))
+
+        # Sort alphabetically
+        menu_vals.sort()
+
+        # Set dropdown values
+        self.mapOriginOptionMenu.configure(values=menu_vals)
+        self.mapDestOptionMenu.configure(values=menu_vals)
+
+    def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
+        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
+        name_str = ' '.join(marker.text.split('\n'))
+        # TODO: Replace this with custom dialog box
+        is_src = messagebox.askyesnocancel(
+            'Source or Destination?', message="Is this the source (yes) or destination (no)?")
+
+        if is_src == True:
+            self.mapOriginOptionMenu.set(name_str)
+
+        elif is_src == False:
+            self.mapDestOptionMenu.set(name_str)
+
+        else:  # None (cancel)
+            pass
 
     # PREDICTION TAB FUNCTIONS
     ################################################################
 
-    def originOptionMenu_callback(self):
+    def originOptionMenu_callback(self, test):
+        print(test)
         pass
 
     def destOptionMenu_callback(self):
