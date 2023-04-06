@@ -295,19 +295,19 @@ class App(customtkinter.CTk):
     def sliderP_callback(self, value):
         value = self.sliderP.get()
         self.partitionCount = int(value)
-        self.partitionOutput.delete(0, 10)
+        self.partitionOutput.delete(0, 500)
         self.partitionOutput.insert(0, str(value))
 
     def sliderK_callback(self, value):
         value = self.sliderK.get()
         self.kvalueCount = value
-        self.kValueOutput.delete(0, 10)
+        self.kValueOutput.delete(0, 500)
         self.kValueOutput.insert(0, str(value))
 
     def sliderF_callback(self, value):
         value = self.SliderF.get()
         self.kFractionCount = value
-        self.kFractionOutput.delete(0, 10)
+        self.kFractionOutput.delete(0, 500)
         self.kFractionOutput.insert(0, str(value))
 
     def importButton_callback(self):
@@ -340,9 +340,9 @@ class App(customtkinter.CTk):
         elif self.partitionCount is not None and self.kvalueCount is not None and self.kFractionCount is not None:
             kvalue, accuracy = self.bayes.train_model(
                 self.partitionCount, self.kvalueCount, self.kFractionCount)
-            self.kValuePrint.delete(0, 10)
+            self.kValuePrint.delete(0, 500)
             self.kValuePrint.insert(0, str(kvalue))
-            self.accuracyPrint.delete(0, 10)
+            self.accuracyPrint.delete(0, 500)
             self.accuracyPrint.insert(0, str(accuracy))
             self.populate_prediction_screen()
         else:
