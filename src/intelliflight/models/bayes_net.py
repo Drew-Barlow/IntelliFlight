@@ -153,7 +153,10 @@ class Bayes_Net(ai_model.AI_Model):
         data_len = self.dataset.get_len()
         max_k = math.floor(data_len * max_k_fraction)
         k_step = math.floor(data_len * k_step_percent)
-        k_values = list(range(0, max_k, k_step))
+        if max_k == 0:
+            k_values = [0]
+        else:
+            k_values = list(range(0, max_k, k_step))
         k_test_results = []
 
         for test_index in range(len(partitions)):
