@@ -43,13 +43,13 @@ The historical weather database used for model training is too large for upload 
 
 ## Building the Test Environment
 
-This app utilizes the Python virtual environment system to create and maintain a test environment isolated from the host system's Python installation and installed packages. To create the virtual environment in the directory `./.venv` , execute the following:
+This app utilizes the Python virtual environment system to create and maintain a test environment isolated from the host system's Python installation and installed packages. To create the virtual environment in the directory `./.venv`, execute the following:
 
 ```
 python -m venv .venv
 ```
 
-Next, follow the steps in ["Activating & Deactivating the Test Environment](#Activating-&-Deactivating-the-Test-Environment) to enter the virtual environment. Finally, install the app and its dependencies in the virtual environment by running the following in the root project directory:
+Next, follow the steps in ["Activating & Deactivating the Test Environment"](#Activating-&-Deactivating-the-Test-Environment) to enter the virtual environment. Finally, install the app and its dependencies in the virtual environment by running the following in the root project directory:
 
 ```
 pip install -r requirements.txt
