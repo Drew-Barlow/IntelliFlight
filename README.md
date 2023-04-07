@@ -15,11 +15,12 @@ data/historical/weather/weather_by_bts_id.json
 2. [Build and setup virtual environment:](#building-the-test-environment)
 ```
 python -m venv .venv
-pip install -r requirements.txt
-pip install -e .
 
 .\.venv\Scripts\Activate.ps1  # PowerShell
 .\.venv\Scripts\activate.bat  # cmd.exe
+
+pip install -r requirements.txt
+pip install -e .
 ```
 3. [Run tests:](#running-unit-tests)
 ```
