@@ -19,6 +19,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1  # PowerShell
 .\.venv\Scripts\activate.bat  # cmd.exe
 
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .
 ```
@@ -55,7 +56,10 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-The second command above will install the app in editable mode, meaning that the installation will point to the project directory, allowing the app's files to be modified without necessitating reinstallation.
+The second command above will install the app in editable mode, meaning that the installation will point to the project directory, allowing the app's files to be modified without necessitating reinstallation. On some versions of Python, the default pip version installed in the virtual environment does not support this command. This can be fixed by updating pip to the latest version:
+```
+python -m pip install --upgrade pip
+```
 
 To remove the virtual environment, delete the `.venv` folder. Virtual environments are non-portable; to move the environment, or if the project directory is moved, delete the `.venv` folder and repeat the above process in the new location.
 
