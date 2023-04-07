@@ -3,6 +3,42 @@
 IntelliFlight is an app designed to predict flight delays, cancellations, and diversions based on factors such as weather, operating airline, flight plan (source and destination), and departure date/time. Implemented in Python, it is powered by the Naïve Bayesian Network machine learning model.
 
 
+## Quick Start
+
+The following is a step-by-step process to install the app into a virtual environment, run unit tests, and launch into the GUI:
+
+1. [Extract historical weather data](#unzipping-data)
+```
+data/historical/weather/historical_weather_by_bts_id.zip ->
+data/historical/weather/weather_by_bts_id.json
+```
+2. [Build and setup virtual environment:](#building-the-test-environment)
+```
+python -m venv .venv
+pip install -r requirements.txt
+pip install -e .
+
+.\.venv\Scripts\Activate.ps1  # PowerShell
+.\.venv\Scripts\activate.bat  # cmd.exe
+```
+3. [Run tests:](#running-unit-tests)
+```
+pytest
+```
+4. [Launch app:](#usage-instructions)
+```
+python -m intelliflight
+```
+5. Exit virtual environment when done:
+```
+deactivate
+```
+
+## Unzipping Data
+
+The historical weather database used for model training is too large for upload to GitHub, so it has been compressed to the archive `data/historical/weather/historical_weather_by_bts_id.zip`. Before using the app for the first time, this archive must be extracted and the database file moved to the location `data/historical/weather/weather_by_bts_id.json`.
+
+
 ## Building the Test Environment
 
 This app utilizes the Python virtual environment system to create and maintain a test environment isolated from the host system's Python installation and installed packages. To create the virtual environment in the directory `./.venv` , execute the following:
@@ -66,6 +102,30 @@ To generate a code coverage report, execute any of the previous test commands wi
 ## Deploying Production App
 
 To install the app for production use, run `pip install .` in the project root directory.
+
+
+## Downloading Alternate Training Data
+
+### Flight Data
+
+Training flight data for this app is sourced from the [Bureau of Transportation Statistics' Marketing Carrier On-Time Performance](https://transtats.bts.gov/Fields.asp?gnoyr_VQ=FGK) dataset. To download data for additional time ranges, click the Download link on the left of that page and select the following fields:
+
+- DayOfWeek
+- FlightDate
+- Operating_Airline
+- OriginAirportID
+- DestAirportID
+- CRSDepTime
+- ArrivalDelayGroups
+- Cancelled
+- CancellationCode
+- Diverted
+
+Click the Download button and load `T_ONTIME_MARKETING.csv` into the app.
+
+### Weather Data
+
+Weather data is sourced from [Meteostat](https://meteostat.net/en/). The pre-packaged dataset covers the entire date range for which flight data exist, so there should never be a need to re-download it. Should such a need arise, the script `preprocessing/get_historical_weather_data.py` can be used. (This requires a Meteostat/RapidAPI account and will use the majority of the account's free monthly API requests.)
 
 
 ## Usage Instructions
