@@ -152,18 +152,17 @@ class App(customtkinter.CTk):
         # Set existing model input text
         self.inputLabel = customtkinter.CTkLabel(self.fileTab.tab(
             "Import existing model"), text="Input the file path for the existing model:")
-        self.inputLabel.grid(row=0, column=0, pady=20)
+        self.inputLabel.grid(row=0, column=0, pady=20, padx=20)
 
         # Set import button
         self.importFileButton = customtkinter.CTkButton(self.fileTab.tab(
             "Import existing model"), text="Import model file", command=self.importButton_callback)
-        self.importFileButton.grid(row=0, column=1)
+        self.importFileButton.grid(row=0, column=1, padx=20)
 
         # Set import checkbox
         self.importCheckbox = customtkinter.CTkCheckBox(
             self.fileTab.tab("Import existing model"), text="")
-        self.importCheckbox.grid(row=0, column=2)
-
+        self.importCheckbox.grid(row=0, column=2, padx=20)
         ################################################################
 
         # PREDICT TAB
@@ -184,7 +183,7 @@ class App(customtkinter.CTk):
 
         # Set map
         self.map = tkintermapview.TkinterMapView(
-            self.mapFrame, width=300, height=300, corner_radius=0)
+            self.mapFrame, width=500, height=500, corner_radius=0)
         self.map.grid(row=1, column=0)
         self.map.fit_bounding_box(
             (49.002494, -124.409591), (24.523096, -66.949895))
@@ -193,23 +192,23 @@ class App(customtkinter.CTk):
         originOptionmenu_var = customtkinter.StringVar(
             value="Select origin airport")
         self.mapOriginOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                               "test", "tests"], variable=originOptionmenu_var)
+                                                               ], variable=originOptionmenu_var)
         self.mapOriginOptionMenu.grid(
-            row=2, column=0, padx=(20, 0), sticky='w')
+            row=2, column=0, padx=20, pady=20, sticky='n')
 
         # Set destination airport option menu
         destOptionmenu_var = customtkinter.StringVar(
             value="Select destination airport")
         self.mapDestOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             "testing", "test"], variable=destOptionmenu_var)
-        self.mapDestOptionMenu.grid(row=2, column=0, padx=(0, 13), sticky='e')
+                                                             ], variable=destOptionmenu_var)
+        self.mapDestOptionMenu.grid(row=3, column=0, padx=20, pady=20, sticky='n')
 
         # Set airline option menu
         airlineOptionmenu_var = customtkinter.StringVar(
             value="Select airline name")
         self.airlineOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             "airline"], variable=airlineOptionmenu_var)
-        self.airlineOptionMenu.grid(row=2, column=1, padx=(0, 190), sticky='w')
+                                                             ], variable=airlineOptionmenu_var)
+        self.airlineOptionMenu.grid(row=2, column=1, padx=20, pady=20, sticky='n')
 
         # Set calendar label
         self.calendarLabel = customtkinter.CTkLabel(
@@ -220,7 +219,7 @@ class App(customtkinter.CTk):
         self.today = date.today()
         self.calendar = Calendar(
             self.mapFrame, selectmode='day', mindate=self.today, maxdate=date.today() + timedelta(days=7), borderwidth=5)
-        self.calendar.grid(row=1, column=1, pady=20, padx=20, sticky='n')
+        self.calendar.grid(row=1, column=1, pady=20, padx=20, sticky='nsew')
 
         # Set departure time option menu
         departTimeOptionmenu_var = customtkinter.StringVar(
@@ -252,27 +251,27 @@ class App(customtkinter.CTk):
             '23:00', '23:30',
         ], variable=departTimeOptionmenu_var)
         self.departTimeOptionMenu.grid(
-            row=2, column=1, pady=20, padx=20, sticky='e')
+            row=3, column=1, pady=20, padx=20, sticky='n')
 
         # Set divider line
         self.line = customtkinter.CTkLabel(
-            self.mapFrame, text="______________________________________________________________________________________________________________________\n")
-        self.line.grid(row=3, columnspan=3)
+            self.mapFrame, text="_______________________________________________________________________________________________________________________________________________________________\n")
+        self.line.grid(row=4, columnspan=3)
 
         # Set predict button
         self.predictButton = customtkinter.CTkButton(
             self.mapFrame, text="Run prediction", command=self.predictButton_callback)
-        self.predictButton.grid(row=4, column=0, padx=20, pady=20, sticky='w')
+        self.predictButton.grid(row=5, column=0, padx=20, pady=20, sticky='w')
 
         # Set prediction key print
         self.predictionKey = customtkinter.CTkEntry(
             self.mapFrame, placeholder_text="Type of prediction")
-        self.predictionKey.grid(row=4, column=1, sticky='w')
+        self.predictionKey.grid(row=5, column=1, sticky='w')
 
         # Set key description
         self.keyDescription = customtkinter.CTkEntry(
             self.mapFrame, placeholder_text="Prediction description")
-        self.keyDescription.grid(row=4, column=1, pady=20, padx=20, sticky='e')
+        self.keyDescription.grid(row=5, column=1, pady=20, padx=20, sticky='e')
         ################################################################
 
         # TRAINING TAB FUNCTIONS
