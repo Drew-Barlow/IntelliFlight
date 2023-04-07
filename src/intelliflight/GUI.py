@@ -285,6 +285,12 @@ class App(customtkinter.CTk):
                 self.bayes = Bayes_Net()
                 self.bayes.load_data(data_path)
                 self.trainingCheckbox.select()
+            except BufferError as e:
+                self.bayes = None
+                self.trainingCheckbox.deselect()
+                messagebox.showerror(
+                    'Error', 'Training data file is empty or malformed.')
+                print(e)
             except Exception as e:
                 self.bayes = None
                 self.trainingCheckbox.deselect()

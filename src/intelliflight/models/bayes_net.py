@@ -106,6 +106,12 @@ class Bayes_Net(ai_model.AI_Model):
             (data_dir / 'historical' / 'weather' /
              'weather_by_bts_id.json').as_posix()
         )
+        # If flight_path points to a file not containing flight data,
+        # merge_training_data() will fail to extract any data records, but it
+        # will not raise an exception.
+        if len(data) == 0:
+            raise BufferError(
+                'BayesNet: ERR: Loaded training dataset is empty or malformed.')
         # Get combined set of src and dst airports
         seen_airports = seen_src.copy()
         for dst in seen_dst:
