@@ -13,7 +13,8 @@ from intelliflight.models.components.ptables import ProbabilityTables
 from pathlib import Path
 
 
-root_dir = Path(__file__).parent.parent.parent
+root_dir = Path(__file__).parent.parent.parent.parent
+data_dir = root_dir / 'data'
 
 
 class Bayes_Net(ai_model.AI_Model):
@@ -43,8 +44,9 @@ class Bayes_Net(ai_model.AI_Model):
         arrival_statuses: dict[str, str] = {}
         # Open files containing codes and descriptions for arrival delay/ahead/on-time buckets
         # and cancellation reasons.
-        with open('data/maps/L_CANCELLATION.csv', 'r', encoding='utf-8') as cancel_in, \
-                open('data/maps/L_ONTIME_DELAY_GROUPS.csv', 'r', encoding='utf-8') as delay_in:
+
+        with (data_dir / 'maps' / 'L_CANCELLATION.csv').open('r', encoding='utf-8') as cancel_in, \
+                (data_dir / 'maps' / 'L_ONTIME_DELAY_GROUPS.csv').open('r', encoding='utf-8') as delay_in:
             cancellation_codes = csv.DictReader(cancel_in)
             delay_groups = csv.DictReader(delay_in)
 
@@ -65,8 +67,9 @@ class Bayes_Net(ai_model.AI_Model):
             self.key_meta.set_arrival_statuses(arrival_statuses)
 
             # Pull keys for temperature and wind buckets
-            with open('data/maps/temp_ranges.csv', 'r', encoding='utf-8') as temp_in, \
-                    open('data/maps/wind_speeds.csv', 'r', encoding='utf-8') as wind_in:
+            data_dir.open
+            with (data_dir / 'maps' / 'temp_ranges.csv').open('r', encoding='utf-8') as temp_in, \
+                    (data_dir / 'maps' / 'wind_speeds.csv').open('r', encoding='utf-8') as wind_in:
                 temp_codes = csv.DictReader(temp_in)
                 wind_codes = csv.DictReader(wind_in)
                 self.key_meta.set_temp_keys(
@@ -99,7 +102,10 @@ class Bayes_Net(ai_model.AI_Model):
         # Get merged and pruned flight and weather data
         print('BayesNet: Merging training datasets.')
         data, seen_carriers, seen_src, seen_dst = datautil.merge_training_data(
-            flight_path, 'data/historical/weather/weather_by_bts_id.json')
+            flight_path,
+            (data_dir / 'historical' / 'weather' /
+             'weather_by_bts_id.json').as_posix()
+        )
         # Get combined set of src and dst airports
         seen_airports = seen_src.copy()
         for dst in seen_dst:
@@ -265,7 +271,7 @@ class Bayes_Net(ai_model.AI_Model):
         export_json['seen_airports'] = list(self.key_meta.get_seen_airports())
         export_json['seen_carriers'] = list(self.key_meta.get_seen_carriers())
         export_json['p_tables'] = self.p_tables.export_p_tables()
-        with open('data/models/bayes_net.model.json', 'w') as f_out:
+        with (data_dir / 'models' / 'bayes_net.model.json').open('w') as f_out:
             json.dump(export_json, f_out)
 
     def test(self, test_bounds: tuple[int, int]):

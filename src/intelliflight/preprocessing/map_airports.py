@@ -1,5 +1,5 @@
 import json
-from ..preprocessing import DATA_PATH
+from pathlib import Path
 
 """
 Map BTS airport IDs to FAA airport IDs, ICAO IDs, and
@@ -10,11 +10,13 @@ the relevant ID or weather station does not exist), the
 airport is dropped from the data.
 """
 
+data_dir = Path(__file__).parent.parent.parent / 'data'
+
 mappings = []
 
 icao_coords = []
 # From https://ourairports.com/data/
-with open(f'{DATA_PATH}/raw/airports/airports.csv', 'r', encoding='utf-8') as f_airport_db:
+with (data_dir / 'raw' / 'airports' / 'airports.csv').open('r', encoding='utf-8') as f_airport_db:
     for l in f_airport_db.readlines():
         tokens = l.split(',')
         # Check country code. Remove surrounding quotes.
@@ -27,12 +29,12 @@ with open(f'{DATA_PATH}/raw/airports/airports.csv', 'r', encoding='utf-8') as f_
             })
 
 # From https://transtats.bts.gov/Fields.asp?gnoyr_VQ=FGK (key OriginAirportID)
-with open(f'{DATA_PATH}/raw/airports/L_AIRPORT.csv', 'r') as f_airport_faa_ids:
+with (data_dir / 'raw' / 'airports' / 'L_AIRPORT.csv').open('r') as f_airport_faa_ids:
     # From https://en.wikipedia.org/wiki/List_of_airports_in_the_United_States
     # The table on that page was copied and converted to CSV.
-    with open(f'{DATA_PATH}/raw/airports/wikitable.csv', 'r') as f_wiki_airports:
+    with (data_dir / 'raw' / 'airports' / 'wikitable.csv').open('r') as f_wiki_airports:
         # From https://github.com/meteostat/weather-stations (Lite dump)
-        with open(f'{DATA_PATH}/raw/weather/meteostat_lite.json', 'r', encoding='utf-8') as f_meteostat_stations:
+        with (data_dir / 'raw' / 'weather' / 'meteostat_lite.json').open('r', encoding='utf-8') as f_meteostat_stations:
             wikilines = f_wiki_airports.readlines()
             meteostat = json.load(f_meteostat_stations)
             success = 0
@@ -84,7 +86,7 @@ with open(f'{DATA_PATH}/raw/airports/L_AIRPORT.csv', 'r') as f_airport_faa_ids:
 
 # From https://transtats.bts.gov/Fields.asp?gnoyr_VQ=FGK (key Origin)
 final_mappings = []
-with open(f'{DATA_PATH}/raw/airports/L_AIRPORT_ID.csv') as f_bts_ids:
+with (data_dir / 'raw' / 'airports' / 'L_AIRPORT_ID.csv').open() as f_bts_ids:
     idlines = f_bts_ids.readlines()
     s = 0
     f = 0
@@ -104,5 +106,5 @@ with open(f'{DATA_PATH}/raw/airports/L_AIRPORT_ID.csv') as f_bts_ids:
 
 print(f'generated {len(final_mappings)} records')
 
-with open(f'{DATA_PATH}/maps/airport_mappings.json', 'w') as f_out:
+with (data_dir / 'maps' / 'airport_mappings.json').open('w') as f_out:
     json.dump(final_mappings, f_out, indent=2)

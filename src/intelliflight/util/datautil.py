@@ -1,5 +1,6 @@
 import json
 import csv
+from pathlib import Path
 import random
 import math
 
@@ -7,6 +8,9 @@ from bisect import bisect_right
 from intelliflight.util import typeutil
 
 from intelliflight.constants import WEATHER_FIELDS, TIME_INTERVAL_SIZE
+
+
+data_dir = Path(__file__).parent.parent.parent.parent / 'data'
 
 
 def merge_training_data(flight_path: str, weather_path: str):
@@ -47,7 +51,7 @@ def merge_training_data(flight_path: str, weather_path: str):
     # Read data from files
     with open(flight_path, 'r', encoding="utf-8") as f_in, \
             open(weather_path, 'r', encoding="utf-8") as w_in, \
-            open(f'data/maps/airport_mappings.json', encoding="utf-8") as a_in:
+        (data_dir / 'maps' / 'airport_mappings.json').open(encoding="utf-8") as a_in:
         # Load known airport mappings
         mappings = json.load(a_in)
         typeutil.AIRPORT_MAP_SCHEMA.validate(mappings)
@@ -154,8 +158,8 @@ def discretize(dataset: list):
     """
     wind_map = None
     temp_map = None
-    with open('data/maps/wind_speeds.csv', 'r', encoding='utf-8') as w_in, \
-            open('data/maps/temp_ranges.csv', 'r', encoding='utf-8') as t_in:
+    with (data_dir / 'maps' / 'wind_speeds.csv').open('r', encoding='utf-8') as w_in, \
+            (data_dir / 'maps' / 'temp_ranges.csv').open('r', encoding='utf-8') as t_in:
         wind_map = list(csv.DictReader(w_in))
         temp_map = list(csv.DictReader(t_in))
 

@@ -1,10 +1,10 @@
+from pathlib import Path
 import requests
 from typing import Final
 import json
 import sys
 import datetime
 import time
-from ..preprocessing import DATA_PATH
 
 """
 Usage: python ./get_historical_weather_data.py <METEOSTAT_API_KEY>
@@ -31,7 +31,7 @@ To access the data for a particular day and airport, run the following:
 
 import json
 data = {}
-with open('historical_weather_by_bts_id.json', 'r') as f:
+with open('PATH/TO/historical_weather_by_bts_id.json', 'r') as f:
     data = json.load(f)
 
 # Access weather on a certain day at a certain airport
@@ -39,10 +39,12 @@ data['<Airport BTS ID>']['<Day in YYYY-MM-DD format>']
 
 """
 
+data_dir = Path(__file__).parent.parent.parent.parent / 'data'
+
 start_time = datetime.datetime.now()
 mappings = []
 
-with open(f'{DATA_PATH}/maps/airport_mappings.json', 'r') as map_f:
+with (data_dir / 'maps' / 'airport_mappings.json').open('r') as map_f:
     mappings = json.load(map_f)
 
 if len(sys.argv) < 2:
@@ -96,11 +98,11 @@ for m in mappings:
 
 # Output results
 print('\nWriting output file...')
-with open(f'{DATA_PATH}/historical/weather/weather_by_bts_id.json', 'w') as out_f:
+with (data_dir / 'historical' / 'weather' / 'weather_by_bts_id.json').open('w') as out_f:
     out_f.write(json.dumps(historical_data, indent=2))
 
 if len(failed_mappings) > 0:
-    with open(f'{DATA_PATH}/historical/weather/failed_weather_requests.json', 'w') as out_f:
+    with (data_dir / 'historical' / 'weather' / 'failed_weather_requests.json').open('w') as out_f:
         out_f.write(json.dumps(failed_mappings, indent=2))
 
 print(
