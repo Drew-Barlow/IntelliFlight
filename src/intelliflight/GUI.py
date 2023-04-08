@@ -18,6 +18,24 @@ customtkinter.set_default_color_theme("blue")
 
 root_dir = Path(__file__).parent.parent.parent
 
+class DialogBox(customtkinter.CTkToplevel):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.geometry("400x200")
+        self.title("Origin or Destination")
+
+        self.label = customtkinter.CTkLabel(self, text="Select if this airport is your origin or destination:")
+        self.label.grid(row=0, column=0, padx=20, pady=20)
+
+        self.dialogFrame = customtkinter.CTkFrame(self)
+        self.dialogFrame.grid(row=1, column=0, padx=20)
+
+        self.setOriginButton = customtkinter.CTkButton(self.dialogFrame, text="Origin")
+        self.setOriginButton.grid(row=0, column=0, padx=20, pady=20)
+
+        self.setDestButton = customtkinter.CTkButton(self.dialogFrame, text="Destination")
+        self.setDestButton.grid(row=0, column=1, padx=20, pady=20)
+
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -32,6 +50,7 @@ class App(customtkinter.CTk):
         self.kFractionCount = None
         self.originMarkerList = []
         self.destMarkerList = []
+        self.dialogBoxWindow = None
 
         self.grid_rowconfigure((0), weight=1)
         self.grid_columnconfigure((0), weight=1)
@@ -259,23 +278,31 @@ class App(customtkinter.CTk):
 
         # Set divider line
         self.line = customtkinter.CTkLabel(
-            self.mapFrame, text="_______________________________________________________________________________________________________________________________________________________________\n")
+            self.mapFrame, text="___________________________________________________________________________________________________________________________________________________________________________________________________________________________________\n")
         self.line.grid(row=4, columnspan=3)
 
         # Set predict button
         self.predictButton = customtkinter.CTkButton(
             self.mapFrame, text="Run prediction", command=self.predictButton_callback)
-        self.predictButton.grid(row=5, column=0, padx=20, pady=20, sticky='w')
+        self.predictButton.grid(row=5, column=0, padx=20)
+
+        #Set prediction label
+        self.preditionLabel = customtkinter.CTkLabel(self.mapFrame,text="This is what the model has predicted:")
+        self.preditionLabel.grid(row=5, column=1)
 
         # Set prediction key print
         self.predictionKey = customtkinter.CTkEntry(
-            self.mapFrame, placeholder_text="Type of prediction")
-        self.predictionKey.grid(row=5, column=1, sticky='w')
+            self.mapFrame, placeholder_text="Type of prediction", width=210)
+        self.predictionKey.grid(row=6, column=1, padx=20, pady=(0,20))
+
+         #Set prediction label
+        self.confidenceLabel = customtkinter.CTkLabel(self.mapFrame,text="This is the confidence of the model:")
+        self.confidenceLabel.grid(row=5, column=2)
 
         # Set key description
         self.keyDescription = customtkinter.CTkEntry(
-            self.mapFrame, placeholder_text="Prediction description")
-        self.keyDescription.grid(row=5, column=1, pady=20, padx=20, sticky='e')
+            self.mapFrame, placeholder_text="Prediction confidence")
+        self.keyDescription.grid(row=6, column=2, padx=20, pady=(0,20))
         ################################################################
 
         # TRAINING TAB FUNCTIONS
@@ -423,6 +450,8 @@ class App(customtkinter.CTk):
         # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
         name_str = ' '.join(marker.text.split('\n'))
         # TODO: Replace this with custom dialog box
+        self.open_DialogBox()
+
         is_src = messagebox.askyesnocancel(
             'Source or Destination?', message="Is this the source (yes) or destination (no)?")
 
@@ -434,6 +463,15 @@ class App(customtkinter.CTk):
 
         else:  # None (cancel)
             pass
+
+    def open_DialogBox(self):
+        if self.dialogBoxWindow is None or not self.dialogBoxWindow.winfo_exists():
+            self.dialogBoxWindow = DialogBox(self)
+        else:
+            self.dialogBoxWindow.focus()
+
+    def originButton_callback(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
+        pass
 
     # PREDICTION TAB FUNCTIONS
     ################################################################
