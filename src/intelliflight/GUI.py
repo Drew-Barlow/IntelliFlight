@@ -179,14 +179,14 @@ class App(customtkinter.CTk):
         # Set map label
         self.mapLabel = customtkinter.CTkLabel(
             self.mapFrame, text="Use the map or drop down menus to choose your origin and\n destination airports:")
-        self.mapLabel.grid(row=0, column=0, pady=20, padx=20)
+        self.mapLabel.grid(row=2, column=0, pady=20, padx=20)
 
         # Set map
         self.map = tkintermapview.TkinterMapView(
             self.mapFrame, width=500, height=500, corner_radius=0)
-        self.map.grid(row=1, column=0)
-        self.map.fit_bounding_box(
-            (49.002494, -124.409591), (24.523096, -66.949895))
+        self.map.grid(row=1, column=0, sticky='nsew', columnspan=3)
+        self.map.set_position(42.3314, -83.0458)
+        self.map.set_zoom(9)
 
         # Set origin airport option menu
         originOptionmenu_var = customtkinter.StringVar(
@@ -194,32 +194,36 @@ class App(customtkinter.CTk):
         self.mapOriginOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
                                                                ], variable=originOptionmenu_var)
         self.mapOriginOptionMenu.grid(
-            row=2, column=0, padx=20, pady=20, sticky='n')
+            row=3, column=0, padx=20, pady=20, sticky='n')
 
         # Set destination airport option menu
         destOptionmenu_var = customtkinter.StringVar(
             value="Select destination airport")
         self.mapDestOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
                                                              ], variable=destOptionmenu_var)
-        self.mapDestOptionMenu.grid(row=3, column=0, padx=20, pady=20, sticky='n')
+        self.mapDestOptionMenu.grid(row=3, column=0, padx=20, pady=20)
+
+        #Set airline option label
+        self.airlineLabel = customtkinter.CTkLabel(self.mapFrame, text="Use these drop down menus to select the airline you are flying with and\n your departure time:")
+        self.airlineLabel.grid(row=2, column=1, pady=20, padx=20)
 
         # Set airline option menu
         airlineOptionmenu_var = customtkinter.StringVar(
             value="Select airline name")
         self.airlineOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
                                                              ], variable=airlineOptionmenu_var)
-        self.airlineOptionMenu.grid(row=2, column=1, padx=20, pady=20, sticky='n')
+        self.airlineOptionMenu.grid(row=3, column=1, padx=20, pady=20, sticky='n')
 
         # Set calendar label
         self.calendarLabel = customtkinter.CTkLabel(
-            self.mapFrame, text="Use the calender to set your departure date:")
-        self.calendarLabel.grid(row=0, column=1, pady=20, padx=20)
+            self.mapFrame, text="Use the calender to set your departure date:\n")
+        self.calendarLabel.grid(row=2, column=2, pady=20, padx=20)
 
         # Set calendar
         self.today = date.today()
         self.calendar = Calendar(
             self.mapFrame, selectmode='day', mindate=self.today, maxdate=date.today() + timedelta(days=7), borderwidth=5)
-        self.calendar.grid(row=1, column=1, pady=20, padx=20, sticky='nsew')
+        self.calendar.grid(row=3, column=2, padx=20)
 
         # Set departure time option menu
         departTimeOptionmenu_var = customtkinter.StringVar(
@@ -251,7 +255,7 @@ class App(customtkinter.CTk):
             '23:00', '23:30',
         ], variable=departTimeOptionmenu_var)
         self.departTimeOptionMenu.grid(
-            row=3, column=1, pady=20, padx=20, sticky='n')
+            row=3, column=1, pady=20, padx=20)
 
         # Set divider line
         self.line = customtkinter.CTkLabel(
