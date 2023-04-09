@@ -21,20 +21,25 @@ root_dir = Path(__file__).parent.parent.parent
 class DialogBox(customtkinter.CTkToplevel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.geometry("400x200")
-        self.title("Origin or Destination")
 
+        self.geometry("600x200")
+        self.title("Origin or Destination?")
+        self.grid_columnconfigure((0,1,2), weight=1)
+        
         self.label = customtkinter.CTkLabel(self, text="Select if this airport is your origin or destination:")
         self.label.grid(row=0, column=0, padx=20, pady=20)
 
         self.dialogFrame = customtkinter.CTkFrame(self)
         self.dialogFrame.grid(row=1, column=0, padx=20)
 
-        self.setOriginButton = customtkinter.CTkButton(self.dialogFrame, text="Origin")
+        self.setOriginButton = customtkinter.CTkButton(self.dialogFrame, text="Origin", command=App.originButton_callback)
         self.setOriginButton.grid(row=0, column=0, padx=20, pady=20)
 
-        self.setDestButton = customtkinter.CTkButton(self.dialogFrame, text="Destination")
+        self.setDestButton = customtkinter.CTkButton(self.dialogFrame, text="Destination", command=App.destButton_callback)
         self.setDestButton.grid(row=0, column=1, padx=20, pady=20)
+
+        self.cancelButton = customtkinter.CTkButton(self.dialogFrame, text='Cancel', command=self.destroy)
+        self.cancelButton.grid(row=0,column=2, padx=20, pady=20)
 
 
 class App(customtkinter.CTk):
@@ -412,7 +417,7 @@ class App(customtkinter.CTk):
                 float(airport['location']['lat']),
                 float(airport['location']['lon']),
                 name_str,
-                command=self.pin_click_handler
+                command= self.open_DialogBox
             ))
             # Replace '\n' with ' ' and add to menu_vals
             menu_vals.append(' '.join(name_str.split('\n')))
@@ -446,7 +451,7 @@ class App(customtkinter.CTk):
         # Set dropdown values
         self.airlineOptionMenu.configure(values=airline_menu_vals)
 
-    def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
+    """ def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
         # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
         name_str = ' '.join(marker.text.split('\n'))
         # TODO: Replace this with custom dialog box
@@ -462,16 +467,25 @@ class App(customtkinter.CTk):
             self.mapDestOptionMenu.set(name_str)
 
         else:  # None (cancel)
-            pass
+            pass """
 
-    def open_DialogBox(self):
+    def open_DialogBox(self,dialogBoxWindow):
         if self.dialogBoxWindow is None or not self.dialogBoxWindow.winfo_exists():
             self.dialogBoxWindow = DialogBox(self)
         else:
             self.dialogBoxWindow.focus()
 
     def originButton_callback(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
-        pass
+        marker = tkintermapview.map_widget.CanvasPositionMarker
+        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
+        name_str = ' '.join(marker.text.split('\n'))
+        self.mapOriginOptionMenu.set(name_str)
+
+    def destButton_callback(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
+        marker = tkintermapview.map_widget.CanvasPositionMarker
+        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
+        name_str = ' '.join(marker.text.split('\n'))
+        self.mapDestOptionMenu.set(name_str)
 
     # PREDICTION TAB FUNCTIONS
     ################################################################
