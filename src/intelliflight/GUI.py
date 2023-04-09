@@ -18,28 +18,63 @@ customtkinter.set_default_color_theme("blue")
 
 root_dir = Path(__file__).parent.parent.parent
 
+
 class DialogBox(customtkinter.CTkToplevel):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, app, pin: tkintermapview.map_widget.CanvasPositionMarker):
+        '''Dialog box to set src or dst airport when clicking a map pin.
+
+        Positional arguments:
+
+        - app -- the `App` instance of the main application. This object's
+                 src/dst data will be modified.
+        - pin -- the map pin object that was clicked, which is passed to the
+                 map pin click handler (`command`).
+        '''
+        super().__init__()
+
+        # Store GUI reference and airport info in member variables for access
+        # by callbacks
+
+        self.main_gui = app
+
+        # Extract airport name data from pin object.
+        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
+        self.airport_name_str = ' '.join(pin.text.split('\n'))
 
         self.geometry("600x200")
         self.title("Origin or Destination?")
-        self.grid_columnconfigure((0,1,2), weight=1)
-        
-        self.label = customtkinter.CTkLabel(self, text="Select if this airport is your origin or destination:")
+        self.grid_columnconfigure((0, 1, 2), weight=1)
+
+        self.label = customtkinter.CTkLabel(
+            self, text="Select if this airport is your origin or destination:")
         self.label.grid(row=0, column=0, padx=20, pady=20)
 
         self.dialogFrame = customtkinter.CTkFrame(self)
         self.dialogFrame.grid(row=1, column=0, padx=20)
 
-        self.setOriginButton = customtkinter.CTkButton(self.dialogFrame, text="Origin", command=App.originButton_callback)
+        # The command callback functions on these buttons do not pass any arguments.
+        # Use callback functions below to interact with the `App` class
+        self.setOriginButton = customtkinter.CTkButton(
+            self.dialogFrame, text="Origin", command=self.origin_callback)
         self.setOriginButton.grid(row=0, column=0, padx=20, pady=20)
 
-        self.setDestButton = customtkinter.CTkButton(self.dialogFrame, text="Destination", command=App.destButton_callback)
+        self.setDestButton = customtkinter.CTkButton(
+            self.dialogFrame, text="Destination", command=self.destination_callback)
         self.setDestButton.grid(row=0, column=1, padx=20, pady=20)
 
-        self.cancelButton = customtkinter.CTkButton(self.dialogFrame, text='Cancel', command=self.destroy)
-        self.cancelButton.grid(row=0,column=2, padx=20, pady=20)
+        self.cancelButton = customtkinter.CTkButton(
+            self.dialogFrame, text='Cancel', command=self.destroy)
+        self.cancelButton.grid(row=0, column=2, padx=20, pady=20)
+
+    def origin_callback(self):
+        '''Set origin airport in App'''
+        self.main_gui.originButton_callback(self.airport_name_str)
+        self.destroy()
+
+    def destination_callback(self):
+        '''Set destination airport in App'''
+        self.main_gui.destButton_callback(self.airport_name_str)
+        self.destroy()
 
 
 class App(customtkinter.CTk):
@@ -216,7 +251,7 @@ class App(customtkinter.CTk):
         originOptionmenu_var = customtkinter.StringVar(
             value="Select origin airport")
         self.mapOriginOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                               ], variable=originOptionmenu_var)
+        ], variable=originOptionmenu_var)
         self.mapOriginOptionMenu.grid(
             row=3, column=0, padx=20, pady=20, sticky='n')
 
@@ -224,19 +259,21 @@ class App(customtkinter.CTk):
         destOptionmenu_var = customtkinter.StringVar(
             value="Select destination airport")
         self.mapDestOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             ], variable=destOptionmenu_var)
+        ], variable=destOptionmenu_var)
         self.mapDestOptionMenu.grid(row=3, column=0, padx=20, pady=20)
 
-        #Set airline option label
-        self.airlineLabel = customtkinter.CTkLabel(self.mapFrame, text="Use these drop down menus to select the airline you are flying with and\n your departure time:")
+        # Set airline option label
+        self.airlineLabel = customtkinter.CTkLabel(
+            self.mapFrame, text="Use these drop down menus to select the airline you are flying with and\n your departure time:")
         self.airlineLabel.grid(row=2, column=1, pady=20, padx=20)
 
         # Set airline option menu
         airlineOptionmenu_var = customtkinter.StringVar(
             value="Select airline name")
         self.airlineOptionMenu = customtkinter.CTkOptionMenu(self.mapFrame, values=[
-                                                             ], variable=airlineOptionmenu_var)
-        self.airlineOptionMenu.grid(row=3, column=1, padx=20, pady=20, sticky='n')
+        ], variable=airlineOptionmenu_var)
+        self.airlineOptionMenu.grid(
+            row=3, column=1, padx=20, pady=20, sticky='n')
 
         # Set calendar label
         self.calendarLabel = customtkinter.CTkLabel(
@@ -291,23 +328,25 @@ class App(customtkinter.CTk):
             self.mapFrame, text="Run prediction", command=self.predictButton_callback)
         self.predictButton.grid(row=5, column=0, padx=20)
 
-        #Set prediction label
-        self.preditionLabel = customtkinter.CTkLabel(self.mapFrame,text="This is what the model has predicted:")
+        # Set prediction label
+        self.preditionLabel = customtkinter.CTkLabel(
+            self.mapFrame, text="This is what the model has predicted:")
         self.preditionLabel.grid(row=5, column=1)
 
         # Set prediction key print
         self.predictionKey = customtkinter.CTkEntry(
             self.mapFrame, placeholder_text="Type of prediction", width=210)
-        self.predictionKey.grid(row=6, column=1, padx=20, pady=(0,20))
+        self.predictionKey.grid(row=6, column=1, padx=20, pady=(0, 20))
 
-         #Set prediction label
-        self.confidenceLabel = customtkinter.CTkLabel(self.mapFrame,text="This is the confidence of the model:")
+        # Set prediction label
+        self.confidenceLabel = customtkinter.CTkLabel(
+            self.mapFrame, text="This is the confidence of the model:")
         self.confidenceLabel.grid(row=5, column=2)
 
         # Set key description
         self.keyDescription = customtkinter.CTkEntry(
             self.mapFrame, placeholder_text="Prediction confidence")
-        self.keyDescription.grid(row=6, column=2, padx=20, pady=(0,20))
+        self.keyDescription.grid(row=6, column=2, padx=20, pady=(0, 20))
         ################################################################
 
         # TRAINING TAB FUNCTIONS
@@ -417,7 +456,7 @@ class App(customtkinter.CTk):
                 float(airport['location']['lat']),
                 float(airport['location']['lon']),
                 name_str,
-                command= self.open_DialogBox
+                command=self.open_DialogBox
             ))
             # Replace '\n' with ' ' and add to menu_vals
             menu_vals.append(' '.join(name_str.split('\n')))
@@ -469,22 +508,20 @@ class App(customtkinter.CTk):
         else:  # None (cancel)
             pass """
 
-    def open_DialogBox(self,dialogBoxWindow):
+    def open_DialogBox(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
+        '''Create a DialogBox, passing it this App instance and the map pin'''
         if self.dialogBoxWindow is None or not self.dialogBoxWindow.winfo_exists():
-            self.dialogBoxWindow = DialogBox(self)
+            self.dialogBoxWindow = DialogBox(self, marker)
+            self.dialogBoxWindow.focus()
         else:
             self.dialogBoxWindow.focus()
 
-    def originButton_callback(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
-        marker = tkintermapview.map_widget.CanvasPositionMarker
-        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
-        name_str = ' '.join(marker.text.split('\n'))
+    # These methods are invoked by the DialogBox class and used to set
+    # src/dst airport
+    def originButton_callback(self, name_str: str):
         self.mapOriginOptionMenu.set(name_str)
 
-    def destButton_callback(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
-        marker = tkintermapview.map_widget.CanvasPositionMarker
-        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
-        name_str = ' '.join(marker.text.split('\n'))
+    def destButton_callback(self, name_str: str):
         self.mapDestOptionMenu.set(name_str)
 
     # PREDICTION TAB FUNCTIONS
