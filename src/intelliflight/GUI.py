@@ -155,7 +155,7 @@ class App(customtkinter.CTk):
 
         # Set k value increment text
         self.kValueLabel = customtkinter.CTkLabel(self.fileTab.tab(
-            "Train new model"), text="Offset between candidate values for thelaplace smoothing \nfactor k as a percentage of the dataset length:")
+            "Train new model"), text="Offset between candidate values for the laplace smoothing \nfactor k as a percentage of the dataset length:")
         self.kValueLabel.grid(row=2, column=0, pady=20, padx=10)
 
         # Set k value increment slider
@@ -191,15 +191,25 @@ class App(customtkinter.CTk):
             "Train new model"), text='Run Model', command=self.runButton_callback)
         self.runButton.grid(row=5, column=0, sticky='w', padx=(20, 0))
 
+        #Set k value output label
+        self.kValueOutputLabel = customtkinter.CTkLabel(self.fileTab.tab(
+            "Train new model"),text="This is the best k value \nthat the model found:")
+        self.kValueOutputLabel.grid(row=5,column=0, sticky='e')
+
         # Set k value print
         self.kValuePrint = customtkinter.CTkEntry(self.fileTab.tab(
             "Train new model"), placeholder_text="Model's k value")
-        self.kValuePrint.grid(row=5, column=0, sticky='e')
+        self.kValuePrint.grid(row=6, column=0, pady=(10,20), sticky='e')
+
+        #Set accuracy output label
+        self.accuracyOutputLabel = customtkinter.CTkLabel(self.fileTab.tab(
+            "Train new model"), text="This is the accuracy of \nthe newly trained model:")
+        self.accuracyOutputLabel.grid(row=5, column=1, padx=(20, 0))
 
         # Set accuracy print
         self.accuracyPrint = customtkinter.CTkEntry(self.fileTab.tab(
             "Train new model"), placeholder_text="Accuracy of model")
-        self.accuracyPrint.grid(row=5, column=1, padx=(20, 0))
+        self.accuracyPrint.grid(row=6, column=1, pady=(10,20),padx=(20, 0))
 
         # Set save model button
         self.saveButton = customtkinter.CTkButton(self.fileTab.tab(
@@ -424,11 +434,13 @@ class App(customtkinter.CTk):
             self.kValuePrint.delete(0, 500)
             self.kValuePrint.insert(0, str(kvalue))
             self.accuracyPrint.delete(0, 500)
-            self.accuracyPrint.insert(0, str(accuracy))
+            self.accuracyPrint.insert(0, f'{accuracy}%')
             self.populate_prediction_screen()
         else:
             messagebox.showerror('Error', message="Slider not set")
 
+    # PREDICTION TAB FUNCTIONS
+    ################################################################
     def populate_prediction_screen(self):
         # Clear map
         self.map.delete_all_marker()
@@ -491,29 +503,10 @@ class App(customtkinter.CTk):
         # Set dropdown values
         self.airlineOptionMenu.configure(values=airline_menu_vals)
 
-    """ def pin_click_handler(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
-        # Replace '\n' with ' ' since dropdown uses spaces while pins use newlines
-        name_str = ' '.join(marker.text.split('\n'))
-        # TODO: Replace this with custom dialog box
-        self.open_DialogBox()
-
-        is_src = messagebox.askyesnocancel(
-            'Source or Destination?', message="Is this the source (yes) or destination (no)?")
-
-        if is_src == True:
-            self.mapOriginOptionMenu.set(name_str)
-
-        elif is_src == False:
-            self.mapDestOptionMenu.set(name_str)
-
-        else:  # None (cancel)
-            pass """
-
     def open_DialogBox(self, marker: tkintermapview.map_widget.CanvasPositionMarker):
         '''Create a DialogBox, passing it this App instance and the map pin'''
         if self.dialogBoxWindow is None or not self.dialogBoxWindow.winfo_exists():
             self.dialogBoxWindow = DialogBox(self, marker)
-            self.dialogBoxWindow.focus()
         else:
             self.dialogBoxWindow.focus()
 
@@ -524,9 +517,6 @@ class App(customtkinter.CTk):
 
     def destButton_callback(self, name_str: str):
         self.mapDestOptionMenu.set(name_str)
-
-    # PREDICTION TAB FUNCTIONS
-    ################################################################
 
     def predictButton_callback(self):
         src_airport_str = self.mapOriginOptionMenu.get()
