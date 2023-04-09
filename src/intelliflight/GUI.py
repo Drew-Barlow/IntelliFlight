@@ -44,6 +44,7 @@ class DialogBox(customtkinter.CTkToplevel):
         self.geometry("600x200")
         self.title("Origin or Destination?")
         self.grid_columnconfigure((0, 1, 2), weight=1)
+        self.grab_set()
 
         self.label = customtkinter.CTkLabel(
             self, text="Select if this airport is your origin or destination:")
