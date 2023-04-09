@@ -253,7 +253,7 @@ class App(customtkinter.CTk):
 
         # Set map
         self.map = tkintermapview.TkinterMapView(
-            self.mapFrame, width=500, height=500, corner_radius=0)
+            self.mapFrame, width=500, height=450, corner_radius=0)
         self.map.grid(row=1, column=0, sticky='nsew', columnspan=3)
         self.map.set_position(42.3314, -83.0458)
         self.map.set_zoom(9)
