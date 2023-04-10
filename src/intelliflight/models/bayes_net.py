@@ -67,7 +67,6 @@ class Bayes_Net(ai_model.AI_Model):
             self.key_meta.set_arrival_statuses(arrival_statuses)
 
             # Pull keys for temperature and wind buckets
-            data_dir.open
             with (data_dir / 'maps' / 'temp_ranges.csv').open('r', encoding='utf-8') as temp_in, \
                     (data_dir / 'maps' / 'wind_speeds.csv').open('r', encoding='utf-8') as wind_in:
                 temp_codes = csv.DictReader(temp_in)

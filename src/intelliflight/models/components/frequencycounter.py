@@ -123,6 +123,8 @@ class FrequencyCounter:
 
     def get_status_counter(self) -> dict[str, int]:
         """Copy `status_counter`"""
+        if self.__status_counter is None:
+            return None
         return self.__status_counter.copy()
 
     def get_day_counter(self) -> dict[str, dict[str, int]]:

@@ -263,6 +263,8 @@ class ProbabilityTables:
 
     def get_p_status(self) -> dict[str, float]:
         """Copy `p_status`"""
+        if self.p_status is None:
+            return None
         return self.p_status.copy()
 
     def get_p_day(self) -> dict[str, dict[str, float]]:

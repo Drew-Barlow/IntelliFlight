@@ -47,24 +47,38 @@ class KeyMeta:
         return airport in self.__wind_keys
 
     def get_arrival_statuses(self) -> dict[str, str]:
+        if self.__arrival_statuses is None:
+            return None
         return self.__arrival_statuses.copy()
 
     def get_seen_airports(self) -> set[str]:
+        if self.__seen_airports is None:
+            return None
         return self.__seen_airports.copy()
 
     def get_seen_carriers(self) -> set[str]:
+        if self.__seen_carriers is None:
+            return None
         return self.__seen_carriers.copy()
 
     def get_dep_times(self) -> list[str]:
+        if self.__DEP_TIMES is None:
+            return None
         return self.__DEP_TIMES.copy()
 
     def get_temp_keys(self) -> list[str]:
+        if self.__temp_keys is None:
+            return None
         return self.__temp_keys.copy()
 
     def get_wind_keys(self) -> list[str]:
+        if self.__wind_keys is None:
+            return None
         return self.__wind_keys.copy()
 
     def get_status_keys(self) -> list[str]:
+        if self.__arrival_statuses is None:
+            return None
         return self.__arrival_statuses.keys()
 
     def set_arrival_statuses(self, arrival_statuses: dict[str, str]):
