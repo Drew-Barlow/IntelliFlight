@@ -106,7 +106,12 @@ To generate a code coverage report, execute any of the previous test commands wi
 
 ## Deploying Production App
 
-To install the app for production use, run `pip install .` in the project root directory.
+To deploy the app for production use, run the following in the project root directory to install IntelliFlight and its dependencies: 
+
+```
+pip install -r requirements.txt
+pip install .
+```
 
 
 ## Downloading Alternate Training Data
