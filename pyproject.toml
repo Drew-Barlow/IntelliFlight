@@ -35,4 +35,5 @@ markers = [
     "keymeta: function tests the KeyMeta model component",
     "frequencies: function tests the FrequencyCounter model component",
     "ptables: function tests the ProbabilityTables model component",
+    "bayes: function tests the BayesNet class",
 ]

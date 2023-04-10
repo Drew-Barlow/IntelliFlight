@@ -96,6 +96,7 @@ To run unit tests for a subset of software modules, execute `pytest -m <module-m
 - `keymeta`: Test the `KeyMeta` model component
 - `frequencies`: Test the `FrequencyCounter` model component
 - `ptables`: Test the `ProbabilityTables` model component
+- `bayes`: Test the `Bayes_Net` class
 
 To test multiple modules, use `-m "<mark> and <mark> and ..."`.
 
@@ -106,7 +107,7 @@ To generate a code coverage report, execute any of the previous test commands wi
 
 ## Deploying Production App
 
-To deploy the app for production use, run the following in the project root directory to install IntelliFlight and its dependencies: 
+To deploy the app for production use, run the following in the project root directory to install IntelliFlight and its dependencies:
 
 ```
 pip install -r requirements.txt
