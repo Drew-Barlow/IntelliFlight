@@ -110,7 +110,7 @@ To deploy the app for production use, run the following in the project root dire
 
 ```
 pip install -r requirements.txt
-pip install .
+pip install -e .
 ```
 
 
