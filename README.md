@@ -163,13 +163,13 @@ Run `python -m intelliflight train -h` for more information on each argument.
 
 Predictions can be made with a trained model using the following command:
 ```
-python -m intelliflight predict [-h] -s SRC_AIRPORT -d DST_AIRPORT -D DAY_OF_WEEK -t DEP_TIME
+python -m intelliflight predict [-h] -s SRC_AIRPORT -d DST_AIRPORT -a CARRIER -D DEP_DATE -t DEP_TIME
 ```
 Run `python -m intelliflight predict -h` for more information on each argument.
 
 ### Listing Input Mappings
 
-Airports, airlines, and days of the week are passed into the above commands using IDs rather than human-readable descriptions or names. To view the mappings of IDs to human-readable name, run the following commands:
+Airports and airlines are passed into the above commands using IDs rather than human-readable descriptions or names. To view the mappings of IDs to human-readable names, run the following commands:
 
 #### Airports
 
@@ -181,10 +181,4 @@ python -m intelliflight list airports
 
 ```
 python -m intelliflight list airlines
-```
-
-#### Days of the Week
-
-```
-python -m intelliflight list days
 ```

@@ -1,7 +1,10 @@
 import argparse
 import csv
+from datetime import date, timedelta, datetime, time
 import json
 import sys
+
+from intelliflight.util import datautil, nws_manager
 from .models.bayes_net import Bayes_Net
 from pathlib import Path
 from pydoc import pager
@@ -111,6 +114,52 @@ def time_str() -> callable:
     return check_format
 
 
+def date_str() -> callable:
+    """Argparse type representing a date as YYYY-MM-DD.
+
+    Month and day fields need not be padded to 2 characters each, but
+    each must be integral. Additionally, splitting the input string with '-'
+    must return exactly 3 tokens.
+
+    Violation of the above conditions will result in an `ArgumentTypeError`.
+
+    Returns:
+
+    A function that can be passed to the `type` argument of
+    `argparse.add_argument()`
+    """
+    def check_format(datestamp: str) -> date:
+        """Function to check that the passed argument is of correct format."""
+        try:
+            tokens = datestamp.split('-')
+            if len(tokens) != 3:
+                raise argparse.ArgumentTypeError(
+                    'Must be of format YYYY-MM-DD')
+
+            year = int(tokens[0])
+            if not (year >= date.today().year):
+                raise argparse.ArgumentTypeError(
+                    f'Year must be >= {date.today().year} (the current date).')
+
+            month = int(tokens[1])
+            if not (month >= date.today().month):
+                raise argparse.ArgumentTypeError(
+                    f'Month must be >= {date.today().month} (the current date).')
+
+            day = int(tokens[2])
+            if not (day >= date.today().day):
+                raise argparse.ArgumentTypeError(
+                    f'Day must be >= {date.today().day} (the current date).')
+
+            return date.fromisoformat(datestamp)
+
+        except ValueError:
+            raise argparse.ArgumentTypeError(
+                'Must be a valid date of format YYYY-MM-DD.')
+
+    return check_format
+
+
 class HelpfulParser(argparse.ArgumentParser):
     """ArgumentParser class designed to facilitate custom behavior when
     invalid arguments are provided.
@@ -181,24 +230,30 @@ predict_subparser = subparsers.add_parser('predict', help="Make a prediction.")
 predict_subparser.add_argument(
     '-s', '--src-airport',
     required=True,
-    type=str,
+    type=int,
     dest='src_airport',
     help='Source airport BTS ID.'
 )
 predict_subparser.add_argument(
     '-d', '--dst-airport',
     required=True,
-    type=str,
+    type=int,
     dest='dst_airport',
     help='Destination airport BTS ID.'
 )
 predict_subparser.add_argument(
-    '-D', '--day',
+    '-a', '--airline',
     required=True,
-    dest='day',
-    type=int,
-    choices=range(1, 8),
-    help='Day of week of departure.'
+    type=str,
+    dest='carrier',
+    help='Airline ID.'
+)
+predict_subparser.add_argument(
+    '-D', '--date',
+    required=True,
+    dest='date',
+    type=date_str(),
+    help='Departure date in YYYY-MM-DD.'
 )
 predict_subparser.add_argument(
     '-t', '--time',
@@ -216,8 +271,7 @@ list_subparser.add_argument(
     type=str,
     choices=[
         'airports',
-        'airlines',
-        'days'
+        'airlines'
     ],
     help='Input mapping to list.'
 )
@@ -285,116 +339,192 @@ else:
             bayes.export_parameters()
 
     elif sys.argv[1] == 'predict':
-        print('TODO: Implement CLI prediction')
+        # Load model
+        model_path = (root_dir / 'data' / 'models' / 'bayes_net.model.json')
+        if not model_path.exists():
+            print(
+                f'Error: Model file {model_path.as_posix()} does not exist. Train the model first.')
+            exit()
+
+        bayes = Bayes_Net(model_path.as_posix())
+
+        # Get departure time and check if it is within bounds
+        current_date = datetime.now()
+        # args.dep_time is 'hhmm', not 'hh:mm'
+        # Splits:
+        #   'YYYY-MM-DDT00:00:00' -> 'YYYY-MM-DD' ['T'] '00:00:00'
+        #   'hhmm' -> 'hh'
+        #   'hhmm' -> 'mm'
+        dep_timestamp = datetime.fromisoformat(args.date.isoformat().split('T')[
+                                               0] + f'T{args.dep_time[:2]}:{args.dep_time[2:]}:00')
+
+        if not ((dep_timestamp - current_date) <
+                timedelta(days=7, hours=0, minutes=0, seconds=0)):
+            print('Error: Departure time must be within 7 days of the current time.')
+            exit()
+
+        # Check that src and dst differ
+        if args.src_airport == args.dst_airport:
+            print('Error: Origin and Destination cannot be the same.')
+            exit()
+
+        try:
+            # Get weather data
+            forecast_src = nws_manager.Forecaster((root_dir / 'data' / 'maps' / 'airport_mappings.json').as_posix(
+            )).get_nws_forecast_from_bts(args.src_airport, dep_timestamp.isoformat())
+            forecast_dst = nws_manager.Forecaster((root_dir / 'data' / 'maps' / 'airport_mappings.json').as_posix(
+            )).get_nws_forecast_from_bts(args.dst_airport, dep_timestamp.isoformat())
+
+            # Discretize data/arguments
+            data_to_discretize = [
+                {
+                    "CRS_DEP_TIME": args.dep_time,
+                    'src_tavg': float(forecast_src['temperature']),
+                    'dst_tavg': float(forecast_dst['temperature']),
+                    'src_wspd': float(forecast_src['windSpeed'].split(' ')[0]),
+                    'dst_wspd': float(forecast_dst['windSpeed'].split(' ')[0])
+                }
+            ]
+            datautil.discretize(data_to_discretize)
+            data_to_discretize = data_to_discretize[0]
+
+            # Make prediction
+            status_k, probability = bayes.make_prediction(
+                args.src_airport,
+                args.dst_airport,
+                args.carrier,
+                dep_timestamp.isoweekday(),
+                data_to_discretize['CRS_DEP_TIME'],
+                data_to_discretize['src_tavg'],
+                data_to_discretize['dst_tavg'],
+                data_to_discretize['src_wspd'],
+                data_to_discretize['dst_wspd']
+            )
+
+            # If status is a cancellation, add a prefix for readability
+            prefix = 'Cancelled due to ' if status_k.find(
+                'cancel:') == 0 else ''
+
+            # Print result
+            print(
+                '\nPredicted outcome:  ' +
+                f'{prefix}{bayes.key_meta.get_arrival_statuses()[status_k]}'
+            )
+            print(
+                'Confidence:         ' +
+                f'{round(probability * 100, 2)}%'
+            )
+
+        except ConnectionError:
+            # Forecaster got a 500 error from NWS
+            print(
+                'Error: Cannot connect to National Weather Service. Try again later.')
+            exit()
+
+        except KeyError as e:
+            # Forecaster threw an error on an unknown airport
+            print(f'Error: {e}')
+            exit()
+
+        except ValueError as e:
+            # make_prediction threw an error on a bad argument value
+            print(
+                f'Error: {e}')
+            exit()
 
     elif sys.argv[1] == 'list':
         # Print input mappings
-        if args.input == 'days':
-            help_entries = [
-                'Listing days by ID...',
-                '',
-                '1: Monday',
-                '2: Tuesday',
-                '3: Wednesday',
-                '4: Thursday',
-                '5: Friday',
-                '6: Saturday',
-                '7: Sunday'
+        params_path = root_dir / 'data' / 'models' / 'bayes_net.model.json'
+        if not params_path.exists():
+            # The model only supports predictions with airports/airlines
+            # seen in training data. Therefore, mappings are specific to
+            # trained model instances.
+            print('Error: The model must be trained to use this functionality.')
+            exit()
+
+        # Initialize model from which mappings will be extracted
+        bayes = Bayes_Net(params_path)
+
+        if args.input == 'airports':
+            # Get airport BTS IDs
+            airports = bayes.key_meta.get_seen_airports()
+            # Get airport mapping data
+            airport_map_path = root_dir / 'data' / 'maps' / 'airport_mappings.json'
+            mappings = json.load(airport_map_path.open())
+            # Generate 'description@id' strings for airports in model
+            mappings_pruned = [
+                f'{entry["desc"]}@{entry["bts_id"]}'
+                for entry in mappings
+                if entry['bts_id'] in airports
             ]
-            print('\n'.join(help_entries))
+            # Get length of longest ID value (used for spacing later)
+            max_bts_len = 0
+            for entry in mappings_pruned:
+                current_bts = entry.split('@')[1]
+                if len(current_bts) > max_bts_len:
+                    max_bts_len = len(current_bts)
+
+            # Sort airports alphabetically by name/description
+            mappings_pruned.sort()
+
+            help_entries = [
+                'Listing Airports by BTS ID...',
+                "Press [Enter] to proceed 1 line.",
+                "Press [Space] to proceed 1 page.",
+                "Press [q] to exit.",
+                ''
+            ]
+            # Append 'ID: description' strings to help_entries
+            # Use max length found previously to pad 'ID:' portion and
+            # ensure consistent spacing between columns
+            for entry in mappings_pruned:
+                desc, bts = entry.split('@')
+                help_entries.append(
+                    f'{(bts + ":").ljust(max_bts_len + 2, " ")}{desc}')
+
+            # Print paged output
+            pager('\n'.join(help_entries))
 
         else:
-            params_path = root_dir / 'data' / 'models' / 'bayes_net.model.json'
-            if not params_path.exists():
-                # The model only supports predictions with airports/airlines
-                # seen in training data. Therefore, mappings are specific to
-                # trained model instances.
-                print('Error: The model must be trained to use this functionality.')
-                exit()
+            # Get airline codes
+            airlines = bayes.key_meta.get_seen_carriers()
+            # Get airline mapping data
+            airline_map_path = root_dir / 'data' / 'maps' / 'L_UNIQUE_CARRIERS.csv'
+            mappings = csv.DictReader(airline_map_path.open())
+            # Generate 'description@code' strings for airlines in model
+            mappings_pruned = [
+                f'{entry["Description"]}@{entry["Code"]}'
+                for entry in mappings
+                if entry['Code'] in airlines
+            ]
 
-            # Initialize model from which mappings will be extracted
-            bayes = Bayes_Net(params_path)
+            # Get length of longest code
+            max_code_len = 0
+            for entry in mappings_pruned:
+                current_code = entry.split('@')[1]
+                if len(current_code) > max_code_len:
+                    max_code_len = len(current_code)
 
-            if args.input == 'airports':
-                # Get airport BTS IDs
-                airports = bayes.key_meta.get_seen_airports()
-                # Get airport mapping data
-                airport_map_path = root_dir / 'data' / 'maps' / 'airport_mappings.json'
-                mappings = json.load(airport_map_path.open())
-                # Generate 'description@id' strings for airports in model
-                mappings_pruned = [
-                    f'{entry["desc"]}@{entry["bts_id"]}'
-                    for entry in mappings
-                    if entry['bts_id'] in airports
-                ]
-                # Get length of longest ID value (used for spacing later)
-                max_bts_len = 0
-                for entry in mappings_pruned:
-                    current_bts = entry.split('@')[1]
-                    if len(current_bts) > max_bts_len:
-                        max_bts_len = len(current_bts)
+            # Sort alphabetically by name/description
+            mappings_pruned.sort()
 
-                # Sort airports alphabetically by name/description
-                mappings_pruned.sort()
+            help_entries = [
+                'Listing Airlines by code...',
+                "Press [Enter] to proceed 1 line.",
+                "Press [Space] to proceed 1 page.",
+                "Press [q] to exit.",
+                ''
+            ]
+            # Append 'Code: description' strings to help_entries
+            # Use max length found previously to pad 'Code:' portion and
+            # ensure consistent spacing between columns
+            for entry in mappings_pruned:
+                desc, code = entry.split('@')
+                help_entries.append(
+                    f'{(code + ":").ljust(max_code_len + 2, " ")}{desc}')
 
-                help_entries = [
-                    'Listing Airports by BTS ID...',
-                    "Press [Enter] to proceed 1 line.",
-                    "Press [Space] to proceed 1 page.",
-                    "Press [q] to exit.",
-                    ''
-                ]
-                # Append 'ID: description' strings to help_entries
-                # Use max length found previously to pad 'ID:' portion and
-                # ensure consistent spacing between columns
-                for entry in mappings_pruned:
-                    desc, bts = entry.split('@')
-                    help_entries.append(
-                        f'{(bts + ":").ljust(max_bts_len + 2, " ")}{desc}')
-
-                # Print paged output
-                pager('\n'.join(help_entries))
-
-            else:
-                # Get airline codes
-                airlines = bayes.key_meta.get_seen_carriers()
-                # Get airline mapping data
-                airline_map_path = root_dir / 'data' / 'maps' / 'L_UNIQUE_CARRIERS.csv'
-                mappings = csv.DictReader(airline_map_path.open())
-                # Generate 'description@code' strings for airlines in model
-                mappings_pruned = [
-                    f'{entry["Description"]}@{entry["Code"]}'
-                    for entry in mappings
-                    if entry['Code'] in airlines
-                ]
-
-                # Get length of longest code
-                max_code_len = 0
-                for entry in mappings_pruned:
-                    current_code = entry.split('@')[1]
-                    if len(current_code) > max_code_len:
-                        max_code_len = len(current_code)
-
-                # Sort alphabetically by name/description
-                mappings_pruned.sort()
-
-                help_entries = [
-                    'Listing Airlines by code...',
-                    "Press [Enter] to proceed 1 line.",
-                    "Press [Space] to proceed 1 page.",
-                    "Press [q] to exit.",
-                    ''
-                ]
-                # Append 'Code: description' strings to help_entries
-                # Use max length found previously to pad 'Code:' portion and
-                # ensure consistent spacing between columns
-                for entry in mappings_pruned:
-                    desc, code = entry.split('@')
-                    help_entries.append(
-                        f'{(code + ":").ljust(max_code_len + 2, " ")}{desc}')
-
-                # Print paged output
-                pager('\n'.join(help_entries))
+            # Print paged output
+            pager('\n'.join(help_entries))
 
     else:
         # Command was not 'train', 'predict', or 'list'.
@@ -402,10 +532,3 @@ else:
         # impossible to enter this branch.
         raise Exception(
             'Something went wrong! This branch should never be triggered.')
-
-
-# x = Bayes_Net('data/models/bayes_net.model.json')
-# x = Bayes_Net()
-# x.load_data('data/historical/flights/T_ONTIME_MARKETING.csv')
-# x.train_model(10, .02, .1, 33000897)
-# x.export_parameters()
